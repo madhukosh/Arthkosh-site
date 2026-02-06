@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+  }
+   td {
+    padding: 3px;
+    text-align: justify;
+    font-size: 15px;
+    margin: 1px;
+  }  
+
+  th {
+    padding: 3px;
+    background-color: #01411C;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Pakistan 
+       <img src="https://flagcdn.com/pk.svg" style="width: 25px;" alt="Pakistan">
+
+ </h2>
+ 
+  
+ <h3>
+   	Currency: Rupee&emsp; 
+	Unit currency: Paisa&emsp; 
+	Symbol: &#x20A8;&emsp;	
+	Code: <input type="text" id="fromCurrency" value="PKR"><br>
+      PKR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PKR - <span id="reverseRateUSD">-</span>  &emsp;
+     PKR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PKR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+   <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/626b82c63d6215.52169141-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mohammed Ali Jinnah;Dark brown on tan and pink underprint;Six signature varieties<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Khajak railroad tunnel. Urdu text line B beneath upper title</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/626b82c6e14046.76358007-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/623b640bae7c70.95030430-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Muhammad Ali Jinnah<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Gawadar Sea Port</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/623b640c2304e8.99619592-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/626d3cf8a68472.63205980-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Effigy of the Quaid-e-Azam Muhammad Ali Jinnah (25 December 1876 – 11 September 1948) in National Dress i.e. Sherwani<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Khyber Pass Gateway (Baab e Khyber; Bab-al-Khyber; Bab-el-Khyber) on Jamrud Road in Yaghistan near Peshawar. State Bank seal</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/626d3cf9618813.31429518-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/62f180652c6da2.34050725-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>LQuaid-e-Azam Muhammad Ali Jinnah at right Center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Karakoram Peak of Himalaya mountains</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/62f180666d4e07.89364861-original.jpg" alt="Reverse Image"></td>
+	</tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 75</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/64d123c78c10f8.39001592-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>State Bank of Pakistan building in Karachi. Jinnah<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Bank logo. Fatima Jinnah</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/64d123c8d246e1.73170689-original.jpg" alt="Reverse Image"></td>
+	</tr>
+	 
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/63c4fea0cc5490.75101443-original.jpg" alt="Obverse Image"> </td>
+	 <td>
+	     <h4>&larr;Observe</h4>Main color red, Picture of Mohammed Ali Jinnah<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Picture of Quaid-e-Azam Residency in Ziarat</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/63c4fea1e3e555.72825111-original.jpg" alt="Reverse Image"> </td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/636e61e17a6836.79164004-original.jpg" alt="Obverse Image"> </td>
+	 <td>
+	     <h4>&larr;Observe</h4>Rich deep green color; Picture of Mohammed Ali Jinnah<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Picture of Badshahi Masjid in Lahore</p>
+	</td>    
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/636e61e2d5b2b7.42325365-original.jpg" alt="Reverse Image"> </td>
+	 </tr>
+	 
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/630dbf0c5e37a1.87247404-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Dark blue color; Picture of Mohammed Ali Jinnah; Small flag of Pakistan on the right side below denomination written in Urdu<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Picture of Islamia College in Peshawar</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/630dbf0cdf8a18.73823660-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A8; 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/636e6230570365.13354089-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Effigy of Quaid-e-Azam Muhammad Ali Jinnah<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">King Faisal Mosque, Islamabad</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/636e6231a32278.84677744-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+ </section>
+<h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greece</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #0D5EAF;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Greece 
+      <img src="https://flagcdn.com/gr.svg" style="width: 25px;" alt="Greece">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Euro&emsp; 
+	Unit currency: Cent &emsp; 
+	Symbol:  &euro;&emsp;
+	1 Euro = 100 Cents  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+   <table id = "table1">
+ 	    <tr>
+	     <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+
+	    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;&euro; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/61f90d68c77f68.89536303-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An advanced model of an Athenian boat, a trireme, the largest warship afloat for more than 200 years, dating from the time of the Athenian democracy (fifth century BC), is accompanied by the face value. 
+	      Around twelve five-pointed stars representing the European Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/61f90d696bc7d5.25158717-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2007<br>2009</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cent<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/626ea6cd5db9f1.93867710-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A modern commercial boat, a sea-going tanker, reflecting the innovative spirit of Greek shipping accompanied with the face value and encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/626ea6ce7ef417.14891651-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2006<br>2009</td>
+	 <td style="text-align: center;">2</tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cents<hr>
+		  Value:&emsp;&euro; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1824-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A portrait of Rigas Fereos (1757-1798), a forerunner and leading figure of the Greek enlightenment and confederation, 
+	 	is accompanied with a legend indicating his name "Ρήγας Φεραίος" and the face value and is encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1825-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2004</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&euro; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1826-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A portrait of Ioannis Capodistrias (1776-1831), a leading national and European politician and diplomat who became the first Governor of Greece (1830-31) following the Greek War of Independence (1821-27)
+	     accompanied with a legend indicating his name "Ι. Καποδίστριας" and the face value and is encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1827-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Cents<hr>
+		  Value:&emsp;&euro; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/605d7310dfec66.91115567-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A portrait of Eleftherios Venizelos (1864-1936), one of Greece’s most prominent political figures, accompanied by a legend indicating his name "Ελ. Βενιζέλος", the value, 
+	     and the 12 stars of Europe around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/605d731176ff38.14105518-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"> </td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Euros<hr>
+		  Value:&emsp;&euro; 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/63c2ce3a511623.46526105-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A representation of the myth of the Abduction of Europa, the daughter of the Phoenician King Agenor, by Zeus, who had taken the form of a bull, 
+	     is accompanied with the legend "Ευρώπη" (Europa) and the face value and encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/63c2ce3b8069f8.14431010-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+
+<section>
+    
+  <h3>
+     Currency: Drachma&emsp; 
+	Unit currency: Lepta&emsp; 
+	Symbol: ₯ &emsp;
+	1 Drachma = 100 Lepta &emsp; 
+	Code: <input type="text" id="Currency1" value="GRD"><br>
+      GRD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:GRD - <span id="reverseRateUSD">-</span>  &emsp;
+     GRD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:GRD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+   <table id = "table2">
+ 	    <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Lepta<hr>
+		  Value:&emsp;₯ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1744-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of mature King George I facing left, date below, engraver's initials in Greek under the portrait<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within wreath, mint mark below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1745-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1882</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Lepta<hr>
+		  Value:&emsp;₯ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1730-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crown right of centre hole, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Owl on amphora left of centre hole</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1731-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1912</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Lepta<hr>
+		  Value:&emsp;₯ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/884-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Center hole within crowned wreath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Grapes above center hole, double denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/885-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1954<br>1959</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Lepta<hr>
+		  Value:&emsp;₯ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1752-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crown, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within wreath</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1753-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1894</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Lepta<hr>
+		  Value:&emsp;₯ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/876-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Center hole within crowned wreath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Grapes above center hole, double denomination below</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/877-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1964</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Lepta<hr>
+		  Value:&emsp;₯ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/1736-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of the Regime of Colonels, a Phoenix rising from its flames<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination is inscribed under a pattern</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/1737-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973<br>1976</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Drachma<hr>
+		  Value:&emsp;₯ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/60bb1e291b3928.51854033-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of mature King Paul A left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms (shield with cross) with the defenders of the Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/60bb1e29907936.30605856-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1959</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Drachma<hr>
+		  Value:&emsp;₯ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/65f309b66c7c69.47863569-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The portrait of young Constantine II left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms (shield with cross) with the defenders of the Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/65f309b794f064.33983289-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Drachma<hr>
+		  Value:&emsp;₯ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/858-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Regime of Colonels of 21 April 1967.Portrait of young Constantine II left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Soldier in front of a phoenix, anniversary date and denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/859-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1971</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Drachma<hr>
+		  Value:&emsp;₯ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/855-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A corvette, a boat of 1821, denomination and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The portrait of Constantine Kanaris (1793-1877), a Greek admiral, freedom fighter and politician, who played an important role in the War of Greek Independence</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/854-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1976<br>1980<br>1982</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Drachma<hr>
+		  Value:&emsp;₯ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/853-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A corvette, a boat of 1821, denomination and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;The portrait of Laskarina Bouboulina (1771-1825), an Arvanites-Greek heroine of the Greek War of Independence in 1821, engraver's monogram at the bottom sinister</h5>
+			 <p style = "text-align: right;"></p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/852-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Drachma<hr>
+		  Value:&emsp;₯ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/60bb1fd313d839.91007458-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of mature King Paul A' left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms (shield with cross) with the defenders of the Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/60bb1fd38a93b1.36587160-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1957<br>1959</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	    	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Drachma<hr>
+		  Value:&emsp;₯ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/848-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of young Constantine II left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms (shield with cross) with the defenders of the Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/849-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Drachma<hr>
+		  Value:&emsp;₯ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/844-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A Phoenix rising from its flames and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The little owl, Athene noctua, symbol of goddess Athena which was first depicted on an ancient Greek tetradrachm (5th century B.C.), denomination right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/845-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Drachma<hr>
+		  Value:&emsp;₯ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/842-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The portrait in left profile of Georgios Karaiskakis (1782-1827), a famous Greek klepht, armatolos, military commander, and a hero of the Greek War of Independence<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two crossed rifles with branch, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/843-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1976<br>1978<br>1980</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	   	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Drachma<hr>
+		  Value:&emsp;₯ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/841-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Two crossed rifles with branch, denomination and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The portrait of Constantine Kanaris (1793-1877), a Greek admiral, freedom fighter and politician, in the War of Greek Independence</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/842-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Drachma<hr>
+		  Value:&emsp;₯ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/827-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination in new lettering, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Aristotle facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/828-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984<br>1992</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Drachma<hr>
+		  Value:&emsp;₯ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/63b6fe70aa04a0.21934803-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of mature King Paul I facing left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Greek coat of arms (shield with a cross) with the defenders of the Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/63b6fe710e0dd9.80990546-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1959</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	        	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Drachma<hr>
+		  Value:&emsp;₯ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/5e88dbce210c75.33823959-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of young Constantine facing left, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms of Greece (shield with cross) with defenders of Crown, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/5e88dbce731401.81350981-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	        	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Drachma<hr>
+		  Value:&emsp;₯ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/813-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Parthenon surrounded with the value and the country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The portrait of Pericles (ca. 495 – 429 BC), a prominent and influential statesman, orator, and general of Athens in the city's Golden Age, 
+	     facing left surrounded with his name in Greek (ΠΕΡΙΚΛΗΣ)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/812-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1976<br>1980</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	         	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Drachma<hr>
+		  Value:&emsp;₯ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/810-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Temple of Athena-Nike (Acropolis) with face value and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Helmeted bust of Pericles facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/809-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	                	  
+      	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Drachma<hr>
+		  Value:&emsp;₯ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/808-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value accompanied by an olive branch, date and country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Dionysios Solomos facing forward, engraver's initials at base of bust</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/807-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Drachma<hr>
+		  Value:&emsp;₯ 50.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/63b6f9e85e12a9.18058698-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Sailing trireme with face value and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Homer in left profile, engraver's initials below bust to right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/63b6f9e8df4572.14397095-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;100 Drachma<hr>
+		  Value:&emsp;₯ 100.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/grece/63a4a82b247f60.68734311-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Sixteen-pointed star, the symbol of Macedonia, surrounded with country name; mintmark, date and value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Alexander the Great facing right</p>
+		</td>
+
+      	 <td><img src="https://en.numista.com/catalogue/photos/grece/63a4a82bbf3a97.99395838-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990<br>1992<br>1994</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+   <h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

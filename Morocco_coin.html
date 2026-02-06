@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morocco</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C1272D;
+    color: #006233;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Morocco 
+      <img src="https://flagcdn.com/ma.svg" style="width: 25px;" alt="Peru">
+ </h2>
+ 
+  <h3>
+  Currency: Dirham&emsp; 
+	Unit Currency: Centime&emsp;
+	Symbol: &#x062F;&#x002E;&#x0645;&emsp;
+	One Dirham = 100 Centime&emsp;
+	Code:<input type="text" id="fromCurrency" value="MAD"><br>
+      MAD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:MAD -  <span id="reverseRateUSD">-</span> &emsp;
+      MAD:INR -  <span id="exchangeRateINR">-</span> &emsp;
+      INR:MAD - <span id="reverseRateINR">-</span>
+ </h3>
+  
+   <table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;50 Centimes<hr>
+	  Value:&emsp;&#x062F;&#x002E;&#x0645; 0.50</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/1362-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>King Hassan II facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The arms of Morocco with dates above and the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/1363-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1974</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;&#189; Dirham<hr>
+	  Value:&emsp;&#x062F;&#x002E;&#x0645; 0.50</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/60bfe419bdea54.41466615-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>King Hassan II facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The arms of Morocco with dates above and the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/60bfe41a309cd9.74095580-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1987</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Dirham<hr>
+	  Value:&emsp;&#x062F;&#x002E;&#x0645; 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/1354-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of king 3/4 left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms with supporters, below the value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/1355-original.jpg" alt="Reserve Image"></td>
+	 	<td style="text-align: center;">2002</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+    
+	   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Dirham<hr>
+	  Value:&emsp;&#x062F;&#x002E;&#x0645; 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/1352-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of king 3/4 left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms with supporters, below the value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/1353-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2012<br>2017</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+<h3>
+     Currency: Franc&emsp; 
+	Unit Currency: Centime&emsp;
+	Symbol: F&emsp;
+	One Franc = 100 Centime&emsp;
+	Code:<input type="text" id="Currency1" value="MAF"><br>
+      MAF:USD -  <span id="RateUSD">-</span> &emsp;
+      USD:MAF -  <span id="RRateUSD">-</span> &emsp;
+      MAF:INR -  <span id="RateINR">-</span> &emsp;
+      INR:MAF - <span id="RRateINR">-</span>
+ </h3>
+<table id = "table2">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Franc<hr>
+	  Value:&emsp;F 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/1401-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Five-pointed star surrounded by an ornate pattern with Latin lettering above the outer circle, Arabic lettering below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value within an artistic designed star</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/1402-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1921</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Francs<hr>
+	  Value:&emsp;F 10.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/470-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Star flanked by designs, lettering surrounding, date on bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by designs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/471-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1951</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+     </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+
+<h3>
+     Currency: Rial&emsp; 
+	Unit Currency: Mazunas&emsp;
+	Symbol: R&emsp;
+	1 Rial = 50 Mazunas&emsp;
+	Code:<input type="text" id="Currency1" value="MAH"><br>
+      MAH:USD -  <span id="RateUSD">-</span> &emsp;
+      USD:MAH -  <span id="RRateUSD">-</span> &emsp;
+      MAH:INR -  <span id="RateINR">-</span> &emsp;
+      INR:MAH - <span id="RRateINR">-</span>
+ </h3>
+<table id = "table3">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Mazunas<hr>
+	  Value:&emsp;R 0.10</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/maroc/6040e6e98b1047.72304718-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Date within circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within circle</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/maroc/6040e6e9c30542.01817532-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1903</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+    
+     </table>
+  <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+   
+   <h2>
+	  Total Coins:<span id="table4sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {	
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	   
+	   var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table4sum = sum5
+	  document.getElementById("table4sum").innerText = table4sum;
+   }
+ sumTable4();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

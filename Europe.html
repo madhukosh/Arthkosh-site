@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Europe</title>
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #001489;
+        color: #FFDD00;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #001489;
+    color: #FFDD00;
+    text-align: center;
+  }
+  img {
+    width: 200px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 document.getElementById('reverseRateUSD').textContent = 1/ rate;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 document.getElementById('reverseRateINR').textContent = 1/ rate;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+</head>
+<body>
+
+<section>
+  <h2>Euro 
+       <img src="https://flagcdn.com/eu.svg" style="width: 25px;" alt="Euro"> 
+	
+
+ </h2>
+ 
+  
+ <h3>
+     Currency:Euro &emsp; Symbol:&euro;  &emsp; Code:
+    <input type="text" id="fromCurrency" value="EUR">
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:EUR -  <span id="reverseRateUSD">-</span> &emsp;
+      EUR:INR -  <span id="exchangeRateINR">-</span> &emsp;
+      INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+    <table>
+    <tr>
+      <th>Den.</th>
+      <th>Obverse</th>
+      <th>Obverse Detail</th>
+	 <th>Reverse</th>
+      <th>Reverse Detail</th>
+	 <th>Ordering Country</th>
+	 <th>Printing Country</th>
+	 
+    </tr>
+    <tr>
+      <td style="text-align: right; font-size: 24px;">&euro;5</td>
+      <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212627&authkey=%21AJC2tKkr6hJt-9g&width=2442&height=1265" alt="Obverse Image"></td>
+      <td class="small-text"> On the front are shown windows and doorways. <br>
+	 				They symbolise the European spirit of openness and cooperation. <br>
+				The banknote shows the architectural style from the classical period in Europe's history, but does not show any 
+				actual existing monuments or bridges.
+	 </td>
+      <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212623&authkey=%21AGD206DQA_E0O-g&width=2339&height=1223" alt="Reverse Image"></td>
+      <td> The bridges on the reverse of the Europa banknotes symbolize communication between the people of Europe and between Europe
+	 	 and the rest of the world. <br>
+	 	 The reverse also contains a map of Europe and the stars of the European flag.
+	</td>
+	<td style="text-align: right; font-size: 13px;">
+	Netherland <img src="https://flagcdn.com/nl.svg" style="width: 18px;" alt="Netherland"></td>
+	<td style="text-align: right; font-size: 13px;">
+	France <img src="https://flagcdn.com/fr.svg" style="width: 18px;" alt="France"></td>
+	  </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 24px;">&euro;10</td>
+      <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212628&authkey=%21AMCBMSZlu-6wCMs&width=2552&height=1324" alt="Obverse Image"></td>
+      <td class="small-text">On the front are shown windows and doorways.<br>
+	 				    They symbolise the European spirit of openness and cooperation. <br>
+					    Banknote show architectural style from romanesque period in Europe's history, but do not show any actual
+					     existing monuments or bridges.
+	 </td>
+     <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212626&authkey=%21AAgAfAVPK2XQe9Y&width=1875&height=981" alt="Reverse Image"></td>
+      <td> The bridges on the reverse of the Europa banknotes symbolize communication between the people of Europe and between Europe
+	      and the rest of the world. <br>
+		 The reverse also contains a map of Europe and the stars of the European flag.
+	</td>
+	<td style="text-align: right; font-size: 13px;">Austria <img src="https://flagcdn.com/at.svg" style="width: 18px;" 
+	alt="Austria"></td>
+	<td style="text-align: right; font-size: 13px;">Austria <img src="https://flagcdn.com/at.svg" style="width: 18px;" alt="Austria"></td>
+    </tr>  
+    
+    <tr>
+      <td style="text-align: right; font-size: 24px;">&euro;50</td>
+      <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212625&authkey=%21AOiRB5vDxRNU5LI&width=2812&height=1460" alt="Obverse Image"></td>
+      <td class="small-text">On the front are shown windows and doorways.<br>
+	 				    They symbolise the European spirit of openness and cooperation. <br>
+					    Banknote show architectural style from renaissance period in Europe's history, but do not show any
+					     actual existing monuments or bridges.
+	 </td>
+      <td><img src="https://onedrive.live.com/embed?resid=b22240508548c5f2%212624&authkey=%21AM_GIw-A2iHdthU&width=2805&height=1501" alt="Reverse Image"></td>
+      <td> The bridges on the reverse of the Europa banknotes symbolize communication between the people of Europe and between Europe
+	      and the rest of the world. <br>
+		 The reverse also contains a map of Europe and the stars of the European flag.
+	</td>
+	<td style="text-align: right; font-size: 13px;">
+	Belgium <img src="https://flagcdn.com/be.svg" style="width: 18px;" alt="Belgium"> </td>
+	<td style="text-align: right; font-size: 13px;">
+	Belgium <img src="https://flagcdn.com/be.svg" style="width: 18px;" alt="Belgium"></td>
+    </tr>
+    <!-- Add more rows as needed -->
+   
+  </table>
+  
+ </section>
+     <p>  <img src="https://en.numista.com/catalogue/images/6425c7e57f033.png" style="width: 625px;" alt="Euro"> </p>
+    <p> </p>
+    <p> </p>
+
+
+ 
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #FFCD00;
+    color: #000000;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Vanuatu
+      <img src="https://flagcdn.com/vu.svg" style="width: 25px;" alt="VUV">
+ </h2>
+ <h3>Currency: Vatu&emsp; 
+     Unit Currency: None&emsp; 
+	Symbol: VT&emsp; 
+	&emsp;
+	Code:<input type="text" id="fromCurrency" value="VUV"> &emsp; <br>
+	VUV:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:VUV -  <span id="reverseRateUSD">-</span> &emsp; 
+	VUV:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:VUV -  <span id="reverseRateINR">-</span> 
+</h3>
+<table id = "table1">
+ 	     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 800px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Vatu<hr>
+	  	  Value:&emsp;VT 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0c5b0c2.77489062-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Triton, large shell that predates upon sea stars, particularly invading Acanthaster, locally responsible for destruction of corals. It was used as trumpet</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0d0c906.67241573-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Vatu<hr>
+	  	  Value:&emsp;VT 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0dcee29.18948702-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Triton, large shell that predates upon sea stars, particularly invading Acanthaster, locally responsible for destruction of corals. It was used as trumpet</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0e22217.95323449-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	 	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Vatu<hr>
+	  	  Value:&emsp;VT 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0e4dfb2.19839266-original.jpg" alt="Obverse Image"></td>
+       <td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Triton, large shell that predates upon sea stars, particularly invading Acanthaster, locally responsible for destruction of corals. It was used as trumpet</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b0f25fd5.15415131-original.jpg" alt="Reserve Image"></td>     
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Vatu<hr>
+	  	  Value:&emsp;VT 10.00</h5>
+ 	  </td>
+       <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b1273ce9.83420854-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coconut crab(hermit crab), Birgus latro, surrounded by coconut trees, largest of all terrestrial crabs</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b1385b75.02954040-original.jpg" alt="Reserve Image"></td>      
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Vatu<hr>
+	  	  Value:&emsp;VT 20.00</h5>
+ 	  </td>
+     <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b15e7e50.60548148-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coconut crab(hermit crab), Birgus latro, surrounded by coconut trees, largest of all terrestrial crabs</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b1669a36.36504016-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Vatu<hr>
+	  	  Value:&emsp;VT 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b202a877.09589357-original.jpg" alt="Obverse Image"></td>
+	<td>
+		     <h5>&larr;Observe</h5>Arms of Vanuatu: Melanesian warrior in front ofcurved boar's tooth, scroll reading "LONG GOD YUMI STANAP" and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Yam tubers (genus Dioscorea), important food crop in Vanuatu, surrounded by stems of the plant. Value above</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/vanuatu_period/653ac1b21945a6.74427287-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

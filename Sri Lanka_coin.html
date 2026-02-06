@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lanka</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #8D153A;
+    color: #FFBE29;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+</head>
+<body>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+<section>
+  <h2>Sri Lanka 
+      <img src="https://flagcdn.com/lk.svg" style="width: 25px;" alt="Lanka">
+ </h2>
+ 
+ 
+   <h3>
+     Currency: Rupee &emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: Rs&emsp;
+	1 Rupee = 100 Cents  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="LKR"><br>
+      LKR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:LKR - <span id="reverseRateUSD">-</span>  &emsp;
+     LKR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:LKR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+<table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Cents<hr>
+	  	  Value:&emsp;Rs 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766814b07e2.55945232-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Armorial Ensign<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above designs within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/6537668151f383.89333304-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1978</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;Rs 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ceylon_period/6537670f0a3dc0.47552638-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms with "Ceylon" in English, Sinhala and Tamil<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ceylon_period/6537670f20a677.66440151-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1969<br>1971</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;Rs 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ceylon_period/6537670ff34352.49092245-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ceylon_period/653767100b3140.74403755-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1943</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rupee<hr>
+	  	  Value:&emsp;Rs 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376682947e61.86122845-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Sri Lanka<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in Sinhala, Tamil and English in circular floral ornament divided by country name in Sinhala at top and date at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766829f9de2.58755617-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1975<br>1982</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rupee<hr>
+	  	  Value:&emsp;Rs 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766832c4e91.62561838-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Sri Lanka<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in Sinhala, Tamil and English in circular floral ornament divided by country name in Sinhala at top and date at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766833425b8.63854814-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">2004</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rupees<hr>
+	  	  Value:&emsp;Rs 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376683c028c4.36866673-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mahaweli dam within raised disc, with electricity towers in background and the name of Mahaweli river in Tamil, Sinhala, and English, with flower pattern<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in 3 languages: Sinhala, Tamil, English, superimposed on numeral '2' and name of country in Tamil, Sinhala, English in a semicircle around, date at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376683c1f8c6.38156476-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1981</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rupees<hr>
+	  	  Value:&emsp;Rs 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766840dda53.33986552-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Armorial Ensign of Sri Lanka<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large numeral 2 with TWO RUPEES in Sinhala, Tamil and English. SRI LANKA in Sinhala, Tamil and English. Year of issue is at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/6537668414b598.92770416-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2005</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rupees<hr>
+	  	  Value:&emsp;Rs 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/6537668457c9c8.01929236-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Armorial Ensign of Sri Lanka<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large numeral 2 with TWO RUPEES in Sinhala, Tamil and English. SRI LANKA in Sinhala, Tamil and English. Year of issue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/6537668462cd00.68654972-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2013</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rupees<hr>
+	  	  Value:&emsp;Rs 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376684dafae9.21376617-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The emblem of Sri Lanka<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in the center surrounded by the country name with the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376684e9beb9.63573679-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2013</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rupees<hr>
+	  	  Value:&emsp;Rs 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766852a3c36.71472718-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Inscription over and around value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/653766852d2675.12565665-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2016</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Rupees<hr>
+	  	  Value:&emsp;Rs 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376685772932.32145813-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Sri Lanka ensign<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Inscription over and around value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/sri_lanka_period/65376685793d23.02406408-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2013<br>2016</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

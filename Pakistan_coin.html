@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakistan</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #01411C ;
+    color: #FFFFFF ;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Pakistan 
+      <img src="https://flagcdn.com/pk.svg" style="width: 25px;" alt="Pakistan">
+ </h2>
+ 
+  <h3>
+  	Currency: Rupee&emsp; 
+	Unit currency: Paisa&emsp; 
+	Symbol: &#x20A8;&emsp;	
+	1 Rupee = 100 Paise &emsp; 
+	Code: <input type="text" id="fromCurrency" value="PKR"><br>
+      PKR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PKR - <span id="reverseRateUSD">-</span>  &emsp;
+     PKR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PKR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table1">
+ 	     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Paisa<hr>
+	  	  Value:&emsp;&#x20A8; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/499-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent and Star above Tughra<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by Oat Sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/500-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Paisa<hr>
+	  	  Value:&emsp;&#x20A8; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/505-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent and Star above Tughra<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by Oat Sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/506-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pice<hr>
+	  	  Value:&emsp;&#x20A8; 0.0156</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/467-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Legend around center hole<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Star and crescent moon, denomination and date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/468-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Paisa<hr>
+	  	  Value:&emsp;&#x20A8; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/521-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Toughra with crescent moon and star, "Government of Pakistan" in Bengali and Urdu<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within sprigs, written in Urdu and Bengali</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/522-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	      
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pice<hr>
+	  	  Value:&emsp;&#x20A8; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/525-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent moon and star over toughra<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Sailboat with value on the sails, legend in Bengali, Urdu & English surrounds, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/526-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Paisa<hr>
+	  	  Value:&emsp;&#x20A8; 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/537-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent within monument (Minar-e -Pakistan) with star at upper left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wheat ears</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/538-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Paisa<hr>
+	  	  Value:&emsp;&#x20A8; 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/541-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent, star and date above sprigs<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within artistic designed wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/542-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paise<hr>
+	  	  Value:&emsp;&#x20A8; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/549-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>"Government of Pakistan" written on top in urdu, with date written at the bottom. Minar-e-Pakistan building with crescent moon and star in the background shown in the centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/550-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rupee<hr>
+	  	  Value:&emsp;&#x20A8; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/425-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mohammad Ali Jinnah, facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Hazrat Lal Shahbaz Qalandar Mausoleum, Sehwan Shareef(in Jamshoro District of Sindh, Pakistan)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/426-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2021</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rupees<hr>
+	  	  Value:&emsp;&#x20A8; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pakistan/66863f4a6a38f8.71235127-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Waxing crescent moon and a five pointed star facing north-west in rising position<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Floral wreath all along within the periphery of the coin splitted with the cones of five pointed star in the center</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pakistan/66863f4ad52596.16387523-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2015<br>2018</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

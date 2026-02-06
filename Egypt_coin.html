@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egypt</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+</head>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+<body>
+
+<section>
+  <h2>Egypt 
+      <img src="https://flagcdn.com/eg.svg" style="width: 25px;" alt="Egypt">
+ </h2>
+ 
+  <h3>
+     Currency: Pound &emsp; 
+	Unit currency: Piastres&emsp; 
+	Symbol: &#x062C;&#x002E;&#x0645;&emsp;
+	One Pound = 100 Piastres;1 Pound = 1000 Millieme&emsp;1 Pound = 100 Qirsh&emsp;
+Code: <input type="text" id="fromCurrency" value="USD"><br>
+      EGP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EGP - <span id="reverseRateUSD">-</span>  &emsp;
+     EGP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EGP - <span id="reverseRateINR">-</span>
+ </h3>
+
+ <table id = "table1">
+    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		  </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Milliemes<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.005</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ec18c31809e2.24676281-160.jpg" alt="Obverse Image"></td>
+			 <td>
+		     <h5>&larr;Observe</h5>Portrait of Farouk I facing left, wearing his military uniform and a fez hat<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/6337559727ed23.84760261-160.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1943</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Milliemes<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/2226-180.jpg" alt="Obverse Image"></td>
+			 <td>
+		     <h5>&larr;Observe</h5>Farouk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/2227-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942<br>1943</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Milliemes<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/60589c60cc8b79.90608447-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of the Federation of Arab Republics (Hawk of Qureish), name of issuer under<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The issuer name above with the denomination in Arabic in the center and the Hegira and Gregorian year in Arabic on the sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/60589c611b3131.56918437-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/8-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Tughra A.R.E. value in Arabic Hegira and Gregorian year in Arabic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Illustration representing the three pyramids of Giza</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/7-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/1806-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hawk of Quraish - Coat of Arms of Arab Republic of Egypt<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides dates, legend above</p>
+		</td>	
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/1807-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1980</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/2526-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>National emblem "Eagle of Saladin"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">United Arab Republic, Egypt, 5, Qirsh, 1966 1386</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/2527-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/1884-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Falcon, emblem of the U.A.R. and lettering below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The issuer name at the top, the denomination in the center, and the Hegira and Gregorian year at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/1885-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/1149-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Hawk of Quraish as the arms of Egypt<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides dates, legend aboven</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/1150-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1972</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/28-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>A.R.E. Value in Arabic Hegira and Gregorian year in Arabic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Decorated vase</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/27-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2004</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/6632b588386123.15282360-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Value in the centre, surrounded by Arabic inscriptions and the Gregorian and Hijri dates from left and right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Decorated vase</p>
+		</td>	  
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/66339ee05af0d3.56903412-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/60d6331a710c94.56779064-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Falcon, coat of arms of Egypt within the Federation of Arab Republics<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides dates, legend above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/60d6331adff161.96674289-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1972</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/14-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>A.R.E. Value, Hegira and Gregorian year in Arabic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Illustration representing the Mosque of Mohamed Ali at the Citadel of Salah El Din from Islamic Illustrations</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/13-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Qirsh<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/26-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Stylized state name, Denomination, year of issue in Hijri and Gregorian calendar years (all in Arabic)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Illustration representing the Mosque of Mohamed Ali at the Citadel of Salah El Din</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/25-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Piastres<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/371-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Stylized state name, Denomination, year of issue in Hijri and Gregorian calendar years (all in Arabic)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Illustration representing the Mosque of Mohamed Ali at the Citadel of Salah El Din</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/370-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Piastres<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/60d6315dea81f0.60329966-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>State name in Arabic, and year of issue in Gregorian and Hijri calendar years (both in Arabic numerals)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in Arabic and English, and Islamic illustrations</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/60d6315e4c4ae4.60773739-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1993</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pound<hr>
+		  Value:&emsp;&#x062C;&#x002E;&#x0645; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/1196-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Country name in Arabic, Denomination in Arabic and English, and year of issue in Gregorian and Hijri calendar years (both in Arabic)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tutankhamun's mask surrounded by ornamental designs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/egypte/1195-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2007<br>2008</td>
+	 <td style="text-align: center;">2</td>
+    </tr>	   
+ 
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sierra Leone</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #0072C6;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(270deg);
+	   height: 200px;
+	   object-fit:contain;
+    }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Sierra Leone
+      <img src="https://flagcdn.com/sl.svg" style="width: 25px;" alt="Bosnia and Herzegovina">
+ </h2>
+ <h3>Currency:Leonne &emsp; 
+     Unit Currency:Cent&emsp; 
+	Symbol: Le&emsp; 
+	Code:<input type="text" id="fromCurrency" value="SLL"> &emsp; <br>
+	SLL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:SLL -  <span id="reverseRateUSD">-</span> &emsp; 
+	SLL:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:SLL -  <span id="reverseRateINR">-</span> 
+</h3>
+  
+  <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+	
+    <tr>	
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">Le 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/sierra_leone/6335c8f37a1b97.70937696-original.jpg" alt="Obverse Image"></td>
+ 	<td>
+	     <h4>&larr;Observe</h4>Coat of arms; carvings, portrait of Bai Bureh facing left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Telecommunications satellite dish</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/sierra_leone/6335c8f43b5da8.93974573-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+    <tr>	
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">Le 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/sierra_leone/629a2b7881e8d6.06221112-original.jpg" alt="Obverse Image"></td>
+ 	<td>
+	     <h4>&larr;Observe</h4>Multicolour print. Bai Bureh at right; Coat of arms of Sierra Leone at upper-centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Multicolour print. Satellite dish at the left-centre</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/sierra_leone/629a2b7934c380.58892187-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+   <tr>	
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">Le 2000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/sierra_leone/63e49f06bc9ea7.23439705-original.jpg" alt="Obverse Image"></td>
+ 	<td>
+	     <h4>&larr;Observe</h4>Brown and blue on multicolor underprint. Isaac Theophilus Akunna Wallace-Johnson, cargo ship, Coat of arms of Sierra Leone<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Bank of Sierra Leone building, Freetown</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/sierra_leone/63e49f07a539b9.75629373-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>	
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">Le 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/sierra_leone/63d936a93ecb08.09011618-original.jpg" alt="Obverse Image"></td>
+ 	<td>
+	     <h4>&larr;Observe</h4>Multicolour print.Sengbe Pieh to the right of the security thread; Coat of arms of Sierra Leone directly to the left of it<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Multicolour print.Bumbuna Dam at left</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/sierra_leone/63d936aa655dc8.86604630-original.jpg" alt="Reverse Image"></td>
+    </tr>
+ 
+    <tr>	
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">Le 10000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/sierra_leone/623c284b392f43.90533200-original.jpg" alt="Obverse Image"></td>
+ 	<td>
+	     <h4>&larr;Observe</h4>Dove flying over the map of Sierra Leone, Flag of Sierra Leone. Hologram patch<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">White silk-cotton tree; savanna grassland in the background; Coat of arms</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/sierra_leone/623c284bd72f41.96996176-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+ 
+
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italy</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #009A44;
+    color: #CD212A;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Italy 
+      <img src="https://flagcdn.com/it.svg" style="width: 25px;" alt="Italy">
+ </h2>
+ <h3>
+ 	Currency: Euro&emsp; 
+     Unit Currency: Cent&emsp; 
+	Symbol: &euro;&emsp; 
+	1 Euro = 100 Cents&emsp;
+	Code:<input type="text" id="fromCurrency" value="EUR"> &emsp; <br>
+	EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:EUR -  <span id="reverseRateUSD">-</span> &emsp; 
+	EUR:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:EUR -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+ <table id = "table1">
+ <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  	<h5>Den.:&emsp;1 Cent<hr>
+	  	Value:&emsp;&euro; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/61fccce824b820.92416870-original.jpg" alt="Obverse Image"></td>
+     <td>
+		     <h5>&larr;Observe</h5>The Castel del Monte, a 13th-century castle in Apulia, Italy, features the mintmark, Italian Republic monogram, author’s initial below, and twelve EU stars around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/61fccce8c39305.18290716-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  	<h5>Den.:&emsp;5 Cents<hr>
+	  	Value:&emsp;&euro; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/61ff724b0bc689.51779243-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Flavius amphitheatre, which Emperor Vespasian began building around 75 AD and Emperor Titus inaugurated in 80 AD, is encircled by 12 stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>	  
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/61ff724c3a0db7.02698926-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002<br>2011</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  	<h5>Den.:&emsp;20 Cents<hr>
+	  	Value:&emsp;&euro; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/61da9d39654153.37336320-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Boccioni’s “Unique Forms in the Continuity of Space” is encircled by twelve stars, with the Italian Republic monogram on the left, mint mark and date on the right, and author’s initials below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Next to the face value, a symbolic map of Europe with twelve vertical stars represents the unity of EU nations, with spaces between borders to indicate non-geographical depiction</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/61da9d39d089a6.52440788-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ 
+  <h3>
+     Currency: Lira&emsp; 
+	Unit currency: Centesimo&emsp; 
+	Symbol: L&emsp;
+	1 Lira = 100 Centesimo&emsp; 
+	Code: <input type="text" id="Currency1" value="ITL"><br>
+      ITL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ITL - <span id="reverseRateUSD">-</span>  &emsp;
+     ITL:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ITL - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table2">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 900px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;2 Centesimi<hr>
+	  Value:&emsp;L 0.02</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/657174b972e900.86977239-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Vittorio Emanuele III facing left. Below neck initial S of the engraver<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within two branches, one of laurel and the other of oak. Above the Italy star and below the sign of the mint</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/657174b9c751d5.76437595-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1903</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Centesimi<hr>
+	  Value:&emsp;L 0.05</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/1459-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Vittorio Emanuele II left and the name of the engraver below the neck<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within two branches, one of laurel and other of oak with star of Italy above and mintmark below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/1460-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1861</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Centesimi<hr>
+	  Value:&emsp;L 0.10</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5fa008bbf3ac33.23166589-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bare head of King Victor Emmanuel III facing left. The legend VITT·EM·III | ·RE·E·IMP· means Victor Emmanuel III King and Emperor (of Italy)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Savoy Arms on fasces with axe, wheat ear, oak leaves, value, date and mintmark, fascist era date, engraver’s name below, and “C.10” for centesimi</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5fa008bc4ff6f1.40790654-original.jpg" alt="Reserve Image"></td>      
+	 	 <td style="text-align: center;">1939</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Centesimi<hr>
+	  Value:&emsp;L 0.20</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/60264ee82719f0.53119323-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Vittorio Emanuele III facing left and the name of the engraver below the neck<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date of coin within hexagon surrounded by laurel wreath and mintmark below date</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/60264ee88f4879.31855070-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1918</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Centesimi<hr>
+	  Value:&emsp;L 0.20</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f8f0e30552e16.96964974-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Vittorio Emanuele III facing left and the name of the engraver below the neck<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Woman’s head (representing Italy) faces right behind fasces with Savoy shield and axe, value below between date on and mintmark plus Fascist Era year</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f8f0e30baf123.43410632-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1940<br>1941</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;50 Centesimi<hr>
+	  Value:&emsp;L 0.50</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f8d36b6c73ec2.35645834-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Vittorio Emanuele III facing left and the name of the engraver below the neck<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A side view of an eagle with raised wings holding a fasces with an axe, date and Fascist Era year near the tail on the left, and the Savoy shield dividing the value and mintmark below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f8d36b720ba65.70089954-original.jpg" alt="Reserve Image"></td>     
+	 	 <td style="text-align: center;">1941</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Lira<hr>
+	  Value:&emsp;L 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5fa911713f38f9.78575687-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Weighting scale. Name of the author below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Big "1" as denomination divides a cornucopia at right and date and mintmark at left</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5fa911717e29b3.77688401-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1954&emsp;1955</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Lira<hr>
+	  Value:&emsp;L 5.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f7988efd4b370.52158656-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Female head facing right holding torch in her raised right hand. Engraver and designer names below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Grape cluster divides value, date and mintmark below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f7988f0aa87c3.73583083-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1950</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Lira<hr>
+	  Value:&emsp;L 5.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5fa91234f37349.44835297-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rudder<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value to the left of the date above a dolphin</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f79bf94407c95.93154539-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1951<br>1952&emsp;1953<br>1954&emsp;1955</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Lira<hr>
+	  Value:&emsp;L 10.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f79c73dc12675.65849794-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Plough, lettering above, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two ears of wheat dividing by value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f79c73e0a06f9.73627146-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1951&emsp;1953<br>1954<br>1955&emsp;1967<br>1968&emsp;1969<br>1973&emsp;1975</td>
+	 <td style="text-align: center;">9</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Lira<hr>
+	  Value:&emsp;L 20.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f7af32e2f35b1.31296295-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Woman head facing left with wheat sprigs in her curly hair. Designer name below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oak branch in the center with the denomination to the left and the mintmark below and the date to the right</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f7af32e821501.07474633-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1957&emsp;1958<br>1980</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;50 Lira<hr>
+	  Value:&emsp;L 50.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5fa6b687a60a24.76983707-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Woman head with oak wreath in hair facing right. Designer and engraver names below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Representation of the god Vulcan beating iron on an anvil. Date left, denomination right, mint mark below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5fa6b6880c48b0.18612707-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1955&emsp;1956<br>1959&emsp;1964<br>1969&emsp;1975<br>1976&emsp;1977<br>1978&emsp;1979<br>1980</td>
+	 <td style="text-align: center;">11</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;100 Lira<hr>
+	  Value:&emsp;L 100.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f8b3d7716d705.15931157-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Female head with laurel wreath facing left, dividing the country name on both sides. Names of the designer and engraver below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Goddess Minerva facing left reaching an olive tree with her raised right hand while in the left holds a long spear. Value at left of olive trunk; mintmark at right of the Goddess. Date below, in exergue</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f8b3d77608e26.65875438-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1956&emsp;1957<br>1960&emsp;1962<br>1963&emsp;1965<br>1966&emsp;1970<br>1972&emsp;1974<br>1975&emsp;1977<br>1978&emsp;1979<br>1980&emsp;1981</td>
+	 <td style="text-align: center;">16</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+		   <td style = "text-align: left; font-size: 15px;">
+	 	  <h5>Den.:&emsp;100 Lira<hr>
+	  		Value:&emsp;L 100.00</h5>
+ 	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f7da85587bf32.26669360-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Female head with laurel wreath facing left, dividing the country name on both sides. Names of the designer and engraver below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">In field, cow nursing calf decentralized to left, to right indication of value on two lines, plus date. Mintmark is at left of cow, near rim. Depiction of meridians and parallels to symbolize world</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f7da855ce2ff6.46997792-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;100 Lira<hr>
+	  Value:&emsp;L 100.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f8b3d7716d705.15931157-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young female head with long braid and wheat sprigs (Goddess Ceres) faces left, with country name around the rim, small flower, and engraver’s name below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Goddess Minerva faces left, reaching an olive tree with her right hand, holding a spear in her left, with value, mintmark, and date around her</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f8b3d77608e26.65875438-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+ 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;200 Lira<hr>
+	  Value:&emsp;L 200.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f7d87b8e459c1.70593342-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Woman head with long curly hair facing right. Below the neck cut a big dot and the name of the engraver<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Square toothed gear which contains indication of value on two lines. In exergue, the date. At 8 o'clock along edge mint mark (R)</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f7d87b92f79b3.50836620-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1978&emsp;1979<br>1981&emsp;1998</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;200 Lira<hr>
+	  Value:&emsp;L 200.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f8986dee15ec9.27642340-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Woman head with long curly hair facing right.Below the neck cut a big dot and the name of the engraver<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">100th Anniversary of IV Section of State Council. Palazzo Spada facede with its name incused in its foundations. Below mintmark, value, and name of author on three lines. Above building are dates of the anniversary</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f8986df5176a3.56132865-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;500 Lira<hr>
+	  Value:&emsp;L 500.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/italie/5f81b129238eb5.37429813-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A female head facing left symbolizes the Italian Republic, with feathered wings from the temples representing intelligence and freedom, and the engraver’s name below the neck<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">In center, view of Piazza del Quirinale, Rome, with date below, “L.500” in Braille at top, text at bottom, and plants on either side</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/italie/5f81b12979c873.42035040-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1987&emsp;1992</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+       <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+   <h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>East Caribbean</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #009739;
+    color: #1D4E89;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>East Carribbean States 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_Eastern_Caribean.png/125px-Flag_of_Eastern_Caribean.png" style="width: 32px;" alt="Caribbean"><br>
+	 </h2>
+	 <h4>
+		 Anguilla &emsp; <img src="https://flagcdn.com/al.svg" style="width: 32px;height:18px;" alt="Anguilla">&emsp;
+		 Antigua and Barbuda&emsp; <img src="https://flagcdn.com/ag.svg" style="width: 32px;height:18px;" alt="Antigua and Barbuda">&emsp;
+		 Dominica&emsp; <img src="https://flagcdn.com/dm.svg" style="width: 32px;height:18px;" alt="Dominica">&emsp;
+		 Greneda&emsp;	 <img src="https://flagcdn.com/gd.svg" style="width: 32px;height:18px;" alt="Greneda">&emsp;
+	      Montserrat&emsp; <img src="https://flagcdn.com/ms.svg" style="width: 32px;height:18px;" alt="Montserrat">&emsp;
+	      Saint Kitts and Nevis&emsp; <img src="https://flagcdn.com/kn.svg" style="width: 32px;height:18px;" alt="Saint Kitts and Nevis">&emsp;
+		 Saint Lucia&emsp; <img src="https://flagcdn.com/lc.svg" style="width: 32px;height:18px;" alt="Saint Lucia">&emsp;
+		 Saint Vincent and the Grenadines&emsp; <img src="https://flagcdn.com/vc.svg" style="width: 32px;height:18px;" alt="Saint Lucia">
+
+      </h4>
+ 
+ 
+  
+  <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol:  $&emsp;
+	1 Dollar = 100 Cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="XCD"><br>
+      XCD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:XCD - <span id="reverseRateUSD">-</span>  &emsp;
+     XCD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:XCD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+<table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+	      <th style="width: 100px;">Stat</th>
+	      <th>Obverse</th>
+	      <th style="width: 700px;">Details</th>
+	      <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+ 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  1 Cents<hr>
+		  Value:&emsp;$ 0.01</h5>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/17-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II to the right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">TValue flanked by palm tree fronds</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/19-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  5 Cents<hr>
+		  Value:&emsp;$ 0.05</h5>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/60be6150ce2329.17922347-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II to the right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/60be61515cdf48.85104107-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp; 5 Cents <hr>
+		  Value:&emsp;$ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/65f5fa77779f61.76537046-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value flanked by palm tree fronds</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/65f5fa77dc64d1.95804095-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2015</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  10 Cents<hr>
+		  Value:&emsp;$ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/200-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/201-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp; 10 Cents <hr>
+		  Value:&emsp;$ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/65f5f47376b6b2.70384955-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/65f5f474c12124.65687932-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2014</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  25 Cents<hr>
+		  Value:&emsp;$ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/617a6db37b4c33.87155020-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/617a6db3d05cf2.95204029-original.jpg" alt="Reserve Image"></td>
+      <td style="text-align: center;">1955<br>1959</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  25 Cents<hr>
+		  Value:&emsp;$ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/206-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/207-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1987<br>1989</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+		  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  25 Cents<hr>
+		  Value:&emsp;$ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/208-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/209-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2004</td>
+	 <td style="text-align: center;">1</td>	 
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;  25 Cents<hr>
+		  Value:&emsp;$ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/oeco/450-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Queen Elizabeth II facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The "Golden Hind", ship of Sir Francis Drake (1542-1596), corsair and English explorer</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/oeco/451-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2017</td>
+	 <td style="text-align: center;">1</td>	 
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</body>
+</html>

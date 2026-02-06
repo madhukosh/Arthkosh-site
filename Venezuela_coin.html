@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venezuela</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #FCE300;
+    color: #003DA5;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Venezuela 
+      <img src="https://flagcdn.com/ve.svg" style="width: 25px;" alt="Venezuela">
+ </h2>
+  <h3>Currency: Bolivar &emsp;
+     Unit Currency:Centimos &emsp;
+	Symbol: &#x20A1; &emsp; 
+	1 Bolivares= 100 Centimos&emsp;
+	Code:<input type="text" id="fromCurrency" value="VES"> &emsp; <br>
+	VES:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:VES -  <span id="reverseRateUSD">-</span> &emsp; 
+	VES:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:VES -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+<table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 850px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62bb128fe22cf5.68513078-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination below inverted wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/62bb1290b56f67.06929285-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1986</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Centimos<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/446-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms flanked by date. With legend above and value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left, flanked with legend and engraver's name at bottom</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/445-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+ <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Centimos<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/667-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Venezuelan coat of arms with a legend and date on the outer circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value with diagonal waves crossing coin and 8 stars; mintmark</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/668-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2007</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Centimos<hr>
+	  	  Value:&emsp;&#x20A1; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/803-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Shield features national flag’s colors: wheat for unity and wealth, weapons and flags for triumph, and horse for independence and freedom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Simón Bolívar (1783–1830), Venezuelan leader instrumental in independence of 6 nations from Spanish rule, with legend and engraver’s name</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/804-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Bolivare<hr>
+	  	  Value:&emsp;&#x20A1; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/464-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Venezuela with legend above and date to right of denomination at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left flanked with a legend with the engraver's name at the bottom</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/463-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	   	 	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Bolivares<hr>
+	  	  Value:&emsp;&#x20A1; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/63b5a5fce1c514.11690030-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend at top. Value and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left, flanked with legend and engraver's name at base</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/63b5a5fd7c0ac6.55930601-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	   	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Bolivares<hr>
+	  	  Value:&emsp;&#x20A1; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/807-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Small coat of arms sharing center with value. With legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left, flanked with legend and engraver's name at base. Inside heptagon</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/808-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Bolivares<hr>
+	  	  Value:&emsp;&#x20A1; 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/809-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Small coat of arms sharing center with value. With legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left, flanked with legend and engraver's name at base. Inside heptagon</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/810-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Russia</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D52B1E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(270deg);
+	   height: 200px;
+	   object-fit:contain;
+    }
+</style>
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Russia
+      <img src="https://flagcdn.com/ru.svg" style="width: 25px;" alt="Russia">
+ </h2>
+ <h3>Currency: Ruble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	Code:<input type="text" id="fromCurrency" value="RUB"> &emsp; <br>
+	RUB:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:RUB -  <span id="reverseRateUSD">-</span> &emsp; 
+	RUB:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:RUB -  <span id="reverseRateINR">-</span> 
+</h3>
+  
+  <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 900px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russia_civil_war/5f147a213318d9.10939265-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Eagle with crown at left, monogram of of Emperor Nicholas II at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Eagle with crown at centre</p>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russia_civil_war/5f147a2179e317.51711098-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	  
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/623b737f60d548.88909274-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>The banknote features a pale yellow-green security underprint with waving lines. The USSR coat of arms is in the upper left corner, above a cartouche with an inscription. 
+		 The denomination is in the center, with the date below and a red serial number to the right. A pale yellow cartouche with the digit "1" is on the right white panel. 
+		 The watermark consists of rows of light and dark 5-pointed stars. Does this work for you?<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The left side has a small white panel with a red-yellow digit “1” at the bottom. 
+		 The right side features a large panel with a pale yellow-green security underprint and a multicolored cartouche with a yellow-green digit “1” and floral elements. 
+		 The denomination is printed in red at the center and repeated in 14 languages in a white cartouche below</p>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/623b73800f5d21.26226954-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 3</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/626e4cd4ce0789.95595809-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>View of Kremlin in Moscow, Soviet Union (Now Russian Federation)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Known as the "Polyglot Rouble" with the denomination's names in several languages: Russian, large (Rubl'), 
+	     Ukrainian (Karbovanets), Byelorussian (Rubel'), Uzbek (Sum), Kazakh (Som), Georgian (Maneti), Turkmenian (Manat), 
+		Lithuanian (Rublis), Romanian in Cyrillic script (Ruble) Latvian (Rublis), Kyrgyz (Som), Tajik (Sum), 
+		Armenian (Roubli), Azerbaijanian (Manat), Estonian (Rubla)</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/626e4cd638c953.12693741-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/63d560dcbc9256.79412405-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Spasskiy tower, Kremlin (Moscow) and Soviet coat of arms on left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Blue background with patterns, the words "Five rubles" in the different languages of the Soviet Union</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/63d560df216404.54158115-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/63d8f84f21d097.43339573-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Monument of the Russian Millennium and St. Sophia Cathedral in Novgorod<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A fragment of the old city wall of Novgorod</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/63d8f84fd167f3.79878276-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russia-empire/5ebc29fb93c191.30775599-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Deep olive green on green and red underprint. Imperial eagle at top centre. Produce at left and right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Denomination</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russia-empire/5ebc29fc04c035.93622798-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+	<tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/623b74ae8020c1.99928542-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Red-brown and green on multicolour underprint. Arms at upper left, portrait of V. I. Lenin at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Denomination</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/623b74af2ef787.88018241-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+	<tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/66547ebbb7aa32.45056329-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>A dark brown and dark grey on multicolour underprint and an arch bridge over the Yenisei river in Krasnoyarsk at left centre, 
+		 steeple at the centre-right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Hydroelectric dam in Krasnoyarsk at centre, 14 lines of microfont "10" and 9 lines of microfont "10 ЦРБ" under it</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/66547ebd0194a0.74610904-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 25</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/63307919c959f3.46154581-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of VI Lenin at upper left, arms at upper centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Value in all languages of Soviet Republic</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6330791a878ac0.62622332-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+    <tr>
+       <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₽ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/63d8f81368b9a3.86548170-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Tricolour flag over the house of Government (Duma) in the Kremlin, Moscow<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Kremlin, Spasski Tower at centre right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/63d8f8142ad344.49906204-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+  Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+ </section>
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

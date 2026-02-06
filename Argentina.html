@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Argentina</title>
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #6CACE4;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(90deg);
+	   height: 350px;
+	   object-fit:contain;
+    }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+</head>
+
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+<body>
+
+<section>
+  <h2>Argentina
+      <img src="https://flagcdn.com/ar.svg" style="width: 25px;" alt="Haiti">
+ </h2>
+ <h3>
+     Currency:Peso &emsp; 
+	unit currency:Centavo &emsp; 
+	Symbol:AR$  &emsp;
+	Code: <input type="text" id="fromCurrency" value="ARS"><br>
+      ARS:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ARS - <span id="reverseRateUSD">-</span>  &emsp;
+     ARS:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ARS - <span id="reverseRateINR">-</span>
+ </h3>
+  
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 75px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">AR$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/65ec876b1d7961.26131511-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Juan Manuel de Rosas<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Illustration of the painting "Combate - La Vuelta de Obligado"</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/65ec876d1228d5.95957355-original.jpg" alt="Obverse Image"></td>
+    </tr>
+  
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">AR$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/5e99d2b9c247e1.09822045-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Julio Argentino Roca<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Illustration of the painting "La Conquista del desierto" by Juan Manuel Blanes</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/5e99d2b9f060a4.79313000-original.jpg" alt="Obverse Image"></td>
+    </tr>
+
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">AR$ 100</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/argentine/632209e67e18c1.11141757-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Deep purple and deep green on multishade purple, pink, cyan, and orange print; vertical format
+Taruca (North Andean deer) near bottom, flowers below the Taruca, and mountains in the background<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Deep purple on pale purple and orange print; serial numbers black and red.
+Scene of the Famatina mountain range at left, map of Argentina to the right of the picture, and the Argentine coat of arms at the top-right corner. Flowers and cacti plants in the background</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/632209e70db951.38087861-original.jpg" alt="Reverse Image"></td>
+      	 
+    </tr>
+
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">AR$ 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/624ea14822cd74.47890449-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of José de San Martín<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Monument to the Army of the Andes in Cerro de la Gloria (Hill of Glory) at Mendoza, Argentina</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/624ea148b04da4.39215136-original.jpg" alt="Reverse Image"></td>
+      	 
+    </tr>
+
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">AR$ 500</td>
+      <td><img class = rright src="https://en.numista.com/catalogue/photos/argentine/63c84f6f567e78.15928509-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Jaguar (panthera onca), flower<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Jaguar cub, Yungas jungle, map of Argentina, coat of arms of Argentina</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/63c84f703372c2.03199434-original.jpg" alt="Reverse Image"></td>
+      	 
+    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script> 
+<h3>
+     Currency: Australes&emsp; 
+	unit currency: Centavo&emsp; 
+	Symbol: ₳&emsp;
+	Code: <input type="text" id="fromCurrency" value="ARA"><br>
+      ARA:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ARA - <span id="reverseRateUSD">-</span>  &emsp;
+     ARA:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ARA - <span id="reverseRateINR">-</span>
+ </h3>
+  
+ <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 75px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₳ 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/63e395cdba8a84.16346268-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Bartolomé Mitre - Argentine statesman, soldier and author. President of Argentina from 1862 to 1868<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Liberty (Progreso) with torch and shield seated at left center</p>
+	</td>
+	 
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/63e395d15c6211.02602913-original.jpg" alt="Obverse Image"></td>
+    </tr>
+
+
+  </table>
+ <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+ 
+ 
+ <h2>Total Notes: <span id="TSum">-</span> &emsp;</h2>
+
+<script>
+function TotalSum() {
+       
+       var table1 = document.getElementById("table1");
+            sum5 = table1.rows.length-1;
+			
+	  var table2 = document.getElementById("table2");
+	    sum6 = table2.rows.length-1;
+      
+	  var sum7 = sum5 + sum6
+	  
+	  document.getElementById("TSum").innerText = sum7;
+   }
+ TotalSum();
+</script>
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

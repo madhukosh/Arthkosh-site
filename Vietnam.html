@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #DA251D;
+    color: #FFC400;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Vietnam 
+       <img src="https://flagcdn.com/vn.svg" style="width: 25px;" alt="Vietnam">
+
+ </h2>
+ 
+  
+
+  <h3>Currency: Dong &emsp; 
+     Unit Currency: Hao &emsp;
+	Symbol: &#8363;  &emsp;
+	Code:<input type="text" id="fromCurrency" value="VND"> &emsp; <br>
+	VND:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:VND -  <span id="reverseRateUSD">-</span> &emsp; 
+	VND:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:VND -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+
+	 
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/63fa2f231383e2.73193247-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ho Chi Minh (1890-1969). Coat of Arms. Flowery-leafy ornamental designs.<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Hai Phong port dockside scene with trawlers being unloaded. Lotus ornamental design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/63fa2f2657b109.91950806-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b8a28cd1456.57945404-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ho Chi Minh (1890-1969), the Vietnamese emblem (Coat of Arms) and a lotus ornamental design<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Forestry production (a teak logging with elephants), a traditional decoration</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b8a29348644.78030396-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 2000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b87e6254884.34599868-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ho Chi Minh (1890-1969) and the Vietnamese emblem (Coat of Arms)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Women in textile factory</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b87e682a027.56685578-original.jpg" alt="Reverse Image"></td>
+      <td></td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b8803cc0d90.08806464-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ho Chi Minh (1890-1969) and the Vietnamese emblem (Coat of Arms)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Hydroelectric power station</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/626b88044b84d9.83219279-original.jpg" alt="Reverse Image"></td>
+      <td></td>
+    </tr>
+         
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 10000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/629a30e8e84ca4.62721942-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Hồ Chí Minh, coat of arms. Transparent window<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Picture of an offshore oil rig platform at centre. Sun in background</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/629a30e97f22e2.67265051-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8363; 100000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/64f38ae1a90dc4.91546703-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ho Chi Minh (1890-1969)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Khuê Văn Các part of the Temple of Literature in Hanoi - Vietnam's first national university</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/viet_nam/64f38ae265ffd3.72692798-original.jpg" alt="Reverse Image"></td>
+    </tr>
+   
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

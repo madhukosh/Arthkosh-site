@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belgium</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FDDA24;
+    color: #EF3340;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+  fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Belgium 
+      <img src="https://flagcdn.com/be.svg" style="width: 25px;" alt="Belgium">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Euro &emsp; 
+	Unit currency:Cent &emsp; 
+	Symbol:&euro;  &emsp;
+	1 Euro = 100 Cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+    
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/61f95162d95f66.83568577-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The portrait in left profile of King Albert II is encircled by the twelve stars of Europe, among which is situated 
+	     his monogram: a capital "A" with the Roman numeral "II" underneath a crown<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/61f95163bcd270.19204610-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2000</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/61fde21a83e7b0.77023192-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The portrait in left profile of King Albert II is encircled by the twelve stars of Europe, among which is situated 
+	     his monogram: a capital "A" with the Roman numeral "II" underneath a crown<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/61fde21b82e9f5.76970017-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1999</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cents<hr>
+		  Value:&emsp;&euro; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3429-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The portrait in left profile of King Albert II encircled by the twelve stars of Europe, among which is situated 
+	      his monogram: a capital "A" with the Roman numeral "II" underneath a crown<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3430-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1999<br>2001</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&euro; 2<hr>
+		  Value:&emsp;&euro; 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/612b5a2015a697.68208411-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of King Baudouin I facing left. Designer below, flanked by mint mark and privy mark<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Olive branch and value. Legend in French above, year below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/612b5a20a44332.51104975-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+  <h3>
+     Currency:Franc &emsp; 
+	Unit currency:Centimes &emsp; 
+	Symbol:₣;  &emsp;
+	1 Franc = 100 Centimes &emsp; 
+	Code: <input type="text" id="fromCurrency" value="BEF"><br>
+      BEF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:BEF - <span id="reverseRateUSD">-</span>  &emsp;
+     BEF:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:BEF - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table2">
+     
+     <tr>
+			  <th>#</th>
+		      <th style="width: 120px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 120px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr> 
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3317-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Monogram of Léopold III, date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Coats of arms of Ghent (left), Liège (middle) and Arlon (right) surrounded by bilingual legends. Value and designer below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3318-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1941</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/609d10ee921238.18003171-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The royal monogram of King Leopold II is surrounded with lettering in Dutch and the date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The center hole is flanked by an olive sprig to the left and the value to the right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/609d10eee24d89.83291861-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1904</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/609d21e27ccec0.67741658-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The royal monogram of King Leopold II is surrounded with lettering in French and the date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The center hole is flanked by an olive sprig to the left and the value to the right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/609d21e2db4e40.08909612-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1905</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centimes<hr>
+		  Value:&emsp;₣ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2456-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A miner, adapted from the a work of Constantin Meunier, facing left. Mining lamp on the right with designer underneath<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned face value dividing date. Legend above in French</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2457-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1959&emsp;1963</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centimes<hr>
+		  Value:&emsp;₣ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3425-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A miner, adapted from the a work of Constantin Meunier, facing left. Mining lamp on the right with designer underneath<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned face value dividing date. Legend above in Dutch</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3426-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1953&emsp;1954</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centimes<hr>
+		  Value:&emsp;₣ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2600-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Crowned monogram dividing date. Designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value in center, flanked by privy (left) and mint mark (right).Legend in Dutch above</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2601-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3197-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A miner, adapted from the a work of Constantin Meunier, facing left. Mining lamp on the right with designer underneath<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned face value dividing date. Legend above in Dutch</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3198-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1954&emsp;1988</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/65abd40bac0e31.50364094-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A miner, adapted from the a work of Constantin Meunier, facing left. Mining lamp on the right with designer underneath<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned face value dividing date. Legend above in French</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/65abd40d2b0d02.58984748-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1966&emsp;1992&emsp;1993</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3361-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The arms of Belgium with bilingual (French and Dutch) legends on both sides<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned monogram of King Leopold III dividing value and the date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3362-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/61cc30b119c246.11044144-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The arms of Belgium with bilingual (Dutch and French) legends on both sides<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned monogram of King Leopold III dividing value and the date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/61cc30b1b8ef44.14202802-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1943<br>1944</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2604-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of Ceres facing left, date left, cornucopia right, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned oak branch dividing value. Legend in French below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2605-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1950&emsp;1951&emsp;1952<br>1955&emsp;1964&emsp;1965<br>1968&emsp;1969&emsp;1970<br>1972&emsp;1973<br>1975&emsp;1977&emsp;1978</td>
+	 <td style="text-align: center;">14</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/65b0ae3439b748.25065119-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of Ceres facing left, date left, cornucopia right, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned oak branch dividing value. Legend in Dutch below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/65b0ae35458412.08578315-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1950&emsp;1951&emsp;1952<br>1957&emsp;1966&emsp;1967<br>1969&emsp;1972&emsp;1973<br>1974&emsp;1975&emsp;1976<br>1977&emsp;1978&emsp;1980</td>
+	 <td style="text-align: center;">15</td>
+    </tr>
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2130-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait in left profile of Baudouin I of Belgium facing left and his name in French above. Designer mark on lower right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A three-pointed star in center dividing year. Crown, value and legend in French</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2131-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	      
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3427-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait in left profile of Baudouin I of Belgium facing left and his name in Dutch above. Designer mark on lower right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A three-pointed star in center dividing year. Crown, value and legend in Dutch</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3428-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Franc<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/61cc900c7f79f9.35756327-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of Leopold III facing right, legend in French surrounding. Designer's name below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned value at centre, flanked by monograms of King Leopold III. Date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/61cc900cdecd10.02558488-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1943</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Franc<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/526-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of Ceres facing left, date left, cornucopia right, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned oak branch dividing value, legend in Dutch below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/527-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1950&emsp;1960&emsp;1971<br>1973&emsp;1977&emsp;1978</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Franc<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/3201-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of Ceres facing left, date left, cornucopia right, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Crowned oak branch dividing value, legend in French below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/3202-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1949&emsp;1950&emsp;1963</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Franc<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2134-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Stylized portrait of Baudouin I, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in centre, legend in French below. Year at bottom flanked by privy and mint mark</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2135-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1986</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Franc<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2136-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Stylized portrait of Baudouin I, designer below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in centre, legend in Dutch below. Year at bottom flanked by privy and mint mark</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2137-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1986&emsp;1987</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Franc<hr>
+		  Value:&emsp;₣ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/6532cc0dd21186.95670239-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Portrait of Baudouin I facing left , designer name below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Coat of arms of Belgium dividing value. Legend in Dutch above, date below. On either side privy and mint mark</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/6532cc0ce53589.56205244-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1970</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+	  	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Francs<hr>
+		  Value:&emsp;₣ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2138-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of King Baudouin I facing left. Designer below, flanked by mint mark and privy mark<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Olive branch and value. Legend in French above, year below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2139-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1980<br>1981<br>1982</td>
+	 <td style="text-align: center;">3</td>
+	  
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Francs<hr>
+		  Value:&emsp;₣ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/belgique/2140-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Head of King Baudouin I facing left. Designer below, flanked by mint mark and privy mark<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Olive branch and value. Legend in Dutch above, year below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/belgique/2141-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+<h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil</title>
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+   
+  }
+   td {
+    padding: 3px;
+    text-align: justify;
+    font-size: 15px;
+    margin: 1px;
+  }
+ 
+}
+  th {
+    padding: 3px;
+    background-color: #FEDD00;
+    color: #009739;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(270deg);
+	   height: 350px;
+	   object-fit:contain;
+    }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: <style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #009900;
+    color: #000000;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 document.getElementById('reverseRateUSD').textContent = 1/ rate;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+      document.getElementById('reverseRateINR').textContent = 1/ rate;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Brazil 
+       <img src="https://flagcdn.com/br.svg" style="width: 25px;" alt="India">
+
+ </h2>
+ 
+  
+ <h3>
+     Currency:Real &emsp; 
+	Unit Currency: centavos &emsp; 
+	Symbol:R$  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="BRL"><br>
+      BRL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:BRL -  <span id="reverseRateUSD">-</span> &emsp;
+      BRL:INR - <span id="exchangeRateINR">-</span> &emsp;
+	 INR:BRL - <span id="reverseRateINR">-</span> &emsp; 
+ </h3>
+ 
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 2</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/5eb4b89f99c432.97713538-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Country name on top, symbolic effigy of the Republic, interpreted in the form of sculpture. In the lower right corner, a 
+	  tactile mark with a slanted bar to the right, for use by the visually impaired.Face value in number on upper right, in number 
+	  and letters on lower left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">On the left, sea turtle (Eretmochelys imbricata) swimming; and on the right, two sea turtles swimming next to each other. 
+	 In the background marine vegetation and starfish. Issuer name on top, face value in number on top left and right, in letters on 
+	 lower right</p>
+	</td>      
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/5eb4b8a08cb728.23385429-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d7d4ef5073e3.04610543-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Symbolic effigy of the Republic, interpreted in the form of sculpture.In the lower right corner, a tactile mark with two 
+	 vertical bars, for use by the visually impaired<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The macaw (Arara chloroptera) among foliage, with an image of two macaws in flight</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d7d4f0e97862.01157057-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d7d12b765f03.15557920-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Symbolic effigy of the Republic, interpreted in the form of sculpture.In the lower right corner, a tactile mark with two 
+	 bars tilted to the right, for use by the visually impaired<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A golden lion tamarin (Leontopithecus rosalia) supported on a tree trunk, next to the image of a golden lion tamarin in 
+	 the forest</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d7d12cea9f28.76473344-original.jpg" alt="Reverse Image"></td>
+     </tr>
+     
+    <tr>      
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64170b5b13b435.74560884-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Yellow and ochre, in calchography.Symbolic effigy of the Republic, interpreted in the form of sculpture. Left, tactile 
+	 mark with three zeros, for the visually impaired<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Yellow and ochre, in calchography.Figure of a Jaguar (Panthera onca), known and beautiful big cat, threatened with 
+	 extinction, but still found mainly in the Amazon and Pantanal Matogrossense</p>
+	</td>
+      <td><img class = rright src="https://en.numista.com/catalogue/photos/bresil/64170b5d760860.46235997-original.jpg" alt="Reverse Image"></td>
+      </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64171011db8455.62600143-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Symbolic effigy of the Republic, interpreted in the form of sculpture.In the lower right corner, a tactile mark with three
+	  bars, for use by the visually impaired<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Groupers (Epinephelus marginatus) swimming close to the seabed, with plants and aquatic stones as a backdrop</p>
+	</td>     
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/641710144a7ef4.73943240-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">R$ 200</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d763f1e6db86.02685006-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Symbolic effigy of the Republic, interpreted in the form of sculpture.In the lower right corner, a tactile mark with three
+	  bars, for use by the visually impaired<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Maned wolf</p>
+	</td>     
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/64d763f39531e0.99234697-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script> 
+ 
+  
+ <h3>
+     Currency: Cruzeiro&emsp; 
+	Unit Currency: Centavos &emsp; 
+	Symbol: Cz$&emsp; 
+	Code: <input type="text" id="fromCurrency" value="BRC"><br>
+      BRC:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:BRC -  <span id="reverseRateUSD">-</span> &emsp;
+      BRC:INR - <span id="exchangeRateINR">-</span> &emsp;
+	 INR:BRC - <span id="reverseRateINR">-</span> &emsp; 
+ </h3>
+ 
+  <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 70px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/5e9f8b30bf68e0.81549459-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Green and brown on polychrome, in chalcography and offset. On the right, in a circle, the effigy of the Republic looking to the left (in brown background)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">On the left, in brown medallion, project of the building of the Amortization Box (in brown background)</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/5e9f8b310f7341.67321176-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/647cad33dbcfe1.87073516-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Sepia in calchography. In the center, the pictorial representation of the Conquista do Amazonas, painting by Antonio Parreiras<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">On the left, the images of the National Congress (foreground); Catetinho (left); Alvorada Palace (right)</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/647cad344c57a9.52196747-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+         
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/63e64e831be0c7.61709644-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Green on polychrome, in calchography and offset. Wrapped in a decorated frame,portrait of Getúlio Dornelles Vargas (President of Republic 1930 - 1945 / 1951 - 1954), flanked by numerals 10<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">On the left, the images of the National Congress (foreground); Catetinho (left); Alvorada Palace (right)</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/63e64e86aa04a5.11704110-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+         
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d40d0fa654.43713256-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Two similar and inverted images on the vertical axis (north - south). In the center, the portrait of Luís Alves de Lima e Silva (Duque de Caxias, 1803 - 1880)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Two similar and inverted images on the vertical axis (north - south). At the center is the pictorial representation of a pitched battle regarding Internal Pacification</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d40d8ecf64.23418245-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+           
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/63e64f4ecb8733.22936457-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>2 similar and inverted images.Portrait of Humberto de Alencar Castelo Branco (President of the Republic 1964 - 1967)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">2 similar and inverted images on vertical axis (north - south).Center hydroelectric dam overlaid by satellite dishes referring to energy and telecommunications</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/63e64f5200dcb3.73817686-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+            
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 10000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6479c774701463.59303781-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Right: portrait of Ruy Barbosa de Oliveira (1849-1923). Left: table with lamp, book titled "DEUXIÈME CONFÉRENCE DE LA PAIX LAHAYE 1907", ink pens, blotter, and written paper; vertical sequence of eight images indicating RIGHT, FREEDOM<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Rui Barbosa conferring at the Second Peace Conference in The Hague, Holland, in 1907</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6479c774d1f476.80151624-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+         
+    <!-- Add more rows as needed -->
+  </table>
+    <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column      
+      
+           sum2 = table.rows.length-1;       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>  
+
+ <h3>
+     Currency: Cruzado&emsp; 
+	Unit Currency: Centavos &emsp; 
+	Symbol: Cz$&emsp; 
+	Code: <input type="text" id="fromCurrency" value="BRC"><br>
+      BRC:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:BRC -  <span id="reverseRateUSD">-</span> &emsp;
+      BRC:INR - <span id="exchangeRateINR">-</span> &emsp;
+	 INR:BRC - <span id="reverseRateINR">-</span> &emsp; 
+ </h3>
+ 
+  <table id = "table3" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d3c09f79e8.35457758-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>On the right, the portrait of Juscelino Kubitschek de Oliveira (President of the Republic, from 1956 to 1961).On the left, in the foreground, 
+		         electric power transmission station and, in the background, the highway<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">On the left, the images of the National Congress (foreground); Catetinho (left); Alvorada Palace (right)</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d3c16e0b04.85998899-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+	
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Cz$ 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d45c4ebdf1.50811246-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Joaquim Maria Machado de Assis (1839-1908) with the emblem of the Brazilian Academy of Letters and a handwritten excerpt from "Esaú and Jacó" (1904)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Representative print of Primeiro de Março street, in Rio de Janeiro, (former Direita street), based on a photo from 1905</p>
+	</td>   
+      <td><img src="https://en.numista.com/catalogue/photos/bresil/6270d45ceb7947.90093009-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+       
+         
+    <!-- Add more rows as needed -->
+  </table>
+    <h3>
+Notes: <span id="sum3">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column      
+      
+           sum3 = table.rows.length-1;       
+      
+       document.getElementById("sum3").innerText = sum3;
+      	 
+   }
+ sumTable3();
+</script>
+<h2>
+	  Total Notes: <span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum4 = table1.rows.length-1;         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum5 = table2.rows.length-1;
+       
+	  var table3 = document.getElementById("table3");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table3.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum4 + sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+ 
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

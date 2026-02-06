@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bulgaria</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #00966E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(270deg);
+	   height: 350px;
+	   object-fit:contain;
+    }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Bulgaria
+      <img src="https://flagcdn.com/bg.svg" style="width: 25px;" alt="Bosnia and Herzegovina">
+ </h2>
+ <h3>Currency: Lev&emsp; 
+     Unit Currency: Stotinca&emsp; 
+	Symbol: лв&emsp; 
+	Code:<input type="text" id="fromCurrency" value="BGN"> &emsp; <br>
+	BGN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:BGN -  <span id="reverseRateUSD">-</span> &emsp; 
+	BGN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:BGN -  <span id="reverseRateINR">-</span> 
+</h3>
+  
+  <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649c69511a5253.23096752-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Asymmetrical disposition, the coat of arms on the left, the figure “1” and the text “ЕДИН ЛЕВ” (one lev) in the middle, the figure “1” in a vignette on the white margin on the right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The monument on the Shipka peak</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649c69525e4793.37719942-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 3</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/62346d238c11c1.98415406-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Asymmetrical disposition, the coat of arms on the left, the figure “3” in a vignette on the right, 
+	     a shield with the inscription “НРБ” (People’s Republic of Bulgaria) on the wider white margin, the serial number under it<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Crossed sickle and hammer in a vignette in the middle</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/62346d241ee324.65255325-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/6421456bdcb0c3.32943773-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Asymmetrical disposition,the coat of arms in the middle, the figure “10” in a vignette on the white margin on the right, a portrait of Georgi Dimitrov on the left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A view from Devnya Chemical Works</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/6421456d81f682.05303852-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 25</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649dc8b3d40201.33507882-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Asymmetrical disposition, the coat of arms on the right, a portrait of Georgi Dimitrov on the left, a shield with the figure "25" on the wider white margin<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A youth brigade installing rails in the middle</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649dc8b5258f32.76332455-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/62c16ad22ec094.91651469-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>A portrait of the publisher Hristo Danov, the text “ПЕТДЕСЕТ ЛЕВА” (fifty levs) and the figure “50”<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A printing press from the 19th century on the right, the figure “50” and the text “ПЕТДЕСЕТ ЛЕВА” (fifty levs)</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/62c16ad3250d75.30715992-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">лв 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649c5fea0bb064.95980905-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>A self-portrait of Zaharii Zograf and a fresco fragment<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The fresco “The Circle of Life” by Zaharii Zograf on the right, the figure “100” and the text “СТО ЛЕВА” (one hundred levs) on the left</p>
+	</td>	 
+      <td><img src="https://en.numista.com/catalogue/photos/bulgarie/649c5feb6f1b80.29093578-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

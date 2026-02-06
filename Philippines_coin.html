@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phillipines</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+  background-color: #0032A0;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Philippines 
+      <img src="https://flagcdn.com/ph.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+ 
+   
+  <h3>
+     Currency: Piso&emsp; 
+	Unit currency: Centavos&emsp; 
+	Symbol: &#8369&emsp;
+	1 Piso = 100 Centavos&emsp; 
+	Code: <input type="text" id="fromCurrency" value="PHP"><br>
+      PHP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PHP - <span id="reverseRateUSD">-</span>  &emsp;
+     PHP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PHP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+   <table id = "table1">
+ 	     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/641-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Seated man with hammer and anvil facing right, smoking volcano at right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Bank of the Philippines seal</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/640-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1944</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/642-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Full-length figure of a seated man with hammer and anvil, Mayon Volcano in right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/643-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/680-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Central Bank of the Philippines seal<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Front-right facing head of Lapulapu</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/681-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1976</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/678-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">ull-length figure of a seated man in left, facing right, with hammer and anvil, Mayon Volcano in right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/679-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/60c7991d1dc917.72805915-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Melchora Aquino facing right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/60c7991d80d9d7.74609727-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/621-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Legend surrounding denomination with centered hole<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Legend around rim withdenomination around center hole and 1993 (date Central Bank was established) at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/620-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1999</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5f5a3a9c29c572.98743145-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Full-length figure of Lady Liberty standing, facing left, holding hammer in right hand striking an anvil, Mayon Volcano in right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/5f5a3a9ca8a6d2.74215354-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962<br>1964</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/646-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left-facing bust of Francisco Baltasar</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/647-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1970</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/649-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Laureate bust of Francisco Baltasar facing front-right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Bank of the Philippines seal</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/648-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1978<br>1981</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/65f4160d519f29.22271544-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Francisco Baltasar facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Philippine goby (Pandaka pygmaea) facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/65f4160dd15f72.67559796-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centavos<hr>
+	  	  Value:&emsp;&#8369 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/625-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value at centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Bank of the Philippines seal</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/624-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008<br>2016</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+     
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/961-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Full-length figure of Lady Liberty standing, facing left, holding hammer in right hand striking an anvil, Mayon Volcano in right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/1115-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962<br>1964</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/1111-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left-facing head of Juan Luna</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/1112-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/652-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Juan Luna facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Philippine butterfly (Graphium idaeoides)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/653-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/10-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value at centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seal of the Central Bank of the Philippines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/9-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1995<br>1997<br>1998<br>1999<br>2003</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/627-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value at centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seal of the Central Bank of the Philippines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/626-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2009</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Sentimos<hr>
+	  	  Value:&emsp;&#8369 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/612ffd8d6cccd9.85729949-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Sun and 3 stars. Denomination, year of issue and mint mark at right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Katmon (Dillenia philippinensis) flower at left, Seal of Central Bank of the Philippines at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/612ffd8ea3c585.14063115-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2019</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Piso<hr>
+	  	  Value:&emsp;&#8369 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/8-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Jose Rizal facing right, value to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bank seal within circle</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/7-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1996<br>1999<br>2002</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Piso<hr>
+	  	  Value:&emsp;&#8369 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/986-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Jose Rizal facing right, value to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bank seal within circle</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/philippines/985-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2004<br>2010<br>2011<br>2012<br>2014<br>2015<br>2017</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Piso<hr>
+	  	  Value:&emsp;&#8369 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/61354db47e7354.96157694-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Jose Rizal facing front-right at left. Denomination, year of issue and mint mark at right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Waling waling orchid (Vanda sanderiana)at left, bank seal at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/61354db60c85a2.70835772-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2018<br>2019</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Piso<hr>
+	  	  Value:&emsp;&#8369 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/944-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Emilio Aguinaldo facing right, value and date within scalloped border<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Bank seal within circle and gear design within scalloped border</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/943-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2012<br>2014</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+	    
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Piso<hr>
+	  	  Value:&emsp;&#8369 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/6482745bec91d4.55860372-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Andres Bonifacio facing front-right at left, denomination at right and "REPUBLIKA NG PILIPINAS" in microtext repeats, mintmark and year of minting appear<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Bank seal and gear design scalloped border. Jade vine (Strongylodon macrobotrys) at left, BSP logo and name "Bangko Sentral ng Pilipinas" in microtext repeats</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/6482745db0dff4.02511635-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2019</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  	    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Piso<hr>
+	  	  Value:&emsp;&#8369 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/591-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Seal of the Central Bank of the Philippines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Conjoined busts of Apolinario Mabini and Andres Bonifacio facing right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/philippines/590-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002<br>2006</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  	    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+</body>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

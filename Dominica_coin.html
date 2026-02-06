@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dominican Republic</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color:#002D62;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Dominication Republic 
+      <img src="https://flagcdn.com/do.svg" style="width: 25px;" alt="Dominica">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Peso &emsp; 
+	Unit currency: Centavos&emsp; 
+	Symbol:  RD$ &emsp;
+	1 Peso = 100 Centavo  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="DOP"><br>
+      DOP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:DOP - <span id="reverseRateUSD">-</span>  &emsp;
+     DOP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:DOP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	    
+	      <tr>
+			  <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+	  
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavos<hr>
+		  Value:&emsp;RD$ 0.01</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/413-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination, name of the country, national coat of arms, year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Caonabo facing right - leader of local peoples in time of arrival of ships of Columbus</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/414-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1984</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;RD$ 0.10</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/60bbf182d04e55.70119635-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of the Dominican Republic with motto and name of the country<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, weight, year of issue, head of Indian woman ("Liberty") facing left</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/60bbf1834babb0.47947454-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;RD$ 0.10</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/63558dd2507a55.85531690-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, weight, year of issue, potrait of one of founding fathers of Dominican Republic - Juan Pablo Duarte</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/63558dd29fb126.67015015-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;RD$ 0.10</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/342-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, national coat of arms, year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, portrait of one of the founding fathers of the Dominican Republic - Juan Pablo Duarte</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/343-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1986</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centavos<hr>
+		  Value:&emsp;RD$ 0.25</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/60d5d6f6164701.06962084-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms with motto and name of the country<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, weight, year of issue, head of Indian woman ("Liberty") facing left</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/60d5d6f679dae9.99920996-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centavos<hr>
+		  Value:&emsp;RD$ 0.25</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/535-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, national coat of arms, year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two oxen pulling cart, denomination above</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/536-original.jpg"	 alt="Reserve Image"></td>
+     <td style="text-align: center;">1990<br>1991</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Peso<hr>
+		  Value:&emsp;RD$ 1.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/478-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Dominican Republic with the denomination to the left and below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Juan Pablo Duarte y Diez (1813-1876), 1 of founding fathers of Dominican Republic, date with  "DUARTE"</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/477-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Peso<hr>
+		  Value:&emsp;RD$ 1.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/596-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Dominican Republic with the denomination to the left and below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Juan Pablo Duarte y Diez (1813-1876), 1 of founding fathers of Dominican Republic, date with  "DUARTE"</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/595-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2015</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Peso<hr>
+		  Value:&emsp;RD$ 1.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/5e68e0197c7a60.83264723-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms, Face value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Juan Pablo Duarte y Diez (1813-1876), one of the founding fathers of the Dominican Republic</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/5e68e019125084.24290812-original.jpg"  alt="Reserve Image"></td>
+      <td style="text-align: center;">2021</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Peso<hr>
+		  Value:&emsp;RD$ 5.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/598-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Country and year of issue on outer ring and coat of arms of Dominican Republic and denomination in inner ring<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">One of the founding fathers of the Dominican Republic - Francisco del Rosario Sánchez, with issuer name and date</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/597-original.jpg"  alt="Reserve Image"></td>
+      <td style="text-align: center;">2010</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Peso<hr>
+		  Value:&emsp;RD$ 5.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/5e6cdb05e05e01.82218523-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination, name of the country, coat of arms of the Dominican Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait and name of one of the founding fathers of the Dominican Republic: Francisco del Rosario Sánchez</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/5e6cdb05801676.07502999-original.jpg"  alt="Reserve Image"></td>
+      <td style="text-align: center;">2021</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pesos<hr>
+		  Value:&emsp;RD$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/61f023710868b2.40926825-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Dominican Republic with value, country name above in outer ring, and date below, also in outer ring<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Matías Ramón Mella in centre with issuer name above in the outer ring and the date below, also in the outer ring</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_dominicaine/61f0237159e690.57826085-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">2005<br>2015</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

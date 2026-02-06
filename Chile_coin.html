@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chile</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D72B1F;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+</head>
+<body>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+<section>
+  <h2>Chile 
+      <img src="https://flagcdn.com/cl.svg" style="width: 25px;" alt="Chile">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Peso &emsp; 
+	Unit currency: Centavo &emsp; 
+	Symbol: $&emsp;
+	1 Peso  = 100 Centavo  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="CLP"><br>
+      CLP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CLP - <span id="reverseRateUSD">-</span>  &emsp;
+     CLP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CLP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	    <tr>
+	     <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+  
+  
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;$ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1550-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Defiant condor on rock left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above date within laurel wreath with hammer and sickle below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chili/1551-original.jpg"  alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1932</td>
+	 <td style="text-align: center;">1</td>
+    </tr>   
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 1<hr>
+		  Value:&emsp;$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1003-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Bernardo O'Higgins with signature Francis R.Thenot<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within a laurel wreath, date under</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chili/1004-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">1975</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 10<hr>
+		  Value:&emsp;$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1464-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Flying Andean Condor<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two wheat ears around the face value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chili/1465-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">1958</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+          
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 10<hr>
+		  Value:&emsp;$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1661-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Bernardo O'Higgins facing right, mintmark to the left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value within a laurel wreath, date under</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chili/1662-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">1986</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 10<hr>
+		  Value:&emsp;$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1119-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Bernardo O'Higgins facing right, mintmark to the left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value within a laurel wreath, date under</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chili/1120-original.jpg"  alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2008<br>2012<br>2015</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+             
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 100<hr>
+		  Value:&emsp;$ 100.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/5e67ee0f415902.79285949-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mapuche Indian Woman<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of Arms within Wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chili/5e67ee0fa47558.19436004-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2013<br>2014<br>2021</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

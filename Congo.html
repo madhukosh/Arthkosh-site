@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Democratic Republic of Congo</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #007FFF;
+    color: #f7d618;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+
+
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Democratic Republic of Congo 
+       <img src="https://flagcdn.com/cd.svg" style="width: 25px;" alt="Congo">
+
+ </h2>
+ 
+  
+  <h3>Currency: Nouveau Likuta &emsp; 
+     Unit Currency: Sengi&emsp; 
+	Symbol: NK&emsp; 
+	Code:<input type="text" id="Currency1" value="ZRN"> &emsp; <br>
+	ZRN:USD -  <span id="RateUSD">-</span> &emsp;
+	USD:ZRN -  <span id="RRateUSD">-</span> &emsp; 
+	ZRN:INR -  <span id="RateINR">-</span> &emsp; 
+	INR:ZRN -  <span id="RRateINR">-</span> 
+</h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">NK 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944ddc4b6.34110209-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Mobutu in military uniform on the right leopard in bottom left face<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Independence Monument on the left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944e923c6.85761229-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     </table>
+	  <h3 style =  "text-align: center">
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+   <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+    <h3>Currency: Franc&emsp; 
+     Unit Currency: &emsp; 
+	Symbol:  FC ;&emsp; 
+	Code:<input type="text" id="fromCurrency" value="CDF"> &emsp; <br>
+	CDF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:CDF -  <span id="reverseRateUSD">-</span> &emsp; 
+	CDF:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:CDF -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+    <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+   
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">FC 0.01</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b3cbe1c4.12921924-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Woman harvesting coffee beans. Bank monogram<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Nyiragongo volcano erupting</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b3dfd787.21964572-original.jpg" alt="Reverse Image"></td>
+      </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">FC 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b77f8e90.17117839-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Tshokwe female mask "Mwana Pwo"<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Fishermen village on Congo river. Fish</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b7947c33.06612616-original.jpg" alt="Reverse Image"></td>
+      </tr>
+    
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">FC 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8168d45.88091461-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>African Bush Elephant (Loxodonta africana) at Virunga National Park. BCC logo<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">High voltage power lines. Inga II hydroelectric dam and power station on Congo River</p>
+	</td>     
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b82e5172.71942355-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    
+     <tr>
+	<td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">FC 200</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8835f77.19228228-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Male fieldworker. Allegorical female sculpture "Agriculture"<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Telegraphic gong drummers</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8991133.53172513-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+     <tr>
+	<td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">FC 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8bb2b38.06114821-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Miners and diamond at left. 3 diamonds at right<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Central Bank of Congo, 500 Francs, FIVE HUNDRED, The counterfeiter is punished with penal servitude, FIVE HUNDRED Francs</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8cd2c42.22544404-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h3 style =  "text-align: center">
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+   <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum1;
+      	 
+   }
+ sumTable2();
+</script>
+
+  <h3 style =  "text-align: center">
+Total Notes: <span id="TotalSum">-</span> &emsp;
+</h3>
+
+ <script>
+  function sumTable3() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+	  var table2 = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum1 = table1.rows.length-1;
+		 sum2 = table2.rows.length-1;
+       
+      
+       document.getElementById("TotalSum").innerText = sum1+sum2;
+      	 
+   }
+ sumTable3();
+</script>
+ 
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

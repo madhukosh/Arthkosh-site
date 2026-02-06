@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>China</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #DE2910;
+    color: #FFDE00;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>China 
+      <img src="https://flagcdn.com/cn.svg" style="width: 25px;" alt="China">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Yuan &emsp; 
+	Unit currency:Fen, Jiao &emsp; 
+	Symbol: &#xA5; &emsp;
+	1 Yuan = 100 Fens, 1 Yuan = 10 Jiao  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="CNY"><br>
+      CNY:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CNY - <span id="reverseRateUSD">-</span>  &emsp;
+     CNY:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CNY - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>	
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Fen<hr>
+		  Value:&emsp;&#xA5; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/12-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>China's emblem: Tian'anmen, "Gate of Heavenly Peace", gate to the forbidden city, 5 stars above it<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ears surrounding the face value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/13-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1981</td>
+	 <td style="text-align: center;">1</td>
+    </tr>    
+    
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Jiao<hr>
+		  Value:&emsp;&#xA5; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/1751-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>China's emblem: Tian'anmen, "Gate of Heavenly Peace", gate to forbidden city, 5 stars above it with country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Peony blossom, or “king of flowers” in China and previously national flower and value in Chinese and Pinyin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/1752-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1993</td>
+	 <td style="text-align: center;">1</td>
+    </tr>    
+   
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Jiao<hr>
+		  Value:&emsp;&#xA5; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/28-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Orchid blossom and the issuer name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The issuer name at the top, the denomination in the center, and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/29-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2000</td>
+	 <td style="text-align: center;">1</td>
+    </tr>    
+ 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Jiao<hr>
+		  Value:&emsp;&#xA5; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/20-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Orchid blossom and "People's Bank of China" in Pinyin above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The issuing authority above the value in Chinese and Pinyin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/21-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2005<br>2007<br>2010<br>2013</td>
+	 <td style="text-align: center;">4</td>
+    </tr>    
+       
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Jiao<hr>
+		  Value:&emsp;&#xA5; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/16-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Lotus flower, and the issuer name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The issuer name at the top around the rim with the denomination in Chinese and Pinyin in the center, and the date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/17-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2005<br>2006<br>2010<br>2016</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+     
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#xA5; 1<hr>
+		  Value:&emsp;&#xA5; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/1748-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>China's emblem: Tian'anmen, "Gate of Heavenly Peace", gate to the forbidden city, 5 stars above it and the country name below along with date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Peony blossom. Value in Chinese and Pinyin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/1749-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1995<br>1996<br>1997</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#xA5; 1<hr>
+		  Value:&emsp;&#xA5; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/18-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Chrysanthemum blossom and the issuer name in Pinyin above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bank name '中国人民银行', denomination '1 元' 'YI YUAN', and year of issue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/19-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">2001<br>2002<br>2006<br>2009<br>2011<br>2013<br>2017</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+        
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Russia</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D52B1E ;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Russia 
+      <img src="https://flagcdn.com/ru.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+  
+  <h3>
+     Currency: Ruble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	1 Ruble = 100 Kopecks &emsp; 
+	Code:<input type="text" id="fromCurrency" value="RUB"> &emsp; <br>
+	RUB:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:RUB -  <span id="reverseRateUSD">-</span> &emsp; 
+	RUB:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:RUB -  <span id="reverseRateINR">-</span> 
+</h3>
+
+    <table id = "table1">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/634b0c74e2be70.35263885-original.jpg" 
+	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974&emsp;1977<br>1978&emsp;1980<br>1981&emsp;1982<br>1984&emsp;1985<br>1986&emsp;1987<br>1988</td>
+	 <td style="text-align: center;">11</td>
+    </tr>
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/5901-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Saint George, killing serpent with spear;Cyrillic М (Moscow) or С-П (Saint Petersburg);BANK OF RUSSIA;Year<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination “1” and “КОПЕЙКА” (KOPECK), with stylized vegetable ornament of two branches</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/5902-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1998&emsp;2001<br>2009</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above the date surrounded by sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6e392b5.42090251-original.jpg" 	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1979<br>1985&emsp;1990</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.03</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/11-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above the date surrounded by sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/12-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1971&emsp;1973<br>1978&emsp;1983<br>1987</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/19-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above.15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/20-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1980&emsp;1985</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404151150.28446467-original.jpg"	 alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Soviet Union (hammer and sickle on globe above sun with rays, sheaf of wheat stalks, star above within 15 ribbons on wreath (7 + 1 + 7 ribbons)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date within a partial wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404d42456.79786090-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1962<br>1974&emsp;1976<br>1978&emsp;1980<br>1982&emsp;1983<br>1984&emsp;1985<br>1986&emsp;1988<br>1991</td>
+	 <td style="text-align: center;">13</td>
+    </tr>
+    
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1034-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1035-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/6374-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Saint George, killing serpent with spear;Cyrillic М (Moscow) or С-П (Saint Petersburg);BANK OF RUSSIA;Year<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/6375-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008&emsp;2009<br>2012</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee44d0deb2.44222776-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State Emblem of the Soviet Union.15 ribbons on the wreath, 7 + 1 + 7<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee45996d11.36709784-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1988</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1173-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>50th Anniversary of the October Revolution<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Worker and Kolkhoz Woman statue and dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1174-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af0758f219.99722485-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within octagon flanked by sprigs with date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af07dabe47.05047487-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1935</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/7-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above. 15 orbits of ribbon on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/8-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1962<br>1982&emsp;1987<br>1988</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+    
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1673-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>50th Anniversary of the Great October Socialist Revolution<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The emblem of the Soviet Union; value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1674-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/21-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Saint George, killing serpent with spear;Cyrillic М (Moscow) or С-П (Saint Petersburg);BANK OF RUSSIA;Year<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination;“КОПЕЕК” (KOPECKS) written horizontal;stylized vegetable ornament in form of 2 branches</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/22-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2006</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Ruble<hr>
+	  	  Value:&emsp;₽ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1289-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1290-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Ruble<hr>
+	  	  Value:&emsp;₽ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/31-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Bank of Russia (two-headed eagle with wings down), denomination; year of issue and mint trade mark<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/32-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1998</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Ruble<hr>
+	  	  Value:&emsp;₽ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/33-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of the Bank of Russia (the two-headed eagle with wings down), denomination;year of issue and mint trade mark<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/34-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Ruble<hr>
+	  	  Value:&emsp;₽ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/62e2ab41c968e9.85603700-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms, “РОССИЙСКАЯ ФЕДЕРАЦИЯ” (RUSSIAN FEDERATION), 2 double rhombuses. “БАНК РОССИИ” (BANK OF RUSSIA);year<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/62e2ab420a6b47.06032052-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2016&emsp;2020<br>2022</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rubles<hr>
+	  	  Value:&emsp;₽ 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/29-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Bank of Russia (2-headed eagle with wings down) with denomination;date and mintmark; issuer name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination to the left and a floral design</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/30-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1997<br>1998</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+		
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rubles<hr>
+	  	  Value:&emsp;₽ 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/5913-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Bank of Russia (2-headed eagle with wings down), denomination; year; mint trade mark<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/5914-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2013</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rubles<hr>
+	  	  Value:&emsp;₽ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/65-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>2-headed eagle with wings down; “BANK OF RUSSIA”, face value; year ; mint mark to right.<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value at left of vine sprig</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/66-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1997</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rubles<hr>
+	  	  Value:&emsp;₽ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/5909-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>2-headed eagle with wings down; “BANK OF RUSSIA”, face value; year ; mint mark to right.<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value at left of vine sprig</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/5910-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2009</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Rubles<hr>
+	  	  Value:&emsp;₽ 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/6374-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Saint George on horseback slaying a serpent, with mint marks (М or С-П) below the horse’s hoof, “БАНК РОССИИ” along the rim, and the year of mintage below the serpent<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination “10” and “КОПЕЕК” slightly to the right, with a stylized vegetable ornament of two branches at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/6375-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2010</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Rubles<hr>
+	  	  Value:&emsp;₽ 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/5983-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of the Bank of Russia (2 headed eagle)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/5982-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+   
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Rubles<hr>
+	  	  Value:&emsp;₽ 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/russie/2941-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Emblem of the Bank of Russia (the two headed eagle)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			<p style = "text-align: right;">Value, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/russie/2942-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1993</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

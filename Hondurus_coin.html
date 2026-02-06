@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hondurus</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #0073CF ;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Hondurus 
+      <img src="https://flagcdn.com/hn.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+ 
+ 
+ <h3>
+     Currency:Lempira &emsp;
+	Unit Currency: Centavos &emsp;
+	Symbol:L  &emsp; 
+	1  = 100  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="HNL"><br>
+      HNL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      HNL:INR - <span id="exchangeRateINR">-</span>&emsp;
+	 USD:HNL -  <span id="reverseRateUSD">-</span> &emsp;
+	 INR:HNL -  <span id="reverseRateINR">-</span> 
+       
+ </h3>
+ <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 800px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavos<hr>
+		  Value:&emsp;L 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/479-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (pyramid without clouds), date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within laurel wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/480-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Centavos<hr>
+		  Value:&emsp;L 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/481-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (pyramid without clouds), date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within laurel wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/482-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1956</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos<hr>
+		  Value:&emsp;L 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/579-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (pyramid without clouds)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within laurel wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/580-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1956</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos<hr>
+		  Value:&emsp;L 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/577-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Honduras, state name in full, and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within laurel wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/578-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1975</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;L 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/565-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (pyramid without clouds)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, Portrait of Lempira (with feathers) to the left</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/566-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;L 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/553-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Honduran coat of arms: triangle Coat of Arms with volcano between 2 towers. Sun and rainbow. 2 cornucopias and quiver of arrows. Landscape with oak and pine trees, and mining equipment<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Lempira (without feathers) facing left within the circle, and denomination</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/554-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1978</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;L 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/5e6e2ea006d326.68257306-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Honduran coat of arms: triangle Coat of Arms with volcano between 2 towers. Sun and rainbow. 2 cornucopias and quiver of arrows. Landscape with oak and pine trees, and mining equipment<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Lempira (without feathers) facing left within the circle, and denomination</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/5e6e2ea0606484.67143573-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2010<br>2016</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;L 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/honduras/589-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Honduras, state name in full, and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Lempira (without feathers) facing left within the circle, and denomination</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/honduras/590-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1996<br>2014</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

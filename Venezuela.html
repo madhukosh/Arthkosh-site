@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venezuela</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FCE300;
+    color:  #003DA5;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+   
+  }
+  img.rright { 
+        transform: rotate(270deg);
+	   height: 350px;
+	   
+	   text-align: top;
+	   object-fit:contain;}
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Venezuela 
+       <img src="https://flagcdn.com/ve.svg" style="width: 25px;" alt="Venezuela">
+ </h2>
+ 
+  
+  <h3>Currency: Bolivar &emsp;
+     Unit Currency:Centimos &emsp;
+	Symbol: &#x20A1; &emsp; 
+	Code:<input type="text" id="fromCurrency" value="VES"> &emsp; <br>
+	VES:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:VES -  <span id="reverseRateUSD">-</span> &emsp; 
+	VES:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:VES -  <span id="reverseRateINR">-</span> 
+</h3>
+
+<h4>Fluerte</h4>
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 2</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/venezuela/62fbbe5f47b9a0.94655196-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Portrait of Francisco de Miranda (Venezuelan military leader and revolutionary)<<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Orinoco River Dolphins with Coro Dunes in the background and Gusano flower; Venezuela's Coat of Arms</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbbe5fc68258.80130789-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 5</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/venezuela/629a2e63b70ab9.43363364-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Image of Negro Primero (Pedro Camejo) at lower centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Image of two Giant Armadillos, Venezuelan coat of arms to left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2e641672f2.06621462-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 20</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/venezuela/629a2eeacf8404.83502397-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Luisa Cáceres de Arismendi<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of Arms of Venezuela, Hawksbill turles, moutains</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2eeb6a2f87.66286889-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 50</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/venezuela/629a2f15a5bb90.07937578-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Portrait of Simón Rodriguez (1769 - 1854) among books and quill pens<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Laguna del Santo Cristo in the Sierra Nevada National Park. Oso Frontino - Spectacled Bear (Tremarctos ornatus). Coat of arms</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2f1640a594.16252758-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 100</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/626b87467f2be9.88788979-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Simón Bolívar and the denomination above<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The birds we see are the Red Siski and the El Ávila National Park with its highest peak being the Cerro El Ávila at 2,765 m (9,072 ft) in the background</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/626b8747186f09.60623008-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 100</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbd64adb1140.05601601-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Bolivar in front. Background color is bright lime green<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of Arms of Venezuela, Red siskin, Mountains</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbd64b66afb2.33175535-original.jpg" alt="Reverse Image"></td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 500</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/629a2f70d6e858.22107454-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Image of Francisco de Miranda<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Amazon River Dolphins Marine Worms - Medanos de Coro National Park</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2f716a9b71.96974060-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 1000</td>
+      <td><img class = rright src="https://en.numista.com/catalogue/photos/venezuela/629a2fa05840d5.39357488-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Image of Negro Primero (Pedro Camejo) at lower centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Image of two Giant Armadillos, Venezuelan coat of arms to left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2fa0e113f7.49963835-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 2000</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/629a2f483ff3f2.50696955-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Cacique Guaicaipuro; spears; masks<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of arms of Venezuela, Harpy Eagle, Ucaima Falls, Kurun & Venado Tepuys</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/629a2f48c14201.09482420-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 5000</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbd925c55124.28085672-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Luisa Cáceres de Arismendi<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of Arms of Venezuela, Hawksbill turles, moutains</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbd9265f4468.08989572-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">₡ 20000</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbcacb717aa5.13071461-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h4>&larr;Observe</h4>Simón Bolivar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of Arms of Venezuela, Red siskin, Mountains</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbcacc120fe1.96847420-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    </table>
+	
+<h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+<h4>Sobrerano</h4>
+	<table id = "table2" class="center">
+	
+	<tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>  
+   
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 2</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbbf413f2953.73877349-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>State name, Denomination (number and written out), issue date, signiture of president and vice president, safety thread (half exposed) bust of woman, Josefa Camejo, heroine of
+	  independence movement and church in background, all on a green and yellow background<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Banner of Venezuela with picture of Cayo Sal island in the background and a yellow headed parrot on a cactus in the foreground with denomination (number and written out) on the left</p>
+		Intermittent security thread with letters BCV. Registration image star and parrot left of serial number
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbbf41b8f629.73467439-original.jpg" alt="Reverse Image"></td>	 
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 5</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbbf68256194.30714097-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  <h4>&larr;Observe</h4>Predominantly orange with blue and yellow, vertical orientation. Features a star and frog registration image, Jose Felix Ribas’s portrait,
+	   and a background of stripes, flowers, and a map<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coat of arms of Venezuela on the left, with a star and frog registration image at the top center right. 
+		 Features a prominent Sapito Rayado frog and a background view of Valles de Aragua in Henri Pittier National Park</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbbf68b08049.82704308-original.jpg" alt="Reverse Image"></td>
+      
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 10</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbbff480b712.53364294-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  <h4>&larr;Observe</h4>Purple, orange, blue and red. Vertical orientation. Orientation symbol star and anteater below top serial number.
+	  Portrait of Rafael Urdaneta (1788-1845). General under Bolivar during war for independence<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Crest of Venezuela to the right. Central image of Oso Palmero, giant anteater (Myrmecophaga Tridactyla).Background is image of 
+	  thunderstorms of Catatumbo a weather phenomenon over Lake Maracaibo Image of an oil Derrick on right border</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbbff5193e97.03797237-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 20</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbc02b6624f1.49392127-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  <h4>&larr;Observe</h4>Predominantly blue with brown, yellow, and red. Features a metal security strip with “BCV,” star and jaguar registration image, 
+	  Simon Rodriguez’s portrait, open book border, and star design background<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Crest of Venezuela to the left. Central image of a jaguar. Background image of Waraiarepano National park. Border images of flowers</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbc02c0edf82.06265586-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">₡ 50</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbc093d26471.62743863-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  <h4>&larr;Observe</h4>Orange, purple, brown, and red with vertical orientation. Features a star and prone cat below the serial number, 
+	  security strip with “BCV,” and Antonio Jose de Sucre’s portrait. Background includes lines, flowers, and horsemen<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Crest of Venezuela to the left. Foreground Ocelot (leopardus paradalis)sitting. Background view of Playa Medina in Peninsula de Paria National Park</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbc0946ab193.21540400-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: right; font-size: 15px;">₡ 100</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbc0bc9a8114.46291062-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>A vertically oriented design featuring the Federalist leader Ezequiel Zamora<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Depicts the national emblem. Features a northern muriqui monkey (Brachyteles hypoxanthus).Showcases the Guatopo National Park</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbc0bd2b3041.56823397-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td> 
+	  <td style="text-align: right; font-size: 15px;">₡ 200</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/62fbc0fa31e710.53450014-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Landscape-oriented design featuring a Military macaw with Waraira Repano National Park in the background. Includes the issuer name "BANCO CENTRAL DE VENEZUELA," 
+	  Coat of Arms, and denomination "200" in words and numbers<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Landscape-oriented design featuring a Military macaw with Waraira Repano National Park in the background. 
+		 Includes the issuer name “BANCO CENTRAL DE VENEZUELA,” Coat of Arms, and denomination “200” in words and numbers</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62fbc0fab30ee0.74237245-original.jpg" alt="Reverse Image"></td>
+    </tr>    
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td> 
+	  <td style="text-align: right; font-size: 15px;">₡ 10000</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/63bb388fdcf7b4.30643787-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Simón Bolívar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">"Mausoleum of the Liberator" Simón Bolívar and the National Pantheon in Caracas; Coat of arms of Venezuela</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/63bb389039a566.33886426-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td> 
+	  <td style="text-align: right; font-size: 15px;">₡ 20000</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/venezuela/6153143eb0e538.90731496-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Vertical format, pale rose background. Portrait of Simón Bolívar, country name on top, with face value in numbers and letters below, and issuing date. 
+		 Wide segmented security thread at center, black serial #s with letter prefix turned 90° on top right and lower left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">"Mausoleum of the Liberator" Simón Bolívar and the National Pantheon in Caracas; Coat of arms of Venezuela</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/61531441295d14.35458863-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+
+<h4>Bolivars</h4>
+	<table id = "table3" class="center">
+	
+	<tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>  
+   
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td> 
+	  <td style="text-align: right; font-size: 15px;">₡ 10</td>
+      <td><img  src="https://en.numista.com/catalogue/photos/venezuela/63dbd7cdf0f774.88394094-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Design in violet and turquoise with portraits of Simon Bolivar and Antonio José de Sucre, denomination "10" and "DIEZ BOLIVARES," and issuer "BANCO CENTRAL DE VENEZUELA."<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">"Mausoleum of the Liberator" Simón Bolívar and the National Pantheon in Caracas; Coat of arms of Venezuela</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/63dbd7d18ff4c3.38440210-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td> 
+	  <td style="text-align: right; font-size: 15px;">₡ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/5eabd7c9c350b8.23832427-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Design in brown and yellow with Simon Bolivar's portrait, denomination "100," watermarks zone, and issuer "BANCO CENTRAL DE VENEZUELA."<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Design in brown and yellow with National Capitol, Coat of Arms, denomination "100 CIEN BOLÍVARES," and issuer "BANCO CENTRAL DE VENEZUELA."</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/5eabd7ca372398.02615898-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h3>
+Notes: <span id="sum3">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+      
+      
+           sum3 = table.rows.length-1;
+       
+      
+       document.getElementById("sum3").innerText = sum3;
+      	 
+   }
+ sumTable3();
+</script>
+
+<h3>
+Total Notes: <span id="tsum">-</span> &emsp;
+</h3>
+  <script>
+  function tsumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+	   	   table2 = document.getElementById("table2"); 
+		   table3 = document.getElementById("table3");
+       // Initialize sums for each column
+      
+      
+           sum1 = table1.rows.length-1;
+		   sum2 = table2.rows.length-1;
+		   sum3 = table3.rows.length-1;
+       
+      
+       document.getElementById("tsum").innerText = sum1+sum2+sum3;
+      	 
+   }
+ tsumTable();
+</script>
+ </section>
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

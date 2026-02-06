@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qatar</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #8A1538;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Qatar 
+       <img src="https://flagcdn.com/qa.svg" style="width: 25px;" alt="Qatar">
+
+ </h2>
+ 
+  <h3>Currency: Riyal&emsp; 
+     Unit Currency: Dirham&emsp; 
+	Symbol: &#1585;&#8204;&#1602;&#8204;&#1585; &emsp; 
+	Code:<input type="text" id="fromCurrency" value="QAR"> &emsp; <br>
+	QAR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:QAR -  <span id="reverseRateUSD">-</span> &emsp; 
+	QAR:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:QAR -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+   <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 80px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#1585;&#8204;&#1602;&#8204;&#1585; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/62b9d6c1980d41.11263943-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, 
+		 Qatar at right side<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Traditional Dhow (Bateel) and the Oyster and Pearl Monument</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/62b9d6c24af572.24094526-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/637baa67b9a9a0.61991843-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Traditional desert scene comprising fauna (Arab horses, Camel, Oryxes), flora (Al Qataf) and 'hair tent (buryuut hajar)</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/qatar/637baa69238126.60744187-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/637bae1a7a4e41.42843968-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  	 <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Lusail Stadium, Torch Tower (Aspire Zone), Sidra Medicine and Education City (Qatar Foundation)</p>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/637bae1bafdcd5.44943529-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/659acaa9e2f598.74641808-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Qatar Central Bank building and Ministry of Finance building</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/659acaae0018b7.32562879-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/63fe0fafabb5a0.17675936-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Abu Al Qubaib Mosque</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/63fe0fb1776cb9.83571752-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 200</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/6004e4bf566a03.19206940-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	  	 <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Palace of Sheikh Abdullah bin Jassim Al Thani, Qatar National Museum and Museum of Islamic Art</p>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/6004e4bf8311e6.99661733-original.jpg" alt="Reverse Image"></td>
+	    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 24px;">&#1585;&#8204;&#1602;&#8204;&#1585; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/60022b0a2e1529.01073137-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	  	 <h4>&larr;Observe</h4>Traditional geometric patterns, the State of Qatar flag, Qatari flora (Dreama). Entrance gate inside of Qatar State Mosque in Doha, Qatar<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Ras Laffan LNG refinery and LNG canter ship</p>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/qatar/60022b0a62bef4.67852700-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

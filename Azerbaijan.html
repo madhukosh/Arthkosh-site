@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azerbaijan</title>
+<style>
+    .footer {
+	   position: float;
+	   left: 0;
+	   bottom: 0;
+	   width: 100%;
+	   background-color: #BABA50;
+	   color: #080774;
+	   text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+
+  }
+   td {
+    padding: 3px;
+    text-align: justify;
+    font-size: 15px;
+    margin: 1px;
+  }
+  td:nth-child(3), td:nth-child(5) {
+  width: 600px; /* or any width you prefer */
+}
+  th {
+    padding: 3px;
+    background-color: #E4002B;
+    color: #0092BC;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+  img.rright {
+	   transform: rotate(270deg);
+	   height: 350px;
+	   object-fit:contain;}
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+	 var rate = data.rates[toCurrency];
+	 document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+	 console.error('Error:', error);
+	 document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+	 var rate = data.rates[toCurrency];
+	 document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+	 console.error('Error:', error);
+	 document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+	 rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Azerbaijan
+	  <img src="https://flagcdn.com/az.svg" style="width: 25px;" alt="Azerbaijan">
+
+ </h2>
+
+
+ <h3>
+	Currency:Manat &emsp;
+	Unit Currency: qəpik&emsp;
+	Symbol:₼ &emsp;
+	Code:AZN <input type="text" id="fromCurrency" value="AZN"><br>
+	 AZN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:AZN -  <span id="reverseRateUSD">-</span> &emsp;
+	 AZN:INR - <span id="exchangeRateINR">-</span>&emsp;
+	 AZN:INR - <span id="reverseRateINR">-</span>
+ </h3>
+
+ <table id = "table1" class="center">
+   <tr>
+	 <th>#</th>
+	 <th style="width: 100px;">Den.</th>
+	 <th>Obverse</th>
+	 <th style="width: 600px;">Details</th>
+	 <th>Reverse</th>
+   </tr>
+
+   <tr>
+    <td style="text-align: right; font-size: 15px;"></td>
+    <td style="text-align: right; font-size: 15px;">₼ 0.250</td>
+    <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/626b8f39604b24.93047235-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		<h4>&larr;Observe</h4>Maiden Tower in Baku, Denomination right (1994)<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Bank Name</p>
+	</td>
+   <td><img  src="https://en.numista.com/catalogue/photos/azerbaidjan/626b8f3a0b5611.39106027-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">₼ 1</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/631d9b745653b4.35507593-original.jpg"
+	 alt="Obverse Image"></td>
+	  <td>
+		<h4>&larr;Observe</h4>Traditional musical instruments - Tar, Kamancheh, and Daf, Musical Note and sheet music in the background, Denomination below<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of Azerbaijan, arched windows in the background, Denomination below</p>
+	</td>
+	 <td><img class=rright src="https://en.numista.com/catalogue/photos/azerbaidjan/631d9b750726c2.25780793-original.jpg"
+	 alt="Reverse Image">
+	 </td>
+	</tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">₼ 5</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/631d9db1e8dcc4.47167320-original.jpg"
+	 alt="Obverse Image"></td>
+	  <td>
+		<h4>&larr;Observe</h4>Books, quill and pen, part from the state anthem in background Denomination below<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of Azerbaijan and Europe, Qobustan rock hieroglyphs Denomination below</p>
+	</td>
+	 <td><img class=rright src="https://en.numista.com/catalogue/photos/azerbaidjan/631d9db28a8242.86901026-original.jpg"
+	 alt="Reverse Image"></td>
+    </tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">₼ 10</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/62dbfa8e33fbc1.16736522-original.jpg" alt="Obverse Image">
+	 </td>
+	  <td>
+		<h4>&larr;Observe</h4>Old Baku, the Palace of the Shirvanshahs and the Maiden Tower against a background of the Inner City wall (İçərişəhər),
+	 Denomination below<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of Azerbaijan against the background of national carpet ornaments, Denomination above and below</p>
+	</td>
+	<td><img  src="https://en.numista.com/catalogue/photos/azerbaidjan/62dbfa8e9e9415.60214833-original.jpg"
+	 alt="Reverse Image"></td>
+    </tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">₼ 20</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/634fe498778506.66403707-original.jpg" alt="Obverse Image">
+	 </td>
+	  <td>
+		<h4>&larr;Observe</h4>Military helmet of the region of Nagorno-Karabakh, sword, and shield, Denomination below<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of Azerbaijan against the background of national carpet ornaments, Denomination above and below</p>
+	</td>
+	
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/634fe4994ab659.73800589-original.jpg" alt="Reverse Image">
+	 </td>
+    </tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">₼ 100</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/azerbaidjan/5ea1aa8e7cd777.72353948-original.jpg" alt="Obverse Image">
+	 </td>
+	  <td>
+		<h4>&larr;Observe</h4>Gosha Gala Gapi ("Double Gate"), and buildings in Baku, Denomination below<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of Azerbaijan and Europe, Denomination below</p>
+	</td>
+	<td><img  src="https://en.numista.com/catalogue/photos/azerbaidjan/5ea1aa8fb27011.81777553-original.jpg" alt="Reverse Image">
+	 </td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+<h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

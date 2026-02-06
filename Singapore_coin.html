@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C73b3C ;
+    color: #FFFFFF ;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Singapore 
+      <img src="https://flagcdn.com/sg.svg" style="width: 25px;" alt="Singapore">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol:  SG$&emsp;
+	1 Dollar = 100 cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="SGD"><br>
+      SGD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:SGD - <span id="reverseRateUSD">-</span>  &emsp;
+     SGD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:SGD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1">
+    
+    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;SG$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1656-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divides two orchids</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1657-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1989<br>1990</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;SG$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/94-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/95-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1994<br>1995</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;SG$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1824-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination flanked by two stalks of paddy<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Snake Bird or Oriental darter or Indian darter (Binomial Name: Anhinga melanogaster)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1825-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1977<br>1982</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;SG$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1664-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A fruit salad plant (Binomial Name: Monstera deliciosa) with the denomination in words above and in numerals below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1665-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1986</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;SG$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1832-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Singapore with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay and the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in Latin at top with a fruit salad plant (Binomial Name: Monstera deliciosa) below and denomination in numerals at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1833-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1995<br>2005</td>
+	 <td Style="text-align: center;">2</td>
+   </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;SG$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/366-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination flanked by two stalks of paddy<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Seahorse (Binomial Name: Hippocampus coronatus)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/365-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1969</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;SG$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/625cb920ec4823.56909583-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Singapore with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Star jasmine plant with 3 flowers (also known as downy jasmine, winter jasmine, star jasmine, Binomial Name: Jasminum multiflorum), denomination in numerals and in English</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/625cb92193cb95.25943557-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1985<br>1986<br>1987<br>1988<br>1989<br>1991</td>
+	 <td Style="text-align: center;">6</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;SG$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1826-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Singapore with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and three Indian jasmine Flowers (it is also known as downy jasmine, winter jasmine, star jasmine). Binomial Name: Jasminum multiflorum</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1827-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1993<br>2005</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;SG$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/314-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lion-head motif, Public housing, and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/315-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2017</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;SG$ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/398-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination flanked by two stalks of paddy left, date above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Swordfish (Xiphias gladius) facing right against a wavy line background symbolising water</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/397-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1969<br>1972<br>1976<br>1979<br>1980<br>1981</td>
+	 <td Style="text-align: center;">6</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;SG$ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/1828-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Powder-puff plant fronds (Binomial Name: Calliandra surinamensis) and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/1829-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1985<br>1986<br>1990</td>
+	 <td Style="text-align: center;">3</td>
+    </tr>
+	  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;SG$ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/20-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date and 'Singapore' on 4 sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Powder-puff plant fronds (Binomial Name: Calliandra surinamensis) and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/21-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2011</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;SG$ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/317-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date and 'Singapore' on 4 sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lion-head motif, Changi Airport, and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/316-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2013</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;SG$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/370-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination flanked by two stalks of paddy left, date above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lionfish (genus Pterois) facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/369-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1980</td>
+	 <td Style="text-align: center;">1</td>
+	 
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;SG$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/7-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/8-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1987</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;SG$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/375-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A Yellow allamanda flower (Binomial Name: Allamanda cathartica) in the centre with the numerical value below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/376-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1995<br>2007</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;SG$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/318-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Singapore with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lion-head motif, port of Singapore, and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/319-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2013<br>2015</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dollar<hr>
+	  	  Value:&emsp;SG$ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/singapour/373-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Singapore with the date underneath and 'Singapore' on four sides in English, Tamil, Chinese, and Malay<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in Latin at top and a rosy periwinkle blossom (Binomial Name: Lochnera rosea) with denomination in numerals below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/singapour/374-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1994<br>1995</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chile</title>
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D72B1F;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+
+  #fromCurrency {
+    color: black; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Chile 
+      <img src="https://flagcdn.com/cl.svg" style="width: 25px;" alt="Chile">
+ 
+  <h3>
+     Currency: Peso &emsp; 
+	Unit currency: Centavo &emsp; 
+	Symbol: $&emsp;
+	Code: <input type="text" id="fromCurrency" value="CLP"><br>
+      CLP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CLP - <span id="reverseRateUSD">-</span>  &emsp;
+     CLP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CLP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+</h3>
+  
+  <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>    
+ 
+       <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+  </h2>
+    <h2>Rapa Nui (Easter Island) 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Easter_Island_flag_1876_to_1888.svg" style="width: 25px;" alt="Chile">
+ </h2>
+  
+ <h3>Currency: Rongo&emsp;      
+</h3>
+  
+      <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rongo 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/easter_island/6724ce11db2b00.40619166-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of a native Rapanui man with a face tattoo. Outer slopes of Rano Raraku volcanic crater and quarry with monolithic sculptures called Moai, 
+		             some buried to their shoulders and neck. RongoRongo symbol script<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Moto Nui, Island of the Birdman cult, seen from the Orongo village with Birdman petroglyphs and MakeMake god. 
+		              Sea cliff of Rano Kau volcano at Orongo. Woodcarving of Tangata manu (bird-man). Native Rapanui man with a face tattoo. RongoRongo symbol script</p>
+	</td>	
+      <td><img src="https://en.numista.com/catalogue/photos/easter_island/6724ce12661d17.94807454-original.jpg" alt="Reverse Image"></td>      
+    </tr>    
+    
+
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column      
+      
+           sum2 = table.rows.length-1;       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+<h2>
+	  Total Notes: <span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum5 = table1.rows.length-1;         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table2.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

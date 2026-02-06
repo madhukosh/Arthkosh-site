@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Czech Republic</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #D7141A;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Czech Republic 
+      <img src="https://flagcdn.com/cz.svg" style="width: 25px;" alt="Czech Republic">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Koruna&emsp; 
+	Unit currency: Haleru&emsp; 
+	Symbol: Kč &emsp;
+	1 Koruna  = 100 Haleru  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="CZK"><br>
+      CZK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CZK - <span id="reverseRateUSD">-</span>  &emsp;
+     CZK:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CZK - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	     <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+ 
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;3 Haléřů<hr>
+		  Value:&emsp;Kč 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/703-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Czech lion with socialistic shield<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value between linden wreath, star above</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/704-original.jpg"  alt="Reserve Image"></td>
+	 
+	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Haléřů<hr>
+		  Value:&emsp;Kč 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/17-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Czech lion with socialistic shield<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value between linden wreath, star above</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/18-original.jpg"  alt="Reserve Image"></td>
+	 
+	 <td style="text-align: center;">1953</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Haléřů<hr>
+		  Value:&emsp;Kč 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/64228d444be8b8.22310039-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Czech lion with socialistic shield and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value between linden wreath, star above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/64228d459def40.14992818-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1963&emsp;1965<br>1968</td>
+	 <td style="text-align: center;">3</td>
+    </tr>  
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Haléřů<hr>
+		  Value:&emsp;Kč 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/691-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Czechoslovak coat of arms and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A five-pointed star above the value, engraver's initial to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/692-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1976&emsp;1980</td>
+	 <td style="text-align: center;">2</td>
+    </tr>  
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Haléřů<hr>
+		  Value:&emsp;Kč 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/606873030015d5.26193371-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Czech lion walking left on two legs, bearing a Slovak shield and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Sheaf with a sickle and a linden sprig with the denomination in numerals to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/60687303587d01.68164400-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1924(2)</td>
+	 <td style="text-align: center;">2</td>
+    </tr>  
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Haléřů<hr>
+		  Value:&emsp;Kč 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/693-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Socialist coat of arms, year of minting below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Five-pointed star above value, engraver's initial to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/694-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1972&emsp;1980<br>1983</td>
+	 <td style="text-align: center;">3</td>
+    </tr>  
+             
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Haléřů<hr>
+		  Value:&emsp;Kč 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/945-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>CSFR state shield between linden leaves, date and signature below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/946-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+           
+             
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Haléřů<hr>
+		  Value:&emsp;Kč 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/7-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Heptagonal around Czech lion, year of mintage atop, mintmark under<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Heptagonal around value and linden leaf in the zero. Its different orientations see in comments</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/8-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1999</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+               
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Haléřů<hr>
+		  Value:&emsp;Kč 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/7-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Socialist coat of arms, year of minting below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Star above value, engraver's initial to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/8-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Korun<hr>
+		  Value:&emsp;Kč 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/917-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Czechoslovakia, a Czech lion with Slovak shield and a socialist star, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A woman planting a linden sprig, denomination to left, engraver's name at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/918-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1963&emsp;1967<br>1969&emsp;1970<br>1977&emsp;1980<br>1982&emsp;1983</td>
+	 <td style="text-align: center;">8</td>
+    </tr>  
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Korun<hr>
+		  Value:&emsp;Kč 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/557-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Czech lion, mintmark between legs of the lion<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large denomination number above a depiction of the St. Wenceslas crown. Author monogram below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/558-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">2008&emsp;2009<br>2016</td>
+	 <td style="text-align: center;">3</td>
+    </tr>  
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Koruna<hr>
+		  Value:&emsp;Kč 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/901-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Czechoslovakia, linden twig, year of minting<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Hammer and sickle with five-pointed star within abstract linden leaf at left, denomination at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/tchecoslovaquie/902-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1975&emsp;1981<br>1986&emsp;1990</td>
+	 <td style="text-align: center;">4</td>
+    </tr>  
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Koruna<hr>
+		  Value:&emsp;Kč 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/559-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned Czech lion, mintmark, year of production<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Great Moravian button-jewel, engraver's mark under value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/560-original.jpg"  alt="Reserve Image"></td>
+      	 
+	 <td style="text-align: center;">1996&emsp;2017</td>
+	 <td style="text-align: center;">2</td>
+    </tr>  
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Koruna<hr>
+		  Value:&emsp;Kč 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/563-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned Czech lion, mintmark, year of production<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cathedral of Saints Peter and Paul on Petrov hill in Brno, value, engraver's mark</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/564-original.jpg"	 alt="Reserve Image"></td>
+	 
+	 <td style="text-align: center;">1993</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

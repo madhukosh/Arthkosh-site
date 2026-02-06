@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brazil</title>
+
+
+<style>
+    .footer {
+	   position: float;
+	   left: 0;
+	   bottom: 0;
+	   width: 100%;
+	   background-color: #50BABA;
+	   color: #071974;
+	   text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color:#009739;
+    color:  #FEDD00;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+	 var rate = data.rates[toCurrency];
+	 document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+	 console.error('Error:', error);
+	 document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+	 var rate = data.rates[toCurrency];
+	 document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+	 console.error('Error:', error);
+	 document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Brazil 
+	 <img src="https://flagcdn.com/br.svg" style="width: 25px;" alt="Brazil">
+ </h2>
+ 
+ 
+  
+  <h3>
+	Currency: Real&emsp; 
+	Unit currency: Centavo&emsp; 
+	Symbol: R$&emsp;
+	1 Real = 100 Centavo&emsp; 
+	Code: <input type="text" id="fromCurrency" value="BRL"><br>
+	 BRL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:BRL - <span id="reverseRateUSD">-</span>  &emsp;
+	BRL:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:BRL - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table1">
+	    <th>#</th>
+		      <th style="width: 120px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+    
+    
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavos<hr>
+		  Value:&emsp;R$ 0.01</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/2506-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of Pedro Álvares Cabral, a Portuguese navigator who, "discovered" Brazil on April 22, 1500,flanked by ships symbolizing the Portuguese navigations<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">On the left, diagonal lines background brings out the label corresponding to the denomination,	followed by the year of issue</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/2507-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2001<br>2002<br>2003</td> 
+	 <td style="text-align: center;">3</td> 
+    </tr>
+  
+    
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos<hr>
+		  Value:&emsp;R$ 0.05</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b1847c8757.73187408-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Effigy of the Republic, surrounded by the stylish representation of laurel leaves<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination flanked by laurel leaves behind diagonal stripes, and year of issue</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b18580e307.84345322-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1996</td> 
+	 <td style="text-align: center;">1</td> 
+    </tr>
+    
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos<hr>
+		  Value:&emsp;R$ 0.05</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b3e476a003.71121194-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of Joaquím José da Silva Xavier (Tiradentes)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The value in front of diagonal stripes and the southern cross</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b3e527e237.08405048-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1998<br>2006<br>2012<br>2013<br>2021</td> 
+	 <td style="text-align: center;">5</td> 
+    </tr>
+
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;R$ 0.10</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415c519d93b05.63165577-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Effigy of the Liberty to the left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Steel industry, denomination and date at right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415c51af03846.09756835-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1967<br>1970</td> 
+	 <td style="text-align: center;">2</td>
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;R$ 0.10</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b2492e8832.18794084-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>The effigy of the Brazilian Republic surrounded by a stylish representation of laurel leaves<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination flanked by laurel leaves behind diagonal stripes, and year of issue</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b24a38d543.59064501-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1994<br>1995<br>1997</td> 
+	 <td style="text-align: center;">3</td>
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;R$ 0.10</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b4c0a6da96.46073896-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>The portrait of Pedro I (1798-1834), the founder and first ruler of the Empire of Brazil, facing left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The value above the date with National Emblem of Brazil (Southern Cross constellation) and diagonal stripes</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b4c18b1fc0.64531988-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2005<br>2007<br>2008<br>2009<br>2010<br>2011<br>2013<br>2014<br>2016<br>2020</td> 
+	 <td style="text-align: center;">10</td>
+    </tr>
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;R$ 0.20</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/2441-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of Getúlio Dornelles Vargas (1882-1954), facing right<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination above line. Date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/2442-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1946</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centavos<hr>
+		  Value:&emsp;R$ 0.25</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/13-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Effigy of Republic, date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Outlined denomination, linear design</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/14-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1994</td> 
+	 <td style="text-align: center;">1</td>
+    </tr> 
+    <tr>
+	
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centavos<hr>
+		  Value:&emsp;R$ 0.25</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/39-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of Manuel Deodoro da Fonseca facing left with the Brazilian coat of arms to the left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Stylized parts of Brazilian emblem (stripes and stars, globe) with denomination above date</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/40-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2018</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;R$ 0.50</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/62c16f3fe24422.20958468-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of Getúlio Dornelles Vargas (1882-1954), facing left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination above the line, date below, star above</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/62c16f4046ad65.39086236-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1945</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;R$ 0.50</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415c635097211.75240517-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Effigy of the Liberty to the left. Wind Rose in the exergue<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A docked cargo ship and a crane left, representing the shipping industry, value and date</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415c635c14293.13751473-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1970</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;R$ 0.50</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b2c961b0f5.06049392-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Effigy of Brazilian Republic, surrounded by stylish representation of laurel leaves<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination flanked by laurel leaves behind diagonal stripes, and year</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b2caa48180.88510249-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1994</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;R$ 0.50</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/1481-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Portrait of José Maria da Silva Paranhos Júnior, map of Brazil left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination above date in front of diagonal lines and southern cross</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/1482-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002<br>2009<br>2016<br>2019</td> 
+	 <td style="text-align: center;">4</td>
+    </tr>
+
+   
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centavos<hr>
+		  Value:&emsp;R$ 1.00</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b67398cc93.94235770-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Head of Republic facing left with geometric patterns and legend at left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Numerical denomination and date surrounded by geometric patterns and Southern Cross</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/6415b674c4fe24.52982882-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2009</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+    </tr>
+	 <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cruzados<hr>
+		  Value:&emsp;R$ 10.00</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/407-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>State emblem (Star with circle within, surrounded by 27 small stars. Southern Cross inside circle. Flanked by tobacco and coffee plant)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Date divides denomination</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/408-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1987</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+
+    </tr>
+	 <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;500 Cruzeiro<hr>
+		  Value:&emsp;R$ 500.00</h5>
+	  </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/1953-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h5>&larr;Observe</h5>Date 90º left of denomination<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Loggerhead sea turtle (caretta caretta)</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bresil/1952-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1993</td> 
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+	  // Get the table by its ID
+	  var table = document.getElementById("table1");
+	  // Initialize sums for each column
+	  var sum1 = 0;
+	  // Loop through the rows, excluding the last row where the sum will be displayed
+	  for (var i = 1; i < table.rows.length; i++) {
+		 // Parse and sum the values in the first and second columns
+		 sum1 += parseInt(table.rows[i].cells[6].innerText);
+		 
+	  }
+	  // Display the sum in the last row
+	 
+	  document.getElementById("sum1").innerText = sum1;
+		  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

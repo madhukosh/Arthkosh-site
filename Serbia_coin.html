@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serbia</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+     background-color: #0C4076;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Serbia 
+      <img src="https://flagcdn.com/rs.svg" style="width: 25px;" alt="Serbia">
+ </h2>
+   
+  <h3>
+    Currency: Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;
+	1 Dinar = 100 Para&emsp; 
+	Code: <input type="text" id="fromCurrency" value="RSD"><br>
+      RSD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:RSD - <span id="reverseRateUSD">-</span>  &emsp;
+     RSD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:RSD - <span id="reverseRateINR">-</span>
+	
+ </h3>
+ 
+ 
+
+  <table id = "table1">
+ <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>	  
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1f553fd2.10836122-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Serbia in a circle of pearls<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in the center surrounded by legend</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1fcf4126.74055182-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1904</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/538-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The logo of the National Bank of Serbia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Krušedol Monastery</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/serbie/539-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1990</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ 
+</p>
+<p><br></p>
+<p></p>
+
+
+  <h2>Yugoslavia 
+      <img src="https://th.bing.com/th?id=ODL.ca43c159fd8e90db39dbc1754e4088bf&w=149&h=76&c=10&rs=1&qlt=99&o=6&pid=13.1" style="width: 25px;" alt="Serbia">
+ </h2>
+ 
+ 
+  
+  <h3>
+   Currency: Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+     1 Dinar = 100 paras &emsp; 
+	Code: <input type="text" id="Currency1" value="YUD"><br>
+      YUD:USD -  <span id="RateUSD">-</span> &emsp;
+	 USD:YUD - <span id="RRateUSD">-</span>  &emsp;
+     YUD:INR - <span id="RateINR">-</span> &emsp;
+	INR:YUD - <span id="RRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table2">
+    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03f6697a8b4.74345927-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Yugoslavia coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">5 in center of legend</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03f66e05695.66921999-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1965<br>1974<br>1975<br>1978</td>
+	 <td style="width: 50px; text-align: center;">4</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada5985ef5f2.86136814-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The state emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination in numerals in a large font divides date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada598af2159.66651662-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1965<br>1979<br>1980</td>
+	 <td style="width: 50px; text-align: center;">3</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac320a149398.60355577-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination divides date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac320a5716a9.53760353-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1973<br>1977<br>1978<br>1979</td>
+	 <td style="width: 50px; text-align: center;">4</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad6441215232.27462001-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Large crown, lettering around outside<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination , date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad644156d282.50922611-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1938</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e51f1828.69247701-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem or coat of arms (1946-1963) of Yugoslavia, circular legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination with seven stars, date on the sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e586ccd8.12511333-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1953</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada3d1d32a14.18967592-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia - Six torches in center as one, wheat stalks around and star above, 29.XI.1943 on banner<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and year</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada3d232daf6.43721151-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1976<br>1980</td>
+	 <td style="width: 50px; text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88310373d1.28800208-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around the coat of arms (1963 - 1992 version; 6 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left side of wreath: short stem on top left berry, partly behind leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8831623545.80601919-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1963</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac381c163923.25887845-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around the coat of arms (1963 - 1992 version; 6 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left side of wreath: short stem on top left berry, partly behind leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac381c5f4439.36954296-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1965</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad60eb833546.62481098-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within olive & oak wreath, six stars above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad60ebd8eae7.09915069-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1968</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada62cd83e21.85266590-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination with wreath and six stars</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada62d448439.05454464-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1974<br>1979<br>1981</td>
+	 <td style="width: 50px; text-align: center;">3</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03d2b7e6437.67524295-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination with the date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03d2bc394b9.61941735-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1985</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd80b3bd0.37069831-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Yugoslavia surrounded by the country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The numerical value surrounded by the word "dinar" in 4 languages and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd85e7458.82118818-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1990</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd29a071.18221371-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Federal Republic of Yugoslavia, showing a two-headed eagle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd817ed6.58994176-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1996</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/26-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The former name of the country, Federal People's Republic of Yugoslavia, around the coat of arms (1943 - 1963 version; 5 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">7 stars above denomination, date in the left and right sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/27-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1953</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada4d17b0580.04557959-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Numerical denomination with six stars and wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada4d1be7412.84521625-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1972<br>1977<br>1981</td>
+	 <td style="width: 50px; text-align: center;">3</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03dbdc28b48.46051150-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Text surrounds denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03dbe530e01.23091368-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1982<br>1985</td>
+	 <td style="width: 50px; text-align: center;">2</td>
+    </tr>
+        
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada311121f68.74595606-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left side of wreath: short stem on top left berry, partly behind leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ada3115e2ad4.50742548-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1972<br>1980</td>
+	 <td style="width: 50px; text-align: center;">2</td>
+    </tr>
+	    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03e570b40d7.78941924-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03e57729f48.52607601-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1982</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8706c4bab4.51384865-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Former name of the country, Federal People's Republic of Yugoslavia, around coat of arms (1943 - 1963 version; 5 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad870729a5c7.01259925-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1955</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/886-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around coat of arms (1963 - 1992 version; 6 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/887-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1963</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b0562b139560.83437756-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Text encircles denomination, wreath surrounds, six stars at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b0562b9fbdf3.80215254-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1977<br>1978<br>1981</td>
+	 <td style="width: 50px; text-align: center;">3</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03c83ee1ad3.65377880-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The emblem of Yugoslavia in the center<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The numerical value in the center above the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03c84503f01.89964256-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1982<br>1984<br>1988</td>
+	 <td style="width: 50px; text-align: center;">3</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac3eaaeece30.97430216-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The emblem of Yugoslavia in the center<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within square, text on four sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac3eab31fa38.88306618-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1989</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/705-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The emblem of Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value surrounded by the currency in several languages and the year</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/706-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1985<br>1986</td>
+	 <td style="width: 50px; text-align: center;">2</td>
+    </tr>
+	  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/707-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of Yugoslavia; 6 torches, surrounded by wheat with red star at its top. Burning together in one flame; represents brotherhood & unity of the 6 federal republics forming Yugoslavia<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value surrounded by the currency in several languages and the year</p>
+		</td>
+      </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/708-original.jpg" alt="Reserve Image"></td>
+	 <td style="width: 50px; text-align: center;">1985<br>1988</td>
+	 <td style="width: 50px; text-align: center;">2</td>
+    </tr>	 	  
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac3ff6e2fe92.77004656-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Text surrounds state emblem within square<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within square, text on four sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac3ff742dbc5.01727551-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1989</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+<h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+
+ </section>
+</p>
+<p><br></p>
+<p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

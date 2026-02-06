@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indonesia</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Indonesia 
+       <img src="https://flagcdn.com/id.svg" style="width: 25px;" alt="Indonesia">
+ </h2>
+ 
+  <h3>
+     Currency: Rupiah&emsp; 
+	Unit currency: Sen&emsp; 
+	Symbol: Rp&emsp;
+	Code: <input type="text" id="fromCurrency" value="IDR"><br>
+      IDR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:IDR - <span id="reverseRateUSD">-</span>  &emsp;
+     IDR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:IDR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 0.01</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f08dfdfc0.81820925-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Peasant with straw hat<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Geometric designs</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f095d43c4.97095463-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 0.05</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f281ace30.24627558-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Head of a woman in uniform<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Asymmetrical design</p>
+	</td>     
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f28c74c69.56011528-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 0.10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f4e05b9a3.37033972-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Head of a woman in uniform<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Geometric design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f4f1b6917.44056825-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 0.25</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f77ded7b0.88809149-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Red on yellow-green underprint. A volunteer man in uniform at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Geometric design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f785f53a6.28973160-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 0.50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f9b81b528.33275539-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>A volunteer man in uniform at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Geometric design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2f9c4cd789.49127400-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2fca944280.82412153-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Victoria crowned pigeon<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Asahan dam</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e2fcb724bd5.76313884-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5ea96d835f17c0.60498030-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Timorese stag (Cervus timorensis)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Bank of Indonesia Cirebon branch</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5ea96d84215b65.51756374-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/623ada8d4dccf2.02978300-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Captain Pattimura (real name - Thomas Matulesi) with a machete and the Coat of arms of Indonesia<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Maitara and Tidore islands in Maluku (Moluccas); with fishermen on a boat</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/623ada8df00dc7.27029483-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e30ee78fad8.79861835-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portait of Tjut Meutia<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Tifa dance and Banda Neira</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/626e30ef8aa7e1.00801479-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/634d2ba4ac0599.26036727-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Tjut Meutia; Map of Indonesia; coat of arms; bank logo as registration device<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Fort Belgica in Banda Neira;, Banda Islands (Spice Islands), Melaku Province; orchid flower; Tari Tifa (dancer with drum)</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/634d2ba55fc769.22021433-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/64d5263601dc62.15399029-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Tuanku Imam Bondjol (1772 - 1864) - Minangkabau religious leader (also called Muhammad Sahab, Peto Sjarif, Malim Basa, Tuanku (Master) Muda, Tuanku Imam)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Songket (kain balapak) weaver, Pandai Sikek (Pandai Sikat) village, in Tanah Datar regency on Sumatra island</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/64d52636bacff0.00043290-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 10000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5e997d10d29088.43333394-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Sultan Mahmud Badaruddin II (1767-1862); Garuda Pancasila, the National Emblem of Indonesia; Logo of Bank Indonesia<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Rumah Limas - traditional pyramid-shaped houses in Palembang, South Sumatra</p>
+	</td>    
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5e997d11c54672.96107739-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Rp 20000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5ea6e31beb20e6.96924463-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Dr. G. S. S. J. Ratulangi and the Coat of arms of Indonesia<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;"> Derawan Islands and Tari Gong dancer</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/5ea6e31d217a41.33905283-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>      
+      <td style="text-align: right; font-size: 15px;">Rp 50000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/64b1b28f8e72a1.16157898-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of I Gusti Ngurah Rai<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">View of Lake Beratan, Bedugul, Bali</p>
+	</td>     
+      <td><img src="https://en.numista.com/catalogue/photos/indonesie/64b1b29059e2a8.98400766-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+  
+ </section>
+ 
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+
+</html>

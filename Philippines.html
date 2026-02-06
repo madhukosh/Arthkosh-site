@@ -1,0 +1,353 @@
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #0032A0;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+<script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Philippines 
+       <img src="https://flagcdn.com/ph.svg" style="width: 25px;" alt="Philippines">
+
+ </h2>
+
+  <h3>
+     Currency: Piso&emsp; 
+	Unit currency: Centavos&emsp; 
+	Symbol: &#8369&emsp;	
+	Code: <input type="text" id="fromCurrency" value="PHP"><br>
+      PHP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PHP - <span id="reverseRateUSD">-</span>  &emsp;
+     PHP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PHP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 0.10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/67422d9a2db548.73396656-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Brown print. Text in decorative frame<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Olive print. Large value in guilloche at centre</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/67422d9af27908.31457191-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 0.10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5e9f32db1ad404.15868089-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Tan underprint. Text in decorative frame<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Minister of Internal Affairs. Imperial Government of Japan</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5e9f32dd809d72.94593864-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 0.50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5ea07de00cf171.99375068-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Plantation at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Minister of Internal Affairs. Imperial Government of Japan</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5ea07de0ecfde4.40733266-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/67422d344881d7.37832689-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Rizal Monument in Manila at left, value at centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Decorated border</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/67422d35f3b6d6.79553902-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/674a8e91a0b8c1.38240184-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Large 'X' at left, plantation at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">DECORATED FRAME, VALUE AT CENTRE</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/674a8e92ae5f54.13357401-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/626c56a64810b0.18240941-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Bust of Apolinaro Mabini facing front-right, at left, black commemorative overprint at left, seal at lower right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Barasoain Church at centre right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/626c56a6ddb3c2.97369066-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/626c56e0c26f45.85129711-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Multicoloured red and orange print.Bust of Manuel L. Quezon, front-facing at left centre, Malacañan Palace at bottom centre, 
+		                      declaration of "Filipino" as the national language at left, arms and bank seal at upper centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Multicoloured red and orange print. Banaue Rice Terraces in background, palm civet at centre, outline map of the Philippines at left centre, 
+		             and traditional embroidery from northern Luzon Island at right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/626c56e15bc792.92892749-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/658491d4412bc8.67643877-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Bust of Sergio Osmeña, First National Assembly 1907 at left, Leyte Landing at bottom centre, coat of arms of the Philippines at upper centre, bank seal at right centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of the Philippines at left , Taal Lake and Giant Trevally at centre, weave design from Batangas province at right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/658491d4adde59.54589982-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;"">&#8369; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5eba8bb7664bb5.57344473-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Bust of Manuel A. Roxas front-facing, at centre left. Flags of the Philippines and the United States at right, bank seal at centre right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Old building of the Central Bank of the Philippines at upper left, new Central Bank building below</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5eba8bb794a591.92378036-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;"">&#8369; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/65cba059ba49d9.38026137-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Front-facing bust of Manuel A. Roxas at left centre, Inauguration of the third republic at bottom centre, Central Bank of the Philippines building in 1949 at left 
+		Coat-of-Arms of the Republic of the Philippines and Seal of  the Bangko Sentral ng Pilipinas at upper centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Mayon Volcano and a whale shark at centre, outline map of the Philippines at left, traditional embroidery from Bicol region at right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/65cba05b44def3.23347312-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5f679d2a104935.39070146-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Right facing busts of President Corazon C. Aquino and her husband, Senator Benigno Aquino, Jr. at left centre, scene of the EDSA People Power Revolution at lower left
+		 Benigno S. Aquino, Jr. monument in Makati City at lower centre, coat of arms and bank seal at upper centre. Horizontal bars at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Puerto Princesa Subterranean River National Park in background, Blue-naped Parrot at centre, cloth design from the Southern Philippines, 
+		 at right, map of the Philippines at left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/5f679d2a3beb57.07518303-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8369; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/65a6c375d2b762.69052079-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Front facing Philippine eagle (Pithecophaga jefferyi) at centre left, Sampaguita (Jasminum sambac) at upper left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Map of the Philippines at left, South Sea Pearl at centre, fish and reef at right, sea turtle at upper centre</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/philippines/65a6c378306e06.49821106-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+ </section>
+</p>
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

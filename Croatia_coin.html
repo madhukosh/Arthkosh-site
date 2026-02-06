@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Croatia</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+  fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Croatia 
+      <img src="https://flagcdn.com/hr.svg" style="width: 25px;" alt="Croatia">
+ </h2>
+ 	   
+	   
+<section>
+
+ 
+  
+  <h3>
+     Currency: Kuna&emsp; 
+	Unit currency: Lipa &emsp; 
+	Symbol: kn; &emsp;
+	1 Kuna  = 100 Lipa &emsp;
+	1 Kuna = 1000 Dinara &emsp; 
+	Code: <input type="text" id="fromCurrency" value="HRK"><br>
+      HRK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:HRK - <span id="reverseRateUSD">-</span>  &emsp;
+     HRK:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:HRK - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	    <tr>
+	     <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 750px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+ 
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Lipa<hr>
+		  Value:&emsp;kn 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/croatie/63245016046a12.10951425-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Linden branch with value 2 and “LIPE,” surrounded by “REPUBLIKA HRVATSKA,” Croatian coat of arms, and Christian braided ornamentation<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Grapevine with lush grapes. VITIS VINIFERA (grapevine) in Latin. Mint year, signature KK</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/croatie/63245016739455.78703217-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>	 
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Lipa<hr>
+		  Value:&emsp;kn 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/croatie/106-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Linden branch with value on leaves and “LIPA” underneath, country name , and Croatian coat of arms between braided ornament<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The coin features a tobacco stalk in the center, with “DUHAN” above, and the year of mintage and artist’s initials on a leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/croatie/64522176b0f186.90701333-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1999<br>2005<br>2009<br>2015</td>
+	 <td style="text-align: center;">4</td>	 
+    </tr>
+       
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Lipa<hr>
+		  Value:&emsp;kn 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/croatie/209-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Linden branch with value on leaves, “LIPA” below, country name, and Croatian coat of arms between braided ornaments<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Olive branch with fruits, name of plant to the left around rim, date at bottom, signature on right leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/croatie/208-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2007<br>2017</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Kune<hr>
+		  Value:&emsp;kn 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/croatie/793-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marten with denomination on body, country name, Croatian arms,laurel twig to right, and oak sprig to left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tuna and its name in Croatian above and date at bottom, engraver's initials in water</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/croatie/792-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2003<br>2013<br>2017</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+   
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egypt</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+<script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+ 
+</head>
+<body>
+
+<section>
+  <h2>Egypt 
+       <img src="https://flagcdn.com/eg.svg" style="width: 25px;" alt="Egypt">
+
+ </h2>
+ 
+  
+  <h3>
+     Currency: Pound &emsp; 
+	Unit currency: Piastres&emsp; 
+	Symbol: &#x062C;&#x002E;&#x0645  &emsp;
+	Code: <input type="text" id="fromCurrency" value="EGP"><br>
+      EGP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EGP - <span id="reverseRateUSD">-</span>  &emsp;
+     EGP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EGP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.05</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca8a870a3131.86735153-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Red-lilac to violet. Queen Nefertiti at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Signature Hassanein at centre</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca8a87b090d0.05087063-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr> 
+    <td style="text-align: right; font-size: 15px;"></td>   
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.05</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/614ca37ec897a6.71976648-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Queen Nefertiti at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Signature Hassanein at centre</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/614ca37f1bb747.58687575-original.jpg" alt="Reverse Image"</td>
+    </tr>
+    
+    <tr> 
+    <td style="text-align: right; font-size: 15px;"></td>   
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/5f0e386b1745f3.01620355-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Black. Group of militants, new flag with eagle at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Signature and title below denomination</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/5f0e386ebb84f8.66562857-original.jpg" alt="Reverse Image"</td>
+    </tr>
+    
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.25</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ff2e5b510928.13984327-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Dark green on light green, orange and blue underprint.Al-Sayida Aisha Mosque at the centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Stylized A. R. E. arms, cotton, wheat and corn plants at center</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ff2e5caeef09.15747324-original.jpg" alt="Reverse Image"</td>      
+    </tr>
+    
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.25</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ee780a48c353.97104051-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Purple and pale on pale lilac and multicolour underprint.Al-Sayida Aisha Mosque at the centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Egypt Coat of arms (The Eagle), corn, cotton, and wheat at the left-centre</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ee780b7af2b2.53563189-original.jpg" alt="Reverse Image"</td>      
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 0.50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca89d2ce4741.54438971-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Al-Azhar Mosque and its minarets. It is an Egyptian mosque in Islamic Cairo. Al-Mu'izz li-Din Allah of the Fatimid dynasty 
+	                         commissioned its construction for the newly established capital city in 970. Its name is usually thought to derive 
+						from az-Zahrāʾ (meaning "the shining one"), a title given to Fatimah. It was the first mosque established in Cairo, 
+						a city that has since gained the nickname "the City of a Thousand<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The upper part of the statue of Ramses II, backed by a vertical multi-coloured ornamental band and a collection of lotus flowers 
+		 and the sun boat. At the bottom right corner appears a Pharaonic cartouche.On the left side of the note is a drawing taken from the façade of a Pharaonic temple</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca89d3828688.67320388-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca8985351d61.35498269-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Sultan Qaitbay mosque at left centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">At the center left the main entrance to the Great Temple at Abu Simbel</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/62ca8985e7eb32.57499291-original.jpg" alt="Reverse Image"></td>   
+    </tr>
+    
+     <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x062C;&#x002E;&#x0645; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/63c4fd62ee0598.54564985-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Dark brown print on multishade orange and red print.Al-Fatah al-Aleem Mosque in the New Administrative Capital
+		Transparent window with image of the mosque and value 10 in Arabic script. Stylized reed as registration device; Eye of Horus as registration device<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Dark brown print on multishade orange, pink, and red print.Library of Alexandria, winged sun disc with snakes, Pyramid of Giza, Queen
+		  Hatshepsut (Metropolitan Museum of Art, New York)</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/egypte/63c4fd63ab21f0.72467355-original.jpg" alt="Reverse Image"></td>      	 
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

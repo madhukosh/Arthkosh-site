@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nigeria</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #1B7339;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Nigeria 
+       <img src="https://flagcdn.com/ng.svg" style="width: 25px;" alt="Nigeria">
+ </h2>
+ 
+ <h3>Currency: Naira&emsp; 
+     Unit Currency: Kobo&emsp; 
+	Symbol: &#x20A6;&emsp; 
+	Code:<input type="text" id="fromCurrency" value="NGN"> &emsp; <br>
+	NGN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:NGN -  <span id="reverseRateUSD">-</span> &emsp; 
+	NGN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:NGN -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+     <table id = "table1" class="center">
+    
+   <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+        	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A6; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65d90e01b1cae7.82129389-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Alhaji Dir Abubakar Tafawa Balewa<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Nkpokiti dancers with drums; on the left, Nigeria Coat of Arms</p>
+	</td>    
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65d90e03becbb1.22166024-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A6; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65d90cbb5cb908.58030000-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Dr. Alvan Ikoku (1900-1971), a prominent educationist. Central Bank emblem<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Fulani milk maids. Nigerian map outline in national flag colours. Coat of arms</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/nigeria/65d90cbe076b12.12329783-original.jpg" alt="Reverse Image"></td>	
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A6; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65ed64fb194309.91343204-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>General Murtala R. Muhammed (1938-1976). Central Bank emblem<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Ladi Kwali, a famous potter. Nigerian map outline in national flag colours</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65ed64fe3bab17.92040495-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x20A6; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/66db7b7703edc0.84712176-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Nigerians, varied citizenry<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Fishermen with big catch</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/66db7b789cc561.13656417-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+      Notes: <span id="sum1">-</span> &emsp;
+ </h3>
+   <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+ </section>
+</p>
+
+<section>
+  
+ 
+ <h3>Currency: Pound&emsp; 
+     Unit Currency: Penny, Shilling&emsp; 
+	Symbol: &pound;&emsp; 
+	Code:<input type="text" id="fromCurrency" value="NGP"> &emsp; <br>
+	NGP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:NGP -  <span id="reverseRateUSD">-</span> &emsp; 
+	NGP:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:NGP -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+     <table id = "table2" class="center">
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Sh 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/5f972a374595b2.27766069-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Central Bank of Nigeria building<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Men stacking sacks</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/5f972a37721877.42632102-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&pound; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65422f0462c726.23696608-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Red and dark brown. Bank building at left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Man beating cluster from date palm at right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nigeria/65422f04ad4df0.36796403-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+      Notes: <span id="sum2">-</span> &emsp;
+ </h3>
+   <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+
+ <h2>Biafra 
+       <img src="https://en.numista.com/design/pays/biafra.gif" style="width: 25px;" alt="Biafra">
+ </h2>
+ 
+ <h3>Currency: Pound&emsp; 
+     Unit Currency: Penny&emsp; 
+	Symbol: &#x20A6;&emsp; 
+	Code:<input type="text" id="fromCurrency" value="NGN"> &emsp; <br>
+	NGN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:NGN -  <span id="reverseRateUSD">-</span> &emsp; 
+	NGN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:NGN -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+     <table id = "table3" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&pound; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/biafra/62eabeac770ff8.58104719-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Palm tree and small rising run behind. Value ind the left corners and in the center right too<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Arms to the right center and value in the top and bottom right corner</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/biafra/62eabeaccbe138.86755409-original.jpg" alt="Reverse Image"></td>
+    </tr>   	
+</table>
+  <h3>
+      Notes: <span id="sum3">-</span> &emsp;
+ </h3>
+  <script>
+  function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+      
+           sum3 = table.rows.length-1;
+      
+       document.getElementById("sum3").innerText = sum3;
+      	 
+   }
+ sumTable3();
+</script>
+<h3>
+	Total Notes: <span id="tsum">-</span> &emsp;
+  </h3>
+  
+   <script>
+  	function tsumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       var table2 = document.getElementById("table2");
+       var table3 = document.getElementById("table3");
+	  
+       // Initialize sums for each column
+      
+      
+           sum1 = table1.rows.length-1;
+           sum2 = table2.rows.length-1;
+           sum3 = table3.rows.length-1;
+      
+       document.getElementById("tsum").innerText = sum1+sum2+sum3;
+      	 
+   }
+ 	tsumTable();
+  </script>
+ 
+ </section>
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USA</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 0px;
+    text-align: left;
+    font-size: 15px;
+    margin: 0px;
+  }
+  th {
+    padding: 3px;
+     background-color: #B22234;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style> 
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	ho
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')
+  , document.getElementById('table4'), document.getElementById('table5'), document.getElementById('table6'), document.getElementById('table7')
+  , document.getElementById('table8'), document.getElementById('table9'), document.getElementById('table11'), document.getElementById('table12')
+  , document.getElementById('table13'), document.getElementById('table14'), document.getElementById('table15'), document.getElementById('table16')
+  , document.getElementById('table17'), document.getElementById('table18'), document.getElementById('table19'), document.getElementById('table20') 
+  , document.getElementById('table21'), document.getElementById('table22'), document.getElementById('table23'), document.getElementById('table24') 
+  , document.getElementById('table25'), document.getElementById('table26'), document.getElementById('table27'), document.getElementById('table28') 
+  , document.getElementById('table29'), document.getElementById('table30'), document.getElementById('table31'), document.getElementById('table32')
+  ];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+
+  <h2>USA
+      <img src="https://flagcdn.com/us.svg" style="width: 25px;" alt="USA">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol:  $&emsp;
+	1 Dollar  = 100 Cents  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="USD"><br>
+      USD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:USD - <span id="reverseRateUSD">-</span>  &emsp;
+     USD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:USD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+<section> 
+<h4>
+Regular Coins
+</h4>
+     <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1584-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Liberty with Indian headdress bearing the word Liberty with the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Shield and wreath with lettering centered and the mintmark below the date (1908 and 1909 only)
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1585-original.jpg" alt="Reserve Image"></td>
+      	 <td style="text-align: center;">1888</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1116-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The portrait of Abraham Lincoln facing right with the date to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two wheat ears surrounding lettering
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1117-original.jpg" alt="Reserve Image"></td>
+      	 <td style="text-align: center;">1934</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/637de807767e24.45718557-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Profile of President Abraham Lincoln<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two wheat ears
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/637de80a3cfc29.83287135-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1943</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627fa60e7729f9.86339073-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Abraham Lincoln, 16th President of US with the lettering "LIBERTY" and motto "IN GOD WE TRUST"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lincoln Memorial surrounded with face value in full, lettering: "UNITED STATES oF AMERICA" and motto: "E PLURIBUS UNUM"
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627fa60ea6c6b3.15582220-original.jpg" alt="Reserve Image"></td>
+      <td style="text-align: center;">1983</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/4181-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Right facing portrait of President Abraham Lincoln (1809-1865)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Construction of dome atop the United States Capital Building
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/4182-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2009</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;$ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5297-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Abraham Lincoln with date above mintmark to right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ribbon bearing value on top of shield
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5298-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2019</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1619-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Liberty with 13 stars around head, representing 1st 13 colonies/states of USA<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large V in center, representing Roman Numeral 5 with wreath
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1620-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1902</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1586-original.jpg" alt="Obverse Image"></td>
+      <td>The composite profile of Iron Tail, an Oglala Sioux chief, Two Moons, a Cheyenne chief, and Big Tree, a Kiowa chief</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1587-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1917<br>1935<br>1937</td>
+     <td style="text-align: center;">3</td>
+    </tr>
+   
+     <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1319-original.jpg" alt="Obverse Image"></td>
+	 <td>
+		     <h5>&larr;Observe</h5>Thomas Jefferson, the 3rd President of US with lettering "LIBERTY" and motto: "IN GOD WE TRUST"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A representation of Monticello, President Thomas Jefferson's Virginia home
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1320-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1945</td>
+     <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/6214498a93dd11.94704126-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Thomas Jefferson, the 3rd President of US with lettering "LIBERTY" and motto: "IN GOD WE TRUST"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A representation of Monticello, President Thomas Jefferson's Virginia home
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/6214498b59e507.16200277-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2000</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/533-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Thomas Jefferson, the 3rd President of US with lettering "LIBERTY" and motto: "IN GOD WE TRUST"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A boat used during the Lewis & Clark expedition. Legend around
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/534-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2004</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dime<hr>
+	  	  Value:&emsp;$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/60bccb21db7d90.70228809-original.jpg" alt="Obverse Image"> </td>
+	  <td>
+		     <h5>&larr;Observe</h5>Allegory of Liberty wearing winged Phrygian cap with the word "LIBERTY"and motto: "IN GOD WE TRUST"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Fasces mixed with olive branch prepared for war and its desire for peace. Motto "E PLURIBUS UNUM" with mintmark
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/60bccb233b2ae8.30881876-original.jpg" alt="Reserve Image"> </td>
+	 	 <td style="text-align: center;">1940<br>1945</td>
+	 	 <td style="text-align: center;">2</td>
+    </tr>
+  
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dime<hr>
+	  	  Value:&emsp;$ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d617cd00a8c7.08505494-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Franklin D. Roosevelt, 32nd President of US, accompanied by motto: "IN GOD WE TRUST" and letters "LIBERTY"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">"E PLU RIB US U NUM", olive branch, torch, and oak branch symbolize respectively peace, liberty, and victory with face value and lettering "UNITED STATES OF AMERICA
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d617ce98bea5.74831487-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2017</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+	  <td style="text-align: right; font-size: 15px; "></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#188; Dollar<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f03b26bc17f54.45852757-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>200th Anniversary of the The United States Declaration of Independence, 1776-1976<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">George Washington, 1st President of USA, with motto: "IN GOD WE TRUST" and lettering: "LIBERTY"
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f03b26c01b3f9.88424327-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1976</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#188; Dollar<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/2859-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>200th Anniversary of the The United States Declaration of Independence, 1776-1976<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eagle, wings spread, and standing on shaft of arrows with wreath comprised of 2 olive sprays, with face value, motto "E PLURIBUS UNUM" and lettering "UNITED STATES OF AMERICA"
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/2860-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1989</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Dollar<hr>
+	  	  Value:&emsp;$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d3659822e655.38791181-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>John F. Kennedy and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Presidential seal of USA, shield with vertical stripes on chest of an American bald eagle.Eagle holds olive branch bundle of 13 arrow and scroll with "E PLURIBUS UNUM". Circle of 50 stars around eagle
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d36599b31038.25939913-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1974</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Dollar<hr>
+	  	  Value:&emsp;$ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d3659822e655.38791181-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>John F. Kennedy and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Presidential seal of USA, shield with vertical stripes on chest of an American bald eagle.Eagle holds olive branch bundle of 13 arrow and scroll with "E PLURIBUS UNUM". Circle of 50 stars around eagle
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65d36599b31038.25939913-original.jpg" alt="Reserve Image"></td>
+      <td style="text-align: center;">1981</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+	
+ <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dollar<hr>
+	  	  Value:&emsp;$ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1288-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Susan B. Anthony, pioneer for women's rights with date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Apollo 11 Mission Insignia (eagle holding olive branch flying above Moon, with Earth in background) and denomination
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/1289-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+    sumTable1();
+   </script>
+ 
+
+
+ 
+<h4>
+Lincoln Wheat Ears Penny (1908 - 1958)
+</h4>
+ <table id = "table2">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 100px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 500px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+	
+	<tr>
+	 <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;$ 0.01</h5>
+	  </td>
+	 
+	<td><img src="https://en.numista.com/catalogue/photos/etats-unis/1116-original.jpg"  alt="Obverse Image"></td>
+	<td>
+		     <h5>&larr;Observe</h5><hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">
+		</td>
+	<td><img src="https://en.numista.com/catalogue/photos/etats-unis/1117-original.jpg"  alt="Reverse Image"></td> 
+	<td style="text-align: center;">1920&emsp;1940&emsp;1942(C)-3&emsp;1944(2)&emsp;1945&emsp;1945(D)&emsp;1945(S)&emsp;1946
+	                            <br>1950(D)&emsp;1951(D)&emsp;1951(S)&emsp;1952(S)&emsp;1954(D)&emsp;1954(S)&emsp;1955(2)
+	                            <br>1955(S)&emsp;1956(D)&emsp;1958(D)</td>
+	<td style="text-align: center;">22</td>
+	</tr>
+	
+</table>	 
+	
+
+
+<h2>
+	  Coins:<span id="sum2"></span> &emsp;
+ </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+ 
+
+<h4>
+State Formation Quarters 
+</h4>
+
+ <table>
+    <tr>
+      
+      <th>Obverse</th>
+         
+    </tr>
+   <tr>
+      
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65b9537003c178.10317434-original.jpg" alt="Obverse Image"></td>
+      
+    </tr>
+    </table>
+
+
+
+
+<div style="display: flex; margin-left: 2px; margin-right: 2px; ">
+<div>
+   <table id = "table3" class="center">
+    <thead>
+    	<tr>
+      		<th>#</th>			
+      		<th style="width: 175px;">Quarter</th>
+	 		<th style="width: 600px;">Quarter Detail</th>
+    	</tr>
+     </thead>
+	<tbody>
+	
+         <tr>
+		    <td></td>      		
+	          <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65b804c4327c86.31595545-original.jpg" alt="Reverse Image"></td>
+      		<td>
+			<h3>Delaware</h3> 
+	     	<hr>Formed in: 1787&emsp;Coin Issued: 1999<hr>
+			Caesar Rodney's historic horseback ride in 1776 to cast his vote in favor of Delaware signing the Declaration of Independence</td>	 
+        </tr>
+		
+     <tr>
+	 		<td></td>      		
+	          <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf5a0c4a0aa0.71761695-original.jpg" alt="Reverse Image"> </td>
+      		<td>
+			<h3>Pennysylvania</h3> 
+	     	<hr>Formed in: 1787&emsp;Coin Issued: 1999<hr>
+			 Statue, Commonwealth,outline of the state. The state's motto, Virture, Liberty, Independence, and a keystone
+			</td>	 
+        </tr>
+		
+		<tr>
+		<td></td>
+	    <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf5a956b17a1.32731779-original.jpg" alt="Reverse Image"> </td>
+		<td><h3>New Jersey</h3>
+			<hr>Formed in: 1787&emsp;Coin Issued: 1999<hr>
+      		General George Washington and his troops crossing the Delaware River on December 25, 1776</td>	 
+        </tr>
+		
+	<tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf5b10e0f753.74783826-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>Georgia</h3> 
+	     	<hr>Formed in: 1788&emsp;Coin Issued: 1999<hr>
+			Peach(state symbol), branches of live oak tree (state tree), and state motto "Wisdom, Justice, Moderation" , outline of state
+			</td>
+         </tr>
+		 
+		
+     <tr>
+	 	<td></td>
+		   <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b807fe33d375.14356632-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Connecticut</h3> 
+	     		<hr>Formed in: 1788&emsp;Coin Issued: 1999<hr>			
+			Charter Oak tree, the hiding spot of Connecticut's 1662 charter from King Charles II and later state constitution</td>	 
+        </tr>
+		
+	<tr>
+      		<td></td>
+			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/5294-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>Massachusetts</h3> 
+	     	<hr>Formed in: 1788&emsp;Coin Issued: 2000<hr>
+			Minuteman soldier of the American Revolution against an outline of the state
+			 </td>	 
+        </tr>	
+		
+       <tr>
+	    <td></td>
+		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/4868-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Maryland</h3> 
+	     		  <hr>Formed in: 1788&emsp;Coin Issued: 2000<hr>
+			Maryland State House dome. The dome is surrounded by White Oak leaf clusters
+			 </td>
+        </tr>
+	
+     <tr>
+	  <td></td>
+	 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf5bc277e314.28742916-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>South Carolina</h3> 
+	     		<hr>  Formed in: 1788&emsp;Coin Issued: 2000<hr>
+				Palmetto State.Outline of state.Palmetto tree, Carolina Wren, Yellow Jessamine, and a star which indicates the state's capital, Columbia
+			 </td>	 
+        </tr>
+		
+       <tr>
+	   <td></td>
+	    <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b80a397f8925.26761270-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>New Hampshire</h3> 
+	     		  <hr>Formed in: 1788&emsp;Coin Issued: 2000<hr>
+				  Live Free or Die/The Old Man of the Mountain. It highlights rock formation, The Old Man of the Mountain, and state motto, Live free or die
+			 </td>	 
+        </tr>
+		
+       <tr>
+      		<td></td>	 
+			  <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/5292-original.jpg" alt="Reverse Image"> </td>
+			  <td><h3>Virgina</h3> 
+	     		 <hr>Formed in: 1788&emsp;Coin Issued: 2000<hr>
+				Susan Constant, Godspeed, and Discovery which are the three ships that brought the first English settlers to Jamestown 
+			 </td>	 
+	        
+      		
+        </tr>
+     
+	<tr>
+      		<td></td>	 
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b80bc7da67c6.78242031-original.jpg" alt="Reverse Image"> </td>
+			     <td><h3>New York</h3> 
+	     		 <hr>Formed in: 1788&emsp;Coin Issued: 2001<hr>
+				 Gateway to Freedom.Statue of Liberty, the state outline, and 11 stars that represents its position when admitted into the Union
+			 </td>
+        </tr>
+     
+     <tr>
+      		<td></td>	 
+			 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b80cd20edad0.84348136-original.jpg" alt="Reverse Image"> </td>
+			 <td><h3>North Carolina</h3> 
+	     		  <hr>Formed in: 1789&emsp;Coin Issued: 2001<hr>
+				  First Flight. It highlights the first flight that took place in Kill Devil Hills
+			 </td>	 
+        </tr>
+		
+		 <tr>
+		 <td></td>
+			<td>  <img src="https://en.numista.com/catalogue/photos/etats-unis/65b80e6b78a568.01133052-original.jpg" alt="Reverse Image"> </td>	 		 
+      		<td><h3>Rhode Island</h3> 
+	     		 <hr> Formed in: 1790&emsp;Coin Issued: 2001<hr>
+				  Vintage sailboat in Rhode Island's famous Narragansett Bay and the Pell Bridge
+			 </td>	 
+	          
+      		 
+        </tr>
+		
+		 <tr>
+		 <td></td>	 
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf63661f7641.11054458-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Vermont</h3> 
+	     		  <hr>Formed in: 1791&emsp; Coin Issued: 2001<hr>
+					Camel's Hump Mountain and maple trees with sap buckets in the forefront
+			 </td>	 
+        </tr>
+		
+		  <tr>
+		  <td></td> 	       
+		  <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95370b48c62.39839678-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Kentucky</h3> 
+	     		  <hr>Formed in: 1792&emsp;Coin Issued: 2001<hr>
+				  My Old Kentucky Home,the stately mansion, Federal Hill and a thoroughbred racehorse behind a fence
+			 </td>	 
+	          
+      		
+        </tr>
+     
+	<tr>
+      		<td></td> 
+	          <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95450345184.12867389-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Tennessee</h3> 
+	     		<hr>Formed in: 1796&emsp;Coin Issued: 2002<hr>
+				Musical instruments, fiddle, trumpet, and guitar
+			 </td>	 	          
+        </tr>
+		
+		<tr>
+      		<td></td> 
+	          <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf64acdce521.67288555-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Ohio</h3> 
+	     		  <hr>Formed in: 1803&emsp;Coin Issued: 2002<hr>
+				  Birthplace of Aviation Pioneers.Early aircraft and an astronaut, outline of the state, and stars
+			 </td>	 	          
+      		</tr>
+		
+		<tr>
+      		<td></td> 
+	          <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf655f70a0f8.75204108-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Louisiana</h3> 
+	     		  <hr>Formed in: 1812&emsp;Coin Issued: 2002<hr>
+				  Pelican - Louisiana's state bird - a trumpet with musical notes, and the outline of the Louisiana Purchase territory
+			 </td>	 
+      		</tr>
+		
+		 <tr>
+		 	<td></td> 
+	          <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/5290-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Indiana</h3> 
+	     		  <hr>Formed in: 1816&emsp;Coin Issued: 2002<hr>
+				 Crossroads of America. Image of a racecar superimposed on an outline of the state, and 19 stars 
+			 </td>
+      		</tr>
+		
+		<tr>
+		<td></td>	 
+		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b958f4954c34.77005072-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Mississippi</h3> 
+	     		  <hr>Formed in: 1817&emsp;Coin Issued: 2002<hr>
+				  The Magnolia State. the state flower, blossoms and leaves of two magnolias
+			 </td>	     
+        </tr>
+     </tbody>
+    
+	
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+  <div style= "margin-left: 1px; margin-right: 1px; ">
+   <table id = "table4" class="center">
+    <thead>
+    	<tr>
+      		<th>#</th>			
+      		<th style="width: 175px;">Quarter</th>
+	 		<th style="width: 600px;">Quarter Detail</th>
+    	</tr>
+     </thead>
+	
+	<tbody>
+        
+     
+     <tr>
+      		<td></td>	 
+			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/65b959d73cca44.74977059-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>Illinois</h3> 
+	     		  <hr>Formed in: 1818&emsp;Coin Issued: 2003<hr>
+				  Image of a young Abraham Lincoln, state outline, farm scene, and Chicago skyline. 21 stars bordering the coin
+			 </td>	 
+        </tr>
+    
+	<tr>
+	<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95acd8a1517.10239082-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Alabama</h3> 
+	     		  <hr>Formed in: 1819&emsp;Coin Issued: 2003<hr>
+				  Spirit of Courage.Helen Keller with her name in English andBraille, long leaf pine branch wtih magnolias
+			 </td>	 
+        </tr>
+		
+		<tr> 
+		<td></td>
+		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/5288-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Maine</h3> 
+	     		  <hr>Formed in: 1820&emsp;Coin Issued: 2003<hr>
+				  Pemaquid Point Light atop a granite coast and a schooner at sea
+			 </td>	 	         
+        </tr>
+		
+		 <tr>
+		 <td></td>
+		     <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/5310-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Missouri</h3>
+	     		  <hr>Formed in: 1821&emsp;Coin Issued: 2003<hr>
+				  Corps of Discovery. Lewis and Clark's return to St. Louis down the Missouri River, Jefferson National Expansion Memorial Gateway Arch
+				  </td>	 
+	          
+      		
+        </tr>
+		
+		 <tr>
+		 <td></td>
+		   <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95c5a706f93.03278994-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Arkansas</h3> 
+	     		  <hr>Formed in: 1836&emsp;Coin Issued: 2003<hr>
+				  Natural State. Rice stalks, a diamond and a mallard flying above a lake
+			 </td>	
+        </tr>
+	 
+	<tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95d827f81d7.82970668-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>Michigan</h3> 
+	     		  <hr>Formed in: 1837&emsp;Coin Issued: 2004<hr>
+				  Great Lakes State, Michigan outline and the Great Lakes system
+			 </td>
+        </tr>
+     
+     <tr>
+	 		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b95f521a1279.34485587-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Florida</h3> 
+	     		  <hr>Formed in: 1845&emsp;Coin Issued: 2004<hr>
+				  16th-century Spanish galleon, space shuttle, and strip of land with Sabal palm trees
+			 </td>
+        </tr>
+		
+		 <tr>
+		 <td></td>
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/4911-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Texas</h3> 
+	     		  <hr>Formed in: 1845&emsp;Coin Issued: 2004<hr>
+				  The Lone Star State. The lariat - symbolic of the cattle and cowboy history of Texas, frontier spirit
+			 </td>	 
+	                		
+        </tr>    
+        
+         <tr>
+		 <td></td>
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b96036a48a76.61373253-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Iowa</h3> 
+	     		  <hr>Formed in: 1846&emsp;Coin Issued: 2004<hr>
+				  Foundation in Education.1-room schoolhouse with teacher and students planting tree, inscriptions Foundation in Education and Grant Wood
+			 </td>
+        </tr>
+		
+         <tr>
+		 	<td></td>
+		 	<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65b96129310f03.20133651-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Wisconsin</h3> 
+	     		  <hr>Formed in: 1848&emsp;Coin Issued: 2004<hr>
+				  Head of a cow, a round of cheese and an ear of corn
+			</td>
+        </tr>
+		
+	<tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf66457ce303.78301607-original.jpg" alt="Reverse Image"></td>
+			<td><h3>California</h3> 
+	     		  <hr>Formed in: 1850&emsp;Coin Issued: 2005<hr>
+				  Naturalist and conservationist John Muir admiring Yosemite Valley's monolithic granite headwall and a soaring California condor
+			 </td>	 
+        </tr>
+     
+    <tr>
+			<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf6cab74c149.77201015-original.jpg" alt="Reverse Image"> </td>
+            <td><h3>Minnesota</h3> 
+	     		  <hr>Formed in: 1858&emsp;Coin Issued: 2005<hr>
+				  Land of 10,000 Lakes. A tree-lined lake with two people fishing, a loon on the water
+			 </td></tr>
+        
+     
+         <tr>
+		 	<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bab5d6f35071.84025376-original.jpg" alt="Reverse Image"> </td>
+            <td><h3>Oregon</h3> 
+	     		  <hr>Formed in: 1859&emsp;Coin Issued: 2005<hr>
+				  Crater Lake, viewed from the south-southwest rim , Wizard Island and Watchman and Hillman Peaks in the lake's rim
+			 </td>	 
+	          </tr>
+ 
+         <tr>
+		 <td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd514f7803c4.13200948-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>Kansas</h3> 
+	     		 <hr>Formed in: 1861&emsp;Coin Issued: 2005<hr>
+				  Buffalo and sunflower motif
+			 </td>	 
+			  </tr>
+	
+	 	 <tr>
+	 		<td></td>
+			  <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd522e1dc2e0.28677538-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>West Virgina</h3> 
+	     		  <hr>Formed in: 1863&emsp;Coin Issued: 2005<hr>
+				  Scenic beauty of the New River and the New River Gorge Bridge
+			 </td>	 
+	        </tr>
+		
+		<tr>
+			<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd53ba2fc603.35413189-original.jpg" alt="Reverse Image"> </td>	 
+        	<td>
+			<h3>Nevada</h3> 
+	     		  <hr>Formed in: 1864&emsp;Coin Issued: 2006<hr>
+				  Silver State. A trio of wild stallions, snow capped mountains and the sun
+			 </td>	 
+	          </tr>
+     
+    <tr>
+			<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd54349ac851.59808713-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Nebraska</h3> 
+	     		  <hr>Formed in: 1867&emsp;Coin Issued: 2006<hr>
+				  Chimney Rock. An ox-drawn covered wagon carrying pioneers
+			 </td> 
+        </tr>
+		
+		<tr>
+			<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd555987fe66.34476251-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Colorado</h3> 
+	     		 <hr> Formed in: 1874&emsp;Coin Issued: 2006<hr>
+				  Rocky Mountains, evergreen trees and a banner
+			 </td> 
+        </tr>
+		
+	<tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd55f50b4b14.40780313-original.jpg" alt="Reverse Image"> </td>
+			<td><h3>North Dakota</h3> 
+	     		 <hr> Formed in: 1889&emsp;Coin Issued: 2006<hr>
+				  Pair of grazing American bison in the foreground, a sunset view of the rugged buttes and canyons that symbolize the State’s Badlands region
+			 </td>
+      </tr>
+     
+         <tr>
+		 	<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd5681777f37.67291510-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>South Dakota</h3> 
+	     		 <hr> Formed in: 1889&emsp;Coin Issued: 2006<hr>
+				  State bird-Chinese ring-necked pheasant. Mount Rushmore with 4 Presidents: Washington, Jefferson, Roosevelt & Lincoln. heads of wheat
+			 </td> 
+        </tr>
+     
+	</tbody>
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+  
+    <div style= "margin-left: 1px; margin-right: 1px;">
+   <table id = "table5" class="center">
+    <thead>
+	<tr>
+      		<th>#</th>			
+      		<th style="width: 175px;">Quarter</th>
+	 		<th style="width: 600px;">Quarter Detail</th>
+    	</tr>
+     </thead>
+	<tbody>
+	
+       <tr>
+	   <td></td>	
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd571ba2f658.45585848-original.jpg" alt="Reverse Image"> </td>
+            <td><h3>Montana</h3> 
+	     		  <hr>Formed in: 1889&emsp;Coin Issued: 2007<hr>
+					Big Sky Country,a bison skull depicted above the diverse Montana landscape
+			 </td>	 
+	         </tr>
+		
+       <tr>
+      		 <td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd5801e7f601.56142394-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Washington</h3> 
+	     		  <hr>Formed in: 1889&emsp;Coin Issued: 2007<hr>
+					The Evergreen State. Salmon breaching the water in front of majestic Mount Rainer
+			 </td>	 
+	          <td></td>	 
+        </tr>
+    
+          <tr>
+		  <td></td>
+		  <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd58b056a222.55346933-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Idaho</h3> 
+	     		  <hr>Formed in: 1890&emsp;Coin Issued: 2007<hr>
+				Esto Perpetua(May it be forever). Peregrine Falcon, outline of the state of Idaho	
+			 </td>	 
+        </tr>
+		
+      <tr>
+      		<td></td>	
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd595bd9fed9.53713495-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Wyoming</h3> 
+	     		  <hr>Formed in: 1890&emsp;Coin Issued: 2007<hr>
+				Image of a bucking horse and rider	
+			 </td>
+        </tr>
+		
+		 <tr>
+		 <td></td>
+      		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf6f67ae76d3.43499035-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Utah</h3> 
+	     		  <hr>Formed in: 1896&emsp;Coin Issued: 2007<hr>
+					Crossroads of the West. Two locomotives moving toward the golden spike that join Central Pacific and Union Pacific railroads
+			 </td>	 
+	         </tr>
+	
+	<tr>
+			<td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd5dc7a6b1f1.88573680-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Oklahoma</h3> 
+	     		  <hr>Formed in: 1907&emsp;Coin Issued: 2008<hr>
+					State bird, the Scissortail Flycatcher, with tail feathers spread.The State wildflower, the Indian Blanket, field of similar wildflowers
+			 </td>	 
+	          	 
+        </tr>
+     
+         <tr>
+		   <td></td>
+      		<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd5c92bd5591.91604892-original.jpg" alt="Reverse Image"> </td>
+      			<td><h3>New Mexico</h3> 
+	     		<hr>Formed in: 1912&emsp;Coin Issued: 2008<hr>
+				Zia sun symbol over a topographical outline of the State
+			 </td>	           
+        </tr>
+		
+		 <tr> 
+		 <td></td>
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd5f769ddc10.48890047-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Arizona</h3> 
+	     		 <hr>Formed in: 1912&emsp;Coin Issued: 2008<hr>
+				  Grand Canyon with a Saguaro cactus
+			 </td>
+        </tr>
+		
+		<tr>
+		    <td></td>
+	      	<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd60953fd210.31377738-original.jpg" alt="Reverse Image"> </td>		 
+	       <td><h3>Alaska</h3> 
+	     		  <hr>Formed in: 1959&emsp;Coin Issued: 2008<hr>
+				  Grizzly bear emerging from the waters clutching a salmon in its jaw
+			 </td>	 
+	           </tr>
+		
+		 <tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bd6224cd6094.45722974-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Hawaii</h3> 
+	     		  <hr>Formed in: 1959&emsp;Coin Issued:2008<hr>
+				  Hawaiian monarch King Kamehameha I stretching his hand toward the eight major Hawaiian Islands
+			 </td>	 
+        </tr>
+     </table>
+	 
+	 <table>
+	 <tr>
+      		<th style="width: 175px;">Obverse</th>
+	 		<th style="width: 600px;">	</th>
+    	</tr>
+	 <tr>
+  	       <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/4964-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3 style = "text-align: center;">US Territory</h3>
+	 </tr>
+	 </table>
+		
+	 <table id = "table6" class="center">
+	 <tr>
+      		<th>#</th>			
+      		<th style="width: 175px;">Quarter</th>
+	 		<th style="width: 600px;">Quarter Detail</th>
+    	</tr>
+	 
+	<tr>
+      		<td></td>
+			 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf738e611504.03549233-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>District of Columbia</h3>
+	     		  <hr>Formed in: 1790&emsp;Coin Issued: 2009<hr>
+					Duke Ellington, the internationally renowned composer and musician, seated at a grand piano
+			 </td> 
+        </tr>
+		
+      <tr>
+      		<td></td>
+			<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7478e87330.25109890-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Puerto Rico</h3> 
+	     		  <hr>Formed in: 1952&emsp;Coin Issued: 2009<hr>
+					“Isla del Encanto,” meaning Island of Enchantment. It features a hibiscus flower, a coqui tree frog, and the sea
+			 </td> 
+        </tr>  
+    
+         <tr>
+		 <td></td>
+		   <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf760704ad46.68115326-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Guam</h3> 
+	     		  <hr>Formed in: 1788&emsp;Coin Issued: 2008<hr>
+					Island outline, a flying proa (Seagoing craft), latte stone (used in ancient architecture). GUAHAN I TANÓ MANCHAMORRO(Land of Chamorro people)
+			 </td>		 
+        </tr>
+		
+		 <tr>
+		 <td></td>
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7680b34356.88470368-original.jpg" alt="Reverse Image"> </td>
+      	 <td><h3>American Samoa</h3> 
+	     		  <hr>Formed in: 1929&emsp;Coin Issued: 2009<hr>
+				Ceremonial items—a coconut tree, ava bowl, whisk, and staff—along with the motto “SAMOA MUAMUA LE ATUA” (Samoa, God is First)
+			 </td>           
+        </tr>
+		    
+         <tr>
+		 <td></td>
+		 <td> <img src="https://en.numista.com/catalogue/photos/etats-unis/4963-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>US Virgin Islands</h3> 
+	     		  <hr>Formed in: 1917&emsp;Coin Issued: 2009<hr>
+					The Yellow Cedar flower, Bananaquit bird, Tyre Palm Tree, outline of the three main islands. “United in Pride and Hope”
+			 </td>	 
+	          	 
+        </tr>
+		
+	<tr>
+	<td></td>
+	<td> <img src="https://en.numista.com/catalogue/photos/etats-unis/4965-original.jpg" alt="Reverse Image"> </td>
+      		<td><h3>Northern Mariana Islands</h3> 
+	     		  <hr>Formed in: 1975&emsp;Coin Issued: 2009<hr>
+					A limestone latte, a Carolinian canoe, and white ferry tern birds
+			 </td>	 
+	          
+      			 
+        </tr>
+</table>
+	
+</section>  
+<h2>
+	  Coins: 56
+ </h2>	
+
+
+<section> 
+
+<h4>America the Beautiful</h4>
+<h5 style = "text-align: center;width: 175px;">Obverse</h5>
+<div style="display: flex; margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+
+<div>
+
+<img src="https://en.numista.com/catalogue/photos/etats-unis/65be7d1a013716.00222234-original.jpg" alt="Reserve Image">
+   <table id = "table7" class="center">
+   
+    <thead>
+	<tr> 
+	<th>#</th>
+	<th style="width: 175px;">Quarter</th>
+	<th style="width: 400px;">Quarter Detail</th>	
+    </tr>		
+	
+	   </thead>
+    			     		
+      	
+	 				
+				
+  <tbody>
+       
+    <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be7d1c0f5548.22455334-original.jpg" alt="Reserve Image"></td>
+	      
+       <td><h5>Arkansas&emsp;Year: 2010</h5><hr><b>Hot Springs</b><hr>National Park headquarters, thermal fountain</td>
+	  </tr>
+	  
+	 <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be7f990cf120.42923019-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Wyoming&emsp;Year: 2010</h5><hr><b>YellowStone</b><hr>Old Faithful geyser, mature bull bison</td>
+	  </tr>
+	 
+	 <tr>
+	   <td></td> 
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be817cd86c99.19869873-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Arizona&emsp;Year: 2010</h5><hr><b> Grand Canyon</b><hr>Granaries above the Nankoweap Delta in Marble Canyon</td>
+	  </tr>
+	  
+      <tr>	  
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be80c32bd096.09161708-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Oregon&emsp;Year: 2010</h5><hr><b>Mount Hood</b><hr>Mount Hood with Lost Lake in the foreground </td>
+	  </tr>
+     
+    <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be80c32bd096.09161708-original.jpg" alt="Reserve Image"></td>
+       <td><h5>California&emsp;Year: 2010</h5><hr><b>Yosemite</b><hr>El Captain world's largest granite monolith rising above valley floor</td>
+	  </tr>
+      
+	   <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65be8323275652.14950427-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Pennsylvania &emsp;Year: 2011</h5><hr><b>Battle of Gettysburg</b><hr> The 72nd Pennsylvania Infantry Monument</td>
+	  </tr>
+    
+	  <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf77db52fcd3.20916590-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Montana&emsp;Year: 2011</h5><hr><b>Glacier National Park</b><hr> Mount Reynolds and a mountain goat</td>
+	  </tr>
+	  
+      <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf78bab7e353.69859924-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Washington&emsp;Year: 2011</h5><hr><b>Olympic</b><hr>Roosevelt elk with Mount Olympus </td>
+	  </tr>
+      
+	  <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7931dce229.56303891-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Mississippi&emsp;Year: 2011</h5><hr><b>Vicksburg</b><hr> U.S.S. Cairo on Yazoo River as served during civil war</td>
+	  </tr>
+	  
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5283-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Okhlahoma&emsp;Year: 2011</h5><hr><b> Chickasaw</b><hr> Lincoln Bridge(limestone) built for centennial birth of Lincoln</td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7a0cab7829.77407033-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Puerto Rico&emsp;Year: 2012</h5><hr><b>El Yunque</b><hr> Coqui tree frog on leaf, Puerto Rican parrot, epiphyte plant & tropical flora</td>
+	  </tr> 
+	   
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7ab04d5b78.30014061-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New Mexico&emsp;Year: 2012</h5><hr><b>Chaco Culture</b><hr> Two elevated kivas,Chetro Ketl Complex. Wall of Chetro Ketl & canyon </td>
+	  </tr>
+      
+	  <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7b3e235d27.81726262-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Maine &emsp;Year: 2012</h5><hr><b>Acadia</b><hr> Bass Harbor Head Lighthouse and Acadia's rough coastline</td>
+	  </tr>
+      
+	  <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/625b1ab36dea19.15788494-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Hawaii&emsp;Year: 2012</h5><hr><b>Hawaii Volcanoes</b><hr> Eruption on the east rift of Kilauea Volcano</td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/4995-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Alaska&emsp;Year: 2012</h5><hr><b>Denali Park</b><hr>Dall sheep with Mount McKinley rising in the background</td>
+	  </tr>
+	  
+      <tr>
+  	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7bd68a9061.78655522-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New Hampshire&emsp;Year: 2013</style></h5><hr><b>White Mountain</b><hr> Mt.Chocorua, easternmost peak of Sandwich Range in birch trees</td>
+	 </tr>
+	 
+	  <tr>	  
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7c5a93ed44.97609708-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Ohio&emsp;Year: 2013</h5><hr><b>Perrys Victory</b><hr>Master Commandant Oliver Hazard Perry statue with Peace Memorial</td>
+	  </tr>
+      
+      <tr>
+        <td></td>
+	   <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5281-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Nevada&emsp;Year: 2013</h5><hr><b>Great Basin</b><hr> Single Bristlecone Pine tree and the rocky glacial moraines </td>
+	  </tr>
+    </tbody>
+    <!-- Add more rows as needed -->
+  </table>
+</div>
+
+<div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table8" class="center">
+    <thead>
+    	<tr> 
+			<th>#</th>
+			<th style="width: 175px;">Quarter</th>
+			<th style="width: 400px;">Quarter Detail</th>	
+    </tr>
+     </thead>
+  <tbody>
+    <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7ce24100c2.99064494-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Maryland&emsp;Year: 2013</h5><hr><b>Fort Mchenry</b><hr> "Defenders Day" celebration, centerpiece annual event at Fort McHenry </td>
+	  </tr>
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7da516fa84.02230177-original.jpg" alt="Reserve Image"></td>
+       <td><h5>South Dakota &emsp;Year: 2013</h5><hr><b>Mount Rushmore</b><hr> Men who are adding the final details to Thomas Jefferson's face.</td>
+	  </tr>
+	  
+	  
+	  <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/626ed1a2a74312.70069378-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Tennessee&emsp;Year: 2014</h5><hr><b>Great Smoky Mountains</b><hr> Historic log cabin found within Great Smoky Mountains</td>
+	  </tr>
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7e4291f046.45830616-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Virginia&emsp;Year: 2014</h5><hr><b>Shenandoah</b><hr>Day hiker taking in the view from Little Stony Man summit</td>
+	  </tr>
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/626b54f93faea2.03671752-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Utah&emsp;Year: 2014</style></h5><hr><b>Arches National Park</b><hr> Delicate Arch, a 65-foot freestanding natural arch</td>
+	 </tr>
+	  
+	   <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf7f29132db9.49563260-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Colorado&emsp;Year: 2014</h5><hr><b>Great Sand Dunes</b><hr>Father and son playing in sand near creek, Mountains and sand dunes </td>
+	  </tr>
+    
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf97181263c1.43976270-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Florida&emsp;Year: 2014</h5><hr><b>Everglade</b><hr>Anhinga on willow tree with roseate spoonbill in mid-ground </td>
+	  </tr>
+	  
+     <tr>
+       <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf97ad783704.14660115-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Nebraska&emsp;Year: 2015</h5><hr><b>Homestead</b><hr>3 fundamentals of survival for all homesteaders: food, shelter and water</td>
+	  </tr>
+	  
+	  <tr>
+       <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf98a0199443.88760974-original.jpg" alt="Reserve Image"></td>
+       <td><h5>North Carolina&emsp;Year: 2015</h5><hr><b>Blue Ridge Parkway</b><hr>Bend of road along side of mountain; North Carolina state flower</td>
+	  </tr>
+	 
+	  <tr>
+      <td></td>
+        <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf982c21f2d2.28882378-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Louisiana &emsp;Year: 2015</h5><hr><b>Kisatchie</b><hr>Wild turkey in flight over blue stem grass with long leaf pine in the background</td>
+	  </tr>
+      
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf997d3b5c89.52799353-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Delaware&emsp;Year: 2015</h5><hr><b>Bombay Hook</b><hr>Great blue heron in foreground and great egret in background</td>
+	  </tr>	  
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9b43614262.19018238-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New York&emsp;Year: 2015</h5><hr><b>Saratoga</b><hr>General John Burgoyne surrenders his sword to General Horatio Gates</td>
+	 </tr>
+	  
+	  <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5279-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Illinois&emsp;Year: 2016</h5><hr><b>Shawnee</b><hr>Camel Rock with natural vegetation; Red-tailed hawk soaring </td>
+	  </tr>
+        
+      <tr>
+        <td></td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5277-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Kentucky&emsp;Year: 2016</h5><hr><b>Cumberland Gap</b><hr>Frontiersman gazing across the mountains to the West</td>
+	  </tr>
+     
+      <tr>
+        <td></td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5268-original.jpg" alt="Reserve Image"></td>
+       <td><h5>West Virginia&emsp;Year: 2016</h5><hr><b>Harpers Ferry</b><hr>John Brown Fort, John Brown’s stand,during raid on Harpers Ferry Armory</td>
+	  </tr>
+	
+      <tr>
+        <td></td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9bd8a246f1.82508508-original.jpg" alt="Reserve Image"></td>
+       <td><h5>North Dakota &emsp;Year: 2016</h5><hr><b>Theodore Roosevelt Park</b><hr>Roosevelt on horseback; Terrain near Little Missouri River</td>
+	  </tr>
+	   
+      <tr>
+        <td></td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5035-original.jpg" alt="Reserve Image"></td>
+       <td><h5>South Carolina&emsp;Year: 2016</h5><hr><b>Fort Moultrie</b><hr>Sgt William Jasper returning flag to ramparts during attack from British ship</td>
+	  </tr>
+	 
+	  <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5286-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Iowa&emsp;Year: 2017</style></h5><hr><b>Effigy Mounds</b><hr>Aerial view of mounds in the Marching Bear Group.</td>
+	 </tr>
+	 
+	 <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9ca2eafc48.49294549-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Dist. of Columbia&emsp;Year: 2017</h5><hr><b>Frederick Douglass Park</b><hr>Seated at writing desk, his home in Washington, D.C</td>
+	  </tr>
+	  
+    </tbody>
+    <!-- Add more rows as needed -->
+  </table>
+</div>
+
+<div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table9" class="center">
+    <thead>
+
+	   <tr> 
+			<th>#</th>
+			<th style="width: 175px;">Quarter</th>
+			<th style="width: 400px;">Quarter Detail</th>	
+    </tr>
+     </thead>
+  <tbody>
+     <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5041-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Missouri&emsp;Year: 2017</h5><hr><b>Ozark</b><hr>Alley Mill, steel roller mill built in 1894. Used to convert wheat into flour</td>
+	  </tr>
+	
+      <tr>
+      <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5266-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New Jersey&emsp;Year: 2017</h5><hr><b>Ellis Island</b><hr>Immigrant family approaching Ellis Island; Hospital building </td>
+	  </tr>
+	  
+     <tr>
+      <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5045-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Indiana&emsp;Year: 2017</h5><hr><b>George Rogers Clark</b><hr>Leading his men through flooded plains approaching Fort Sackville</td>
+	  </tr>
+	  
+      <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5264-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Michigan &emsp;Year: 2018</h5><hr><b>Pictured Roc</b><hr>Chapel Rock and the white pine tree that grows atop</td>
+	  </tr>  
+           
+	  <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5047-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Wisconsin&emsp;Year: 2018</h5><hr><b>Apostle Islands</b><hr>Sea caves at Devils Island with lighthouse and kayaker paddling</td>
+	  </tr>
+	 	  
+	   <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5051-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Minnesota&emsp;Year: 2018</h5><hr><b>Voyageurs</b><hr>A common loon with a rock cliff in the background </td>
+	  </tr> 
+	  
+	    <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5059-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Georgia&emsp;Year: 2018</style></h5><hr><b>Cumberland Island</b><hr>Snowy egret on branch on edge of salt marsh, ready for flight</td>
+	 </tr>
+	
+	  <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9d805c39b1.48406436-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Rhode Island &emsp;Year: 2018</h5><hr><b>Block Island</b><hr>Black-crowned night-heron,Cow Cove,Sandy Point.North Light lighthouse</td>
+	  </tr>
+    
+     <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9ec8097980.98876854-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Massachusetts&emsp;Year: 2019</h5><hr><b>Lowell Park</b><hr>Mill girl working at power loom with its circular bobbin battery</td>
+	  </tr>
+	  
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9f278ca606.06765891-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Mariana Islands&emsp;Year: 2019</h5><hr><b>American Memorial Park</b><hr>Young woman in traditional attire;Flag Circle and Court of Honor </td>
+	  </tr>
+     
+       <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf9f9fa2d358.57672735-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Guam &emsp;Year: 2019</h5><hr><b>War in the Pacific Park</b><hr>American forces at Asan Bay, in fight for Guam and its liberation.</td>
+	  </tr>
+    
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bfa0c0cf31a2.24752240-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Texas&emsp;Year: 2019</h5><hr><b>San Antonio Missions</b><hr>Elements of the Spanish Colonial Real coin to pay tribute to the missions</td>
+	  </tr>
+	  
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5205-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Idaho &emsp;Year: 2019</h5><hr><b>River of no return</b><hr>Piloted drift boat on rushing river with trees and rock formations</td>
+	  </tr>
+    
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5494-original.jpg" alt="Reserve Image"></td>
+       <td><h5>American Samoa&emsp;Year: 2020</style></h5><hr><b>American Somoa National Park</b><hr>Samoan fruit bat mother hanging in tree with pup</td>
+	 </tr>
+	 
+	   <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bfa1c8ac1cd2.33601817-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Connecticut&emsp;Year: 2020</h5><hr><b>Weir Farm</b><hr>Artist, wearing painter’s smock, painting at Julian Alden Weir’s studio</td>
+	  </tr>
+      
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bfa2550b3b43.82313946-original.jpg" alt="Reserve Image"></td>
+       <td><h5>US Virgin Islands&emsp;Year:2020</h5><hr><b>Salt River Bay</b><hr>A red mangrove tree in an early stage of its life cycle </td>
+	  </tr>
+      
+
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bfa2dace8bb6.92873665-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Vermont&emsp;Year: 2020</h5><hr><b>Marsh Billings Rockefeller National park</b><hr>Young girl planting of Norway spruce seedling near tree </td>
+	  </tr>
+      
+      <tr>
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5510-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Kansas &emsp;Year: 2020</h5><hr><b>Tallgrass Prairie</b><hr>Regal Fritillary butterfly; Bluestem and Indian grasses</td>
+	  </tr>
+     
+      <tr>	  
+        <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5fee4dfe1c4267.76634653-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Alabama&emsp;Year: 2021</h5>Tuskegee : Tuskegee Airman pilot during World War II with Moton Field control tower</td>
+	  </tr>
+	  
+    </tbody>
+    <!-- Add more rows as needed -->
+  </table>
+</div>
+</div>
+ </section>
+<h2>
+	  Coins: 56
+ </h2>	
+
+
+
+<section> 
+<h4>
+Women Power in America
+    
+</h4>
+
+<div style="display: flex; margin-left: 3px; margin-right: 3px; ">
+
+ 
+<div>
+ <div>
+   <table id = "table10" class="center">
+    <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
+   <tr><td><b>2022</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c101e0c2b090.87283459-original.jpg"  alt="Obverse Image"></td></tr>
+   </table>
+ </div>   
+   <table id = "table11" class="center">
+    	
+ 			<tr>
+				<th>#</th>
+	      		<th>Quarter</th>
+				<th style ="width: 400px;">Quarter Detail</th>
+	 		</tr>
+    
+	
+         <tr>
+		 	<td></td>
+			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c101e1c4ea13.53910878-original.jpg"> </td>		
+			<td><h5>Maya Angelou</h5><hr>Celebrated writer, performer, and social activist</td>
+	   </tr>   
+	   
+	    <tr>
+			<td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c10e03989674.00269202-original.jpg" alt="Reserve Image"></td>
+      	     <td><h5>Wilma Mankiller</h5><hr>1<sup>st</sup> woman elected principal chief of Cherokee Nation</td>
+	  </tr>
+	  
+        <tr>
+		  <td></td>
+          <td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c1159a15b4f4.39683204-original.jpg" alt="Reserve Image"></td>
+          <td><h5>Nina Otero Warren&emsp;Year:2022</h5><hr>1<sup>st</sup> woman Superintendent of Santa Fe public schools</td>
+	    </tr>
+	
+		 <tr>
+			 <td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c118c365a5f2.47888185-original.jpg" alt="Reserve Image"></td>
+      	 	<td><h5>Anna May Wong</h5><hr>1<sup>st</sup> Chinese American film star in Hollywood</td>
+	  	</tr>
+    <!-- Add more rows as needed -->
+  	</table>
+ </div>
+ 
+
+ 
+ <div>
+ <div>
+   <table id = "table10" class="center">
+    <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
+   <tr><td><b>2023</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a0fb50e1d4f9.71219011-original.jpg"  alt="Obverse Image"></td></tr>
+   </table>
+ </div>   
+   <table id = "table12" class="center">
+ 		<tr>
+			<th>#</th>
+	      	<th>Quarter</th>
+			<th style ="width: 400px;">Quarter Detail</th>
+	 	</tr>
+     
+		
+        <tr>
+			<td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a0fb51b66903.98251283-original.jpg" alt="Reserve Image"></td>
+       		<td><h5>Bessie Coleman</h5><hr>1<sup>st</sup> African American and Native American woman pilot</td>
+	   </tr>
+	   
+	    <tr>
+	   
+			<td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a111c9496b05.56005499-original.jpg" alt="Reserve Image"></td>
+       		<td><h5>Edith Kanaka'ole</h5><hr>Hawaiian composer, chanter, kumu hula, and custodian of culture, traditions,and land</td>
+	  </tr>
+	   
+	     <tr>
+			<td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a115bc6bdf54.18732263-original.jpg" alt="Reserve Image"></td>
+       		<td><h5>Maria Tallchief</h5><hr>1<sup>st</sup> American prima ballerina</td>
+	  </tr> 
+	  
+	   <tr>
+			<td></td>
+       		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a112b623b7d5.35628228-original.jpg" alt="Reserve Image"></td>
+       		<td><h5>Eleanor Roosevelt</h5><hr>1<sup>st</sup>lady, author, civil liberties advocate, and Chairperson of UN Human Rights Commission</td>
+	   </tr>
+	  
+	  	<tr>
+			<td></td>
+      		<td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a114502033f5.54048394-original.jpg" alt="Reserve Image"></td>
+       		<td><h5>Jovita Idhar</h5><hr>1<sup>st</sup>Mexican-American journalist, activist, teacher, and suffragist</td>
+	    </tr>		
+		
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+  <div>
+   <div>
+   <table id = "table10" class="center">
+   
+   <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
+   <tr><td><b>2024</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/6577c3ffb93aa5.59795211-original.jpg"  alt="Obverse Image"></td></tr>
+   </table>  
+   </div> 
+  
+   <table id = "table13" class="center">
+   
+	   
+    		<tr>
+				<th>#</th>
+	      		<th>Quarter</th>
+				<th style ="width: 400px;">Quarter Detail</th>
+	 		</tr>
+			<tr>
+				<td></td>
+      			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/6579212da41a00.97019961-original.jpg" alt="Reserve Image"></td>
+       			<td><h5>Dr. Mary Edwards Walker </h5><hr>Surgeon, women’s rights advocate, abolitionist, and spy. 1<sup>st</sup>female U.S. Army surgeon during the Civil War</td>
+	    </tr>	
+		<tr>
+				<td></td>
+      			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/6577bdca664327.73286669-original.jpg" alt="Reserve Image"></td>
+       			<td><h5>Patsy Takemoto Mink </h5><hr>Landmark Title IX legislation. U.S. Capitol’s south wing—House of Representatives, where Mink served. Lei honors her Hawaii roots</td>
+	    </tr>	
+		
+		<tr>
+				<td></td>
+      			<td><img src="https://en.numista.com/catalogue/photos/etats-unis/6577c400c79114.87188118-original.jpg" alt="Reserve Image"></td>
+       			<td><h5>Rev. Dr. Pauli Murray</h5><hr>American civil rights activist, advocate, legal scholar and theorist, author, and Episcopal priest</td>
+	    </tr>		
+	
+	 
+    <!-- Add more rows as needed -->
+  </table>
+  
+ </div>   
+ 
+
+ 
+ </section>
+ <h2>
+	  Coins: 11
+ </h2>	
+
+ 
+<section> 
+<h4>
+Presidential Dollar
+ <table>
+    <tr>
+       <th>Obverse</th>         
+    </tr>
+   <tr>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5fb57d615c40e5.69983405-original.jpg"  alt="Obverse Image"></td>
+    </tr>
+ </table>
+ </h4>
+
+
+ <div style="display: flex; margin-left: 1px; margin-right: 1px; ">
+<div>
+   <table id = "table14" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2007<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5110-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5108-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5106-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5104-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+ 
+   <div>
+   <table id = "table15" class="center">
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+
+	
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2008<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036b2683e269.10820790-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036a8475f789.96058641-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/600369eaa4a722.86545980-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036950e7bd94.37339237-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+    <div>
+   <table id = "table16" class="center">
+        
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+    
+	
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2009<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5102-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c981ed48a33.90064641-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5253-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/624d9178dd8355.80341561-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+    <div>
+   <table id = "table17" class="center">
+    
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+    
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2010<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036c39d87288.64260140-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036d10d53500.19339609-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036e66bfe735.29163365-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/624d95f2944106.53558527-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+   <div>
+   <table id = "table18" class="center">
+        
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+    
+
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2011<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c995cc28178.45203056-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/625b3356742690.53188233-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5e13b926698027.05745473-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5099-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+   <div>
+   <table id = "table19" class="center">
+       
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+   
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2012<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/625b3654ad0688.77607074-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/625b3794b3cff2.93119494-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c90e44493d4.67700336-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/61f63887019510.52702784-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+   
+  
+   <div>
+   <table id = "table20" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2013<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c9a2861b658.11583821-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/60036f97d2c4d8.28065203-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/600370523a4b50.27943446-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/600371154ada56.87835025-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+   <div>
+   <table id = "table21" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2014<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c9391652907.77553667-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c941c4b8d73.94202093-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c94a21b7ac7.75084968-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/627c952c7ef585.66005926-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  
+  </div> 
+  <div>
+   <table id = "table22" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2015<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/2833-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5249-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5247-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/2905-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+ </section>
+ <section>
+<div style="display: flex; margin-left: 1px; margin-right: 1px; ">
+<div>
+   <table id = "table23" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2016<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/3309-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5245-original.jpg"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2020<b><hr>
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A8266_A.png"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2016<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/3315-original.jpg"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+ 
+   <div>
+   <table id = "table24" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2020<b><hr>
+			<img src="https://en.numista.com/catalogue/photos/etats-unis/5fb57d6096e658.34843125-original.jpg"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A8268_A.png"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A8269_A.png"></td>
+		</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A8270_A.png"></td>
+		</tr>	
+                 
+  </table>
+  </div> 
+  
+    <div>
+   <table id = "table25" class="center">
+    <thead>
+	    
+    		<tr>
+			<th>#</th>
+      		<th style = "width: 175px;">President</th>				
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+		    <td></td>
+			<td style = "text-align: center"><b>2020<b><hr>
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A8335_A.png"></td>
+			</tr>	
+		
+		 <tr>
+		    <td></td>
+			<td style = "text-align: center">
+			<img src="https://www.littletoncoin.com/shop/api/assets/LCCCatalogAssetStore/images/catalog/products/600x600/A9825_A.png"></td>
+		</tr>	
+		
+		
+                 
+  </table>
+  </div> 
+ </section>
+
+ <h2>
+	  Coins: 46
+ </h2>	
+
+<section> 
+<h4>
+Innovative America
+ <table id = "table26" style="margin-left: 500px;">
+    <tr>
+	  <th>#</th>
+      <th margin-left: 1px;">Year</th>
+      <th>Obverse</th>
+	 <th>Intro Coin</th>
+      <th>Detail</th>   
+    </tr>
+   <tr>
+      <td></td>
+      <td style="text-align: center; width: 150px;font-size: 32px;">2018</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf513620b187.00449491-original.jpg"  alt="Obverse Image"></td> 
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65bf5138a9c962.90973577-original.jpg"  alt="Obverse Image"></td>
+	 <td> George Washington’s signature.Stylized gears represent industry and innovation</td>
+      
+    </tr>
+    </table>
+</h4>
+   <div style="display: flex; margin-left: 1px; margin-right: 1px; ">
+<div>
+   <table id = "table10" class="center">
+    <thead>
+
+	    <table>
+    			<tr>
+      		    <th style="width: 75px;">Year</th>
+	 		</tr>
+     </thead>
+	<tbody>
+         <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2019</h5></td>
+	   </tr>
+
+         <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2020</h5></td>
+	   </tr>
+
+         <tr>
+			<td style="height: 175px; font-size: 40px;"><h5>2021</h5></td>
+	   </tr>
+
+         <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2022</h5></td>
+	   </tr>
+
+         <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2023</h5></td>
+	   </tr>
+         <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2024</h5></td>
+	   </tr>
+	   <tr>
+			<td style="height: 180px; font-size: 40px;"><h5>2025</h5></td>
+	   </tr>
+
+	  </tbody> 
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+  
+  <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table27" class="center">
+   
+    			<tr>
+				    <th></th>  		
+      				<th>Dollar Coin</th>
+	 				<th style="width: 300px;">Innovation Detail</th>
+    			</tr>
+   
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5414-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Delaware<hr>Annie Jump Cannon, internationally astronomer who invented system for classifying stars still in use today</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f00e5045e4996.11355651-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Connecticut<hr>Invention of Gerber Variable Scale, being used to increase geometric shape which resembles state of Connecticut</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/6113d909761fd7.41008477-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New Hampshire<hr>Invention of 1<sup>st</sup> home videom Ralph Baer’s brown box game “Handball”.Homage to Ralph Baer’s Odyssey</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/61fb03e1c3ff58.17669407-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Rhode Island</h5><hr>Innovative Nathanael Herreshoff’s Reliance yacht at full speed in waters surrounding Rhode Island with Rope evoking the nautical scene</td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a2514677bf55.43233117-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Ohio<hr>The Underground Railroad, 2 hands grasped, depicts support and strength required on Underground Railroad</h5></td>
+	  </tr>
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65a7d8e04a0b53.63584603-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Illinois<hr>Invention of steel plow, it is affixed to beam and braces. Stand of Big Bluestem prairie grass and field of soil</h5></td>
+	  </tr>
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/67844154162602.53125989-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Illinois<hr>Raye Montague visualizing a United States Navy Oliver Hazard Perry-class frigate</h5></td>
+	  </tr>
+	 
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+  
+  <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table28" class="center">
+    			<tr>      	
+				<th>#</th>			
+      		<th>Dollar Coin</th>
+	 		<th style="width: 300px;">Innovation Detail</th>
+    			</tr>
+       
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5424-original.jpg" alt="Reserve Image"></td>    
+	  <td><h5>Pennsylvania<hr>Invention of Polio Vaccine, Polio virus at 3 different levels of magnification along with silhouette of period microscope</h5></td>
+	  </tr>
+	  
+	   <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f04ca3a82bed5.10928427-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Massachusetts<hr>Invention of telephone (Graham Bell).Dial of rotary dial telephone</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/60775572045467.99359378-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Virginia<hr>Opening of Chesapeake Bay Bridge-Tunnel, cross section cut away, illustrating ingenuity involved in constructing it</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/61fb079522e4d7.18477470-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Vermont<hr>Invention of snowboarding. Young snowboarder in air performing “melon grab,” trick on a mountainous winter skyline, depicting landscape of Vermont</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a2561f14d939.26107317-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Louisiana<hr>Invention of Higgins Boat, deployed during World War II with its innovative landing ramp open against beach</h5></td>
+	  </tr>
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65e0c726108c06.08902875-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Alabama<hr>Invention of the Saturn V rocket, the power and force of the Saturn V rocket lifting off with the Moon in the background</h5></td>
+     </tr>
+  	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/682b64520a43e0.48946034-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Florida<hr>Image of NASA space shuttle lifting off from Florida’s Kennedy Space Center</h5></td>
+     </tr>
+    
+  
+    <!-- Add more rows as needed -->
+  
+  
+  </table>
+  </div> 
+  
+  <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table29" class="center">
+  
+    			<tr>      
+				<th>#</th>		
+      		<th>Dollar Coin</th>
+	 		<th style="width: 300px;">Innovation Detail</th>
+    			</tr>
+  
+  
+  
+       <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5427-original.jpg" alt="Reserve Image"></td>        
+	  <td><h5>New Jersey<hr>Invention of light bulb. Edison bulb against ornate background</h5></td>
+	  </tr>
+	  
+	  <tr>	  
+	  <td></td>
+	   <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f05c3bfa940f5.84842655-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Maryland<hr>Honors Hubble Space Telescope, orbiting Earth surrounded by field of stars</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+	  <td><img src="https://en.numista.com/catalogue/photos/etats-unis/6078f3558a8a87.27629118-original.jpg" alt="Reserve Image"></td>
+       <td><h5>New York<hr>Homage to Erie Canal, packet boat being pulled from East city toward country areas to West</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/61fb0bc80dd549.51218821-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Kentucky<hr>Invention of bluegrass music. Banjo, bluegrass instrument, tilted to one side, alluding to rhythm and movement of music</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a25b82947aa6.47853616-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Indiana<hr>Recognizes automobile industry, innovations from yesterday and today. Gas automobile, classic car production, recent model of Indy-style race car</h5></td>
+	  </tr>
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65e0e8cc741729.43996511-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Maine<hr>Honors Dr. Bernard Lown's invention ofdirect current defibrillator in operation</h5></td>
+	  </tr>
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/682598076bb582.27300793-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Michigan<hr>1930s-era assembly line where team of auto workers lowers automobile cab into place</h5></td>
+	  </tr>
+	    
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+ 
+  <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
+   <table id = "table30" class="center">
+    
+      <tr>      		
+	 	<th>#</th>		
+     	<th>Dollar Coin</th>
+	 	<th style="width: 300px;">Innovation Detail</th>
+      </tr>
+      
+	  <tr>
+	   <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5430-original.jpg" alt="Reserve Image"></td>       
+	   <td><h5>Georgia<hr>Hand planting seeds representing variety of plants grown in garden: orange, sassafras, grapes, white mulberry, flax, peaches, olive, unidentified shoot</h5></td>
+	  </tr>
+	  
+	  <tr>
+	  <td></td>
+	   <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5f07a531da1180.00931171-original.jpg" alt="Reserve Image"></td>
+       <td><h5>South Carolina<hr>Honors educator and civil rights activist Septima Poinsette Cla, marching with 3 young African American students, carrying books and American flag</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/607a16abc60e45.90929140-original.jpg" alt="Reserve Image"></td>
+       <td><h5>North Carolina<hr>Recognizes University of North Carolina at Chapel Hill.Stack of 3 textbooks with “FIRST PUBLIC UNIVERSITY”. Lamp of knowledge and olive branches curve</h5></td>
+	  </tr>
+		  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/61fb0fe1537361.95327082-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Tennessee<hr>Recognizes formation of Tennessee Valley,Tennessee farm with newly installed power lines lining road</h5></td>
+	  </tr>
+	  
+	    
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a25fc66a7de1.56726527-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Mississippi<hr>Honors 1<sup>st</sup> human lung transplant. On June 11, 1963.Pair of human lungs in background, while surgical assistant passes forceps to surgeon</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65e12ac9178271.92753562-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Missouri<hr>Honors George Washington Carver, agricultural scientist. Carver examining his laboratory. Leaves, blossoms, and fruits of peanut plant</h5></td>
+	  </tr>
+	  
+      <tr>
+	  <td></td>
+       <td><img src="https://en.numista.com/catalogue/photos/etats-unis/688baace2c4b40.39074546-original.jpg" alt="Reserve Image"></td>
+       <td><h5>Texas<hr>American astronaut conducting a spacewalk outside the International Space Station</h5></td>
+	  </tr>
+	  
+	  </tbody> 
+    <!-- Add more rows as needed -->
+  </table>
+  </div>
+ </section>
+<h2>
+	  Coins: 25
+ </h2>	
+ <h2>
+	  Total Coins:<span id="tsum"></span> &emsp;
+ </h2>
+ 
+<script>
+  function sumTable() {
+     var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table1.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table1.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 var table2 = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table2.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table2.rows[i].cells[6].innerText);
+           
+       }
+	   
+       // Get the table by its ID
+       var table3 = document.getElementById("table3");
+              		sum3 = table3.rows.length-1;
+					
+	   var table4 = document.getElementById("table4");
+              		sum4 = table4.rows.length-1;
+					
+	   var table5 = document.getElementById("table5");
+              		sum5 = table5.rows.length-1;
+					
+	   var table6 = document.getElementById("table6");
+              		sum6 = table6.rows.length-1;
+					
+	   var table7 = document.getElementById("table7");
+              		sum7 = table7.rows.length-1;
+					
+	   var table8 = document.getElementById("table8");
+              		sum8 = table8.rows.length-1;
+    				
+	   var table9 = document.getElementById("table9");
+              		sum9 = table9.rows.length-1;
+        			
+	   var table11 = document.getElementById("table11");
+              		sum11 = table11.rows.length-1;
+        			
+	   var table12 = document.getElementById("table12");
+              		sum12 = table12.rows.length-1;
+        			
+	   var table13 = document.getElementById("table13");
+              		sum13 = table13.rows.length-1;
+					
+	   var table14 = document.getElementById("table14");
+              		sum14 = table14.rows.length-1;
+					
+	   var table15 = document.getElementById("table15");
+              		sum15 = table15.rows.length-1;
+					
+	   var table16 = document.getElementById("table16");
+              		sum16 = table16.rows.length-1;
+					
+	   var table17 = document.getElementById("table17");
+              		sum17 = table17.rows.length-1;
+					
+	   var table18 = document.getElementById("table18");
+              		sum18 = table18.rows.length-1;
+    				
+	   var table19 = document.getElementById("table19");
+              		sum19 = table19.rows.length-1;
+        			
+	   var table20 = document.getElementById("table20");
+              		sum20 = table20.rows.length-1;
+        			
+	   var table21 = document.getElementById("table21");
+              		sum21 = table21.rows.length-1;
+        			
+	   var table22 = document.getElementById("table22");
+              		sum22 = table22.rows.length-1;
+        			
+	   var table23 = document.getElementById("table23");
+              		sum23 = table23.rows.length-1;
+					
+       var table24 = document.getElementById("table24");
+              		sum24 = table24.rows.length-1;
+       			
+       var table25 = document.getElementById("table25");
+              		sum25 = table25.rows.length-1;
+					
+       var table26 = document.getElementById("table26");
+              		sum26 = table26.rows.length-1;
+	   					
+       var table27 = document.getElementById("table27");
+              		sum27 = table27.rows.length-1;
+	   					
+       var table28 = document.getElementById("table28");
+              		sum28 = table28.rows.length-1;
+	   					
+       var table29 = document.getElementById("table29");
+              		sum29 = table29.rows.length-1;
+	   					
+       var table30 = document.getElementById("table30");
+              		sum30 = table30.rows.length-1;
+	   
+       document.getElementById("tsum").innerText = sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8+sum9+sum11+sum12+sum13+sum14+sum15+sum16+sum17+sum18+sum19+sum20+sum21+sum22+sum23+sum24+sum25
+	   +sum26+sum27+sum28+sum29+sum30;  
+   }
+ sumTable();
+</script>
+
+<div class="footer">
+   <hr>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

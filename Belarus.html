@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belarus</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color:  #D22730;
+    color: #00AF66;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Belarus 
+       <img src="https://flagcdn.com/by.svg" style="width: 25px;" alt="India">
+
+ </h2>
+   
+ <h3>
+     Currency: Ruble &emsp; 
+     Unit Currency: Kapeyka &emsp; 
+	Symbol: Br &emsp; 
+	Code:<input type="text" id="fromCurrency" value="BYN"> &emsp; <br>
+	BYN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:BYN -  <span id="reverseRateUSD">-</span> &emsp; 
+	BYN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:BYN -  <span id="reverseRateINR">-</span> 
+
+ </h3>
+ 
+  <table id = "table1" class="center">
+    
+<tr>
+ <th>#</th>
+ <th style="width: 60px;">Den.</th>
+ <th>Obverse</th>
+ <th style="width: 600px;">Details</th>	
+ <th>Reverse</th>     
+</tr>
+
+<tr>
+<td style="text-align: right; font-size: 15px;"></td>
+<td style="text-align: right; font-size: 15px;">Br 0.50</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/62a0cab04ff2a4.74831074-original.jpg" alt="Obverse Image"></td>
+<td>
+     <h4>&larr;Observe</h4>Squirrel, Denomination above and below<hr>
+     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+	 <p style = "text-align: right;">"Pahonia" warrior on horseback at centre</p>
+</td>  
+
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/62a0cab2a0c422.39326381-original.jpg" alt="Reverse Image"></td>
+</tr>
+
+<tr>
+<td style="text-align: right; font-size: 15px;"></td>
+<td style="text-align: right; font-size: 15px;">Br 50</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/623c1891057ea0.00494184-original.jpg" alt="Obverse Image"></td>
+<td>
+     <h4>&larr;Observe</h4>Chołmsk Gate - fragment of the Memorial Brest Hero-Fortress, Denomination below<hr>
+     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+	 <p style = "text-align: right;">The main entrance to the Memorial Brest Hero-Fortress, Denomination above</p>
+</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/623c18919fff64.42349162-original.jpg" alt="Reverse Image"></td>
+</tr>
+
+<tr>
+<td style="text-align: right; font-size: 15px;"></td>
+ <td style="text-align: right; font-size: 15px;">Br 50</td>
+ <td><img src="https://en.numista.com/catalogue/photos/bielorussie/6278b0c13e9445.87949186-original.jpg" alt="Obverse Image"></td>
+ <td>
+	     <h4>&larr;Observe</h4>Bear, Denomination above<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">"Pahonia" warrior on horseback at centre</p>
+ </td>
+ 
+ <td><img src="https://en.numista.com/catalogue/photos/bielorussie/6278b0c1ae4490.53688621-original.jpg" alt="Reverse Image"> </td>
+ 
+</tr>
+         
+<tr>
+<td style="text-align: right; font-size: 15px;"></td>
+<td style="text-align: right; font-size: 15px;">Br 100</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/623c17e61b1dd6.69061709-original.jpg" alt="Obverse Image"></td>
+<td>
+	<h4>&larr;Observe</h4>National Academic Grand Opera and Ballet Theatre of the Republic of Belarus, Minsk<hr>
+	<h4 style = "text-align: right;">Reverse&rarr;</h4>
+	 <p style = "text-align: right;">"Ballet scene from Jaŭhen Hlebaŭ's "Vybranńitsa" ("The Chosen Lady") which premiered in 1969, and is based on poems of Janka Kupała</p>
+ </td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/623c17e6b80495.52172918-original.jpg" alt="Reverse Image"></td>
+</tr>
+ 
+<td style="text-align: right; font-size: 15px;"></td>
+<td style="text-align: right; font-size: 15px;">Br 500</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/62a0cccda99057.97602845-original.jpg" alt="Obverse Image"></td>
+<td>
+	     <h4>&larr;Observe</h4>Trade Unions' Palace of Culture in Minsk<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Detail from portico of Trade Unions' Palace of Culture</p>
+	</td>
+<td><img src="https://en.numista.com/catalogue/photos/bielorussie/62a0ccd0bfb475.21145284-original.jpg" alt="Reverse Image"></td>
+</tr>
+    
+    
+    <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

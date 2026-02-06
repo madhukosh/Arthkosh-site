@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukraine</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #005BBB;
+    color: #FFD700;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+
+
+<section>
+  <h2>Ukraine
+      <img src="https://flagcdn.com/ua.svg" style="width: 25px;" alt="Ukraine">
+ </h2>
+ 
+ <h3>
+	Currency: Hryvnia&emsp; 
+	Unit currency: Kopiykas&emsp;
+	Symbol:&#8372;  &emsp; 
+	1 Hryvnia = 100 Kopiykas&emsp;
+	Code:<input type="text" id="fromCurrency" value="UAH"><br>
+      UAH:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:UAH - <span id="reverseRateUSD">-</span>  &emsp;
+     UAH:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:UAH - <span id="reverseRateINR">-</span>
+ </h3>
+  
+  	    <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+ 
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Kopiikas<hr>
+		  Value:&emsp;&#8372; 0.02</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f90941a53f5a7.40365786-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>National arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f90941b5670c8.23387091-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2007<br>2012</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+	<tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Kopiikas<hr>
+		  Value:&emsp;&#8372; 0.05</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f9091d3670d08.48700671-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Arms of Ukraine; Oak leaf and 2 ears of wheat; country name and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination with ornament of 8 Viburnum leaves with cluster of 4 points around rim</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f9091d42ce927.57571075-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2009</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	   <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Hryvnia<hr>
+		  Value:&emsp;&#8372; 1.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f9009958d0612.37784880-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Ukrainian trident emblem ("Tryzub") over large numerical denomination inside decorative wreath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face of Volodymyr the Great</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f900995ed48b6.19847719-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2018</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	   <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Hryvni<hr>
+		  Value:&emsp;&#8372; 2.00</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f9009f61bb1e4.10523579-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Ukrainian trident emblem ("Tryzub") over large numerical denomination inside decorative wreath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face of Yaroslav the Wise</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/ukraine/5f9009f67296e5.36850488-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2019</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+    sumTable1();
+   </script>
+ 
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poland</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D4213D ;
+    color: #FFFFFF ;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Poland 
+      <img src="https://flagcdn.com/pl.svg" style="width: 25px;" alt="Poland">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Zloty&emsp; 
+	Unit currency: Grosz&emsp; 
+	Symbol: zł&emsp;
+	1 Zloty = 100 Grosz&emsp; 
+	Code: <input type="text" id="fromCurrency" value="PLN"><br>
+      PLN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PLN - <span id="reverseRateUSD">-</span>  &emsp;
+     PLN:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PLN - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Grozy<hr>
+	  	  Value:&emsp;zł 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5802-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value over branch with leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5803-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1949</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Grozy<hr>
+	  	  Value:&emsp;zł 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5ebab176984323.81613826-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Eagle in the coat-of-arms of the Republic of Poland, state name in Polish and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value is accompanied by an oak leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5ebab176db93f0.37602764-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1993<br>2000<br>2003<br>2004<br>2008<br>2009</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Grozy<hr>
+	  	  Value:&emsp;zł 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/6342d0ee7b8ec0.20577295-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Polish eagle (state emblem) with stylized rings intersecting at top and split at bottom by date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Twig with oak leaf over denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/6342d0eeda1112.72736664-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2014<br>2015<br>2019<br>2020</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+        
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Grozy<hr>
+	  	  Value:&emsp;zł 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5ebaaefa7cc8c4.20261116-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Poland in the centre, the country name above around the rim, and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Twig with oak leaf over denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5ebaaefad715b0.20254560-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992<br>2006<br>2008<br>2012</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+         
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Grozy<hr>
+	  	  Value:&emsp;zł 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/6226-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Polish eagle (state emblem) with stylized rings intersecting at top and split at bottom by date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Five oak leaves below denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/6227-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2017<br>2018<br>2019</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+       <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Grozy<hr>
+	  	  Value:&emsp;zł 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/4014-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above laurel wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/4015-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968<br>1974<br>1981</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+        
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Grozy<hr>
+	  	  Value:&emsp;zł 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/9309-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The white eagle, the emblem of Poland depicted on its coat of arms, with the country name above around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value surrounded by a coronal of stylized leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/9310-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990<br>1999<br>2009<br>2011<br>2013</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+	  
+      
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Grozy<hr>
+	  	  Value:&emsp;zł 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/6465db3b6c5c34.89469300-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Polish eagle (state emblem) with stylized rings intersecting at top and split at bottom by date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value surrounded by a coronal of stylized leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/6465db3c39e7f9.69825797-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2017<br>2018</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Grozy<hr>
+	  	  Value:&emsp;zł 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/62f2522065e358.79302060-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above the wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/62f252209fb7c7.94082428-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1949</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Grozy<hr>
+	  	  Value:&emsp;zł 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5827-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above the wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5826-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Grozy<hr>
+	  	  Value:&emsp;zł 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5599-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The white eagle, the arms of Poland, with the country name above around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value is surrounded by a coronal of stylized leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5600-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992<br>1997<br>1999<br>2001<br>2005<br>2006<br>2010<br>2011<br>2016<br>2017</td>
+	 <td style="text-align: center;">10</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Grozy<hr>
+	  	  Value:&emsp;zł 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5f674646c29ea6.53947338-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The white eagle, the arms of Poland, with the country name above around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value is surrounded by a coronal of stylized leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5f67464810f0a2.67711848-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2019<br>2022</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Grozy<hr>
+	  	  Value:&emsp;zł 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5804-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date below. Mintmark if present under the left Eagle's Paw<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above sprig</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5805-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974<br>1975<br>1978<br>1985</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Grozy<hr>
+	  	  Value:&emsp;zł 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/9313-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Poland with the country name above around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Fifty oak leaves in a semi-circular formation and the value to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/9314-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990<br>1992</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Zloty<hr>
+	  	  Value:&emsp;zł 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/6484-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, mintmark if present under a claw to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath, part of small circles along rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/6485-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1983</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Zloty<hr>
+	  	  Value:&emsp;zł 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/9315-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Poland with the country name above around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value encircled by a coronal of 100 oak leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/9316-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Zloty<hr>
+	  	  Value:&emsp;zł 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/9315-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Poland with country name above around rim and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value encircled by a coronal of 100 oak leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/9316-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2015<br></td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Zloty<hr>
+	  	  Value:&emsp;zł 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/5893-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>White eagle, emblem of Poland, with inscription "RZECZPOSPOLITA POLSKA" (Republic of Poland)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value encircled by a coronal of oak leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/5894-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2018<br></td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Zloty<hr>
+	  	  Value:&emsp;zł 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/7610-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The White Eagle, national coat of arms of Poland, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above design, engravers' initials if present at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/7611-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1976<br>1984</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Zloty<hr>
+	  	  Value:&emsp;zł 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/9319-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Eagle in the coat-of-arms of the Republic of Poland, state name in Polish 'RZECZPOSPOLITA POLSKA', and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination is surrounded with five oak leaves on vertical and horizontal lines which redesign the denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/9320-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1994</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Zloty<hr>
+	  	  Value:&emsp;zł 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/19-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Eagle in the coat-of-arms of the Republic of Poland, state name in Polish 'RZECZPOSPOLITA POLSKA', and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/20-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1985</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Zloty<hr>
+	  	  Value:&emsp;zł 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pologne/2384-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Eagle in the coat-of-arms of the Republic of Poland, state name in Polish 'RZECZPOSPOLITA POLSKA', and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pologne/2385-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1989<br>1990</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+
+<h3>
+     Currency: Gulden&emsp; 
+	Unit currency: Pfennig&emsp; 
+	Symbol: ℳ&emsp;
+	1 Gulden = 100 Pfennigs&emsp; 
+	Code: <input type="text" id="fromCurrency" value="PLG"><br>
+      PLG:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:PLG - <span id="reverseRateUSD">-</span>  &emsp;
+     PLG:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:PLG - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pfennig<hr>
+	  	  Value:&emsp;ℳ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/dantzig/67b70180b55599.05081208-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The denomination above the issuer name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The arms of Danzig dividing the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/dantzig/67b70181328f76.35591059-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1937</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pfennig<hr>
+	  	  Value:&emsp;ℳ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/dantzig/660da946adb9b9.27269934-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination at the top. Number at the top, three lines with text below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The emblem of Gdańsk in the middle, surrounded by a hexagon. Date inside</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/dantzig/660da947921488.25723117-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1923</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pfennig<hr>
+	  	  Value:&emsp;ℳ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/dantzig/171-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Codfish (Gadus morhua) at top, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/dantzig/170-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1932</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+  </script>
+ <h2>
+	  Total Coins:<span id="Totalsum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var TotalSum = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	   
+       // Display the sum in the last row
+        var table3sum = TotalSum
+	  document.getElementById("Totalsum").innerText = table3sum;
+	  
+	  
+       // Display the sum in the last row
+        var table3sum = TotalSum
+	  document.getElementById("Totalsum").innerText = table3sum;
+   }
+ sumTotal();
+</script>     
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

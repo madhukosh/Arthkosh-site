@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Germany</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFCC00 ;
+    color: #000000;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+  fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table4'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Germany 
+      <img src="https://flagcdn.com/de.svg" style="width: 25px;" alt="Germany">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Euro&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol:  &euro;&emsp;
+	1 Euro  = 100 Cents  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD-Munich,Germany:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;&euro; 0.01</h5>
+	  </td>	  
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1383-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Oak twig, symbolizing stability, surrounded by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1384-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002(D)</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Cents<hr>
+		  Value:&emsp;&euro; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/61fcbada841871.31395888-original.jpg" alt="Obverse Image"></td>
+	 <td>
+		     <h5>&larr;Observe</h5>Oak twig, symbolizing stability, surrounded by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>	 
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/61fcbadb755495.73524562-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002(D)<br>2005(D)</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/61fde61bf27925.91167153-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Oak twig, symbolizing stability, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/61fde61ce40330.51779213-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002(D)<br>2002(J)<br>2004<br>2005<br>2011<br>2016</td>
+	  <td style="text-align: center;">6</td>
+    </tr>
+	
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cents<hr>
+		  Value:&emsp;&euro; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/2191-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Brandenburg Gate, symbol of the division of Germany and its subsequent unification, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/2192-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&euro; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1894-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Brandenburg Gate, symbol of the division of Germany and its subsequent unification, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1895-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002<br>2003</td>
+	  <td style="text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Cents<hr>
+		  Value:&emsp;&euro; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/605d7236201ae1.85728717-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Brandenburg Gate, symbol of the division of Germany and its subsequent unification, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/605d7236a09ca5.75059996-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Euro<hr>
+		  Value:&emsp;&euro; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/6054bcd77f1443.20499529-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The eagle, the traditional symbol of German sovereignty, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, shows the gathering of the fifteen states of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/6054bcd81101a4.32318974-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+  
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Euro<hr>
+		  Value:&emsp;&euro; 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/607028605cac41.13622376-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The eagle, the traditional symbol of German sovereignty, is surrounded with the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, shows the gathering of the fifteen states of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/60702860942de1.20733337-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+ </script>
+
+
+  <h3>
+     Currency: Mark &emsp; 
+	Unit currency: Pfennig&emsp; 
+	Symbol:  DM&emsp;
+	1 Mark = 100 Fennig &emsp; 
+	Code: <input type="text" id="fromCurrency" value="DEM"><br>
+      DEM:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 DEM:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     DEM:INR - <span id="exchangeRateINR">-</span> &emsp;
+	DEM:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+  <h2>Germany 
+      <img src="https://flagcdn.com/de.svg" style="width: 25px;" alt="Germany">
+ </h2>
+ <h5> - 1948</h5>
+ <div style="display: flex;">
+    <table>
+    <tr>
+        <th>Letter</th>
+		
+        <th>A</th>
+		<th>D</th>
+	   <th>E</th>
+	   <th>F</th>
+	   <th>G</th>
+	   <th>J</th>
+    </tr>
+    <tr>
+        <td>Minted at</td>
+        <td>Berlin</td>
+		<td>Muldenhütten</td>
+		<td>Munich</td>
+        <td>Stuttgart</td>
+        <td>Karlsruhe</td>
+        <td>Hamburg</td>
+    </tr>   
+   
+</table>
+<br>
+<br>
+</div>
+<table id = "table4">
+      <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5106-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Imperial German Eagle, with small shield (2nd type). Mint marks below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large central denomination with lettering and date around the rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5107-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1908</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5081-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The numerical value in the centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A wheatsheaf between date and the mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5080-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1924&emsp;1925(A)<br>1925(G)&emsp;1929</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+   
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67e5b22e56cf62.20788429-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value in circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A wheatsheaf between date and the mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67e5b22ebd9562.41354812-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1930&emsp;1931<br>1935&emsp;1936</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Pfennig<hr>
+		  Value:&emsp;DM 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5035-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Value in circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A wheatsheaf between date and the mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5034-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1924(A)&emsp;1924(D)<br>1936</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/1166-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (Imperial eagle with large shield)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in two lines, lettering around, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/1167-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1876</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5e0bb0368a5.77132009-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Imperial German Eagle, with small shield (2nd type). Mint mark below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large central denomination with lettering and date around the rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5e0bb548616.81039543-original.jpg"  alt="Reserve Image"></td>	
+      	 	 <td style="text-align: center;">1898&emsp;1906&emsp;1912</td>
+	 <td style="text-align: center;">3</td>
+    </tr> 
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67b77afd837c01.32213658-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Wheat ears drawing a pyramid<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value in a square with 4 oak leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67b77afde1b384.56910467-original.jpg"  alt="Reserve Image"></td>	
+      	 	 <td style="text-align: center;">1924(A)&emsp;1924(E)<br>1925(D)&emsp;1925(F)<br>1935</td>
+	 <td style="text-align: center;">5</td>
+    </tr> 
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/1216-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An eagle above the swastika, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value with two oak-leaves below, and the mintmark below the 5 between the leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/1217-original.jpg"  alt="Reserve Image"></td>	
+      	 	 <td style="text-align: center;">1941</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennigs<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5e2842d3bf0.36777156-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Imperial German Eagle, with small shield (2nd type). Mint mark below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large central denomination with lettering and date around the rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5e2848877e8.96896248-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1906&emsp;1911&emsp;1916</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+ 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennigs<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5de8d361a54.15328403-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms (Imperial eagle with small shield); the border has approximately 100 very small dots<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in centre, denomination below. Lettering above. Date at bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/60d5de8d92e236.26609442-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1921</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennigs<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/4439-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Face value in a square with 4 oak leaves<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wheat ears drawing a pyramid with the mintmark at the top and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/4438-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1924</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennigs<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/647852e6307558.59493548-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Face value in a square with 4 oak leaves<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wheat ears drawing a pyramid with the mintmark at the top and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/647852e7c36f78.77372864-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1930<br>1932</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Pfennigs<hr>
+		  Value:&emsp;DM 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67b4f11d5d4767.25209175-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The proverb "hard work pays off" on a wheatsheaf<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/67b4f11da61f18.39609989-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1921</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Pfennigs<hr>
+		  Value:&emsp;DM 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5086-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mintmark between oak leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5087-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1935</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Pfennigs<hr>
+		  Value:&emsp;DM 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5088-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An eagle on top of a swastika<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value and two oak leaves and the mintDM below between the leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5089-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1940</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+    sumTable4();
+   </script>
+ 
+ <h2>West Germany 
+      <img src="https://flagcdn.com/de.svg" style="width: 25px;" alt="Germany">
+ </h2>
+ <h5> 1948 - 1991</h5>
+ 
+ <div style="display: flex;">
+    <table>
+    <tr>
+        <th>Letter</th>
+        <th>D</th>
+	   <th>F</th>
+	   <th>G</th>
+	   <th>J</th>
+    </tr>
+    <tr>
+        <td>Minted at</td>
+        <td>Munich</td>
+        <td>Stuttgart</td>
+        <td>Karlsruhe</td>
+        <td>Hamburg</td>
+    </tr>   
+   
+</table>
+<br>
+<br>
+</div>
+     <table id = "table2">
+      <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 160px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+    
+       <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1053-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Oak Sprig with the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination between two Rye ears (Binomial Name: Secale cereal) and the mintDM at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1054-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1949(G)&emsp;1949(J)</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1752-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date, circular legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination between two Rye ears (Binomial Name: Secale cereal) and the mintDM at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1757-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950(D)&emsp;1950(F)<br>1950(G)&emsp;1969(F)<br>1978(J)&emsp;1981(F)</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Pfennig<hr>
+		  Value:&emsp;DM 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/5fd0b0f44d7398.44300713-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date, circular legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mint mark between two rye ears, and the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/5fd0b0f4b79c24.48245212-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1958&emsp;1961</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Pfennig<hr>
+		  Value:&emsp;DM 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1676-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date, circular legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mint mark between two rye ears, and the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1677-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973&emsp;1975&emsp;1978<br>1980&emsp;1990</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/2283-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling, the issuer name above, and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination between two rye stalks</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/2284-original.jpg"  alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1949(D)&emsp;1949(F)<br>1949(J)</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/607022e4363038.03592936-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Oak Sprig with the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination between two Rye ears (Binomial Name: Secale cereal) and the mintDM at the top</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/607022e46dcd95.18345555-original.jpg" 	 alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">1950</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+ <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/236-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The mint mark in between two rye ears above the denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/237-original.jpg"  alt="Reserve Image"></td>	
+      	 	 <td style="text-align: center;">1950(D)&emsp;1950(F)<br>1950(G)&emsp;1950(J)<br>1966&emsp;1970&emsp;1971<br>1972&emsp;1976&emsp;1977<br>1980(D)&emsp;1980(F)</td>
+	 <td style="text-align: center;">12</td>
+    </tr>
+ 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennigs<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1057-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The mintDM in between two rye ears above the denomination in two lines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1058-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1949(D)&emsp;1949(F)<br>1949(G)&emsp;1949(J)</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/234-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An oak seedling above the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The mintDM in between two rye ears above the denomination in two lines</p>
+		</td>    
+	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/235-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950(D, F, G, J)&emsp;1966<br>1969(D, G)&emsp;1970(D, F)<br>1971(F, G, J)<br>1972(J)&emsp;1973(F)&emsp;1975&emsp;1976<br>
+			 1978(F, G)&emsp;1979(D, G)<br>1980(D)&emsp;1980(G)<br>1981(D)&emsp;1982(F)<br>1986(F)&emsp;1988(D)<br>1989(G)&emsp;1990(J)<br>1994(G)</td>
+	 <td style="text-align: center;">29</td>
+    </tr>
+     
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Pfennigs<hr>
+		  Value:&emsp;DM 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/654518c48ac421.95719451-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A woman (Trümmerfrau) planting an oak, symbol of Germany's rebirth after the war<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value surrounded with the country name (German Federal Republic) ; mint mark below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/654518c376bf26.11405702-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950(F,G)</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Mark<hr>
+		  Value:&emsp;DM 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/6280f8dd78c295.68137920-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>German eagle, mint mark below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two oak branches on either side of the face value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/6280f8dda0c876.82924426-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1977<br>1985</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Marks<hr>
+		  Value:&emsp;DM 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1890-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Eagle, emblem of Germany, with denomination below dividing date. Mintmark, numeral "2" in denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Max Planck (1858 - 1947),physicist,father of quantum theory with inscription and birth and death dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1891-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Marks<hr>
+		  Value:&emsp;DM 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1964-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Konrad Adenauer (1876-1967), the first German chancellor from 1949 to 1963 and a key player in rebuilding the France-Germany relationship 
+	     and creating the European community with the dates representing the 20th Anniversary of the Constitution of the Federal Republic of German<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">An eagle facing left, emblem of Germany and the mintDM below the left claw</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1963-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 DM<hr>
+		  Value:&emsp;DM 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne/1957-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The German eagle with the mintDM below the date, all below the eagle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value in a square with rounded corners</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/allemagne/1958-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1978</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+ 
+  <h2>East Germany 
+      <img src="https://th.bing.com/th?id=OIP.6u_XFS1Tmnc9KTjoBkjU5gHaEc" style="width: 25px;" alt="Germany">
+ </h2>
+ <h5>1948-1991</h5>
+ 
+ 
+ </h3>
+<table id = "table3">
+<tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+      
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/5f5e3f4daf7330.60375907-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An ear of wheat in the foreground and a toothed wheel behind, symbolizing the alliance between the industrial worker and the farmer, in accordance with the emblem of the Two-Year Plan<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value under "DEUTSCHLAND" and the mintDM under "PFENNIG"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/5f5e3f4e2e7ba4.58605088-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/5fd0912faeaee1.78494313-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and compass on two wheat stalks symbolizing the alliance of the working class with peasants and intelligent workers. The date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value under "DEUTSCHLAND" and the mintDM under "PFENNIG"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/5fd091300c7ab3.58671019-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1952(A)&emsp;1952(E)<br>1953</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pfennig<hr>
+		  Value:&emsp;DM 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/5-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of the German Democratic Republic (a hammer and a compass, surrounded by a ring of ears with a ribbon displaying the flag colors: black,
+	  	red and yellow) with the country name around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value and two oak leaves and the mintDM above the value, date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/6-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1962<br>1963&emsp;1968<br>1975&emsp;1980<br>1983&emsp;1984</td>
+	 <td style="text-align: center;">8</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/7-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ear of wheat up front and gear wheel in back, symbolizing alliance between industrial worker and farmer<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value and two oak leaves and the mintDM above the value, date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/8-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1948</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Pfennig<hr>
+		  Value:&emsp;DM 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/55-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of German Democratic Republic (hammer and compass, wreath of ears with ribbon displaying flag)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value and two oak leaves and the mintDM above the value, date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/56-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1968</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pfennig<hr>
+		  Value:&emsp;DM 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/15-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem (hammer and a compass, surrounded by a ring of rye with a ribbon displaying the flag colours: black, red and yellow)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value and an oak leaf and the mint mark above, the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/16-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1965&emsp;1968<br>1972&emsp;1978</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Pfennig<hr>
+		  Value:&emsp;DM 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/13-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The emblem of the German Democratic Republic, also known as East Germany (hammer and a compass, surrounded by wreath of ears with a ribbon)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above date, mint mark if present at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/14-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1969&emsp;1971<br>1983</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Pfennig<hr>
+		  Value:&emsp;DM 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/65b5243439a050.08659861-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State emblem of the German Democratic Republic (hammer and a compass, surrounded by a ring of rye with a ribbon displaying the flag colours: black, red and yellow), 
+	      also known as East Germany, with the country name around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value below an oak leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/65b52435526a23.05546573-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960&emsp;1968</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Marks<hr>
+		  Value:&emsp;DM 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ddr/420-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and compass in wheat crown<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value below an oak leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ddr/421-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+ 
+    </table>
+    <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum2;
+      	  
+   }
+    sumTable3();
+   </script>
+<h2>
+	  Total Coins:<span id="table4sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }  
+	   var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table4sum").innerText = table3sum;
+   }
+ sumTable4();
+</script>
+</section>
+ <p><br></p>
+<p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

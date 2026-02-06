@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahrain</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #CE1126;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Bahrain 
+      <img src="https://flagcdn.com/bh.svg" style="width: 25px;" alt="Bahrain">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Dinar&emsp; 
+	Unit currency: Fil&emsp; 
+	Symbol: &#x62f;&#x2e;&#x628;&emsp;
+	1 Dinar = 1000 Fils&emsp; 
+	Code: <input type="text" id="fromCurrency" value="BHD"><br>
+      BHD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:BHD - <span id="reverseRateUSD">-</span>  &emsp;
+     BHD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:BHD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.005</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/601c2454600876.28101782-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Palm tree within inner circle. State name in Arabic at the top, and both Islamic and Gregorian dates in Arabic at the bottom<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in Arabic, and state name in English below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/601c2454c04da2.64235407-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.010</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/64459f4039ae94.58470072-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Palm tree within the inner circle, the country name in Arabic and English and the Islamic and Gregorian dates in English<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Numeric denomination back of boxed denomination within circle all within a chained border</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/64459f408d9986.71556336-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2015</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.025</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/189-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Palm tree within the inner circle, the country name in Arabic at the top, and both Islamic and Gregorian dates in Arabic at 
+	 the bottom<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in Arabic, and state name in English below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/190-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.025</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/5ffe22f81fe9e4.13641581-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Seal of Dilmun civilization (painting with animal and human in circle). State name in Arabic and English. Islamic and Gregorian dates in English<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Numeric denomination back of boxed denomination within circle. Chain border</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/5ffe22f89e6b62.47411227-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2000</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.050</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/177-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Palm tree within the inner circle, the country name in Arabic at the top, and both Islamic and Gregorian dates in Arabic at 
+	 the bottom<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in Arabic, and state name in English below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/178-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+    
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.050</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/64472a17d07d96.17299175-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Stylized dhow (sailing boat) in a central circle. State name in Arabic and English. Islamic and Gregorian dates in English<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Numeric denomination back of boxed denomination within circle. Chain border</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/64472a18396211.17561610-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2015</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;100 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/323-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The coat of arms of State of Bahrain and the country's name in Arabic and English along with the Hijri (Islamic) and 
+	 Gregorian dates in English<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in Arabic, and state name in English below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/324-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1995</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;100 Fils<hr>
+		  Value:&emsp;&#x62f;&#x2e;&#x628; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/bahrein/64472a9291b876.18459629-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Coat of arms of State of Bahrain and name in Arabic and English along with the Hijri (Islamic) and Gregorian dates in English<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in Arabic, and state name in English below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/bahrein/64472a930cdcf1.26673304-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2017</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+  </div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

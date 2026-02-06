@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FF671F;
+    color: #06038D;
+    text-align: center;
+  }
+  img {
+ 
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 document.getElementById('reverseRateUSD').textContent = 1/ rate
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;	 
+	 document.getElementById('reverseRateINR').textContent = 1/ rate;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>India 
+      <img src="https://flagcdn.com/in.svg" style="width: 25px;" alt="India">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Rupee&emsp; 
+	Unit Currency: Paisa&emsp;
+	Symbol: &#8377&emsp; 
+	Code:<input type="text" id="fromCurrency" value="INR"><br>
+      INR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:INR - <span id="reverseRateUSD">-</span>  &emsp;
+     INR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:INR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8377; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62fd26f398f730.59988355-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Blue, Brown, Pink, Deep purple, and multicolored encroaching the edges with circular and colored watermark window. Serial numbers to the right, below bilingual signatories. 
+						Numerical 1 in the center is replaced by designer one rupee in Hindi with a dark floral background<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Scalloped rupee design. 'Sagar Samrat' offshore oil rig on the back</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/inde/62fd26f4576e79.67563627-original.jpg" alt="Reserve Image"></td>
+    </tr>
+      
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>      
+      <td style="text-align: right; font-size: 15px;">&#8377; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/626e322c2a7ef4.52812450-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Signature of the finance secretary & new rupee symbol ₹ at upper left corner. Pink, Green & grey hue<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Sagar Samrat - oil rig , coin in the top left-hand corner with ₹ symbol and value</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/626e322d332769.68680067-original.jpg" alt="Reserve Image"></td>
+    </tr>
+     
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>      
+      <td style="text-align: right; font-size: 15px;">&#8377; 2</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62fd247a84e7a0.41687744-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Pink note with Reserve Bank of India monogram centre base. Bilingual signature either side of central numeral. Watermark window on left & Ashoka pillar on right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Reserve Bank Seal below Bengal tiger in center.Value in 13 regional languages (Assamese, Bengali, Gujarati, Kannada, Kashmiri, Malayalam, Marathi, Oriya, Punjabi, Sanskrit, Tamil, Telugu, Urdu) at left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62fd247b3a4e18.69149651-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>    
+    <td style="text-align: right; font-size: 15px;"></td>      
+      <td style="text-align: right; font-size: 15px;">&#8377; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/623d6a9634d931.22163051-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi at right, Reserve Bank seal at lower right. Lion capital of Asoka column at lower left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Farmer ploughing with a tractor while sun is rising</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/623d6a96d32db4.32505431-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/626e31c98c1397.16718779-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi at right, Reserve Bank seal at lower right. Lion capital of Asoka column at lower lef<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Farmer ploughing with a tractor while sun is rising.with year printed at bottom center</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/626e31ca8fd7d4.84808783-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/65db5703217150.56723775-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>India's seal on the right. Serial number on the bottom left and bottom right. Reserve bank of India in capital letters in the middle-top of the note<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A picture of a boat with the Reserve bank seal below the boat</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/65db570532fcb2.29949242-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e9815a5ee3403.05220756-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Lion capital of Asoka column at Right side. सत्यमेव जयते Added below Asoka Column Black on brown and pale green underprint. Numeral 10 at center 18mm broad.
+						Governor signature at lower center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Heading in Hindi. Dhow at center</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5e9815a685f797.20903534-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e9a210a57a0d9.12937129-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Saffron, brown and multi-color under-print with Ashoka Pillar Capitol to the right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Picture of Shalimar garden in the center and translation of 10 rupees in 13 different indian languages</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5e9a210b10bc99.78780888-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5fce8d36bbce15.99855301-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Pale brown-violet on multicolor underprint. Mahatma Gandhi at right, Reserve Bank seal at lower right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Rhinoceros and elephant heads behind tiger at left center</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5fce8d387a6e35.27615612-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/623d6c77dee4d7.19831925-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Chocolate brown. Mahatma Gandhi at left center. Telescoping serial number. Ashoka Pillar at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Chariot Wheel at Konark Sun Temple is a 13th-century CE (year 1250) Sun temple. The temple is attributed to King Narasimhadeva I of the Eastern Ganga Dynasty</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/623d6c78535430.27079543-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/623d6b24ddffe1.39792936-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Date, No Rupee, Symbol Image of “North Bay Island / Coral Island” from Andaman island</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/623d6b2581cb13.02716028-original.jpg" alt="Reserve Image"></td>
+    </tr>
+	
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/623d6c2fef4c83.83848170-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Date, Rupee Symbol, Image of “North Bay Island / Coral Island” from Andaman island</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/623d6c30790ff4.47285228-original.jpg" alt="Reserve Image"></td>
+    </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62fd0f84892d64.62844532-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A picture of the Ellora Caves and Gandhi's glasses below the watermark window. Star mark between prefix and serial number</p>
+	</td>
+	    <td><img src="https://en.numista.com/catalogue/photos/inde/62fd0f8534f4c7.47364122-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/662fc4e2890226.14686818-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Delhi Parliament House at center</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/inde/662fc4e56934c2.77516157-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/626e32584340c1.09753964-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi, Ashoka pillar on the right. Non metallic windowed security thread with RBI & भारत (India) on the strip<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Stone chariot at Vitthala Temple Complex (14th century) in Hampi and Gandhi's glasses below the watermark window</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/626e3259325369.34079509-original.jpg" alt="Reserve Image"></td>
+    </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e9624260b51c2.02651508-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Panoramic view of Mt. Kangchenjunga as seen from west Sikkim at left center</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5e962426c03f45.33185814-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/6342cc5de97c65.66839766-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">A picture of Rani Ki Vav</p>
+	</td>
+	    <td><img src="https://en.numista.com/catalogue/photos/inde/6342cc5ec6aba2.47563618-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 200</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e9621c69a6c22.03931792-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Sanchi Stupa</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5e9621c70d0251.45858977-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5eaea181df19e3.01821071-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mohandas Karamchand "Mahatma" Gandhi on the right. Lion capital of Asoka column at right lower corner (now in Sarnath Museum) New Rupee Symbol ₹ preceding the numerals<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Statue commemorating the Dandi March of 1930, featuring Gandhi & his followers in peaceful protest. New Rupee Symbol ₹</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/inde/5eaea184e53b62.09601719-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e962341418414.30464708-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi in centre, Ashoka emblem to the right, windowed security thread changes colour from green to blue when note is tilted<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Coloured Indian Flag on Red Fort, Delhi Year at upper left</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/inde/5e96234205fae3.21199261-original.jpg" alt="Reserve Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	 <td style="text-align: right; font-size: 15px;">&#8377; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e961d6bca9283.88054181-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Agriculture (wheat) and Technology (satellite, man working on computer, factory)</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5e961d6c727ab6.47844028-original.jpg" alt="Reserve Image"></td>
+ 
+    </tr>
+    
+    <tr>
+    	<td style="text-align: right; font-size: 15px;"></td>
+	<td style="text-align: right; font-size: 15px;">&#8377; 2000</td>
+     <td><img src="https://en.numista.com/catalogue/photos/inde/5e961aa9a9e6c6.04355655-original.jpg" alt="Obverse Image"></td>
+	<td>
+	     <h4>&larr;Observe</h4>Mahatma Gandhi with Reserve Bank Seal<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Mangalyaan (Mars Orbiter Mission space probe)</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/inde/5e961aaa8467e2.53736157-original.jpg" alt="Reserve Image"></td>
+    </tr>
+	 
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+  
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serbia</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #0C4076;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+  img.rright { 
+        transform: rotate(270deg);
+	   height: 350px;
+	   object-fit:contain;
+    }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Serbia 
+       <img src="https://flagcdn.com/rs.svg" style="width: 25px;" alt="Serbia">
+</h2>
+<h3>
+     Currency: Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+	Code: <input type="text" id="fromCurrency" value="RSD"><br>
+      RSD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:RSD - <span id="reverseRateUSD">-</span>  &emsp;
+     RSD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:RSD - <span id="reverseRateINR">-</span>
+ </h3> 
+  
+  
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 100px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/629a2ab590a290.05127965-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Vuk Stefanović Karadžić, his writing kit, and an open book (exhibits from the standing collection of the Museum devoted to Vuk S.
+	 		Karadžic and Dositej Obradović) and three letters of modern Serbian alphabet. Behind the letters is Filip Višnjić, epic poet and guslar from the 18th century<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Figure of Vuk Stefanović Karadžić (photo detail) , participants to the First Slavic Congress held in Prague in 1848 (photo
+	     detail) and vignette of letters; great coat-of-arms of the Republic of Serbia in the top left corner of the banknote, 
+		against ochre background</p>
+	</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/serbie/629a2ab645afe4.93090190-original.jpg"  alt="Reverse Image"></td>     
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/629a2b240071e9.86938908-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Stevan Stojanović Mokranjac at left center, violin, keyboard and music score at center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Mokranjac standing, scores and linear art from Gospel of Miroslav illuminated manuscript</p>
+	</td>
+      <td><img class= rright src="https://en.numista.com/catalogue/photos/serbie/629a2b24932338.90238296-original.jpg" alt="Reverse Image"></td> 
+	  </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;"></td>&#x434;&#x438;&#x43D; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/62b9fa549727f4.77979232-original.jpg" alt="Obverse Image"></td>
+	  <h4>&larr;Observe</h4>Mokranjac standing, scores and linear art from Gospel of Miroslav illuminated manuscript</p>
+      <td>Portrait of the scientist Nikola Tesla, mathematical formulae for the unit of magnetic flux density, an image of electric discharge, and an image of a Tesla’s plant<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The figure of Nikola Tesla (detail from a photograph kept in his Museum in Belgrade), a sketch of Tesla’s electromagnetic induction engine, “Tesla’s dove”; 
+	 logo of the National Bank of Serbia/great coat-of-arms of the Republic of Serbia in the top left corner of the banknote, against a blue background</td>
+      <td><img class=rright src="https://en.numista.com/catalogue/photos/serbie/62b9fa554065c1.07813841-original.jpg"  alt="Reverse Image"></td>
+     </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+
+ </section>
+ 
+ </p>
+ 
+ <section>
+ <h2>Yugoslavia 
+       <img src="https://th.bing.com/th?id=ODL.ca43c159fd8e90db39dbc1754e4088bf&w=149&h=76&c=10&rs=1&qlt=99&o=6&pid=13.1" style="width: 25px;" alt="Serbia">
+
+ </h2>
+ 
+ <h3>
+     Currency: Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+	Code: <input type="text" id="Currency1" value="YUD"><br>
+      YUD:USD -  <span id="RateUSD">-</span> &emsp;
+	 USD:YUD - <span id="RRateUSD">-</span>  &emsp;
+     YUD:INR - <span id="RateINR">-</span> &emsp;
+	INR:YUD - <span id="RRateINR">-</span>
+ </h3> 
+ 
+ 
+    <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 100px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca75725bd86.26393083-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Arif Heralić a Bosnian Roma metal worker on a blast furnace in Zenica<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">numeric value</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca757b5fc46.37654987-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/674a8f8c22a8c5.47247296-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Purple on multicolour underprint. Ship dockside at left and the two prefix letters plus the 7 digit serial number<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Twenty Dinara Socialist Federal Republic of Yugoslavia</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/674a8f8d586cf8.66097685-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca9f80de2e6.79720320-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Purple. School age boy at left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Roses at center right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca9f89edcf3.22989366-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca6dc602c74.27357835-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Red on multicolor underprint. Equestrian statue "Peace" of Augustinčić in garden of United Nations, New York at left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">STO DINARJEV 100 STO DINARA</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca6dd043e48.56382115-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e52c131ce85.39297511-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Woman on the left. Coat of the arms in the center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Stylized wheat ear</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e52c20bc2b4.19943608-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623cab45ec20a7.44132478-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Woman on the left. Coat of the arms in the center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Stylized wheat ear</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623cab468a0ee5.95570007-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e51cbcf4526.01377987-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Statue of Nikola Tesla in Niagara Falls State Park on Goat Island in New York<<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Five Hundred Dinars; Socialist Federal Republic of Yugoslavia</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e51cd116060.46130121-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62f143c8349ea3.73259522-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Boy; Coat of Arms of the Federal Socialist Republic of Yugoslavia (1963-1992)<<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Mountain scene</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62f143c8c5b9d8.97934205-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62f14e6031f295.57774750-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Nikola Tesla<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">High frequency transformer</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62f14e60c190b5.61844409-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 5000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62bab5c1472766.54232728-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Nikola Tesla<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Tesla Museum, Belgrade</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/62bab5c1d73520.16394280-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 10000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/633348973576d7.14261627-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Vuk Stefanović Karadžić<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Church</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b2cdff1736e3.39988628-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 20000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca96b7f9145.52136883-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of a miner left, National Coat of Arms in centre<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Brown on multicolor underprint. Mining equipments at center</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/623ca96c240816.63682564-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 100000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/634d0f6e827084.02817962-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Violet and red on multicolor underprint. Young girl at left, arms at center<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Violet and red on multicolor underprint. Abstract design with letters and numbers at center right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/634d0f6f15b651.17110431-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 500000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/674227fa017b58.23039314-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Dark navy blue, purple, and orange print; red serial number. Portrait of a boy at left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Scene of snow-covered chalets at Kopaonik Ski Center (Southern Serbia)</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/674227fa9ff4c8.96380716-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 50000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e537bd02f67.50428686-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Girl<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Belgrade University</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/626e537ca54824.36430565-original.jpg" alt="Reverse Image"></td>
+    </tr>
+       
+    <tr>
+	  <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#x434;&#x438;&#x43D; 50000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/634b1b0f98bf12.49919230-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Mihajlo Pupin (9 October 1858 – 12 March 1935). Also known as Michael I. Pupin, he was a Serbian American physicist and physical chemist<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Telephone Exchange building</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/634b1b10296b06.28238831-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID	
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      	
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+
+<h2>
+	  Total Notes:<span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum5 = table1.rows.length-1;
+         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table2.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+
+
+
+ 
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

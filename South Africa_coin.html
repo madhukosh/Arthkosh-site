@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Africa</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #FFB612;
+    color: #007A4D;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>South Africa 
+      <img src="https://flagcdn.com/za.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+ 
+  <h3>
+     Currency: Rand &emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: R;&emsp;	
+	1 Rand  = 100  Cents&emsp; 
+	Code: <input type="text" id="fromCurrency" value="ZAR"><br>
+      ZAR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ZAR - <span id="reverseRateUSD">-</span>  &emsp;
+     ZAR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ZAR - <span id="reverseRateINR">-</span>
+ </h3>
+  
+    <table id = "table1">
+	  <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>    
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&frac14; Penny<hr>
+	  	  Value:&emsp;R 0.001	</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/66cafd3a6ca6c2.51055417-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate portrait of Queen Elizabeth II right, engraver's initials in truncation, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cape Sparrows perched on acacia branch, date and denomination, legend in English and Afrikaans</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/66cafd3abcdb74.43049649-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1954<br>1955</td>
+	 <td Style="text-align: center;">2</td>
+    </tr> 
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Penny<hr>
+	  	  Value:&emsp;R 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1122-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate portrait of Queen Elizabeth II right, engraver's initials in truncation, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ship, 'Dromedaris', sailing, legend in English and Afrikaans, with date and denomination, engraver's initials</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1123-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1960</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;R 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1630-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Jan van Riebeeck (1619-1677), Dutch colonial administrator and founder of Cape Town. motto: "Unity Is Strength"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Covered wagon</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1631-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1961</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+	
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;R 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/6515465a65fa38.77452372-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Jan van Riebeeck (1619-1677), Dutch colonial administrator and founder of Cape Town<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cape sparrows</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/6515465ac8c853.42408238-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1967</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;R 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/37-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto, legend in Afrikaans and English around, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cape sparrows</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/38-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1972<br>1985<br>1987</td>
+	 <td Style="text-align: center;">3</td>
+    </tr> 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;R 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1219-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with motto "Ex Unitate Vires" (Power Through Unity). Country name in Zulu<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cape sparrows</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1220-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1996</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;R 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1032-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto in Bochimans. Country name in Ndebele language<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cape sparrows</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1033-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2001</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Cent<hr>
+	  	  Value:&emsp;R 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1467-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South African coat of arms with the motto "Ex Unitate Vires" (Power Through Unity) surrounded by bilingual English/Afrikaans legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wildebeest bucking left above denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1468-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1980<br>1983</td>
+	 <td Style="text-align: center;">2</td>
+    </tr> 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/417-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of President Diederichs left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>1996
+			 
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/418-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1979</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/29-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "Ex Unitate Vires"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/30-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1987</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1581-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "Ex Unitate Vires" and country name in Tsongat<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1582-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2000</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1415-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "diverse people united"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1416-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2003</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1030-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "diverse people united"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1031-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2004</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2084-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with motto in Bochimans. Country name in Sepedi or in Sesotho. Country name is the same in both languages<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2085-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2006</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2165-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto in Bochimans. Country name in Afrikaans<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2166-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2007</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1649-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>New national coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1650-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2008</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;R 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2086-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>New national coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Blue crane and value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2087-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2010</td>
+	 <td Style="text-align: center;">1</td>
+    </tr> 
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;R 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1694-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto surrounded by English/Afrikaans legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Aloe plant with denomination above.Plant is Cape Aloe (Aloe Ferox), belonging to Asphodelaceae family, plant native to South Africa</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1695-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1975<br>1985</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;R 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2197-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "Ex Unitate Vires" (Power Through Unity)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arum lilies, flowers native to South Africa</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2198-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1996</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;R 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/62e63acd7957a1.69516624-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of South Africa with the date above, all in a nonagonal border<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arum lilies, flowers native to South Africam and the value to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/62e63acde112c1.88184623-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2003</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;R 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1724-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>New national coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arum lily at left, value at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1725-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2008</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"> 10 Cents</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<hr>
+	  	  Value:&emsp;R 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2637-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The new arms of South Africa and the date above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arum lily at left, value at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2638-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2012</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1475-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Jan Van Riebeeck facing right with English legend at right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">King Protea flower within sprigs with denomination at left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1476-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1966</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1136-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "Ex Unitate Vires" (Power Through Unity). Country name both in English and Afrikaans<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Protea flower within sprigs, value at upper right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1137-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1995</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1591-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in nonagon, with motto "Ex Unitate Vires" Country name in Tswana, one of SA's official language<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A King Protea, South Africa's national flower</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1592-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1997<br>1998</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1591-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in nonagon, with motto "Ex Unitate Vires" Country name in Tswana, one of SA's official language<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A King Protea, South Africa's national flower</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1592-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2000</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2692-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in a nonagon, with the motto in Bochimans.Country name in English<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A King Protea, South Africa's national flower</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/2693-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2002</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Cents<hr>
+	  	  Value:&emsp;R 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/60356279a935c3.92187431-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South African coat of arms, surrounded by Zulu legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">King Protea flower with denomination at upper-right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/6035627a3fb917.34022941-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2020</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;R 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/84-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with motto "Ex Unitate Vires" (Power Through Unity) and country name in Afrikaans and English within nonagon<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bird-of-paradise flower (Strelitzia reginae), commonly known in South Africa as the "crane" flower, native to South Africa with value to right, within nonagon</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/85-original.jpg" alt="Reserve Image"></td>
+	 	 <td Style="text-align: center;">1993</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;R 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f0655f43b71f1.69950569-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with motto "Ex Unitate Vires" (Power Through Unity). Country name in Sotho, one of SA's official languages<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bird-of-paradise flower, commonly known in South Africa as the "crane" flower, native to South Africa</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f0655f4848c29.49720242-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1996</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;R 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f0655b7acdce2.15866234-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in a nonagon, with the motto in Bochimans. Country name in Xhosa<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bird-of-paradise flower commonly known in South Africa as the "crane" flower. That flower is native to South Africa</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f0655b80e5829.88861671-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2005</td>
+	 <td Style="text-align: center;">1</td>	 
+    </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;R 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1737-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in a nonagon, with the motto in Bochimans. Country name in Ndebele<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bird-of-paradise flower commonly known in South Africa as the "crane" flower. That flower is native to South Africa</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1738-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2007</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rand<hr>
+	  	  Value:&emsp;R 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1138-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of South Africa with the motto "Ex Unitate Vires" (Power Through Unity) and the country name in English to the left and Afrikaans to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Springbok "Soli Deo gloria" is one of the Reformers' five basic beliefs during the Protestant Reformation. It means "Glory to God alone"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/1139-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1991</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rand<hr>
+	  	  Value:&emsp;R 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f75533ca6df53.57244762-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in square, with motto "diverse people united" in Bochimans. Country name displayed in Tsonga and siSwati<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Springbok and value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f75533d362620.82194321-original.jpg" alt="Reserve Image"></td>
+     <td Style="text-align: center;">2008</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rands<hr>
+	  	  Value:&emsp;R 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/6005f2fb9107a4.23986177-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in square, with motto "Ex Unitate Vires" (Power Through Unity) and country name both in Afrikaans and English<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Greater kudu (Tragelaphus strepsiceros)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/6005f2fc3096e0.58590023-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1991</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rands<hr>
+	  	  Value:&emsp;R 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f06542bd146a5.18310349-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "diverse people united" in Bochimans. On both sides, the country name in Zulu and Ndebele<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Greater kudu and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f06542c3c6e08.38974222-original.jpg" alt="Reserve Image"></td>
+      	 	 <td  Style="text-align: center;">2003</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rands<hr>
+	  	  Value:&emsp;R 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/62adc41cab4538.49661078-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "diverse people united" in Bochimans. On both sides, the country name in Venda and Ndebele<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Greater kudu and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/62adc41cec5ff4.70788419-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2004</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rands<hr>
+	  	  Value:&emsp;R 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/618cf792e973f6.34755218-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in square, with motto "diverse people united" in Bochimans.Country name displayed in English and Tsonga<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Greater kudu and value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/618cf7935af623.82356320-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2007</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<5 Randshr>
+	  	  Value:&emsp;R 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/86-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms, inscribed in a square, with the motto "Ex Unitate Vires" (Power Through Unity) with the country name in Afrikaans and English on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wildebeest below the value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/87-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1994</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rands<hr>
+	  	  Value:&emsp;R 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f06534171f781.19086587-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>South Africa coat of arms with the motto "diverse people united" in Bochimans. Country name in Tsonga and Zulu<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wildebeest. Initials of the South Africa Reserve Bank repeated all around</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/5f065341c52b54.88746049-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2004</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rands<hr>
+	  	  Value:&emsp;R 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/972-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wildebeest. Abbreviation ‘SARB’ for South African Reserve Bank is repeated 32 times at left and 25 at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/afrique_du_sud/973-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2011</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+  
+  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

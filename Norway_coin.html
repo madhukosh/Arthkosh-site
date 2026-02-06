@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norway</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #BA0C2F;
+    color: #00205B;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Norway 
+      <img src="https://flagcdn.com/no.svg" style="width: 25px;" alt="Norway">
+ </h2>
+  <h3>Currency: Krone&emsp; 
+     Unit Currency: Øre&emsp; 
+	Symbol:  kr&emsp; 
+	1 Krone= 100 Øre&emsp;
+	Code:<input type="text" id="fromCurrency" value="NOK"> &emsp; <br>
+	NOK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:NOK -  <span id="reverseRateUSD">-</span> &emsp; 
+	NOK:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:NOK -  <span id="reverseRateINR">-</span> 
+</h3>
+    
+   <table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+ 	      <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Øre<hr>
+	  	  Value:&emsp;kr 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/676f30b46e7a04.47856482-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Haakon VII. Date divided by monogram. Solid ring on rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in 2 lines. Inscription above value. Triskelion on each side of value. Mintmark below value. Solid ring on rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/676f30b5539d49.41985720-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1954</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Øre<hr>
+	  	  Value:&emsp;kr 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/1995-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Olav V. Solid ring on the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Squirrel facing left. Mintmark and date in 2 lines to its left. Value and inscription in 2 lines below. Solid ring on rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/1996-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Øre<hr>
+	  	  Value:&emsp;kr 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7bc55f3f222.88544640-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned Haakon VII monogram in circle, letters around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, three ornamental roses</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7bc571c8cf9.93369783-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1939</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Øre<hr>
+	  	  Value:&emsp;kr 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/830-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Den norske løve (The Norwegian Lion) in the coat-of-arms of Norway<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, state name, mint marks, and the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/831-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974<br>1975<br>1976<br>1977</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Øre<hr>
+	  	  Value:&emsp;kr 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/832-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned Olav V monogram<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in two lines, name of country and mintmark below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/833-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1984<br>1986</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Øre<hr>
+	  	  Value:&emsp;kr 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/64caacca22e2e8.31979739-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned cross with monogram in each quarter, hole in centre<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date below, two ornamental roses flank centre hole, crown above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/64caaccaae7ac5.96090532-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1946</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Øre<hr>
+	  	  Value:&emsp;kr 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7ed1f7a0876.56123847-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Olav V. facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, Siberian tit</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7ed2038d957.15762879-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962<br>1964</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Øre<hr>
+	  	  Value:&emsp;kr 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/834-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Four crowned Olav V monograms aligned in a cross<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in two lines, the name of the country and mintmark below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/835-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1975</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Øre<hr>
+	  	  Value:&emsp;kr 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/63e37742940e13.60081163-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Olav V. facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Norwegian Elkhound, running to right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/63e37743407ae4.21769293-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1958</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Øre<hr>
+	  	  Value:&emsp;kr 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/836-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned shield with crowned norwegian lion holding halberd. Date divided by shield. Solid ring on rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and inscription in 3 lines. Mintmaster's and Engraver's initial, Mintmark</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/837-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+		
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Øre<hr>
+	  	  Value:&emsp;kr 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/64cab2790a43a8.83619970-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crown<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mythical animal - Nidhogg (Dragon)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/64cab279cb1669.61026957-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1996<br>2001<br>2003<br>2006</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Krone<hr>
+	  	  Value:&emsp;kr 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7bb1ea8cd18.44770239-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of King Olav V of Norway facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A horse facing left, year of issue above, denomination and name of the country below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/65b7bb201a5e91.06886953-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961<br>1967<br>1968</td>
+	 <td style="text-align: center;">3</td>
+    </tr>	
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Krone<hr>
+	  	  Value:&emsp;kr 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/838-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of King Olav V of Norway facing left, designer mark, crossed hammer and pick<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crown, denomination, year, mintmaster's mark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/839-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1975</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Krone<hr>
+	  	  Value:&emsp;kr 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/norvege/64c97ff0781ba3.66184567-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>3 crowned monograms of Harald V form cross within circle,center hole. Mintmark, inscription and mintmaster's initials. Solid ring on rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Stylized bird on vine, center hole, carving on portal of Hylestad Stave Church, Setesdal. Engraver's initials in vines. Date, Value, Solid ring on rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/norvege/64c97ff187dba5.05609589-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1998<br>1999<br>2000</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

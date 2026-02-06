@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>France</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #002654;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <style>
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+	<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4'), document.getElementById('table5')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>France 
+      <img src="https://flagcdn.com/fr.svg" style="width: 25px;" alt="France">
+ </h2>
+ 
+ 
+  <h3>
+     Currency: Euro&emsp; 
+	Unit currency:Cent &emsp; 
+	Symbol: &euro; &emsp;
+	1 Euro  = 100 Cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>  
+  
+  
+<table id = "table1">
+ 	     <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;&euro; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/3926-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A young, feminine Marianne with determined features that embody the desire for a sound and lasting Europe. Around twelve five-pointed stars representing the European Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/3928-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1999<br>2015<br>2019</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Cents<hr>
+		  Value:&emsp;&euro; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/3929-180.jpg" alt="Obverse Image"></td>
+	   	 <td>
+		     <h5>&larr;Observe</h5>A young, feminine Marianne with determined features that embody the desire for a sound and lasting Europe. Around twelve five-pointed stars representing the European Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/3930-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2006<br>2014<br>2018</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	         
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/61fde3008fb875.29810810-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>A young, feminine Marianne with determined features that embody the desire for a sound and lasting Europe. Around twelve five-pointed stars representing the European Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/61fde301a02a94.57833549-180.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2004<br>2010<br>2011</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cents<hr>
+		  Value:&emsp;&euro; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/6289eb6f1395f8.91533745-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A modern adaptation of the Sower, initially designed by Oscar Roty, representing "France, which stays true to itself, whilst integrating into Europe", is encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the 15 nations of the European Union</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/france/6289eb6fa421c1.11082254-180.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2000<br>2002</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&euro; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/627a57b6432958.11758022-180.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>A modern adaptation of the Sower, initially designed by Oscar Roty, representing "France, which stays true to itself, whilst integrating into Europe", 
+	     is encircled by the twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/france/627a57b761ff10.55042719-180.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+ </script>
+<div class="page-break"></div> 
+
+ <h3>
+     Currency: Franc&emsp; 
+	Unit currency: Centimo&emsp; 
+	Symbol:  ₣&emsp;
+	1 Franc = 100 Centimos  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="FRF"><br>
+      FRF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:FRF - <span id="reverseRateUSD">-</span>  &emsp;
+     FRF:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:FRF - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+
+     <table id = "table2">
+     <tr>
+     	<th>#</th>
+		<th style="width: 100px;">Stat</th>
+		<th>Obverse</th>
+		<th style="width: 700px;">Details</th>
+		<th>Reserve</th>
+		<th style="width: 125px;text-align: center;">Year(s)</th>
+		<th style="width: 50px;text-align: right;">Count</th>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centimes<hr>
+		  Value:&emsp;₣ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/11234-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An ear of wheat with “république française” in cursive, a rim at the bottom of the right leaf’s high curve, and the A.G.M.M. mark at 6h25<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value is surrounded with a wheatear, an olive branch and the French motto</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/11235-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5383-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait facing left, inside beaded circle. Lettering around outside, date underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eagle facing right with mint letter below, inside beaded circle. Lettering around outside, value lettering A below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5384-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1854<br>1855</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+	  <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/images/5d3052f21b66d.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait facing left, inside beaded circle. Lettering around outside, date underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Chien: Eagle facing right with mint letter below, inside beaded circle. Lettering around outside, value, lettering D below</p>
+		</td>
+      	 <td><img src="https://www.collection-ideale-cgb.net/images/ideal/f116_012_64.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1854</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5373-160.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait facing left, inside beaded circle. Lettering around outside, date underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Chien: Eagle facing right with mint letter below, inside beaded circle</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5374-160.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1861</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9b44cf5d4c48.21818390-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Monogram within wreath divided by the center hole, liberty cap above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divided by plant and the center hole, date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9b44cfa03ad9.19397407-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1918<br>1919</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>5 Centimes<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">₣ 0.05</p>
+		</td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/63bbdefb21be68.73104864-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Monogram within wreath divided by the center hole, liberty cap above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination divided by plant and the center hole, date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/63bbdefc7235c5.33383600-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1930</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   	  
+   <tr>
+       <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centimes<hr>
+		  Value:&emsp;₣ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/11479-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne in left profile wearing the Phrygian cap of liberty, a national emblem of France, dividing the country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value is surrounded with a wheatear, an olive branch and the French motto</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/11480-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966&emsp;1968<br>1969&emsp;1973<br>1975&emsp;1980<br>1982&emsp;1986<br>1987&emsp;1988<br>1992&emsp;1996</td>
+	 <td style="text-align: center;">12</td>
+    </tr>
+	  
+    <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5387-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait facing left, inside beaded circle. Lettering around outside, date underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eagle with wings outstretched facing right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5388-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1853&emsp;1856</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	 	
+   <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10972-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait facing left, inside beaded circle. Lettering around outside, date underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eagle with wings outstretched facing right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10973-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1863</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5818-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Wheat Ears on either side of the hole at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oak Leaves on either side of the Hole</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5819-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1941<br>1943</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+
+	 
+   <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centimes<hr>
+		  Value:&emsp;₣ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd206551cb6.99630125-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne in left profile wearing Phrygian cap of liberty, national emblem of France, surrounded with lettering: "REPUBLIQUE FRANÇAISE" (French Republic)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value surrounded with wheat ear, olive branch and French motto: "LIBERTE - EGALITE - FRATERNITE"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd2069663b8.25893871-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962&emsp;1963&emsp;1967<br>1968&emsp;1969&emsp;1970<br>1972&emsp;1975&emsp;1976<br>1977&emsp;1980&emsp;1981<br>1982&emsp;1984&emsp;1987<br>1988&emsp;1990&emsp;1992<br>1994&emsp;1995&emsp;1998</td>
+	 <td style="text-align: center;">21</td>
+    </tr>
+	 
+   <tr>
+      <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centimes<hr>
+		  Value:&emsp;₣ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10383-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Grain sprigs flank center hole<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Center hole divides denomination, oak leaves flank, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10384-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1941</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centimes<hr>
+		  Value:&emsp;₣ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd2c65f7916.51386836-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne wearing Phrygian cap of liberty, emblem of France, surrounded with: "REPUBLIQUE FRANÇAISE"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value surrounded with wheat ear, olive branch and French motto: "LIBERTE - EGALITE - FRATERNITE"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd2c6a02336.42871704-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1964&emsp;1965<br>1967&emsp;1976&emsp;1978<br>1979&emsp;1981&emsp;1984<br>1986&emsp;1991&emsp;1994<br>1996&emsp;1997</td>
+	 <td style="text-align: center;">14</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centimes<hr>
+		  Value:&emsp;₣ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5e2a1dd7c82632.53714575-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Monogram divided by center hole, liberty cap above, wreath surrounds<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination 25 CMES with abbreviation CMES for 'centimes' divided by the center hole with the French motto above and the date below. No dash below "MES"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5e2a1dd87f5041.34111687-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1931</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/64111438a30ae6.07757107-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne's head left wearing a phrygian cap decorated with a composite wreath made of olive tree leaves, oak and wheat<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination in the center with the date below and the French motto above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/6411143977c838.90220189-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1931&emsp;1932&emsp;1933<br>1938&emsp;1939&emsp;1940<br>1941</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/4722-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An axe in between two ears of wheat and the issuer name at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value encompassed on either side by Cornucopia (or horn of plenty, overflowing with produce, flowers or nuts)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/4723-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5025-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Double bit axe, grain sprigs flank<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two oak leaf branches surround the face value and the motto</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5026-180.jpg" alt="Reserve Image"></td>
+      <td style="text-align: center;">1943</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Centimes<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10499-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The bust of Marianne wearing a Phrygian cap facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in centre, with plant on left and wheat to right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10500-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#189; Franc<hr>
+		  Value:&emsp;₣ 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5607-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Sower, designed by Oscar Roty in 1900: a national emblem of the French Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Émile Rousseau, General coin engraver: Underneath the face value, an olive branch is surrounded with the French motto: 
+	 "LIBERTE - EGALITE - FRATERNITE" (liberty, equality, fraternity)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5608-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1965&emsp;1966<br>1977&emsp;1985<br>1993<br>1995&emsp;1997</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+	   
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10421-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne's head left wearing a phrygian cap decorated with a composite wreath made of olive tree leaves, oak and wheat<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in center, lettering surrounding</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10422-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1922&emsp;1923</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10417-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mercury, the god of commerce (god of abundance and commercial success)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value encompassed on either side by Cornucopia (or horn of plenty, overflowing with produce, flowers, or nuts)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10418-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1939&emsp;1940&emsp;1941</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/4988-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Wreathed female head facing left, lettering around edge both sides, engraver's name behind head<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A cornucopia on each side, lettering at the top, the value in middle with the date below and 
+	   the privy mark to the right of the date in between the gap between the two cornucopias</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/4989-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1941&emsp;1945<br>1945(B)&emsp;1946<br>1947&emsp;1948&emsp;1949<br>1949(B)&emsp;1950<br>1957&emsp;1959</td>
+	 <td style="text-align: center;">11</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/4509-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Double-headed axe in the centre with an ear of wheat either side, lettering below. 
+	 Lettering on top and bottom of axe and any mintmark to the left of the axe head<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oak leaves either side of the central numeral, lettering above, lettering below with the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/4510-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942&emsp;1943&emsp;1944</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd7ac5115b2.11286692-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Sower, designed by Oscar Roty in 1900, a national emblem of the French Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Underneath the face value, an olive branch is surrounded with the French motto</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd30fb1dc06.70955198-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960&emsp;1961<br>1964&emsp;1968<br>1971&emsp;1972<br>1974&emsp;1975<br>1977&emsp;1978</td>
+	 <td style="text-align: center;">10</td>
+    </tr>
+    
+		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Franc<hr>
+		  Value:&emsp;₣ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/11176-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Marianne's head left wearing a Phrygian cap decorated with a composite wreath made of olive tree leaves, oak, and wheat<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">One-one cornucopia on the left and right sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/11177-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1933<br>1939<br>1941</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Francs<hr>
+		  Value:&emsp;₣ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/626ee2ace5f744.52111100-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Double-headed axe in centre with ear of wheat either side, lettering below. Lettering on top and bottom of axe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oak leaves either side of central numeral, lettering above, lettering below with date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/626ee2ad619f49.68326056-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1943</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    		  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Francs<hr>
+		  Value:&emsp;₣ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9b4e1b39d6b7.83362783-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Wreathed female head facing left, lettering around edge both sides, engraver's name behind head<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A cornucopia on each side, lettering at top, value in middle with date below. Privy mark to right of date.If there is a B or C Mintmark it is in the gap between the two bases, below date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9b4e1b8857a3.87871273-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1947&emsp;1947(B)<br>1949</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Francs<hr>
+		  Value:&emsp;₣ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd37e4e2969.55690294-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Sower, designed by Oscar Roty in 1900, a national emblem of the French Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">An olive branch and an oak branch, behind the face value, are surrounded with the French motto: "LIBERTE - EGALITE - FRATERNITE" (liberty, equality, fraternity)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd37e92d7d2.97543737-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1980<br>1981</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Francs<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/11101-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Laureate head left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above date within sectioned wreath with mintmark below lowest of 7 ║ in the design</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/11102-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1945&emsp;1946&emsp;1947<br>1948&emsp;1949&emsp;1950</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+	  
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	       <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Francs<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd414800e77.93186810-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Sower, designed by Oscar Roty in 1900, a national emblem of the French Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Underneath the face value, an olive branch is surrounded with the French motto</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd414d40668.27338105-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1971</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Francs<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10570-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Base of tower, denomination above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eiffel Tower viewed from below, dates at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10569-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1989</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Francs<hr>
+		  Value:&emsp;₣ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/7056-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The head of Republic right with a phrygian cap which brushes by the denticles<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Rooster facing right, laurel branch, value, year of production, pattern around edge</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/7057-original.jpg" alt="Reserve Image"></td>
+      	 		 <td style="text-align: center;">1948</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Francs<hr>
+		  Value:&emsp;₣ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10589-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Female head facing left, designer's name, legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above date, inscription below, grain columns flank</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10590-180.jpg" alt="Reserve Image"></td>
+      	  <td style="text-align: center;">1951&emsp;1951(B)<br>1952&emsp;1952(B)<br>1953&emsp;1957</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+	  
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Francs<hr>
+		  Value:&emsp;₣ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/677557dfdf92c0.23518219-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Radiant map of France with "RF" in interlaced capitals in the center, signed "Mathieu" in the left field<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Stylized representations of an industrial France, with cranes, pylons and buildings</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/677557e02b8324.25405314-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974<br>1975<br>1976<br>1978</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Francs<hr>
+		  Value:&emsp;₣ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd4986e4891.47003450-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A representation of the Génie de la Liberté (the Spirit of Freedom, approximately), 
+	      a sculpture located at the top of the "July Column" in Paris, is flanked with the letters R and F, 
+		 the initials of the French Republic. The rim constitutes a striated geometrical pattern<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value on band across centre, and industry in background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9dd498b4d939.41396241-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1989<br>1990</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Francs<hr>
+		  Value:&emsp;₣ 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10519-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Marianne facing left, designer, legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Rooster facing right, laurel branch, value, year of production, pattern around edge</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10520-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950&emsp;1950(B)<br>1951&emsp;1952<br>1952(B)&emsp;1953</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Francs<hr>
+		  Value:&emsp;₣ 50.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/10497-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Marianne facing left, designer, legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Rooster facing right, laurel branch, value, year of production, a pattern of dashes around the edge with the mintmark below the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/10498-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1951<br>1952</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;100 Francs<hr>
+		  Value:&emsp;₣ 100.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/france/5f9b52f932d1f8.18381770-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The bust of Liberty holding a torch facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date with mintmark on left. Lettering above. Fruit and wheat on right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/france/5f9b52f985fbf2.76878312-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1955<br>1955(B)</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+ <div class="page-break"></div>
+ 
+ <h3>Currency: Polynesian Franc&emsp; 
+     Unit Currency: Cent&emsp; 
+	Symbol: ₣&emsp; 
+	1 Franc = 100 Cents
+	Code:<input type="text" id="Currency1" value="XPF"> &emsp; <br>
+	XPF:USD -  <span id="RateUSD">-</span> &emsp;
+	USD:XPF -  <span id="RRateUSD">-</span> &emsp; 
+	XPF:INR -  <span id="RateINR">-</span> &emsp; 
+	INR:XPF -  <span id="RRateINR">-</span> 
+</h3>
+  <h2>French Polynesia
+      <img src="https://www.bing.com/th?id=OPHS.wuoXX5S47Z38Zw474C474" style="width: 25px;" alt="France">
+ </h2>
+ 
+  
+<table id = "table3">
+ 	   <th>#</th>
+		<th style="width: 100px;">Stat</th>
+		<th>Obverse</th>
+		<th style="width: 700px;">Details</th>
+		<th>Reserve</th>
+		<th style="width: 50px;text-align: center;">Year(s)</th>
+		<th style="width: 50px;text-align: right;">Count</th>
+ 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/french_polynesia_period/6543c6a333b0c7.77890548-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Liberty sitting on throne, facing left holding lit torch in left hand. Assorted fruit in a cornucopia in bend of right arm<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Palm trees on left, sea with sailboat in middle, mountains in distance. Boat with outrigger in foreground, plus assorted fruit in container</p>
+		</td>
+      <td><img src="https://en.numista.com/catalogue/photos/french_polynesia_period/6543c6a339c6c1.30326661-180.jpg" alt="Reverse Image"></td>
+      <td style="text-align: center;">1999<br>2011</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    </table>
+    <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum2;
+      	  
+   }
+    sumTable3();
+   </script>
+    <h2>Indo Chine
+      <img src="https://en.numista.com/design/pays/indochine.gif" style="width: 25px;" alt="INDOCHINE">
+ </h2>
+ 
+<table id = "table4">
+ 	   <th>#</th>
+		<th style="width: 100px;">Stat</th>
+		<th>Obverse</th>
+		<th style="width: 700px;">Details</th>
+		<th>Reserve</th>
+		<th style="width: 50px;text-align: center;">Year(s)</th>
+		<th style="width: 50px;text-align: right;">Count</th>
+ 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Francs<hr>
+		  Value:&emsp;₣ 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/indochine/66c42146504134.40543767-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cornucopias flank centre hole, laureate head left above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Centre hole divides denomination, wreath surrounds, date below</p>
+		</td>
+      <td><img src="https://en.numista.com/catalogue/photos/indochine/66c4214826cb82.58711620-original.jpg" alt="Reverse Image"></td>
+      <td style="text-align: center;">1939</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    </table>
+    <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum2;
+      	  
+   }
+    sumTable4();
+   </script>
+   
+    <h2>New Caledonia
+      <img src="https://flagcdn.com/nc.svg" style="width: 25px;" alt="France">
+ </h2>
+ 
+  
+<table id = "table5">
+ 	    <th>#</th>
+		<th style="width: 100px;">Stat</th>
+		<th>Obverse</th>
+		<th style="width: 700px;">Details</th>
+		<th>Reserve</th>
+		<th style="width: 50px;text-align: center;">Year(s)</th>
+		<th style="width: 50px;text-align: right;">Count</th>
+ 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Franc<hr>
+		  Value:&emsp;₣ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-caledonie/205-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Liberty sitting on a throne facing left holding a lit torch in the left hand and assorted fruit in a cornucopia in a bend of the right arm<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Kagu bird within sprigs below value</p>
+		</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-caledonie/206-180.jpg" alt="Reverse Image"></td>
+	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Franc<hr>
+		  Value:&emsp;₣ 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-caledonie/201-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Liberty sitting on a throne facing left holding a lit torch in the left hand and assorted fruit in a cornucopia in a bend of the right arm<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Kagu bird within sprigs below value</p>
+		</td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-caledonie/202-180.jpg" alt="Reverse Image"></td>
+	 <td style="text-align: center;">1995</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    </table>
+    <h2>
+	  Coins:<span id="sum5"></span> &emsp;
+     </h2>
+<script>
+   function sumTable5() {
+       // Get the table by its ID
+       var table = document.getElementById("table5");
+       // Initialize sums for each column
+       var sum5 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum5").innerText = sum5;
+      	  
+   }
+    sumTable5();
+   </script>
+<h2>
+	  Total Coins:<span id="table6sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable6() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum6 = 0
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }  
+	   var table = document.getElementById("table5");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table6sum = sum6
+	  document.getElementById("table6sum").innerText = table6sum;   }
+ sumTable6();
+</script>
+</section>
+</p>
+<p><br></p>
+	   <p></p>
+	
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+</body>
+</html>

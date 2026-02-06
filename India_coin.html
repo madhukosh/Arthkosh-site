@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FF671F;
+    color: #06038D;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+<style>
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	  document.getElementById('reverseRateUSD').textContent = value;
+	  
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4'), document.getElementById('table5'), document.getElementById('table6'), document.getElementById('table7')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>India 
+      <img src="https://flagcdn.com/in.svg" style="width: 25px;" alt="India">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Rupee &emsp; 
+	unit currency:Paisa &emsp;
+	Symbol:&#8377  &emsp; 
+	1 Rupee = 100 Paise
+	Code:<input type="text" id="fromCurrency" value="INR"><br>
+      INR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:INR - <span id="reverseRateUSD">-</span>  &emsp;
+     INR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:INR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <h4>Regular Coins</h4>
+
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+<br>
+<br>
+</div>
+
+      
+
+    <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1/12 Anna<hr>
+		  Value:&emsp;&#8377 0.0052</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1828-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned head of George V facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within circle of beads, wreath surrounds with any mintmark below date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1829-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1932(2)</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Paisa<hr>
+		  Value:&emsp;&#8377 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2804-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ashoka lion capitol with the country name on both sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3027-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1957</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Paisa<hr>
+		  Value:&emsp;&#8377 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2188-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above the date and "Rupye ka souva bhaag" & "Ek Paisa" in Nagari</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3029-original.jpg" alt="Reserve Image"></td>   
+		<td style="text-align: center;">1964</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Paisa<hr>
+		  Value:&emsp;&#8377 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2350-270.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3030-270.jpg" alt="Reserve Image"></td>    
+		<td style="text-align: center;">1967</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#188; Anna<hr>
+		  Value:&emsp;&#8377 0.015625</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1855-270.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>King George V crowned head left, legend in English, toothed rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within a circle of beads wreath and toothed rim surrounds</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1856-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1918</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Pice<hr>
+		  Value:&emsp;&#8377 0.015625</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2178-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Prancing horse facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3019-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1951</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Paisa<hr>
+		  Value:&emsp;&#8377 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/3032-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3033-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1973</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;3 Paisa<hr>
+		  Value:&emsp;&#8377 0.03</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2358-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;"> "Teen Paise" (three paise) in Devanagari. Denomination flanked by sprays, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3081-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1971</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#189; Anna<hr>
+		  Value:&emsp;&#8377 0.03125</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1725-270.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>King George VI crowned head left, English legend, toothed rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within decorative outline, Value in 4 Indian languages outside border Urdu, Bengali, Telugu & Devnagari within a toothed rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1726-270.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1943(2)</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Paise<hr>
+		  Value:&emsp;&#8377 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2368-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3089-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1967&emsp;1971(&star;)<br>1971(♦)</td>
+	<td style="text-align: center;">3</td>
+    </tr>
+	  
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Paise<hr>
+		  Value:&emsp;&#8377 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2369-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3090-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1974</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Paise<hr>
+		  Value:&emsp;&#8377 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2377-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion pedestal, "Satyamev Jayate" in Nagari below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below. Here the font 5 is larger than the previous issue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3095-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1993(&star;)&emsp;1994</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Anna<hr>
+		  Value:&emsp;&#8377 0.0625</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1756-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned head of King George VI facing left with his name and role in English around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below within floral pattern and the value in four languages: Urdu, Telugu, Bengali & Devanagari outside</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1757-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1944</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Paise<hr>
+		  Value:&emsp;&#8377 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2323-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2324-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1972&emsp;1973</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+		  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Paise<hr>
+		  Value:&emsp;&#8377 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2325-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion capital, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Family above date within triangle, grain sprigs flank</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3100-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1974</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Paise<hr>
+		  Value:&emsp;&#8377 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2339-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capital with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3110-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1987</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Paise<hr>
+		  Value:&emsp;&#8377 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2927-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Asoka Lion pedestal with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date and the mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2928-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1988&emsp;1990</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Anna<hr>
+		  Value:&emsp;&#8377 0.125</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/hyderabad_princely_state/48-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>CharMinar (FourMinarets) gateway Legend in Urdu :92 Asaf Jah (top), bahadur (left) Nizam Al-Mulk (right).'Ain' (Urdu for "O", initial of "Osman" in doorway). AH date below gateway<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Inside circle, value in numerals Outside circle, legend in Urdu:"33 Julus Maimanat Manus Zarb Farkhanda Bunyad - Hyderabad"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/hyderabad_princely_state/49-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1943</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Paise<hr>
+		  Value:&emsp;&#8377 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2285-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3114-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1994</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Paise<hr>
+		  Value:&emsp;&#8377 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2204-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3119-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">1972(&#9830;)&emsp;1974(&#9830;)<br>1975(&#9830;)&emsp;1976(&star;)<br>1980(&star;)</td>
+	<td style="text-align: center;">5</td>
+    </tr>
+	  
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Paise<hr>
+		  Value:&emsp;&#8377 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2206-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Rural scene with a woman. The inscription "Progress for Rural Women" in English and Hindi</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3120-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1980</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Paise<hr>
+		  Value:&emsp;&#8377 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2074-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Asoka capitol above the denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Indian Rhinoceros facing left with the date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3124-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1988(c)&emsp;1988(&diamond;)<br>1994(&star;)&emsp;1998(&star;)<br>1999&emsp;2002</td>
+	<td style="text-align: center;">6</td>
+    </tr>
+	 
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2224-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Death of Jawaharlal Nehru: Bust of Jawaharlal Nehru facing left "Jawaharlal Nehru" in Nagari</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3128-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1964</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2226-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3129-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1968</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2237-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Inscription on shield within wheat ears GROW MORE FOOD</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3133-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1973</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	   
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2245-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital and the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2246-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1975(♦)</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	   
+  
+	</table>
+	  <h2>
+	  Page 1:&emsp;<span id="sum1"></span> 
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1(); 
+ </script>
+	<div class="page-break"></div> 
+	
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+	
+	 <table id = "table2">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 150px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2263-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The bust of Indira Gandhi facing right with dates below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3138-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1984</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2255-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Gandhi with Staff, leading a line of people</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3141-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1997</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2261-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Large denomination at bottom with three lions symbol above. Lettering both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Map in background with circular Parliament house building in New Delhi on top. Date below, lettering top right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3140-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1999(&#x2022;)&emsp;2002<br>2003</td>
+	<td style="text-align: center;">3</td>
+    </tr>
+    
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2259-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capital. Dividing line above contains country. Dividing line below contains date with mintmark underneath<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Part of the Hasta Mudra (hand signs)series. Various Hasta Mudras are used in Indian dance</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3142-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	  
+	  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Paise<hr>
+		  Value:&emsp;&#8377 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2258-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Lion capitol of Ashoka Pillar with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Lotus flowers and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3143-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2011&emsp;2015</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/1690-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value flanked by corn and the date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3147-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">1976(&#9830;)</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2267-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Asoka Lion with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value flanked by corn and the date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3148-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">1983(&#x2022;)&emsp;1985(&#x2022;)<br>1986(&#x2022;)</td>
+	<td style="text-align: center;">3</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2311-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by corn stalks and the denomination in Devanagari above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3165-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">1995(&#x2022;)&emsp;1996(&#x2022;)<br>1997(°M)&emsp;1998(MK)<br>1998(&#x2022;)&emsp;1999(&#x2022;)<br>2001(&star;)&emsp;2001(&#x2022;)<br>2001(♦)&emsp;2002
+		<br>2002(&#x2022;)&emsp;2003</td>
+	<td style="text-align: center;">12</td>
+   </tr>
+ 
+ </table>
+
+  <h2>
+	  Page 2:&emsp;<span id="sum2"></span> 
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2(); 
+ </script>
+	<div class="page-break"></div> 
+	
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+	
+	 <table id = "table3">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2381-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cellular jail building</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3171-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1997</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2385-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">100th Anniversary Birth of Jaya Prakash Narayan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3173-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2002</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+          
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2389-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Maharana Pratap facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3174-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2003</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2399-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination, between lines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cross dividing four dots</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3177-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2005</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2401-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal between lines, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Lotus flowers and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3178-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2007&emsp;2008<br>2008(&star;)&emsp;2009(&#x2022;)</td>
+	<td style="text-align: center;">4</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2405-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal between lines, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bengal Tiger walking left beneath palm tree, legend around, mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3179-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2409-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capital with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date below Rupee symbol flanked by Lotus flowers and the date above the mintmark at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3180-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2011&emsp;2013(&star;)<br>2014(♦)&emsp;2015(♦)<br>2015&emsp;2017<br>2018</td>
+	<td style="text-align: center;">7</td>
+   </tr>
+        
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/63f3a8febe4799.94702957-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5><hr>
+		     <h5 style = "text-aligAshoka Pillar Lion Capitoln: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Logo of Azadi Ka Amrit Mahotsav,75th Year of Independence</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/63f3a8da4a2265.32610046-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2023</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2447-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Map of India, flag within</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3182-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1982</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2417-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">SMALL FAMILY HAPPY FAMILY</p>
+		</td>
+		<td><img src="https://en.numista.com/catalogue/photos/inde/3184-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1993</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2443-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Asoka Lion capital and the numerical value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Flag on the map of India</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3183-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1993(&star;)</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2425-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Sardar Patel facing 3/4 right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3189-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1996</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2437-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal, denomination below, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Sri Aurobindo facing</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3191-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1998</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2435-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">DESHBANDHU CHITTARANJAN DAS 1870-1925</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3192-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1998</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2443-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Asoka Lion capital and the numerical value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Flag on the map of India</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3183-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1998(♦)&emsp;2001<br>2002(♦)&emsp;2002(K)<br>2002(&star;)</td>
+	<td style="text-align: center;">5</td>
+   </tr>
+   
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2439-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated image of Sant Tukaram holding musical instruments</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3196-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2002</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+          
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2441-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">150 Years of Indian Railways. Portrait of Bholu, The guard (symbol of Indian railways)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3197-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2003</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+   </table>
+
+  <h2>
+	  Page 3:&emsp;<span id="sum3"></span> 
+  </h2>
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+ sumTable3(); 
+ </script>
+	<div class="page-break"></div> 
+	
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+	
+	 <table id = "table4">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>  
+  
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/3198-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination, between lines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cross dividing four dots, Unity in Diversity</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3199-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2005</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2451-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capitol between horizontal lines, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Part of the Hasta Mudra (hand signs)series. Various Hasta Mudras are used in Indian dance</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3200-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009&emsp;2010</td>
+	<td style="text-align: center;">2</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2455-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal & denomination, between horizontal lines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Louis Braille. Braille script reads: “L.BRL”</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3202-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+   
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2407-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Anniversary of the Reserve Bank of India.Lion advancing left, palm tree in background, dates below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3203-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2459-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date below the rupee symbol र flanked by lotus flowers</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3205-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2011&emsp;2011(&#x2022;)<br>2011(&star;)&emsp;2012<br>2012(♦)&emsp;2012(&#x2022;)<br>2013(♦)&emsp;2015(♦)
+	<br>2016(&#x2022;)&emsp;2016(♦)</td>
+	<td style="text-align: center;">10</td>
+     </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Rupees<hr>
+		  Value:&emsp;&#8377 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e61775a1f9.97827753-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Year of Independence: Logo of Azadi Ka Amrit Mahotsav</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e6187575a9.39887189-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2022&emsp;2023</td>
+	<td style="text-align: center;">2</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2463-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>World of Work - 75 Years of ILO-Symbol of the International Labour Organization<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Asoka Lion pedestal, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3209-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1994</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2461-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka lion pedestal<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by flowers</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3208-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2000&emsp;2001(&star;)</td>
+	<td style="text-align: center;">2</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2549-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Dadabhai Naoroji-Bust of Naoroji facing 3/4 right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3217-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2003</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2537-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Birth Centenary of Lal Bahadur Shastri-Bust of Shastri 3/4 left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3219-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2004</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2493-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Anniversary Dandi March-Gandhi leading marchers</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3220-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">2005</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2495-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">50th Anniversary of the ONGC (Oil and Natural Gas Corporation) - ONGC logo between sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3226-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2006</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2473-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mahatma Basaveshwara - Bust of Mahatma Basaveshwara facing 1/4 left</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3223-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2006</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2499-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">200th Anniversary of the State Bank of India - SBI logo flanked by leaves</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3229-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2006</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2541-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Narayana Gurudev - Shree Narayana Gurudev bust facing<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Asoka Lion pedestal, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3228-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2006</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/3238-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol, denomination to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Birth Centenary of Shaheed Bhagat Singh- Bust of Shaheed Bhagat Singh facing</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3239-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2007</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    </table>
+
+  <h2>
+	  Page 4:&emsp;<span id="sum4"></span> 
+  </h2>
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+ sumTable4(); 
+ </script>
+	<div class="page-break"></div> 
+	
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+	
+	 <table id = "table5">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2503-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capitol between horizontal lines, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above waves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3234-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2007</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2533-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">60 Years of Commonwealth - Parliament building</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3058-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2465-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion Capitol with the country name on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by lotus flowers and buds with the date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3057-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009&emsp;2009(&#x2022;)</td>
+	<td style="text-align: center;">2</td>
+   </tr>
+   
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2535-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Dr. Rajendra Prasad 125th birth anniversary - Dr. Rajendra Prasad bust facing 1/4 left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3059-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2557-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol above the denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">1000th Anniversary of the Temple of Thanjavur - Statue of King Raja Rajan I before temple</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3060-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2553-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">100th Anniversary of C. Subramaniam - Bust of C. Subramaniam 3/4 left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3061-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2567-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Anniversary of the Reserve Bank of India - RESERVE BANK OF INDIA प्लैटिनम जयंती PLATINUM JUBILEE</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3064-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2563-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">100th Anniversary of Mother Teresa -MOTHER TERESA 1910-2010 जन्मशती BIRTH CENTENARY</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3063-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2571-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below beside the rupee symbol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">150th Anniversary of Comptroller and Auditor General of India - Comptroller and Auditor General logo</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3066-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2569-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol over denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">19th Commonwealth Games in India - Commonwealth games 2010 logo</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3065-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2581-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Lion capitol of Ashoka Pillar, value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">100th Anniversary of Indian Council of Medical Research -Central circle contains object with banner below. 
+	     Legend: Bharatiya Ayurvignyan Anusandhan Parishad, Shatabdi Varsh, 
+		dates below circle.Sanskrit lettering on banner, in Devanagari script: Parikshya Kaarinohi 
+	     Kushalabhavanti</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/inde/3068-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2011</td>
+	<td style="text-align: center;">1</td>
+	
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2579-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date below Rupee symbol ₹ flanked by Lotus sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3072-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2011(&star;)&emsp;2011(♦)<br>2012(&#x2022;)&emsp;2014(♦)<br>2015(♦)&emsp;2015(&star;)<br>2016(K)&emsp;2016(♦)<br>2016(&#x2022;)&emsp;2017(♦)<br>2017(&#x2022;)</td>
+	<td style="text-align: center;">11</td>
+   </tr>
+   
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2591-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Lion capitol of Ashoka Pillar, value below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Silver Jubilee 2012 - Shri Mata Vaishno Devi Shrine Board - Centrally located the picture of Shri Mata Vaishno Devi. 
+	     Lettering around outside of picture and date. Below the picture 'Silver Jubilee' is written</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3075-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2599-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below beside the rupee symbol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">50th Anniversary of Motilal Nehru - Picture of Motilal Nehru facing left in the center, with the inscription 
+	 "मोतीलाल नेहरू की 150वी जयंती" in Devnagri on the upper periphery and "150th BIRTH ANNIVERSARY OF MOTILAL NEHRU" in English on the lower periphery. 
+	  The date is inscribed below the picture of Motilal Nehru</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3074-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2583-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">60th Anniversary of Indian Parliament - Parliament building</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3073-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;">5 Rupees</td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2585-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">60 YEARS OF INDIA GOVT. MINT, KOLKATA</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3076-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2587-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">150 Years of Kuka Movement 1857-2007 - with bust of Satguru Ram Singh Ji</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3077-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2013</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;">5 Rupees</td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2609-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">25 Birth Anniversary of Maulana Abul Kalam Azad - मौलाना अबुल कलाम आजाद MAULANA ABUL KALAM AZAD 1888-1958 125 वीं जयंती 125 BIRTH ANNIVERSARY</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3052-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2014</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/3050-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>125th Birth Anniversary of Jawaharlal Nehru - 125TH BIRTH ANNIVERSARY OF JAWAHARLAL NEHRU 1889-2014<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ashoka Lion capital, denomination below with Rupee symbol</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3051-original.jpg" alt="Reserve Image"></td>
+		<td style="text-align: center;">2014</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    </table>
+
+  <h2>
+	  Page 5:&emsp;<span id="sum5"></span> 
+  </h2>
+  <script>
+function sumTable5() {
+       // Get the table by its ID
+       var table = document.getElementById("table5");
+       // Initialize sums for each column
+       var sum5 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum5").innerText = sum5;
+      	  
+   }
+ sumTable5(); 
+ </script>
+	<div class="page-break"></div> 
+	
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+	
+	 <table id = "table6">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>     
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2577-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date below Rupee symbol ₹ flanked by Lotus sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3070-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2018</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5fc35cfc54d643.81855341-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denominational value in the international numerals.The Rupee symbol above denominational value. Grains depicting agricultural dominance of the country, flanked on left periphery of the coin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/5fc35cfd073195.05785354-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2019(&star;)&emsp;2019(&#x2022;)<br>2019(♦)</td>
+	<td style="text-align: center;">3</td>
+   </tr>       
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e7a2f230c9.39089252-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Year of Independence - Logo of Azadi Ka Amrit Mahotsav</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e7a4094bc6.19275658-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2023</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2617-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Lion pedestal between lines<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large denomination, wide rays above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3251-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2621-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Dr.Homi Bhabha bust facing 3/4 left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3253-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2009</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2623-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Anniversary of the Reserve Bank of India - Indian lion facing left, palm tree behind</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3254-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2010</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2625-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and Rupee symbol below rays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3255-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012&emsp;2015<br>2019</td>
+	<td style="text-align: center;">3</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2613-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Silver Jubilee 2012 - Shri Mata Vaishno Devi Shrine Board - Image of Shri Mata Vaishno Devi in center, with "Silver Jubilee" below
+          "Shri Mata Devi Shrine Board" in Nagari and English on outer ring</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3258-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2155-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar, Denomination Below with rupee symbol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Celebration of centenary commemoration of Mahatma Gandhi’s return from South Africa to India - 
+	     Depicts both young Mahatma Gandhi and Gandhi Ji in old age, showing his transformation from a pravasi to Mahatma</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2156-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2015</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e843d64265.75262954-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Year of Independence - Logo of Azadi Ka Amrit Mahotsav</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e844d81a09.73557665-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2023</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Rupees<hr>
+		  Value:&emsp;&#8377 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/5f76d1c99ab692.17783927-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denominational value in the international numerals. The Rupee symbol above the denominational value. Grains depicting the agricultural dominance of the country is flanked on periphery of the coin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/5f76d1ca578bd3.05962244-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2020</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Rupees<hr>
+		  Value:&emsp;&#8377 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e8c16226e4.63111282-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">75th Year of Independence. Logo of Azadi Ka Amrit Mahotsav</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/62a7e8c2921348.84092028-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">2024</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Page 6:&emsp;<span id="sum6"></span> 
+  </h2>
+  <div class="page-break"></div> 
+  <script>
+function sumTable6() {
+       // Get the table by its ID
+       var table = document.getElementById("table6");
+       // Initialize sums for each column
+       var sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum6").innerText = sum6;
+      	  
+   }
+ sumTable6();
+</script>
+
+
+<h4>Large Coins</h4>
+<div style="display: flex;justify-content: flex-start;">
+    <table>
+    <tr>
+        <th>Symbol</th>
+        <th>&star;</th>
+	   <th></th>	   
+	   <th>♦</th>
+	   <th>°</th>
+	   <th>B</th>
+	   <th>C</th>
+	   <th>°M</th>
+	   <th>(M)</th>
+	   <th>(MK)</th>
+    </tr>
+	<tr>
+        <td>Minted at</td>
+        <td>Hyderabad</td>
+        <td>Kolkata</td>
+		<td>Mumbai</td>
+		<td>Mumbai</td>
+        <td>Noida</td>        
+		<td>Ottawa</td>
+		<td>Mexico</td>
+		<td>South Africa</td>
+		<td>Slovakia</td>
+    </tr> 
+	</table>
+	</div>	
+  <table id = "table7">
+    
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+    	    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1562-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of George VI facing left. Small second head, large rim decoration<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Within the circle, date divides legend in English & Urdu (Yek Rupya). Outside circle, a wreath made of roses, thistle, shamrock leaves and lotus flowers. All within a toothed border</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/1563-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1942</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Rupee<hr>
+		  Value:&emsp;&#8377 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/2205-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned head George VI facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Indian tiger (panthera tigris) One rupee (Ek Rupya) in Nagari, English and Urdu</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde_britannique/2206-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1947</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Rupees<hr>
+		  Value:&emsp;&#8377 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2289-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Asoka Lion pedestal, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Death of Indira Gandhi - statesperson, 1917-1984.Bust of Indira Gandhi facing right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3206-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1985</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2631-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol,denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Centennial - Mahatma Gandhi's Birth -Bust of Mahatma Gandhi facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3240-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1969</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2633-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol,denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Floating lotus flower below sun, flanked by wheat grains</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3241-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1970</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/1066-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol,denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">25th Anniversary of Independence - Figures with Indian flag, parliament building in background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3242-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1972(2)</td>
+	<td style="text-align: center;">2</td>
+   </tr>
+   
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2647-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ashoka Pillar Lion Capitol,denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">FOOD & WORK FOR ALL - Figure on tractor, utility pole, and buildings in the background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3246-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1976</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Rupees<hr>
+		  Value:&emsp;&#8377 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2004-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Ashoka Lion Pillar above the value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">IX Asian Games</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2005-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1982</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Rupees<hr>
+		  Value:&emsp;&#8377 50.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2660-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Ashoka Lion Pillar above the numerical value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">FAO - Planned Families - Family within triangle, grain ears flank</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3262-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1974</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Rupees<hr>
+		  Value:&emsp;&#8377 50.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2656-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Ashoka Lion Pillar above the numerical value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">FAO - Food and Work for All - Figure on tractor, utility pole, and buildings in the background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/3264-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1976</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;100 Rupees<hr>
+		  Value:&emsp;&#8377 100.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/inde/2925-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Ashoka Lion Pillar above the numerical value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Logo of IX Asian Games adopted from Delhi's Jantar Mantar monument</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/inde/2926-original.jpg" alt="Reserve Image"></td>
+      		<td style="text-align: center;">1982</td>
+	<td style="text-align: center;">1</td>
+   </tr>
+   
+ </table>
+ 
+ <h2>
+	  Page 7:&emsp;<span id="sum7"></span> 
+     </h2>
+<script>
+   function sumTable7() {
+       // Get the table by its ID
+       var table = document.getElementById("table7");
+       // Initialize sums for each column
+       var sum7 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum7 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum7").innerText = sum7;
+      	  
+   }
+    sumTable7();
+   </script>
+   <h2>
+	  Total Coins:<span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var tsum = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	  var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	  var table = document.getElementById("table5");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	  var table = document.getElementById("table6");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	  var table = document.getElementById("table7");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var tablesum = tsum
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

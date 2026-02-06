@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peru</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Peru 
+      <img src="https://flagcdn.com/pe.svg" style="width: 25px;" alt="Peru">
+ </h2>
+   <h3>Currency: Sol&emsp; 
+    Unit Currency: Centimo&emsp; 
+	Symbol: S/.&emsp; 
+	1 Sol = 100 Centimos&emsp;
+	Code:<input type="text" id="fromCurrency" value="PEN"> &emsp; <br>
+	PEN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:PEN -  <span id="reverseRateUSD">-</span> &emsp; 
+	PEN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:PEN -  <span id="reverseRateINR">-</span> 
+</h3> 
+ 
+  <table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Centimo<hr>
+	  	  Value:&emsp;S/. 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/624752903ab1f0.15664935-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Peru surrounded by legend,all with braille above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Chimu designs from city of Chan Chan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/624752909a1820.97804162-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1999</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Centimo<hr>
+	  	  Value:&emsp;S/. 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1255-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National arms of Peru with the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Chimu designs from city of Chan Chan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1256-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2007</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;S/. 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1171-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Shield of Peru with the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Chimu designs from city of Chan Chan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1172-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2010<br>2013<br>2014<br>2017</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centimos<hr>
+	  	  Value:&emsp;S/. 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/6350b0ec6321a1.04972627-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Peru surrounded by legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Chimu designs from city of Chan Chan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/6350b0ec95a191.80506144-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centimos<hr>
+	  	  Value:&emsp;S/. 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1801-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Peru surrounded by legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination flanked by Chimu designs from city of Chan Chan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1802-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2009<br>2015<br>2016<br>2021</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Centimos<hr>
+	  	  Value:&emsp;S/. 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1773-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Peru surrounded by legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination with wreath to the left and vertical lines to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1774-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2009<br>2014<br>2016</td>
+	 <td style="text-align: center;">3</td>
+    </tr>	    
+   
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Sol<hr>
+	  	  Value:&emsp;S/. 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1577-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Peru with the issuer name around the rim and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1578-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2012</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ <h3>Currency: Sol de Oro&emsp; 
+    Unit Currency: Centimo&emsp; 
+	Symbol: S/&emsp; 
+	1 Oro = 100 Centimos&emsp;
+	Code:<input type="text" id="Currency1" value="PEH"> &emsp; <br>
+	PEH:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:PEH -  <span id="reverseRateUSD">-</span> &emsp; 
+	PEH:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:PEH -  <span id="reverseRateINR">-</span> 
+</h3> 
+
+  <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;S/. 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/607f2ef0b5be94.89500597-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Ceres<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination to right of sprig</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/607f2ef105e8d9.94314823-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centimos<hr>
+	  	  Value:&emsp;S/. 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/67c88b33553562.25856623-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value to right of sprig</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/67c88b33a6f931.34905927-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Sol<hr>
+	  	  Value:&emsp;S/. 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1715-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Peru (Shield divided in 3 parts with cornucopia, vicuna, treetop with wreath circle, plants on either side, laurel and palm branch)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value within the circle, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1716-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>	
+	    
+		
+		 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Sol<hr>
+	  	  Value:&emsp;S/. 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/5e9075dad38392.06435429-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem in circle containing wreath with shield divided into 3 in middle, and wreath with lettering outside circle, date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Vicuña (Vicugna vicugna), standing, facing right and the engraver's name below the vicuña at the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/5e9075db4f2099.63142688-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>	
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Sol<hr>
+	  	  Value:&emsp;S/. 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/1239-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms flanked by laurel and olive branch<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within the circle, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/1240-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>	
+	
+        
+     
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+<h3>Currency: Inti&emsp; 
+     Unit Currency: Centimo&emsp; 
+	Symbol: S/&emsp; 
+	1 Inti = 100 Centimos&emsp;
+	Code:<input type="text" id="Currency1" value="PEI"> &emsp; <br>
+	PEI:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:PEI -  <span id="reverseRateUSD">-</span> &emsp; 
+	PEI:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:PEI -  <span id="reverseRateINR">-</span> 
+</h3> 
+
+  <table id = "table3">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Inti<hr>
+	  	  Value:&emsp;S/. 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/635d9a2e008347.33698173-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Legend surrounding coat of arms, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Miguel Grau facing right with the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/perou/635d9a2e3b9043.86159018-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	  	
+     
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+  </h2>
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+ sumTable3();
+</script>
+
+<h2>
+	  Total Coins:<span id="Totalsum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var TotalSum = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row 
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = TotalSum
+	  document.getElementById("Totalsum").innerText = table3sum;
+	  
+	  
+       // Display the sum in the last row
+        var table3sum = TotalSum
+	  document.getElementById("Totalsum").innerText = table3sum;
+   }
+ sumTotal();
+</script>
+
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

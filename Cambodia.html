@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambodia</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #E00025;
+    color: #032EA1;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Cambodia 
+       <img src="https://flagcdn.com/kh.svg" style="width: 25px;" alt="Cambodia">
+
+ </h2>
+  <h3>Currency: Riel&emsp; 
+     Unit Currency:Kak&emsp; 
+	Symbol: &#6107; &emsp; 
+	Code:<input type="text" id="fromCurrency" value="KHR"> &emsp; <br>
+	KHR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:KHR -  <span id="reverseRateUSD">-</span> &emsp; 
+	KHR:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:KHR -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+  <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 0.50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62b9cdc1d4a2b0.92857826-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>The portrait of Banteay Srei Temple emerges in the center. On the right is the Norak Singha. On the left is the sculture of naga serpent<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">Fishermen on the Tonle Sap lake, text in Khmer</p>
+      </td>     
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62b9cdc289e5f2.74381835-original.jpg" alt="Reverse Image"></td>
+    </tr>  
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/623aec9867a882.79381034-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>State Emblem of the People's Republic of Kampuchea to the left, passenger train to the right<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">The sluice "Tek Thla", along the National Road No 3</p>
+      </td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/623aec98c49a61.04227449-original.jpg" alt="Reverse Image"></td>
+      </tr>  
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e862f6cc8.53460499-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>Independence Monument of Phnom Penh Signed: Chea Chanto & Tieng Seng<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">School Building with students</p>
+      </td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e868dca63.87384304-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e5f439e23.77164712-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>Naga, Statue of Buddha, King Norodom Sihanouk as a young monk<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">Khmer statue, Wat Preah Keo temple, Statue of Buddha, "100" and "NATIONALBANKOFCAMBODIA" repeated in micro-script above and under the central design</p>
+      </td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e5faa9b29.42996238-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 200</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/644ff499913212.21361932-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>Royal arms of Cambodia, naga (mythical snake), King Norodom Sihamoni as a young man<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">Preah Thineang Chan Chhaya (Moonlight Pavilion) of the Royal Palace in Phnom Penh, Paul Ducuing’s statue of King Sisowath at the National Museum of Cambodia</p>
+      </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/644ff49ac22326.43799878-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#6107; 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e3fb1cfb6.65693928-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	 	<h4>&larr;Observe</h4>Naga, Coat of Arms of Cambodia, King Norodom Sihamoni<hr>
+		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+		<p style = "text-align: right;">Neak Loeung Bridge on the left, Kizuna Bridge near Kampong Cham on the center,Relief from Bayon at the background,Japanese-Cambodian Friendship Monument on the right</p>
+      </td>
+	 <td><img src="https://en.numista.com/catalogue/photos/cambodge/62fc7e4072ef06.47249103-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Czech</title>
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D7141A;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+
+
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Czech Republic 
+       <img src="https://flagcdn.com/cz.svg" style="width: 25px;" alt="Czech">
+
+ </h2>
+ 
+  <h3>
+     Currency: Koruna&emsp; 
+	Unit currency: Haleru&emsp; 
+	Symbol: Kč &emsp;
+	Code: <input type="text" id="fromCurrency" value="CZK"><br>
+      CZK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CZK - <span id="reverseRateUSD">-</span>  &emsp;
+     CZK:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CZK - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+     <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#75;&#269; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e837adc5.80144273-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>10 10 Protectorate of Bohemia and Moravia Ten Crowns Protectorate Bohemia and Moravia Ten Crowns Prague, July 8, 1942. 415235 S. 01 A 10 Counterfeiting is punished<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">10 Prot. Bohemia & Moravia 10 Crowns</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e960aec6.61585408-original.jpg" alt="Reverse Image"></td>  	
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#75;&#269; 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/6505d7d5803067.69308004-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Karel IV (the Czech, Holy Roman Emperor). Obverse and reverse images of a silver Prague gross (from the Kingdom of Bohemia)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Seal of Charles University, Prague, in centre. National arms at right.</p>
+	</td>      
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/6505d7d61b6382.96113111-original.jpg" alt="Reverse Image"></td>
+      </tr>
+    
+    <tr>
+    <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#75;&#269; 200</td>
+      <td><img src=" https://en.numista.com/catalogue/photos/republique_tcheque/651aedd32a6215.75439254-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Jan Ámos Komenský (Czech educator and Theologian)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Hands, stylized open book at bottom right</p>
+	</td>      
+      <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/651aedd466f447.27847845-original.jpg"  alt="Reverse Image"></td>
+      <td> .
+	</td>
+	
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h3>
+Notes: <span id="sum1">- </span> &emsp;
+</h3>
+   <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ 
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+ 
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

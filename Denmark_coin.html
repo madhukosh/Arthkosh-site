@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Denmark</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Denmark 
+      <img src="https://flagcdn.com/dk.svg" style="width: 25px;" alt="Denmark">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Krone&emsp; 
+	Unit currency: Øre&emsp; 
+	Symbol: kr. &emsp;
+	1 Krone  = 100 Øre &emsp; 
+	Code: <input type="text" id="fromCurrency" value="DKK"><br>
+      DKK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:DKK - <span id="reverseRateUSD">-</span>  &emsp;
+     DKK:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:DKK - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	     <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 80px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+ 
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Øre<hr>
+		  Value:&emsp;kr. 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3c6724a5e26.04705549-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of King Frederik IX (1899-1972)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3c672ee1373.10134331-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1966<br>1967</td>
+	 <td style="text-align: center;">3</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Øre<hr>
+		  Value:&emsp;kr. 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/62dc393aee6539.79696420-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned Christian X monogram divides date, mint mark and initials N-S below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value divide Oak and laurel leaves</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/62dc393b4d11c6.49763405-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Øre<hr>
+		  Value:&emsp;kr. 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3e33c5d6803.19803335-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned Frederik IX monogram (1899-1972)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3e33d6b53d2.15418199-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1954&emsp;1957<br>1963&emsp;1964<br>1966</td>
+	 <td style="text-align: center;">5</td>
+    </tr> 
+     
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Øre<hr>
+		  Value:&emsp;kr. 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/904-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned CX monogram divides date, mintmark and initials N-S below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oak and beech leaves divide the value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/905-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1941</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+     
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Øre<hr>
+		  Value:&emsp;kr. 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/2972-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Frederik IX dividing the date on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above ears of wheat and the country name at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/2973-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1964<br>1972</td>
+	 <td style="text-align: center;">2</td>
+    </tr> 
+      
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Øre<hr>
+		  Value:&emsp;kr. 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3f9a7e07f24.43678394-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned Margrethe II monogram dividing the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above ears of wheat and the country name at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d3f9a87633b7.58339001-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1974&emsp;1975<br>1976&emsp;1978<br>1979&emsp;1980<br>1981&emsp;1983<br>1987&emsp;1988</td>
+	 <td style="text-align: center;">10</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Øre<hr>
+		  Value:&emsp;kr. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/5f60fb2d26d541.74081646-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Christian X (1870-1947), mint mark and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value in two lines divided by the center hole above and below with 2 spirals on both sides of the hole</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/5f60fb2d8f63f6.33348291-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1933</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Øre<hr>
+		  Value:&emsp;kr. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/5fd1ec255dddf4.20477595-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>The crowned monogram of Frederik IX above crossed oak and laurel branches. Date at top divides by crown<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value with the country name above, mint official's and moneyer's initials at the bottom on the sides of mintmark</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/5fd1ec25c63691.54292655-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1952&emsp;1953<br>1955&emsp;1956</td>
+	 <td style="text-align: center;">4</td>
+    </tr> 
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Øre<hr>
+		  Value:&emsp;kr. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d400f871a173.30054966-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Frederik IX divides date, mintmark and initials C S below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in the center, the country name above oak branches</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d400f9447c00.25404300-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1964<br>1965&emsp;1970<br>1971&emsp;1972</td>
+	 <td style="text-align: center;">6</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Øre<hr>
+		  Value:&emsp;kr. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d401582bade6.12697103-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned monogram of Margrethe II dividing the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value with oaktree-leaves and the country name above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d40158e9ddc4.84786262-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973&emsp;1974<br>1975&emsp;1976<br>1977&emsp;1978<br>1977&emsp;1978<br>1982&emsp;1983<br>1984&emsp;1985<br>1987</td>
+	 <td style="text-align: center;">11</td>
+    </tr> 
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Øre<hr>
+		  Value:&emsp;kr. 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/912-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crowned Frederik IX monogram on the left, beech branch on the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Monetary value above crossed oaktree branches, name of country at top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/913-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Øre<hr>
+		  Value:&emsp;kr. 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/29-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crown of Christian V (1646-1699) in center, dividing the date in 2 with the cross. Country name below, along the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, barley left and right around the central hole</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/30-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967&emsp;1972</td>
+	 <td style="text-align: center;">2</td>
+    </tr> 
+	
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Øre<hr>
+		  Value:&emsp;kr. 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/1393-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Crown of Christian V (1646-1699) in center, dividing the date in 2 with the cross. Country name below, along the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value with the heart of the Royal Mint (early issues with initials: LG ♥ JP at bottom)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/1394-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990&emsp;1993</td>
+	 <td style="text-align: center;">2</td>
+    </tr> 
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Øre<hr>
+		  Value:&emsp;kr. 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/2976-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>The crown of Christian V (1646-1699) dividing the date above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value with the heart of the Royal Mint above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/2977-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr> 
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Kroner<hr>
+		  Value:&emsp;kr. 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/390-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Christian X facing right, mint official and moneyer initials at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value in two lines divided by wheat and oat with date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/391-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Kroner<hr>
+		  Value:&emsp;kr. 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d416e2d84574.26608874-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Value, crowned royal coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portrait of Frederik IX. to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d416e3c1d558.88700967-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1970</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Kroner<hr>
+		  Value:&emsp;kr. 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/62d0ae89bef509.72430723-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>New royal monogram, showing three times between three crowns. The autographs of the designer, medallist and mint official flanking the year<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Drawing based on prehistoric drawings with two hearts on each side of the hole representing the royal mint</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/62d0ae8a338006.03960192-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Kroner<hr>
+		  Value:&emsp;kr. 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/795-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>The new royal monogram of Margarethe II, showing three times between three crowns<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Drawing based on prehistoric drawings and the heart of the royal mint left and right of the hole</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/796-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>  
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Kroner<hr>
+		  Value:&emsp;kr. 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/5fd2031ab72da8.73263788-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Portrait Frederik IX facing right, titles, mintmark, and initials C♥S or S♥S below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned and quartered arms of Denmark divide date within two oak branches, value above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/5fd2031b801077.36241591-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>	  
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Kroner<hr>
+		  Value:&emsp;kr. 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/66491ece0e9320.03878817-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Three monograms of Queen Margarethe II intertwined with three crowns of King Christian V around central hole. Heart mint marks to right and left above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Stylised prehistoric ornament with seven waves and pellets around central hole. Heart mint marks to right and left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/66491ecee41a48.69263689-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1990&emsp;2002</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+  	<tr>  
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Kroner<hr>
+		  Value:&emsp;kr. 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d422412e5126.39923502-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head right with tiara, mint mark and initials B-B (KM#864.1) or R-B (KM#864.2) below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Large 10 on horizontal grid, two rye stalks flanking, date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d422422d8374.87740869-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr> 
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Kroner<hr>
+		  Value:&emsp;kr. 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/789-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Margrethe II looking right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, Crowned Denmark coat of arms in circle, ornamental decoration</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/790-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1994</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>  
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Kroner<hr>
+		  Value:&emsp;kr. 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/62b47315eed7f3.54253507-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Margrethe II looking right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, Crowned Denmark coat of arms in circle, ornamental decoration</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/62b47316815fa9.54132397-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2001</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Kroner<hr>
+		  Value:&emsp;kr. 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/64d42536cd7b13.02498508-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Margrethe II portrait (2nd effigy) facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denmark coat of arms above the value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/64d42538016528.01136602-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+     <tr> 
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Kroner<hr>
+		  Value:&emsp;kr. 20.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/danemark/787-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Margrethe II (4th effigy)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Danish coat of arms</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/danemark/788-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2005</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

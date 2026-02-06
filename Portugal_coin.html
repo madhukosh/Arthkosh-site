@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portugal</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #DA291C;
+    color: #FFE900;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Portugal 
+      <img src="https://flagcdn.com/pt.svg" style="width: 25px;" alt="Portugal">
+ </h2>
+ 
+  <h3>
+     Currency: Euro&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: &euro;&emsp;
+	1 Euro = 100 Cents&emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;&euro; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/5970-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The first royal seal of Afonso Henriques (1134) is encircled by seven castles, five coats of arms, the word “PORTUGAL,” and twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Globe, next to face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/portugal/5971-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;&euro; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/5975-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The first royal seal of Afonso Henriques (1134) is encircled by seven castles, five coats of arms, the word “PORTUGAL,” and twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Globe, next to face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/portugal/5976-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2006</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+    
+<section>
+  
+  <h3>
+     Currency: Escudo&emsp; 
+	Unit currency: Centavo&emsp; 
+	Symbol: &#36;&emsp;
+	1 Escudo = 100 Centavos&emsp; 
+	Code: <input type="text" id="Currency1" value="PTE"><br>
+      PTE:USD -  <span id="RateUSD">-</span> &emsp;
+	 USD:PTE - <span id="RRateUSD">-</span>  &emsp;
+     PTE:INR - <span id="RateINR">-</span> &emsp;
+	INR:PTE - <span id="RRateINR">-</span>
+ </h3>
+ 
+    
+    <table id = "table2">
+      <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Centavos<hr>
+	  	  Value:&emsp;&#36; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/3226-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Allegory of Republic facing right with the country name and date above around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Portuguese coat of arms and the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/3227-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1959</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Escudos<hr>
+	  	  Value:&emsp;&#36; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/3152-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Symbol of the Portuguese Republic (five shields each containing five bezants) and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination above five wheat ears, engraver's name to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/3153-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1973</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2$50 Escudos<hr>
+	  	  Value:&emsp;&#36; 2.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/66b6586eceb2c9.46488695-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A ship (caravel), sailing to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The shield from the Coat-of-Arms of Portugal with the value below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/66b6586f288422.01615616-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1972<br>1973&emsp;1975<br>1977&emsp;1978<br>1979&emsp;1981<br>1982&emsp;1983<br>1984&emsp;1985</td>
+	 <td style="text-align: center;">12</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Escudos<hr>
+	  	  Value:&emsp;&#36; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/66bee5b27c5be2.11785624-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A ship, boat sailing to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The coat of arms of Portugal and 4 stars, value below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/66bee5b2e1c095.88793339-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Escudos<hr>
+	  	  Value:&emsp;&#36; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/250-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Portugal with a knot above, date at the end of circular legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A stained glass window above denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/251-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1989&emsp;1993</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Escudos<hr>
+	  	  Value:&emsp;&#36; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/63b5e177caea96.73132062-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of Portugal and a knot, date at the end of circular legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A stained glass window, engraver's name and issuer at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/63b5e178399229.49978744-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1988&emsp;1999</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Escudos<hr>
+	  	  Value:&emsp;&#36; 20.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/3007-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Portugal dividing the date and the denomination below, engraver's name and mintmark at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A nautical compass with pointer at top and Order of Christ Cross at right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/3008-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1986&emsp;1987<br>1988</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Escudos<hr>
+	  	  Value:&emsp;&#36; 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/3010-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The shield of Portugal with the denomination to the right and below and the country name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Laureate head facing left and the date to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/3009-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1980</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Escudos<hr>
+	  	  Value:&emsp;&#36; 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/3011-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Portugal dividing the date with the denomination below, engraver's name and the mintmark on the sides of denomination<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A ship or stylized boat at sail left with four fishes below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/3012-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Escudos<hr>
+	  	  Value:&emsp;&#36; 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/portugal/63b5e0ac235cc5.49777063-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Portugal and the denomination below and the date at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Pedro Nunes (1502-1578), a Portuguese mathematician, cosmographer, and professor, facing left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/portugal/63b5e0ac9ceb16.51789048-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	 
+    <!-- Add more rows as needed -->
+  </table>
+<h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+   <h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

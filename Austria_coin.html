@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austria</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+      background-color: #EF3340;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+  fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+ 
+</head>
+<body>
+
+<section>
+  <h2>Austria 
+      <img src="https://flagcdn.com/at.svg" style="width: 25px;" alt="Austria">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Euro &emsp; 
+	Unit currency:Cent &emsp; 
+	Symbol:&euro;  &emsp;
+	1 Euro = 100 Cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+  
+<table id = "table1">
+ 	    <tr>
+	      <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+ 
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;&euro; 0.01</h5>
+       </td>
+	  <td><img src="https://en.numista.com/catalogue/photos/autriche/62ca843026f837.34117868-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A gentian, which symbolizes a duty to the environment encircled by the face value, 
+	      heraldic hatchings representing the Austrian flag and twelve five-pointed stars representing the European Union around the rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/62ca843116f7d5.49400449-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2009</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Cents<hr>
+		  Value:&emsp;&euro; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/621339f8972019.30788998-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>An edelweiss, symbolising a duty to the environment, is encircled by the face value, heraldic hatchings representing the 
+	 Austrian flag and the twelve stars of Europe<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/621339f98e9cc9.26512080-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2005</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/654246f0796620.35756162-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The Mountain Cowslip (Primula auricula), an Alpine flower, symbolising a duty to the environment, are encircled by the face
+	  value, heraldic hatchings representing the Austrian flag and the twelve stars of Europe<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/654246f20323c1.54152797-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2007</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&euro; 1<hr>
+		  Value:&emsp;&euro; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/6054b75246f966.89678113-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A portrait of Wolfgang Amadeus Mozart, the famous Austrian composer, in reference to Austria as a land of music, is 
+	      accompanied with the face value<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A map, next to the face value, shows the gathering of the fifteen states of the European Union</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/6054b752daced7.65683680-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ 
+  <h3>
+     Currency: Schilling &emsp; 
+	Unit currency: Groschen &emsp; 
+	Symbol: öS&emsp;
+	1 Schilling = 100 Groschen &emsp; 
+	Code: <input type="text" id="currency1" value="ATS"><br>
+      ATS:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ATS - <span id="reverseRateUSD">-</span>  &emsp;
+     ATS:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ATS - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table2">
+    <tr>
+	      <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 1<hr>
+		  Value:&emsp;öS 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/1014-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the Austrian escutcheon)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Large value above date, spray of leaves below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/1015-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1947 </td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 2<hr>
+		  Value:&emsp;öS 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/64108b3cac1b03.55791269-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Cross potent, date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/64108b3e49c301.86392658-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1926</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 2<hr>
+		  Value:&emsp;öS 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/3478-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the Austrian escutcheon)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Denomination in circle of dots, name of the state around, date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/3477-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1950&emsp;1951<br>1952&emsp;1954<br>1957&emsp;1964<br>1965&emsp;1966<br>1986</td>
+	 <td style="text-align: center;">9</td>
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 5<hr>
+		  Value:&emsp;öS 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/131-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The Austrian coat of arms (an eagle carrying the Austrian shield on its breast with the hammer and sickle) with the country name surrounding around the rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The value in large numeral in center with word above and the date below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/132-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1962&emsp;1965<br>1974&emsp;1976<br>1980&emsp;1982</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 10<hr>
+		  Value:&emsp;öS 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/3647-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the Austrian escutcheon)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Four gentians and an edelweiss</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/3648-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1948&emsp;1949</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 10<hr>
+		  Value:&emsp;öS 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/5f8a1be4027ae5.13137415-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The Austrian coat of arms (the imperial eagle carrying the Austrian shield on its breast) with broken chains, which signify
+	  Austria as an independent country, and the country name as a stylized inscription, and denomination in the scalloped rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The face value above the year in a scalloped rim</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/5f8a1be4697460.20362744-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1953&emsp;1955<br>1964&emsp;1965<br>1966&emsp;1967<br>1971</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 50<hr>
+		  Value:&emsp;öS 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/66351690cbf314.81934859-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the Austrian escutcheon)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Austrian escutcheon and four ears</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/66351692265648.18331932-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1946<br>1955</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Groschen 50<hr>
+		  Value:&emsp;öS 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/149-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The Austrian escutcheon and the state title in semi-circle<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The face value divides the date and a gentian flower or Stemless gentian flower (Binomial Name: Gentiana acaulis) partially inside the numeral '0' of denomination</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/151-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1960&emsp;1962<br>1963&emsp;1965<br>1976&emsp;1980<br>1982</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;öS 1<hr>
+		  Value:&emsp;öS 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/2861-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The denomination in the center above the date with the country name above around the rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Three edelweiss flowers (Leontopodium alpinum or Leontopodium nivale ssp.) and face value in words surrounding</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/2860-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1959&emsp;1960<br>1961&emsp;1963<br>1965&emsp;1966<br>1967&emsp;1969<br>1972&emsp;1973<br>1974&emsp;1977<br>1979&emsp;1980<br>1989&emsp;1991<br>1998</td>
+	 <td style="text-align: center;">17</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;öS 2<hr>
+		  Value:&emsp;öS 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/663672ead74a62.40285712-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the austrian escutcheon)<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Wine grape on a vine and ears</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/663672ebc0de57.60738276-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1946</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;öS 5<hr>
+		  Value:&emsp;öS 5.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/63b80f7b24e6e8.99276178-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Lipizzaner stallion with rider, rearing left<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The Austrian escutcheon, the face value and two laurel branches Binomial Name: Laurus nobilis</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/63b80f7b877466.56789554-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1971</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;öS 10<hr>
+		  Value:&emsp;öS 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche/63b810405a07d7.02065247-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Austria coat of arms (an eagle carries the Austrian escutcheon) and the state title<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Head of a woman wearing the traditional headgear of Lower Austria dividing the denomination on both sides and the date to the right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche/63b81040c50312.12557414-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1979</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+
+  <h3>
+     Currency: Crown &emsp; 
+	Unit currency: Heller &emsp; 
+	Symbol: K.&emsp;
+	1 Crown = 100 Heller&emsp; 
+	Code: <input type="text" id="currency1" value="ATC"><br>
+      ATC:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ATC - <span id="reverseRateUSD">-</span>  &emsp;
+     ATC:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ATC - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table3">
+      <tr>
+	      <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+    
+        <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Heller 2<hr>
+		  Value:&emsp;K. 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed96c2190.61119943-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The 1867–1915 coat of arms of Austria-Hungary, a double-headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value above twigs, date below, within an art nouveau style frame</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed9ad8485.77995545-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1893<br>1906&emsp;1911</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Heller 10<hr>
+		  Value:&emsp;K. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc31d2ef9.37090316-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The double headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value above date at center of ornate shield</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc3742b41.87209523-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1895</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+	    
+
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+   
+   <h3>
+     Currency: Gulden &emsp; 
+	Unit currency: Kreuzer &emsp; 
+	Symbol: Xr&emsp;
+	1 Crown = 100 Heller&emsp; 
+	Code: <input type="text" id="currency1" value="ATK"><br>
+    ATK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:ATK - <span id="reverseRateUSD">-</span>  &emsp;
+    ATK:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ATK - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table4">
+      <tr>
+	      <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+    
+        <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Kreuzer 1<hr>
+		  Value:&emsp;Xr 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f49b24af0.05685248-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Imperial eagle with Habsburg-Lorraine and Austria arms, surrounded by legend<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Face value with date and mintmark below, surrounded by oak wreath</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f4a2e1da0.81012439-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1858</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+    sumTable4();
+   </script>
+   
+<h2>
+	  Total Coins:<span id="table5sum"></span> &emsp;
+ </h2>
+	
+ 
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  
+       var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+       var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table5sum = sum5
+	  document.getElementById("table5sum").innerText = table5sum;
+   }
+ sumTable4();
+</script>
+
+  </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

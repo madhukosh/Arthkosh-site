@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Germany</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFCC00;
+    color: #000000;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+   img.rright { 
+        transform: rotate(270deg);
+	   height: 350px;
+	   object-fit:contain;
+    }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+   font-size: 15px;
+    border: none;
+    outline: none;
+  }
+
+</style>
+<style>
+ small-text
+{
+font-size: 5px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Germany
+      <img src="https://flagcdn.com/de.svg" style="width: 25px;" alt="Germany">
+ </h2>
+  <h3>
+     Currency: Euro&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol:  &euro;&emsp;
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+   </section>
+ <p></p>
+    <div class="container">
+    <table>
+    <tr>
+        <th>Letter</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Z</td>
+        <td>Belgium</td>
+    </tr>
+    <tr>
+        <td>Y</td>
+        <td>Greece</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>W</td>
+        <td>Denmark (reserved)</td>
+    </tr>
+    <tr>
+        <td>V</td>
+        <td>Spain</td>
+    </tr>
+    <tr>
+        <td>U</td>
+        <td>France</td>
+    </tr>
+    
+    <tr>
+        <td>T</td>
+        <td>Ireland</td>
+    </tr>
+    
+    </table>
+     <table>
+    <tr>
+        <th>Letter</th>
+        <th>Country</th>
+    </tr>
+   <tr>
+        <td>S</td>
+        <td>Italy</td>
+    </tr>
+    
+    <tr>
+        <td>R</td>
+        <td>Luxembourg</td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>Netherlands</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>Austria</td>
+    </tr>
+    <tr>
+        <td>M</td>
+        <td>Portugal</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td>Finland</td>
+    </tr>
+    <tr>
+        <td>K</td>
+        <td>Sweden (reserved)</td>
+    </tr>
+   
+    </table>
+     <table>
+    <tr>
+        <th>Letter</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>J</td>
+        <td>United Kingdom (reserved)</td>
+    </tr>
+    
+    <tr>
+        <td>H</td>
+        <td>Slovenia</td>
+    </tr>
+    <tr>
+        <td>G</td>
+        <td>Cyprus</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>Malta</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>Slovakia</td>
+    <tr>
+        <td>D</td>
+        <td>Estonia</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>Spain</td>
+    </tr>
+   
+</table>
+
+</div>
+ <h3>
+     Currency: Mark &emsp; 
+	Unit currency: Pfennig&emsp; 
+	Symbol:  DM&emsp;
+	Code: <input type="text" id="Currency1" value="DEM"><br>
+      DEM:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 DEM:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     DEM:INR - <span id="exchangeRateINR">-</span> &emsp;
+	DEM:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+  <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/62fd0623996a17.35679200-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Darlehnskassenschein, Eine Mark, 1 Mark<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Eine Mark</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/62fd06245959e3.48139640-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5e9986991c8760.49938683-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Olive. Yellow stripe at right. Large and small size numerals in serial Seal on lower right side<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Wheat tied up on left. Denomination on right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5e998699720445.54393085-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/629afcc060c652.19752253-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Text with decorated initials and imperial eagle<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Ornament with value numeral</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/629afcc131c860.95521931-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+   
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/674b8aa5d8fe97.53203383-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Top center: faint grey "100". Center: large, deep blue eagle with crown & shield, overlaid with German fraktur text "Ein Hundert Mark". Serial number in green ink on each side; bank seal with Imperial eagle in green ink on upper/lower right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Value in big font in center within an oval with text in floral design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5e9977f0b04a97.99272269-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+  
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5e9608e54bd0c5.72183368-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Head of the "Bamberg Horseman" from the Bamberg Cathedral at upper left and right over red Reichsbank directorate seals<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Medallic woman's head (Germania) supported by two allegorical women. The ribbon with legend 'BANKNOTE 100 MARK' repeated many times is along the frame and in the field that are a lot of '100' as part of design</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/5e9608e5ee7975.33825535-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+  
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">DM 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/6575dcfb482ee4.56815408-original.jpg"  alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Value and anti-counterfeit warning on the left, text and two seals flanking signatures<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Large green leaf guilloche with denomination and value</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/allemagne-pre1945/6575dcfbc2a641.78276015-original.jpg"  alt="Reverse Image"></td>
+    </tr>
+  
+  </table>
+<h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID	
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      	
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+
+<h2>
+	  Total Notes:<span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum5 = table1.rows.length-1;
+         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table2.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

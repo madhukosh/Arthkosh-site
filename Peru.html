@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peru</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {	
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Peru 
+       <img src="https://flagcdn.com/pe.svg" style="width: 25px;" alt="Peru">
+
+ </h2>
+ 
+  
+  <h3>Currency: Sol&emsp; 
+     Unit Currency: Centimo&emsp; 
+	Symbol: S/.&emsp; 
+	Code:<input type="text" id="fromCurrency" value="PEN"> &emsp; <br>
+	PEN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:PEN -  <span id="reverseRateUSD">-</span> &emsp; 
+	PEN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:PEN -  <span id="reverseRateINR">-</span> 
+</h3> 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+   
+    <!-- Add more rows as needed -->
+  </table>
+ <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID	
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script> 
+ </section>
+</p>
+<section>
+   
+  <h3>Currency: Intis&emsp; 
+     Unit Currency: Centimo&emsp; 
+	Symbol: Intis&emsp; 
+	Code:<input type="text" id="Currency1" value="PEI"> &emsp; <br>
+	PEI:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:PEI -  <span id="reverseRateUSD">-</span> &emsp; 
+	PEI:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:PEI -  <span id="reverseRateINR">-</span> 
+</h3> 
+    <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Intis 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/623b65ef984db7.32878414-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Nicolás de Piérola to the right, Peruvian Coat of Arms at the center, issuer name on top, face value in numbers on the lower left and both right corners, 
+		 		 in letters below the arms, watermark area to the left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Illustration of Drilling rig and helicopter on background. Issuer name on top, face value in numbers on top left and lower right corners, 
+		 in letters on lower left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/623b65ef984db7.32878414-original.jpg" alt="Reverse Image"></td>      
+	 
+    </tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Intis 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/623b6648b7e7c5.71770979-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Image of Jose Gabriel Condorcanqui, known as Tupac Amaru II to right; Peruvian Coat of Arms on center,issuer name on top left and center, 
+	 face value in numbers on lower left and both right corners, in letter at center, watermark area on left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Huascarán mountain and climber at center. Issuer name on top. Face value in numbers on top left and lower right corners, in letters on lower left. 
+	     Imagen de montaña Huascarán y montañista al centro. Nombre del emisor arriba. Valor facial en números en esquinas superior izquierda e inferior derecha, en letras abajo izquierda</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/perou/623b664967a448.31325484-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	  
+    </tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Intis 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/perou/623b667a2db382.49238780-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Portrait of Marshall Andres Avelino Caceres; Peruvian coat of arms at center. Issuer name ;face value in numbers, in letters below arms, watermark area<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">llustration of Ruins of Chan Chan, issuer name on top, face value in numbers, in letters below image</p>
+	</td>
+     <td><img src="https://en.numista.com/catalogue/photos/perou/623b667ac30193.94615916-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <!-- Add more rows as needed -->
+  </table>
+    <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column      
+      
+           sum2 = table.rows.length-1;       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+<h2>
+	  Total Notes: <span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum5 = table1.rows.length-1;         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table2.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+ </section>
+
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

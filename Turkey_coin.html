@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turkey</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #E30A17 ;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width:175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Turkey 
+      <img src="https://flagcdn.com/tr.svg" style="width: 25px;" alt="Turkey">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Lira &emsp; 
+	Unit currency: Kurus&emsp; 
+	Symbol: ₺ &emsp;
+	1 Lira = 100 Kurus &emsp; 
+	Code: <input type="text" id="fromCurrency" value="TRY"><br>
+      TRY:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:TRY - <span id="reverseRateUSD">-</span>  &emsp;
+     TRY:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:TRY - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+  <table id = "table1">
+	     <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+	    
+		
+		   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kurus<hr>
+	  	  Value:&emsp;₺ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/618eca947a07f6.97335255-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Turkish crescent with country name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Olive branch with the value on the right and the date to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/618eca94c37247.35201084-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1964<br>1970</td>
+	 <td style= "text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kurus<hr>
+	  	  Value:&emsp;₺ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/1318-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crescent and star<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Olive branch</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/1319-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1975</td>
+	 <td style= "text-align: center;">1</td>
+    </tr>
+    	        
+
+    	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kurus<hr>
+	  	  Value:&emsp;₺ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/6285771f0429a1.13507324-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Turkish crescent in the center<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">An oak branch in the center with the date to the right and the denomination to the left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/6285771f2f15b6.82567732-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1967</td>
+	 <td style= "text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kurus<hr>
+	  	  Value:&emsp;₺ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/60b65167b40d77.17387560-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mustafa Kemal Atatürk facing left within a center circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crescent and Star (National Emblem) at the top above the value, the Tree of Life at the right, and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/60b65167f11553.34262375-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2010<br>2016<br>2018</td>
+	 <td style= "text-align: center;">3</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kurus<hr>
+	  	  Value:&emsp;₺ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/34-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Star, crescent and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/35-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1949</td>
+	 <td style= "text-align: center;">1</td>
+    </tr>
+	 
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kurus<hr>
+	  	  Value:&emsp;₺ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/63f4421d58f8c5.51384892-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Turkish crescent in the center with the country name surrounding around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Oat stalks with the denomination to the left and the date to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/634c0172e01e01.57383505-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1967</td>
+	 <td style= "text-align: center;">1</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kurus<hr>
+	  	  Value:&emsp;₺ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/2933-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mustafa Kemal Atatürk facing left within a center circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crescent and Star (National Emblem) above the value with a Rumi motif, the arabesques and geometric patterns of Islamic art, in the background and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/2934-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2011</td>
+	 <td style= "text-align: center;">2</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Kurus<hr>
+	  	  Value:&emsp;₺ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/60b653bcd11049.31947954-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mustafa Kemal Atatürk facing left with the country name around the rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crescent and Star (National Emblem of Turkey), a Kufic calligraphic, and the value along with the date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/60b653bd2e8064.89871840-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2010<br>2017</td>
+	 <td style= "text-align: center;">3</td>	 
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Kurus<hr>
+	  	  Value:&emsp;₺ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/1686-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mustafa Kemal Atatürk facing left and the country name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Istanbul suspension bridge or the Bosphorus strait bridge that links Asia with Europe continent</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/1687-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2010<br>2016<br>2017</td>
+	 <td style= "text-align: center;">4</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Lira<hr>
+	  	  Value:&emsp;₺ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/56-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Mustafa Kemal Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/57-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1972<br>1976</td>
+	 <td style= "text-align: center;">2</td>
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Lira<hr>
+	  	  Value:&emsp;₺ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/2815-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Mustafa Kemal Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crescent and star (National Emblem) and designed ring of Rumi art and denomination in the center and a Rumi Motif in the background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/2816-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2010<br>2013<br>2015<br>2020</td>
+	  <td style= "text-align: center;">5</td>
+    </tr>
+	  
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Lira<hr>
+	  	  Value:&emsp;₺ 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/50-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wreath, crescent moon and star at the top. Crescent opens right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/51-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1985<br>1986</td>
+	  <td style= "text-align: center;">2</td>
+    </tr>
+	  
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Lira<hr>
+	  	  Value:&emsp;₺ 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/2767-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wreath, crescent moon and star at the top. Crescent opens right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/2768-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1989</td>
+	  <td style= "text-align: center;">1</td>
+    </tr>
+	  
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1000 Lira<hr>
+	  	  Value:&emsp;₺ 1000.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/2911-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wreath, crescent moon and star at the top. Crescent opens right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/2912-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1990<br>1991</td>
+	  <td style= "text-align: center;">2</td>
+    </tr>
+	    
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5000 Lira<hr>
+	  	  Value:&emsp;₺ 5000.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/5e8da5cccef181.63216843-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tulip flowers to the left of value and date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/5e8da5cd883093.72383390-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1992</td>
+	  <td style= "text-align: center;">1</td>
+    </tr>
+	   
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5000 Lira<hr>
+	  	  Value:&emsp;₺ 5000.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/5e8da5cccef181.63216843-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tulip flowers to the left of value and date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/turquie/5e8da5cd883093.72383390-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1992</td>
+	  <td style= "text-align: center;">1</td>
+    </tr>	   
+     
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25000 Lira<hr>
+	  	  Value:&emsp;₺ 25000.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/turquie/12-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Atatürk facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crescent moon and star, value and year left of a rose</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/turquie/13-original.jpg" alt="Reserve Image"></td>
+	 <td style= "text-align: center;">1996</td>
+	  <td style= "text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+<h3>
+     Currency: Lira&emsp; 
+	Unit Currency: Para&emsp;
+	Symbol: ₺&emsp;
+	One Lira = 100 Para&emsp;
+	Code:<input type="text" id="Currency1" value="TRL"><br>
+      TRL:USD -  <span id="RateUSD">-</span> &emsp;
+      USD:TRL -  <span id="RRateUSD">-</span> &emsp;
+      TRL:INR -  <span id="RateINR">-</span> &emsp;
+      INR:TRL - <span id="RRateINR">-</span>
+ </h3>
+<table id = "table2">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Para<hr>
+	  Value:&emsp;₺ 0.20</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ottoman/5f594bfbd97aa9.06412641-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Beaded circle, regnal year, tughra of sultan next to "Reshat"; motto followed by an olive branch and wheat sheaf knotted together<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">denomination in beaded crescent; Name of mint,country followed by the accession date of sultan olive branch and wheat sheaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ottoman/5f594bfc5141b0.86687066-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1909</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+        
+    
+     </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+<h2>
+	  Total Coins:<span id="table4sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {	
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	   
+	   // Display the sum in the last row
+        var table4sum = sum5
+	  document.getElementById("table4sum").innerText = table4sum;
+   }
+ sumTable4();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

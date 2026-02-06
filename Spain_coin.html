@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spain</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #C60B1E ;
+    color: #FFC400 ;
+    text-align: center;
+  }
+  img {
+ 
+    width:175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+    fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Spain 
+      <img src="https://flagcdn.com/es.svg" style="width: 25px;" alt="Spain">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Euro &emsp; 
+	Unit currency: Cent &emsp; 
+	Symbol: €&emsp;
+	1 Euro = 100 cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+     <table id = "table1">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Cents<hr>
+	  	  Value:&emsp;€ 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/6213534f299c89.05040142-180.jpg" alt="Obverse Image"></td>
+	  		
+      <td>
+	  <h5>&larr;Observe</h5>Cathedral of Santiago de Compostela, jewel of Spanish Romanesque architecture encircled by "ESPAÑA" (Spain), royal monogram and 12 stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/espagne/62135350332902.43919305-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2017</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;€ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/61ff71a6cc21e1.93410910-180.jpg" alt="Obverse Image"></td>
+	  <td>
+	  			     <h5>&larr;Observe</h5>Cathedral of Santiago de Compostela, jewel of Spanish Romanesque architecture encircled by "ESPAÑA" (Spain), royal monogram and 12 stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/espagne/61ff71a7d756a3.00233374-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2000<br>2003<br>2009</td>
+	  <td Style="text-align: center;">3</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;€ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/61ff754bb64b05.15685511-180.jpg" alt="Obverse Image"></td>
+	  <td>
+	  		     <h5>&larr;Observe</h5>Cathedral of Santiago de Compostela, jewel of Spanish Romanesque architecture encircled by "ESPAÑA" (Spain), royal monogram and 12 stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/61ff754d067f05.21439227-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2012<br>2016<br>2020</td>
+	  <td Style="text-align: center;">3</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Euro<hr>
+	  	  Value:&emsp;€ 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/62ca7e3ab00005.33413427-180.jpg" alt="Obverse Image"></td>
+	  <td>
+	  		     <h5>&larr;Observe</h5>Portrait of King Juan Carlos I encircled with "ESPAÑA" (Spain), mintmark for Madrid Mint and 12 stars of Europe of which 4 are bound by band<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, shows the 15 states of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/62ca7e3c06f2d3.74143567-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2002</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+   </table>
+   
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+ <h3>
+     Currency: Peseta&emsp; 
+	Unit currency: Céntimo &emsp; 
+	Symbol: ₧ &emsp;
+	1 Peseta = 100 Centimos &emsp; 
+	Code: <input type="text" id="Currency1" value="ESP"><br>
+      ESP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ESP - <span id="reverseRateUSD">-</span>  &emsp;
+     ESP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ESP - <span id="reverseRateINR">-</span>
+ </h3>
+  
+
+    <table id = "table2">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;Diez Cents<hr>
+	  	  Value:&emsp;₧ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/600c55858d65f7.74545808-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Horseman with a spear (Iberian ride)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/600c558619fbf9.65715339-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1941</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+    
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;Diez Cents<hr>
+	  	  Value:&emsp;₧ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/66792eee40da87.83178011-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Horseman with a spear (Iberian ride)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/66792eee99fdd1.96976404-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1940<br>1941<br>1945</td>
+	  <td Style="text-align: center;">3</td>
+    </tr>
+    
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Centimos<hr>
+	  	  Value:&emsp;₧ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/277-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value surrounded by a leaves wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/278-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1959</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+         
+        
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Centimos<hr>
+	  	  Value:&emsp;₧ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/279-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Anchor with rope to the left of the central hole and rudder below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/280-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1949</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/65f3086dea5d74.97141270-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Pattern with symbols of the kingdoms of Granada (pomegranate), Aragón (four pallets), Castile (castle), León (lion) and of Navarre (chains), and yoke and bundle of arrows of the Catholic Monarchs<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/65f3086ee49f96.40373336-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1944</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/228-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/229-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1947<br>1953<br>1963</td>
+	  <td Style="text-align: center;">3</td>
+    </tr>
+    
+        <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/226-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/227-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1966</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/625cb74a00d989.64463352-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/625cb74aa10319.60902286-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1975<br>1980</td>
+	  <td Style="text-align: center;">2</td>
+    </tr>
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/157-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned coat of arms of Spain with Pillars of Hercules</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/158-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1985<br>1986<br>1987<br>1989</td>
+	  <td Style="text-align: center;">4</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Peseta<hr>
+	  	  Value:&emsp;₧ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/223-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I on half coin left side facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned coat of arms of Spain with Pillars of Hercules</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/222-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1989</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+            
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2'50 Peseta<hr>
+	  	  Value:&emsp;₧ 2.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/63492250d01ca4.12646582-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/634922512bad80.91217685-original.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1953</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/4658-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with the eagle of Saint John on flight and yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/4659-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1957</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/5672-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Personal coat of arms of King Juan Carlos I</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/5673-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1975</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/185-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The world and soccer ball</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/186-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1980</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/442-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Personal coat of arms of King Juan Carlos I</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/443-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1982<br>1983<br>1984<br>1989</td>
+	   <td Style="text-align: center;">4</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/203-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Stylized "JCI" monogram of King Juan Carlos I<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above stylized sailboats</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/204-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1992<br>1998</td>
+	   <td Style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pesetas<hr>
+	  	  Value:&emsp;₧ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/207-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Standing figure of St. James and pilgrim's shell<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Botafumeiro from Cathedral of Santiago de Compostela and Way of St. James logo</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/208-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1993</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pesetas<hr>
+	  	  Value:&emsp;₧ 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/674ec3323beb37.10363762-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with Pillars of Hercules</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/674ec333800818.91902242-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1983</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pesetas<hr>
+	  	  Value:&emsp;₧ 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/2470-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>350th anniversary of the death of Francisco de Quevedo<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Book, glasses, inkwell and pen</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/2471-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1995</td>
+	  <td Style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Pesetas<hr>
+	  	  Value:&emsp;₧ 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/191-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with the eagle of Saint John on flight and yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/192-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1957</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Pesetas<hr>
+	  	  Value:&emsp;₧ 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/2292-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Spanish Royal crown</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/2293-180.jpg" alt="Reserve Image"></td>
+	  <td Style="text-align: center;">1975</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Pesetas<hr>
+	  	  Value:&emsp;₧ 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/283-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Soccer ball in front of goal net</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/espagne/284-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1980</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Pesetas<hr>
+	  	  Value:&emsp;₧ 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/189-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Spanish Royal crown</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/190-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1982<br>1983<br>1984</td>
+	   <td Style="text-align: center;">3</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Pesetas<hr>
+	  	  Value:&emsp;₧ 25.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/209-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Towered buildings of the Palace of the Assembly of Melilla<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Centre hole divides ancient phoenician amphora and dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/210-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1997</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Pesetas<hr>
+	  	  Value:&emsp;₧ 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/61a24ba5d51a30.86729642-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Francisco Franco facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Spain with the eagle of Saint John on flight and yoke and arrows below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/1328-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1957</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Pesetas<hr>
+	  	  Value:&emsp;₧ 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/2296-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Personal coat of arms of King Juan Carlos I</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/2297-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1975<br>1980</td>
+	   <td Style="text-align: center;">2</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Pesetas<hr>
+	  	  Value:&emsp;₧ 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/285-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Personal coat of arms of King Juan Carlos I</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/286-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1982</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Pesetas<hr>
+	  	  Value:&emsp;₧ 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/4844-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Main facade of the Royal Opera of Madrid</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/4845-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1997</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Pesetas<hr>
+	  	  Value:&emsp;₧ 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/espagne/570-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of King Juan Carlos I facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Emblem of the United Nations for the elderly</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/espagne/571-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1999</td>
+	   <td Style="text-align: center;">1</td>
+    </tr>
+  
+    <!-- Add more rows as needed -->
+  </table>
+
+ 
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+<h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+
+</section>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

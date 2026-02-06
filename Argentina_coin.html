@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Argentina</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #6CACE4;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Argentina 
+      <img src="https://flagcdn.com/ar.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Peso &emsp; 
+	unit currency: Centavo &emsp; 
+	Symbol: AR$ &emsp;
+	1 Peso = 100 Centavo&emsp; 
+	Code: <input type="text" id="fromCurrency" value="ARS"><br>
+      ARS:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:ARS - <span id="reverseRateUSD">-</span>  &emsp;
+     ARS:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:ARS - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 120px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 800px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+ 
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavo <hr>
+		  Value:&emsp;AR$ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1007-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Freedom head Oudine, wearing a Phrygian cap to the left and lettering<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value to the left of grain sprig, date below</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/1008-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1972</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+    
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2 Centavos <hr>
+		  Value:&emsp;AR$ 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1555-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Coat of arms within Laurel Wreath<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value within Laurel Wreath</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/1556-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+    
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos <hr>
+		  Value:&emsp;AR$ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/971-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Freedom head Oudine, wearing a Phrygian cap to the left and lettering<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value and Wreath</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/972-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1973</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+      
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos <hr>
+		  Value:&emsp;AR$ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/938-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Large value, date below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value and Wreath</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/939-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1973</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+       
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 10 Centavos<hr>
+		  Value:&emsp;AR$ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1511-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Freedom head Oudine, wearing Phrygian cap, with date and country name<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value within wreath</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/1512-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1930</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+      
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 10 Centavos<hr>
+		  Value:&emsp;AR$ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1065-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Value<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Portrait of General José de San Martín to the right</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/1064-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1956</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+          
+    <tr>
+          <td style="text-align: right; font-size: 15px;"></td>
+		  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 20 Centavos<hr>
+		  Value:&emsp;AR$ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/6355938c79fad9.51988396-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Value, legend in circle around<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">100th Anniversary of the Death of José San Martin</p>
+	 <td><img src="https://en.numista.com/catalogue/photos/argentine/6355938cc0c217.08720719-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1956</td>
+	 <td style="text-align: center;">1 </td>	 
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;  25 Centavos<hr>
+		  Value:&emsp;AR$ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1180-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The Cabildo building in the center with the country name above around the rim with a point at the beginning 
+	      and end and the inscription "EN UNION Y LIBERTAD" at the bottom of milled edge points<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">The denomination in center and the date below and points or granas around the rim</p>
+        <td><img src="https://en.numista.com/catalogue/photos/argentine/1181-original.jpg" alt="Reserve Image"></td>
+	  <td style="text-align: center;">1993</td>
+	 <td style="text-align: center;">1 </td>
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 1 Peso <hr>
+		  Value:&emsp;AR$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/6442204b115469.93140184-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Freedom head Oudine wearing a Phrygian cap facing left with the country name above around the rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value within laurel wreath</p>
+	    <td><img src="https://en.numista.com/catalogue/photos/argentine/6442204b7a55d9.39449661-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+            
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 1 Peso <hr>
+		  Value:&emsp;AR$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1495-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A replica of the obverse of the first national coin (KM#9) in the center and the country name above and a legend below in
+	  the outer rim<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">A replica of the reverse of the first national coin, with the 32-rayed National Sun surrounded by the inscription 
+	 in the center and the date below and the denomination above in the outer rim</p>
+	    <td><img src="https://en.numista.com/catalogue/photos/argentine/1496-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2009<br>2016</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+               
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp; 1 Peso <hr>
+		  Value:&emsp;AR$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1428-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>A representation of the jacaranda in the center with the country name above and "JACARANDÁ" below<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Jacaranda flower, date above and motto "EN UNION Y LIBERTAD". Denomination indicating Northwest region</p>
+	    <td><img src="https://en.numista.com/catalogue/photos/argentine/1429-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2017</td>
+	 <td style="text-align: center;">1</td>
+    </tr>          
+               
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Peso<hr>
+		  Value:&emsp;AR$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1152-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Independence Hall at Tucuman<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value, date at bottom</p>
+	    <td><img src="https://en.numista.com/catalogue/photos/argentine/1153-original.jpg"></td>
+	 <td style="text-align: center;">1985</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+                  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Peso<hr>
+		  Value:&emsp;AR$ 10.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/argentine/1476-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Caldén, exclusive to Argentina has characteristic broad and rounded glass;text "REPÚBLICA ARGENTINA" and "CALDÉN"<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <span style = "text-align: right;">Synthesis of flower and leaves of caldén. Motto "EN UNIÓN Y LIBERTAD", year. Location of "10" symbolizes tree is originally from Argentine(center)</span>
+	    <td><img src="https://en.numista.com/catalogue/photos/argentine/1477-original.jpg"></td>
+	 <td style="text-align: center;">2019</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+         
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+</body>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

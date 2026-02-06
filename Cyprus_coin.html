@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyprus</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFFFFF;
+    color: #D57800;
+    text-align: center;
+  }
+  img {
+
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+
+</style>
+<style>
+ class=small-text
+{
+font-size: 15px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Cyprus
+      <img src="https://flagcdn.com/cy.svg" style="width: 25px;" alt="Cyprus">
+ </h2>
+
+
+
+  <h3>
+     Currency: Euro&emsp;
+	Unit currency:Cent &emsp;
+	Symbol: &euro; &emsp;
+	1 Euro = 100 Cents &emsp;
+	Code: <input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:EUR - <span id="reverseRateUSD">-</span>  &emsp;
+     EUR:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+
+ <table id = "table1">
+ 	     <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
+
+       <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;&euro; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/62c90b3f212cf3.13056628-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Mouflon, a species of wild sheep found on Cyprus and representative of the island’s wildlife<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The reverse of the coin shows Europe in relation to Africa and Asia on a globe; it also features the numeral 5 and the inscription EURO CENT</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chypre/62c90b401315b3.35059836-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2008</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   </table>
+
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+
+       }
+       // Display the sum in the last row
+
+       document.getElementById("sum1").innerText = sum1;
+
+   }
+ sumTable1();
+</script>
+
+    <h3>
+     Currency: Pounds&emsp;
+	Unit currency:mil &emsp;
+	Symbol: &pound; &emsp;
+	1 Pound = 100 mils &emsp;
+	Code: <input type="text" id="fromCurrency" value="CYP"><br>
+      CYP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CYP - <span id="reverseRateUSD">-</span>  &emsp;
+     CYP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CYP - <span id="reverseRateINR">-</span>
+ </h3>
+
+ <table id = "table2">
+      <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Mils<hr>
+		  Value:&emsp;&pound; 0.001</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/212-160.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (A dove holding an olive twig and the independence year 1960).Country name in Greek and Turkish (Republic of Cyprus)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wheat wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/213-160.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Mils<hr>
+		  Value:&emsp;&pound; 0.005</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/759-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (A dove holding an olive twig and the independence year 1960).Country name in Greek and Turkish (Republic of Cyprus)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ancient galley and figure 5 left of the mast</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/760-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1963<br>1973</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50 Mils<hr>
+		  Value:&emsp;&pound; 0.050</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/218-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (A dove holding an olive twig and the independence year 1960).Country name in Greek and Turkish (Republic of Cyprus)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Grape cluster above denomination</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/219-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1981</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Cents<hr>
+		  Value:&emsp;&pound; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/783-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (A dove holding an olive twig and the independence year 1960).Country name in Greek and Turkish (Republic of Cyprus)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Modern clay vase of Phini village, beautifully decorated with flowers and singing birds. The value of 10 above</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/784-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1998</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&pound; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/5efe460c8c7b11.63471644-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (a dove holding an olive twig and the independence year 1960), laurel twigs around Country name
+	 (Cyprus) in Greek, Turkish and English<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A Pied Wheatear, the characteristic bird of Cyprus, perched on an olive branch. The Cyprus Pied Wheatear (Oenanthe cypriaca) nests only on Cyprus, 
+			 migrating from NE Africa and the Near East. The value 20 in outlined style above the leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chypre/5efe460ce96838.57906429-original.jpg" alt="Reserve Image"></td>
+    	 <td style="text-align: center;">1985</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&pound; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/5f4e9df42a01b2.43066033-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (Dove holding olive twig and the independence year 1960), laurel twigs around.Country name in Greek, Turkish and English<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Head of Zeno of Citium (334 BC-262 BC), Greek philosopher from Citium (Greek for Cyprus), he was the founder of the Stoic school of philosophy</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/5f4e9df4d05b03.25025374-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1990</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Cents<hr>
+		  Value:&emsp;&pound; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chypre/847-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cyprus coat of arms (Dove holding olive twig and the independence year 1960), laurel twigs around.Country name in Greek, Turkish and English<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Head of Zeno of Citium (334 BC-262 BC), Greek philosopher from Citium (Greek for Cyprus), he was the founder of the Stoic school of philosophy</p>
+		</td>
+      
+	 <td><img src="https://en.numista.com/catalogue/photos/chypre/848-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+
+
+
+    <!-- Add more rows as needed -->
+  </table>
+
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+
+       }
+       // Display the sum in the last row
+
+       document.getElementById("sum2").innerText = sum2;
+
+   }
+    sumTable2();
+   </script>
+<h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

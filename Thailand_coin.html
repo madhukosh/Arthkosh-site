@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thailand</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+      background-color:#00247D;
+    color:  #ED1C24;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Thailand 
+      <img src="https://flagcdn.com/th.svg" style="width: 25px;" alt="Thailand">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Baht &emsp; 
+	Unit currency: Satang&emsp; 
+	Symbol: ฿&emsp;
+	1 Baht = 100 Satang  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="THB"><br>
+      THB:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:THB - <span id="reverseRateUSD">-</span>  &emsp;
+     THB:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:THB - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+  
+  <table id = "table1">
+  <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+	    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Satang<hr>
+	  	  Value:&emsp;฿ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/5fc7d38c506eb6.35430620-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of King Rama IX facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The arms of Thailand dividing the denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/5fc7d38cce5827.46035257-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1957</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Satang<hr>
+	  	  Value:&emsp;฿ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2686-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Rama X facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned monogram</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2687-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2018</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Satang<hr>
+	  	  Value:&emsp;฿ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/639d3262e8a593.64289607-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of King Rama IX facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arms of Thailand with the issuer name above, the denomination divided on both sides, and year below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/639d326427bcd5.25618292-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1957</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Satang<hr>
+	  	  Value:&emsp;฿ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/128-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bhumibol Adulyadej (Rama IX) facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wat Phrathat Doi Suthep, Chiang Mai</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/129-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1989<br>1995</td>
+	 <td style= "text-align: center;">2</td>	 
+    </tr>	  
+                    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Satang<hr>
+	  	  Value:&emsp;฿ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/126-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of King Rama IX facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Doi Suthep Temple from Chiang Mai province with the denomination in numerals on each side</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/127-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2017</td>
+	 <td style= "text-align: center;">2</td>	 
+    </tr>	  
+              
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Satang<hr>
+	  	  Value:&emsp;฿ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2684-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Rama X facing left, inscription left and right, in decagon rim<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned monogram with 17 radious on its top, inscription around, in decagon rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2685-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2018</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/1494-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bhumibol Adulyadej (Rama IX) bust left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mantled Thai arms and issuer name and year above and denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/1495-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1962</td>
+	 <td style= "text-align: center;">1</td>	 
+	 
+    </tr>	  
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/3029-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Conjoined busts of Rama IX and Queen Sirikit facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Symbol of Asian Games, the sun with 16 rays, with motto above and conjoined 20 circles below, inscriptions around</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/3030-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1966</td>
+	 <td style= "text-align: center;">1</td>	 
+	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2844-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Bhumibol Adulyadej, or Rama IX, facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Phra Kaew Temple, Bangkok and the denomination to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2845-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1988<br>1989<br>1993<br>1994<br>1995<br>1998<br>2003<br>2006</td>
+	 <td style= "text-align: center;">8</td>	 
+	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/138-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Rama IX front-facing<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Royal emblem of Golden Jubilee ceremony: crowned privy seal flanked by two elephants facing toward center, each covered by seven-tiered Chhatra parasols, with thai number '50' and mottos on ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/139-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1996</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2842-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>2nd portrait of HRH King Bhumibol Adulyadej facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Phra Kaew Temple in Bangkok, state name, denomination, and year of issue in Thai lunar year</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2843-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2008<br>2011<br>2012<br>2014<br>2016<br>2017</td>
+	 <td style= "text-align: center;">6</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Baht<hr>
+	  	  Value:&emsp;฿ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2747-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Maha Vajiralongkorn Rama X bust facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned monogram</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2748-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2021</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Bahts<hr>
+	  	  Value:&emsp;฿ 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/1212-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>King's portrait left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Phukhao Thong of Saket Temple in Bangkok, value below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/1213-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2006</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Bahts<hr>
+	  	  Value:&emsp;฿ 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2846-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Rama IX facing left, inscriptions left and right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Phu Khao Thong (The Golden Mountain), Stupa in Wat Saket, inscriptions around</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2847-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2012</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bahts<hr>
+	  	  Value:&emsp;฿ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2590-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bhumibol Adulyadej (Rama IX) facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Suphannahong (royal ceremonial boat) with Grand Palace</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2591-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1987</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bahts<hr>
+	  	  Value:&emsp;฿ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2215-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bhumibol Adulyadej (Rama IX) facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wat Benchamabophit, also known as “The Marble Temple", with the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2216-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1992<br>1993<br>1994</td>
+	 <td style= "text-align: center;">3</td>	 
+    </tr>	  
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bahts<hr>
+	  	  Value:&emsp;฿ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/1200-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>50th Anniversary of reign of King Rama IX,Bust of King Rama IX front-facing<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Royal emblem of Golden Jubilee ceremony: crowned privy seal flanked by two elephants facing toward the center, each covered by 7-tiered Chhatra parasols, with thai number '50' and mottos on ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/1201-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1996</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bahts<hr>
+	  	  Value:&emsp;฿ 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/2848-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Bhumibol Adulyadej facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wat Benchamabophit, also known as "The Marble Temple".Lettering and date above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/thailande/2849-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2013</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>	 
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Bahts<hr>
+	  	  Value:&emsp;฿ 10.00</h5> 	
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/23-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Rama IX front-facing<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">His Majesty King Bhumibol Adulyadej Siamintharathirat Borommanatbophit Rama IX</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/thailande/24-original.jpg" alt="Reserve Image"></td>
+	 <td style= "text-align: center;">1996</td>
+	 <td style= "text-align: center;">1</td>	 
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Bahts<hr>
+	  	  Value:&emsp;฿ 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/21-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of King Rama IX facing left within circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wat Arun (Temple of the Dawn) with Chao Phraya River in the front, denomination in braille dots on top and denomination inscriptions bottom</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/thailande/22-original.jpg" alt="Reserve Image"></td>
+	 <td style= "text-align: center;">1994<br>2007</td>
+	 <td style= "text-align: center;">2</td>	 
+    </tr>	  
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>United Kingdom</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #012169 ;
+    color: #C8102E;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>United Kingdom 
+      <img src="https://flagcdn.com/gb.svg" style="width: 25px;" alt="United Kingdom">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Pound &emsp; 
+	Unit currency: Pence &emsp; 
+	Symbol:  &pound;&emsp;
+	1 Pound  = 100 Pennies &emsp; 
+	Code: <input type="text" id="fromCurrency" value="GBP"><br>
+      GBP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:GBP - <span id="reverseRateUSD">-</span>  &emsp;
+     GBP:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:GBP - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table1">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Farthing<hr>
+	  	  Value:&emsp;&pound; 0.0010</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8882-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eurasian wren left (Troglodytes troglodytes), date above and denomination below (from the Greek 'troglodytes' meaning cave-dweller)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8883-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1939<br>1940<br>1943</td>
+	 <td Style="text-align: center;">3</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Farthing<hr>
+	  	  Value:&emsp;&pound; 0.0010</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2365-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Eurasian wren left (Troglodytes troglodytes), date above and denomination below (from the Greek 'troglodytes' meaning cave-dweller)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2366-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1949<br>1950</td>
+	 <td Style="text-align: center;">2</td>
+    </tr>	  
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.0021</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2679-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Shorter haired laureate and draped bust of King George III facing right, legend around, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia facing left, trident in left hand, shield with Union flag resting on left, olive branch in raised right hand, legend above, sea behind with ship on left</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2680-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1807</td>
+	 <td Style="text-align: center;">1</td>	 
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.0021</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2476-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Old crowned and veiled portrait ('Old Head') of Queen Victoria facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, trident in left hand, shield bearing the Union flag in right, denomination around, date in exergue, sea behind</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2477-180.jpg" alt="Reserve Image"></td>
+	 <td Style="text-align: center;">1895</td>
+	 <td Style="text-align: center;">1</td>	
+    </tr>
+	  
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.0021</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5e393c3d276958.94737610-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Three-masted ship sailing left, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5e393c3ddc3158.19494612-180.jpg" alt="Reserve Image"></td>      
+	 <td Style="text-align: center;">1939<br>1941<br>1942<br>1943<br>1944<br>1948</td>
+	 <td Style="text-align: center;">6</td>	
+    </tr>
+	   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.0021</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2071-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Three-masted ship sailing left, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2072-180.jpg" alt="Reserve Image"></td>
+      	  	 <td Style="text-align: center;">1949<br>1952</td>
+	 <td Style="text-align: center;">2</td>	
+  
+    </tr>
+	        
+  
+	  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.0021</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2065-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate portrait of Queen Elizabeth II facing right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Three-masted ship sailing left, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2066-180.jpg" alt="Reserve Image"></td>      
+	 <td Style="text-align: center;">1955<br>1958<br>1959<br>1960<br>1962<br>1963<br>1965<br>1966</td>
+	 <td Style="text-align: center;">8</td>	
+    </tr>
+            
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5fa68ec50b4e02.59941740-160.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second laureate and draped bust ('Bun Head') of Queen Victoria left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5fa68ec5c8a650.13680512-160.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1860</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+                  
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/4128-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Older diademed and veiled portrait ('Old Head') of Queen Victoria left, legend around, designer's initials below bust<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/4129-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1899</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+      
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/4177-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King Edward VII right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/4178-180.jpg" alt="Reserve Image"></td>
+      	  	  <td Style="text-align: center;">1908</td>
+	 <td Style="text-align: center;">1</td>		
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5eacb8ad088f68.12144574-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George V facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5eacb8ad75d170.02185391-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1914<br>1915<br>1916<br>1917<br>1918<br>1921</td>
+	 <td Style="text-align: center;">6</td>		 
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8956-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George V facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8957-180.jpg" alt="Reserve Image"></td>
+	  <td Style="text-align: center;">1927</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2482-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George V facing left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2483-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1928<br>1935<br>1936</td>
+	 <td Style="text-align: center;">3</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/6284913fcd7764.78944742-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seated figure of Britannia right, with trident in left hand and shield bearing the Union flag in right, sea behind, denomination above and date in exergue</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/62849140292c81.45708438-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1939<br>1945<br>1947</td>
+	 <td Style="text-align: center;">3</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9385-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate portrait of Queen Elizabeth II facing right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Three-masted ship sailing left, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9386-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1962<br>1964<br>1966<br>1967</td>
+	 <td Style="text-align: center;">4</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Pence<hr>
+	  	  Value:&emsp;&pound; 0.005</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/82-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central crown of St. Edward, denomination in letters above and numerals below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/83-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1971<br>1973<br>1974<br>1975<br>1976<br>1977<br>1979</td>
+	 <td Style="text-align: center;">7</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/6568ba50f2cbf6.58966222-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A crowned portcullis with chains (an adaptation of the Badge of Henry VII which is now the Badge of the Palace of Westminster) and the face value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/6568ba52498538.83968580-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1971<br>1973<br>1975<br>1976<br>1977<br>1978<br>1979<br>1980<br>1981</td>
+	 <td Style="text-align: center;">9</td>	 
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5132-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned portcullis with chains (an adaptation of the Badge of Henry VII which is now the Badge of the Palace of Westminster), legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5133-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1982</td>
+	 <td Style="text-align: center;">1</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2190-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A crowned portcullis with chains (an adaptation of the Badge of Henry VII, now the Badge of the Palace of Westminster) with legend above and denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2191-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1985<br>1986<br>1987<br>1988<br>1989<br>1990<br>1992</td>
+	 <td Style="text-align: center;">7</td>
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;">1</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp; Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2359-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A crowned portcullis with chains (an adaptation of the Badge of Henry VII, now the Badge of the Palace of Westminster) with legend above and denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2360-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1993<br>1994<br>1996<br>1997</td>
+	 <td Style="text-align: center;">4</td>	 
+    </tr>
+    
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/64-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A crowned portcullis with chains (an adaptation of the Badge of Henry VII, now the Badge of the Palace of Westminster), denomination around</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/65-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1998<br>1999<br>2000<br>2002<br>2003<br>2004<br>2006<br>2007</td>
+	 <td Style="text-align: center;">8</td>	 
+    </tr>
+   
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5529-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left part of Royal Shield, denomination in left segment</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5530-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2008<br>2009<br>2010<br>2011<br>2012<br>2013<br>2014</td>
+	 <td Style="text-align: center;">7</td>	     
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pence<hr>
+	  	  Value:&emsp;&pound; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5f25bb14ef6888.75632197-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fifth crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left section of the Royal Shield, denomination to left segment</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5f25bb1572bbf5.95546498-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2015<br>2016</td>
+	 <td Style="text-align: center;">2</td>	     
+    </tr>
+      
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0125</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/157-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around, designer's initials below truncation<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Three-headed 'thrift' plant, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/158-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1937<br>1942<br>1943<br>1945</td>
+	 <td Style="text-align: center;">4</td>	     
+    </tr>
+              
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Pence<hr>
+	  	  Value:&emsp;&pound; 0.0125</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/178-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate portrait of Queen Elizabeth II facing right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A Tudor portcullis and side chains with crown above, dividing value, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/180-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1954<br>1955<br>1956<br>1960<br>1966</td>
+	 <td Style="text-align: center;">5</td>	  	 
+    </tr>
+	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pence<hr>
+	  	  Value:&emsp;&pound; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/78-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Badge of Prince of Wales, a plume of 3 ostrich feathers enfiling coronet of cross pattée and fleur de lis, dividing motto with legend and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/79-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1971<br>1975<br>1977<br>1978<br>1979<br>1981</td>
+	 <td Style="text-align: center;">6</td>	  	
+    </tr>
+    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pence<hr>
+	  	  Value:&emsp;&pound; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/62-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of HM Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Badge of Prince of Wales, plume of 3 ostrich feathers enfiling coronet of cross pattée and fleur de lys, dividing motto with legend and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/63-180.jpg" alt="Reserve Image"></td> 	  
+		 <td Style="text-align: center;">1985<br>1987<br>1989</td>
+	 <td Style="text-align: center;">3</td>		 
+    </tr>
+    
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pence<hr>
+	  	  Value:&emsp;&pound; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/6568b8471fd2f1.09988331-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of HM Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Badge of Prince of Wales, plume of 3 ostrich feathers enfiling coronet of cross pattée and fleur de lys, dividing motto with legend and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/6568b848f1b711.00423930-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1994<br>1997</td>
+	 <td Style="text-align: center;">2</td>	 
+    </tr>
+      
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pence<hr>
+	  	  Value:&emsp;&pound; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2464-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Badge of Prince of Wales, plume of 3 ostrich feathers enfiling coronet of cross pattée and fleur de lys, dividing motto with legend and denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2465-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1998<br>2000<br>2001<br>2004</td>
+	 <td Style="text-align: center;">4</td>	 	 
+    </tr>
+    
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pence<hr>
+	  	  Value:&emsp;&pound; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5531-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Top right section of the Royal Shield of Arms, denomination above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5532-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2012<br>2014</td>
+	 <td Style="text-align: center;">2</td>	 	 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;6 Pence<hr>
+	  	  Value:&emsp;&pound; 0.025</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2515-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George V left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">hree oak sprigs with six acorns, denomination above, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/2517-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1935</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;6 Pence<hr>
+	  	  Value:&emsp;&pound; 0.025</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5eacbc937efbd8.43288996-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned royal cypher dividing date, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5eacbc93c86190.89141308-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1947<br>1948</td>
+	 <td Style="text-align: center;">2</td>		 
+    </tr>
+       
+    <tr>
+      <td style="text-align: right; font-size: 15px;">6 Pence</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<hr>
+	  	  Value:&emsp;&pound; 0.025</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9470-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate bust of Queen Elizabeth II right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tudor rose, shamrock, thistle and leek aligned in a cross, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9471-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1953</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+      
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;6 Pence<hr>
+	  	  Value:&emsp;&pound; 0.025</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9470-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate bust of Queen Elizabeth II right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tudor rose, shamrock, thistle and leek aligned in a cross, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9471-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1957<br>1960<br>1964<br>1966<br>1967</td>
+	 <td Style="text-align: center;">5</td>		 
+    </tr>
+ 
+     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Shilling<hr>
+	  	  Value:&emsp;&pound; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5790-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate bust of Queen Elizabeth II right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Scottish shield of arms dividing date, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5791-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1955<br>1958<br>1959<br>1961<br>1963<br>1966</td>
+	 <td Style="text-align: center;">6</td>		
+    </tr>
+     
+	  
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pence<hr>
+	  	  Value:&emsp;&pound; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/58-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Badge of Scotland, a thistle royally crowned, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/61-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1968<br>1969<br>1971<br>1975<br>1979<br>1980</td>
+	 <td Style="text-align: center;">6</td>	
+    </tr>	
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pence<hr>
+	  	  Value:&emsp;&pound; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/7600-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Badge of Scotland, a thistle royally crowned, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/208-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1990<br>1991<br>1992<br>1996</td>
+	 <td Style="text-align: center;">4</td>	 
+    </tr>	
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pence<hr>
+	  	  Value:&emsp;&pound; 0.05</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5533-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Badge of Scotland, a thistle royally crowned, with legend above and denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5534-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1998<br>1999<br>2000<br>2002<br>2003<br>2004</td>
+	 <td Style="text-align: center;">6</td>	 
+    </tr>	
+     
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Pence<hr>
+	  	  Value:&emsp;&pound; 0.05</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5ea5f79685af66.03840756-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Centre section of the Royal Shield of Arms, denomination central</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5ea5f796d62886.98458700-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2012<br>2014</td>
+	 <td Style="text-align: center;">2</td>	 
+    </tr>	
+     
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Shillings<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9666-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Tudor rose dividing royal cypher below thistle and shamrock, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9667-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1948</td>
+	 <td Style="text-align: center;">1</td>	 
+    </tr>
+    	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Shillings<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/164-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Tudor rose dividing royal cypher below thistle and shamrock, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/165-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1949(2)</td>
+	 <td Style="text-align: center;">2</td>	 
+    </tr>
+    
+     <tr>
+      <td style="text-align: right; font-size: 15px;">2 Shillings</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5792-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate bust of Queen Elizabeth II right, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Central Tudor rose surrounded by thistles, shamrocks and leeks, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5793-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1955<br>1956<br>1957<br>1961<br>1965</td>
+	 <td Style="text-align: center;">5</td>	 
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pence<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/54-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Part of the Crest of England, a lion passant guardant royally crowned, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/55-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1968<br>1969<br>1970<br>1973<br>1975<br>1976<br>1977<br>1980</td>
+	 <td Style="text-align: center;">8</td>	 
+    </tr>
+    
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pence<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/68-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Part of the Crest of England, a lion passant guardant royally crowned, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/69-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">1992<br>1997</td>
+	 <td Style="text-align: center;">2</td>	 	 
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pence<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/60bb754aeb0553.89555244-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Part of the Crest of England, a lion passant guardant royally crowned, legend above, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/60bb754b603047.36155089-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2000<br>2001<br>2004</td>
+	 <td Style="text-align: center;">3</td>	
+	</tr>
+	
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Pence<hr>
+	  	  Value:&emsp;&pound; 0.10</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5541-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Upper left section of the Royal Shield of Arms, denomination to upper segment</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5542-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2009<br>2011<br>2014</td>
+	 <td Style="text-align: center;">3</td>	
+    </tr>
+    
+    
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Crown<hr>
+	  	  Value:&emsp;&pound; 0.0125</h5>
+ 	  </td>
+
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9660-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of King George VI left, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Quartered shield of arms flanked by crowned royal cyphers, legend above, denomination and date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/9661-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1947<br>1951</td>
+	 <td Style="text-align: center;">2</td>	
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Pence<hr>
+	  	  Value:&emsp;&pound; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/10769-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Tudor rose dividing date and legend, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/10770-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1982</td>
+	 <td Style="text-align: center;">1</td>	
+    </tr>
+    
+    
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Pence<hr>
+	  	  Value:&emsp;&pound; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/97-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of HM Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Tudor rose dividing date and legend, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/99-180.jpg" alt="Reserve Image"></td>
+      	 	<td Style="text-align: center;">1993<br>1997</td>
+	 <td Style="text-align: center;">2</td>	
+    </tr>
+    
+    
+   
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Pence<hr>
+	  	  Value:&emsp;&pound; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/95-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned Tudor rose dividing date and legend, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/96-180.jpg" alt="Reserve Image"></td>
+      	 	<td Style="text-align: center;">2001</td>
+	 <td Style="text-align: center;">1</td>	
+    </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Pence<hr>
+	  	  Value:&emsp;&pound; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/604d107513ce84.45337848-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Lower right section of the Royal Shield, denomination to right segment of rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/604d1075693998.82562233-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2008</td>
+	 <td Style="text-align: center;">1</td>	
+    </tr>
+    
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Pence<hr>
+	  	  Value:&emsp;&pound; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/60a22a49e09985.96100999-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Second crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Figure of Britannia seated beside lion, with shield resting against her, holding trident and olive branch in her hand, denomination and legend</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/60a22a4b7ade21.11861768-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1970</td>
+	 <td Style="text-align: center;">1</td>	
+	 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Pence<hr>
+	  	  Value:&emsp;&pound; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/87-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing the George IV State Diadem, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Figure of Britannia seated beside lion, with shield resting against her side, holding trident in her hand and olive branch, denomination and legend</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/88-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">1985</td>
+	 <td Style="text-align: center;">1</td>	
+	 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;">50 Pence</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<hr>
+	  	  Value:&emsp;&pound; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5415-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The turning pages of stylised book on the roof of a classical library building</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5416-180.jpg" alt="Reserve Image"></td>
+      	 	  <td Style="text-align: center;">2000</td>
+	 <td Style="text-align: center;">1</td>		 
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pound<hr>
+	  	  Value:&emsp;&pound; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8141-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Royal Arms with supporters, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Second crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8142-180.jpg" alt="Reserve Image"></td>     
+	 	 <td Style="text-align: center;">1983</td>
+	 <td Style="text-align: center;">1</td>			 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pound<hr>
+	  	  Value:&emsp;&pound; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/606b7b1df0a664.87842392-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A representation of the Menai Bridge inside a border of railings and stanchions</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/606b7b1e96dfb9.26610329-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2005</td>
+	 <td Style="text-align: center;">1</td>			 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Pound<hr>
+	  	  Value:&emsp;&pound; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/639dfa233d9e73.32275043-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fifth crowned portrait of Queen Elizabeth II right, wearing George IV State Diadem, with holographic image below and denomination as incuse micro-legend around edge<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">English rose, Welsh leek, Scottish thistle and Northern Irish shamrock emerging from 1 stem within royal coronet, with minting year as incuse micro-legend around rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/639dfa2407d068.39111385-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2016</td>
+	 <td Style="text-align: center;">1</td>		
+	 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pound<hr>
+	  	  Value:&emsp;&pound; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8793-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Four concentric circles representing the Iron Age, Industrial Revolution, silicon chip and the internet, denomination above, date below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/8794-180.jpg" alt="Reserve Image"></td>
+     <td Style="text-align: center;">1998</td>
+	 <td Style="text-align: center;">1</td>			 
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Pound<hr>
+	  	  Value:&emsp;&pound; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5f48d9937bb987.14438769-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Fourth crowned portrait of HM Queen Elizabeth II right, wearing the Girls of Great Britain and Ireland tiara, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">St. Paul's Cathedral illuminated by searchlights, denomination above, dates below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/royaume-uni/5f48d993dd8cf6.38211838-180.jpg" alt="Reserve Image"></td>
+      	 	 <td Style="text-align: center;">2005</td>	 
+	 <td>1</td>
+    </tr>
+    </table>
+     <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+    </p>
+<p><br></p>
+	   <p></p>
+
+  
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

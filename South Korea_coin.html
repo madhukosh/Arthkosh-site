@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Korea</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFFFFF;
+    color: #CD2E3A;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>South Korea 
+      <img src="https://flagcdn.com/kr.svg" style="width: 25px;" alt="South Korea">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Won&emsp; 
+	Unit currency: Jeon&emsp; 
+	Symbol: &#x20A9;&emsp;
+	1 Won = 100 Jeon &emsp; 
+	Code: <input type="text" id="fromCurrency" value="KRW"><br>
+      KRW:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:KRW - <span id="reverseRateUSD">-</span>  &emsp;
+     KRW:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:KRW - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	  <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Won<hr>
+	  	  Value:&emsp;&#x20A9; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/56-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rose of Sharon (Hibiscus syriacus), South Korea national flower<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/57-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1966</td>	 
+	 <td style= "text-align: center;">1</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Won<hr>
+	  	  Value:&emsp;&#x20A9; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/329-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rose of Sharon (Hibiscus syriacus), South Korea national flower<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/330-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1969</td>	 
+	 <td style= "text-align: center;">1</td>
+    </tr>
+                 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Won<hr>
+	  	  Value:&emsp;&#x20A9; 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/481-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Geobukseon (Turtle Ship), Korean battleship used from the 15th to the 19th century<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bank name and denomination and the issuer name below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/480-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1967</td>	 
+	 <td style= "text-align: center;">1</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Won<hr>
+	  	  Value:&emsp;&#x20A9; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/328-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rose of Sharon (Hibiscus syriacus), South Korea national flower, value, bank title (Hangul)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date per the Korean calendar</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/327-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1959</td>	 
+	 <td style= "text-align: center;">1</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Won<hr>
+	  	  Value:&emsp;&#x20A9; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/478-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Dabotap Pagoda, located in Gyeongju, it is one of the national treasures. Value and "Bank of Korea" (Hangul)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bank name and denomination and the issuer name below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/479-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1967<br>1968<br>1969<br>1972</td>	 
+	 <td style= "text-align: center;">4</td>
+    </tr>
+       
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Won<hr>
+	  	  Value:&emsp;&#x20A9; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f3cb5dc8f2.62320273-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Dabotap Pagoda, located in Gyeongju, one of the national treasures of South Korea, dividing the value in Hangul on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in numerals in the center with "Bank of Korea" in Hangul below and the date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f3cbe44aa0.46457274-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1995</td>	 
+	 <td style= "text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Won<hr>
+	  	  Value:&emsp;&#x20A9; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/11-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Dabotap Pagoda, located in Gyeongju, one of the national treasures of South Korea, dividing the value in Hangul on both sides<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in numerals in the center with "Bank of Korea" in Hangul below and the date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/12-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2009<br>2010<br>2015<br>2019</td>	 
+	 <td style= "text-align: center;">4</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Won<hr>
+	  	  Value:&emsp;&#x20A9; 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f32bb1c2f9.91714435-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rice plant and value in Hangul below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination in numerals in the center with the issuer name in Hangul below and the date above</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f32c5a5bc7.66736018-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1989<br>1992<br>1994</td>
+	 <td style= "text-align: center;">3</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Won<hr>
+	  	  Value:&emsp;&#x20A9; 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/474-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Admiral Yi Sun-sin (1545-1598), Korea's national hero, with Korean legend "Bank of Korea" below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination in numerals above the date within a circular design</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/475-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">1972</td>
+	 <td style= "text-align: center;">1</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Won<hr>
+	  	  Value:&emsp;&#x20A9; 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30ee107601c0.25294962-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Admiral Yi Sun-sin (1545-1598), Korea's national hero, facing the viewer dividing the denominatio<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above the issuer name and below the date</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30ee111cb5d5.30619822-180.jpg" alt="Reserve Image"></td>
+	 	 <td style= "text-align: center;">1986<br>1987<br>1993<br>1996<br>2000<br>2014</td>
+	 <td style= "text-align: center;">6</td>
+    </tr>
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;500 Won<hr>
+	  	  Value:&emsp;&#x20A9; 500.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f43f539af1.02024576-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Flying Manchurian crane and the value below in Korean<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value in numerals below the date and above the issuer name, in Korean</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/coree_du_sud/5e30f43fdec590.98245203-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style= "text-align: center;">2003<br>2016</td>
+	 <td style= "text-align: center;">2</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+<script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

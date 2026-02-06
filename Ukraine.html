@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukraine</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #005BBB;
+    color: #FFD700;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate3() {
+  var currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
+    });
+}
+
+function fetchExchangeRate4() {
+  var currency1 = document.getElementById('currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	     document.getElementById('RRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('RRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Ukraine
+       <img src="https://flagcdn.com/ua.svg" style="width: 25px;" alt="Ukraine">
+ </h2>
+ 
+  
+ <h3>
+     Currency: karbovanets&emsp; 
+	 Unit Currency: kopiykas&emsp; 
+	 Symbol: крб&emsp; 
+	 Code:<input type="text" id="Currency1" value="UAK"><br>
+      UAK:USD -  <span id="RateUSD">-</span>&emsp;
+	  USD:UAK -  <span id="RRateUSD">-</span>&emsp;
+	  UAH:INR - <span id="RateINR">-</span>&emsp;
+	  INR:UAH - <span id="RRateINR">-</span>&emsp;
+	</h3> 
+	 <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 800px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">крб 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e4f518e9586.98262544-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Sculptural image of Lybid from the Memorial in honor of the founding of Kyiv<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Cathedral of St. Sophia in Kyiv is a historical, architectural and wall painting monument of first half of XI century, which is famous worldwide</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e4f5276e460.14081029-original.jpg" alt="Reverse Image"></td>      	 
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">крб 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5e99784d077f71.10325372-original.jpg" alt="Obverse Image"></td>
+	 <td>
+	     <h4>&larr;Observe</h4>Sculptural image of Lybid from the Memorial in honor of the founding of Kyiv<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Memorial in honor of the founding of city of Kyiv - commemorative sign built in 1982 to commemorate 1500th anniversary of city of Kyiv</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/5e99784d88dd64.06030556-original.jpg" alt="Reverse Image"></td>      	 
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+	</h3>	
+	
+	<h3>
+	Currency:Hryvnia &emsp; 
+	Unit currency: Kopiykas &emsp;
+	Symbol:&#8372;  &emsp; 
+	Code:<input type="text" id="fromCurrency" value="UAH"><br>
+      UAH:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:UAH - <span id="reverseRateUSD">-</span>  &emsp;
+     UAH:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:UAH - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table2" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 70px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 800px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8372; 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e503a7bd0f1.81368512-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Volodymyr the Great was a Grand Duke of Kyiv (980-1015). During his rule a rise of the Kyivan Rus as a solid community 
+	  and a great power started off and all the Eastern Slavic lands were united under the dominion of Kyiv. In 988-989 Rus was Christianized on his initiative<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">In the end of the 10th century the wall system of Kyiv Detynets (citadel) contained several gates. One gate was for passage to Podil, 
+	  another – in the direction of Pechersk, one more was for passage in the direction of St. Sophia Cathedral</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e503b7f1e58.76379328-original.jpg" alt="Reverse Image"></td>
+   </tr>
+   
+   <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#8372; 2</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e4ff0a3b293.02902502-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Yaroslav the Wise was a Grand Duke of Kyiv (1019-1054). In times of his ruling the “Rus' Justice” Code of the Old Rus was composed and adopted, 
+	  the Christianity was finally established in Rus and the culture developed. Yaroslav the Wise was buried in the Cathedral of St. Sophia in Kyiv<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">The Cathedral of St. Sophia in Kyiv is a historical, architectural and wall painting monument of the first half of the XI century, 
+	  which is famous worldwide. It was built in the golden age of Kyivan Rus to become the metropolitan's cathedral, i.e. the principal church of Rus, on the place, 
+	  where Yaroslav had won a victory over Pechenegs. Yaroslav founded therein the first library in Rus</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/ukraine/626e4ff1be8305.91108394-original.jpg" alt="Reverse Image"></td>
+   </tr>
+   
+    <!-- Add more rows as needed -->
+  </table> <h3>
+Notes: <span id="sum2">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+
+ <h3>
+Total Notes: <span id="tsum">-</span> &emsp;
+</h3>
+  <script>
+  function tsumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+	   	   table2 = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum1 = table1.rows.length-1;
+		   sum2 = table2.rows.length-1;
+       
+      
+       document.getElementById("tsum").innerText = sum1+sum2;
+      	 
+   }
+ tsumTable();
+</script>
+
+ </section>
+
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

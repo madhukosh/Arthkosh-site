@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<title>United States of America</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #B22234;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+  }
+  
+</style>
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+   
+  #fromCurrency {
+    color: black; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+<style>
+ small-text
+{
+font-size: 15px;
+}
+</style>
+<style>
+ letter-text
+{
+font-size: 3px;
+}
+</style>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate; 
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;	  
+       var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>United States of America 
+     <img src="https://flagcdn.com/us.svg" style="width: 25px;" alt="USA">  
+ </h2>
+ 
+  
+  <h3>
+   <h3>Currency: Dollar&emsp; 
+     Unit Currency:Cent&emsp; 
+	Symbol:  $&emsp; 
+	Code:<input type="text" id="fromCurrency" value="USD"> &emsp; <br>
+	USD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:USD -  <span id="reverseRateUSD">-</span> &emsp; 
+	USD:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:USD -  <span id="reverseRateINR">-</span> 
+</h3>
+
+	<table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/629b7964c07c84.13688260-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of George Washington at center.Treasurer's Signature and 1 at left. Secretary's Signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Great Seal of the United States around ONE</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/629b796c42f0a7.28238647-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63e49d43684fa6.47761200-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of George Washington at center. Treasurer's Signature and Federal Reserve Bank Seal at left. Secretary's Signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Great Seal of the United States around ONE</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63e49d44023ff2.51688991-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 2</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63b83db770aa29.25070493-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Thomas Jefferson center. Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">John Trumbull's portrait of the signing of the Declaration of Independence</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/63b83db85c1e63.26469491-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627bb5f291b2c0.20814136-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Abraham Lincoln at center. Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">LINCOLN MEMORIAL</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627bb5f3aa5d88.98146013-original.jpg" alt="Reverse Image"></td> 
+    </tr>
+	
+	<tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e95110f936e58.60818421-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Abraham Lincoln at center. Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Lincoln Memorial at center</p>
+	 </td>
+     <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e951110506cf2.66323301-original.jpg" alt="Reverse Image"></td>
+	</tr>
+	
+	<tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e951db46ddf53.96848322-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Alexander Hamilton facing left, center.	Treasurer's signature and Federal Reserve Seal at left.Secretary's signature and Treasury Seal at right
+			The torch of the Statue of Liberty in background at left.Handwritten "WE THE PEOPLE" from the Declaration of Independence in background at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">U.S. Treasury Building at center</p>
+	</td>
+	<td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e951db50b1dd4.18725816-original.jpg" alt="Reverse Image"></td> 
+    </tr>
+	
+	<tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627bae38293112.43096406-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Andrew Jackson at center. Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">THE WHITE HOUSE</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/627bae391bbb00.13033060-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+	<tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65545a9e41b016.59831637-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Andrew Jackson. Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">THE WHITE HOUSE</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/65545a9f5219d8.34767050-original.jpg" alt="Reverse Image"></td>
+    </tr>
+
+	<tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e9526726f6188.87832392-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Ulysses S. Grant at center.	Treasurer's signature and Federal Reserve Seal at left. Secretary's signature and Treasury Seal at right.
+			United States flag in background<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">U.S. Capitol building at center</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e952672e1e615.55558139-original.jpg" alt="Reverse Image"></td> 
+    </tr>
+
+
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e9655a07ce412.69868567-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Portrait of Benjamin Franklin in center (with oval frame around), serial number top left and bottom right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Independence Hall, Philadelphia, Pennsylvania</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/5e9655a1487811.90824766-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    </table> 
+	<h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+
+ </section>
+
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

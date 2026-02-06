@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guatemala</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #4997D0 ;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Guatemala 
+      <img src="https://flagcdn.com/gt.svg" style="width: 25px;" alt="Guatemala">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency: Queztal&emsp; 
+	Unit currency: Centavo&emsp; 
+	Symbol: Q &emsp;
+	1 Queztal = 100 Centavo &emsp; 
+	Code: <input type="text" id="fromCurrency" value="GTQ"><br>
+      GTQ:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:GTQ - <span id="reverseRateUSD">-</span>  &emsp;
+     GTQ:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:GTQ - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavo<hr>
+		  Value:&emsp;Q 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/5ffee328cb1765.60778726-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms, legend at top and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in lettering</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/5ffee3297fd752.67735232-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1932</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavo<hr>
+		  Value:&emsp;Q 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/60955077378c77.11154545-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms, legend at top and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination at top. Bust left with legend at bottom</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/60955077b61c20.26802809-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1954</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavo<hr>
+		  Value:&emsp;Q 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/1114-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of Guatemala depicts two rifles and two swords crossed with a wreath of laurel. A scroll of parchment with the words"Liberty 15 of September, 1821" and national bird; the Quetzal<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination at top and a bust of Bartolomé de las Casas (c. 1484 – 1566)</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/1115-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1979<br>1984<br>1988<br>1990</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavo<hr>
+		  Value:&emsp;Q 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/1058-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tree with value at right and legend at bottom</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/1059-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1995<br>2000</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavo<hr>
+		  Value:&emsp;Q 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/879-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tree with value at right and legend at bottom</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/880-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2012<br>2016<br>2018</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavo<hr>
+		  Value:&emsp;Q 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/1042-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms, with legend at top, and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mayan Pillar ruins of Quiriguá with denomination at right and legend below</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/1043-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1995</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Centavo<hr>
+		  Value:&emsp;Q 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/957-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms, with legend at top, and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Mayan Pillar ruins of Quiriguá with denomination at right and legend below</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/958-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2016</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25 Centavo<hr>
+		  Value:&emsp;Q 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/1111-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms (2 laurel branches, quetzal bird perched on scroll and "Libertad 15 De Setiembre De 1821" written on scroll along with 2 rifles and 2 swords crossed) and date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Native bust facing left with the value to the right and bottom-right</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/1112-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1994</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	   
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Queztal<hr>
+		  Value:&emsp;Q 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/guatemala/1052-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Guatemala with country name above and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Stylized peace dove, with the word Paz (Peace), celebrating the end of civil war on December 29, 1996</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/guatemala/1053-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2018</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

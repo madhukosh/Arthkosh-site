@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canada</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #D80621;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: black; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};	
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Canada 
+       <img src="https://flagcdn.com/ca.svg" style="width: 25px;" alt="India">
+
+ </h2>
+ 
+<h3>
+     Currency:Dollar &emsp; 
+	Unit currency:Cent &emsp; 
+	Symbol:CA$  &emsp;	
+	Code: <input type="text" id="fromCurrency" value="CAD"><br>
+      CAD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CAD - <span id="reverseRateUSD">-</span>  &emsp;
+     CAD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CAD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>
+	 </tr>
+	 
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/63cd04c38c6563.32385328-original.jpg" alt="Obverse Image"></td>
+	 <td> <h4>&larr;Observe</h4>The note has a frosted maple leaf window, a portrait of Sir Wilfrid Laurier, and a hologram strip with Laurier’s portrait, 
+	      the Mackenzie Tower, and repeated denominations. The strip also features a maple leaf border. The denomination and issue year are on the right<hr>
+	 <h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 	 <p style = "text-align: right;">This side of the note features a space innovation theme. It includes the denomination, a mirrored hologram strip, 
+	          images of Canadarm2, Dextre, and an astronaut with a Canadian flag patch. Below is Earth from space, showing the Great Lakes, Hudson Bay, and the Gulf of St. Lawrence. 
+			 Five stylized stars represent the denomination, and the reverse side of the maple leaf window is on the right</p></td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/canada/63cd04c6d3ef26.23323347-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+	 
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/623aee49d7d630.95321626-original.jpg" alt="Obverse Image"></td>
+	<td> <h4>&larr;Observe</h4>The left side of the note shows the issuing institute, Canada’s coat of arms, and a holographic stripe. 
+	 It features Sir Wilfrid Laurier’s portrait, the West Block of Parliament, the face value “5,” a watermark of Laurier, and a Canadian flag. The note’s colors are mainly blue and yellow<hr>
+ 	<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 	<p style = "text-align: right;">The image shows Canadian winter sports: children playing hockey, a boy tobogganing, and a child learning to ice skate with an adult. 
+	In the middle is a bilingual quote</p></td>      
+      <td><img src="https://en.numista.com/catalogue/photos/canada/623aee4a6b3c47.85723724-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+     
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e9545769b5976.11896004-original.jpg" alt="Obverse Image"></td>
+	 <td> <h4>&larr;Observe</h4>The left side of the note shows the issuing institute, Canada’s Coat of Arms, and a holographic stripe. It features Sir John A. 
+	     Macdonald, the Library of Parliament, the face value “10,” and a Canadian flag. The note’s colors are mainly purple and yellow<hr>
+ 	<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 	<p style = "text-align: right;">The image honors Canadian veterans with symbols like poppies, the war memorial, 
+		a military woman with binoculars, and white doves. In the lower left corner is a bilingual quote from a poem</p></td>
+     <td><img src="https://en.numista.com/catalogue/photos/canada/5e954576e96de3.22013380-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e95450ad947b1.61709510-original.jpg" alt="Obverse Image"></td>
+	 <td> <h4>&larr;Observe</h4>The left side of the note shows the issuing institute, Canada’s Coat of Arms, and a holographic stripe. 
+	 		It features Queen Elizabeth II, the Parliament of Ottawa, the face value “20,” a watermark of Elizabeth II, and a Canadian flag. The note’s colors are mainly green and yellow<hr>
+ 	<h4 style = "text-align: right;">Reverse&rarr;</h4>
+	 <p style = "text-align: right;">The image highlights arts and culture, featuring four works by Haida artist Bill Reid and a bilingual quote from Gabrielle Roy’s novel 
+	             “La montagne secrète” in the lower left corner</p></td>      
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e95450b2a82a5.11991681-original.jpg" alt="Reverse Image"></td>    
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e95448087d974.72186565-original.jpg" alt="Obverse Image"></td>
+	 <td> <h4>&larr;Observe</h4>The left side of the note features the issuing institute, Canada’s Coat of Arms, and a holographic stripe. 
+	      It has a portrait of William Lyon Mackenzie King, the Peace Tower, the face value “50,” a watermark of King, and a Canadian flag. The note’s colors are mainly red and yellow<hr>
+	 <h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 	<p style = "text-align: right;">The image represents “Building the Nation” with the 1929 newspaper “Women are Persons,” a scale of justice, the statue “The Famous Five,” 
+	            the Thérèse Casgrain Volunteer Award, and a bilingual quote from the Universal Declaration of Human Rights</p></td>      
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e954480df6d40.41415212-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">C$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e9543fc1ab206.77516161-original.jpg" alt="Obverse Image"></td>
+	 <td> <h4>&larr;Observe</h4>The left side of the note shows the issuing institute, Canada’s Coat of Arms, and a holographic stripe. It features Sir Robert Borden, 
+	                      the Parliament Buildings, the face value “100,” a watermark of Borden, and a Canadian flag. The note’s colors are mainly gold, yellow, and green<hr>
+ 	 <h4 style = "text-align: right;">Reverse&rarr;</h4>
+	 <p style = "text-align: right;"></p>The image represents “Exploration and Innovation” with a satellite image of Canada, a telecommunications antenna, 
+	 						Radarsat-1, a map, a compass, a canoe, and a bilingual quote</td>
+      
+      <td><img src="https://en.numista.com/catalogue/photos/canada/5e9543fc5c0209.15894847-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {	
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      	
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+ </section>
+  
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

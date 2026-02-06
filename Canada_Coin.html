@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canada</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align:¢er;
+    }
+</style>
+<style>
+    .centered {
+        vertical-align: middle;
+        text-align:¢er;
+    }
+    .centered img {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFFFFF;
+    color: #D80621;
+    text-align:¢er;
+  }
+  img {
+
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+
+</style>
+<style>
+ class=small-text
+{
+font-size: 15px;
+}
+</style>
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;
+  }
+
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Canada
+      <img src="https://flagcdn.com/ca.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+
+
+
+  <h3>
+     Currency:Dollar &emsp;
+	Unit currency:Cent &emsp;
+	Symbol:CA$  &emsp;
+	1 Dollar = 100¢ &emsp;
+	Code: <input type="text" id="fromCurrency" value="CAD"><br>
+      CAD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CAD - <span id="reverseRateUSD">-</span>  &emsp;
+     CAD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CAD - <span id="reverseRateINR">-</span>
+ </h3>
+
+
+
+    <table>
+   <table id = "table1">
+ 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/1073-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of King George V, wearing a crown, facing left, engravers abbreviation in the truncation<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The face value above the date is surrounded by the inscription "CANADA" and flanked by two maple leaves</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/canada/1074-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1920</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+      <tr>
+      <td style="text-align: right; font-size: 15px;">/td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/canada/1037-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of King George VI facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td><img src="https://en.numista.com/catalogue/photos/canada/1038-original.jpg" alt="Reserve Image"></td>
+
+	<td style="text-align: center;">1942</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td><img src="http://en.numista.com/catalogue/photos/canada/8103-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of King George VI facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td><img src="https://en.numista.com/catalogue/photos/canada/8104-original.jpg	" alt="Reserve Image"></td>
+
+
+	<td style="text-align: center;">1950<br>1951<br>1952</td>
+	<td style="text-align: center;">3</td>
+    </tr>
+
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/724-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 27 years of age, wearing a wreath, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+	 <td td ><img src="https://en.numista.com/catalogue/photos/canada/725-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1953&emsp;1955<br>1956&emsp;1957<br>1958&emsp;1959<br>1960&emsp;1961<br>1962&emsp;1964</td>
+	<td style="text-align: center;">10</td>
+    </tr>
+
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/6605838e2918e8.79904749-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/6605838e9cd6f8.32351399-original.jpg" alt="Reserve Image"></td>
+
+	<td style="text-align: center;">1965&emsp;1966<br>1968&emsp;1969<br>1970&emsp;1971<br>1972&emsp;1973<br>1974&emsp;1975<br>1976&emsp;1978</td>
+	<td style="text-align: center;">12</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/9134-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A rock dove in flight is surrounded with the face value and the inscription "CANADA 1867-1967"</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/9137-original.jpg" alt="Reserve Image"></td>
+
+	<td style="text-align: center;">1967</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/2907-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/2908-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1980&emsp;1981</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/2495-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/2497-original.jpg" alt="Reserve Image"></td>
+
+
+	<td style="text-align: center;">1982&emsp;1983<br>1986</td>
+	<td style="text-align: center;">3</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/4530-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/4531-original.jpg" alt="Reserve Image"></td>
+
+	<td style="text-align: center;">1991&emsp;1994</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/5528-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/5529-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1997&emsp;1998<br>2000&emsp;2003</td>
+	<td style="text-align: center;">4</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1¢<hr>
+		  Value:&emsp;CA$ 0.01</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/8113-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 77 years of age, bare headed, wearing necklace and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A maple twig is surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/8114-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">2007</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5¢<hr>
+		  Value:&emsp;CA$ 0.05</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/1116-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A North American Beaver (Binomial Name: Castor canadensis), above the country name, surrounded with the face value, flanked on both sides by a maple leaf</p>
+		</td>
+
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/1117-original.jpg" alt="Reserve Image"></td>
+
+	<td style="text-align: center;">1968&emsp;1979</td>
+	<td style="text-align: center;">2</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5¢<hr>
+		  Value:&emsp;CA$ 0.05</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/5e1cce7968ed08.97842865-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A North American Beaver (Binomial Name: Castor canadensis), above the country name, surrounded with the face value, flanked on both sides by a maple leaf</p>
+		</td>
+      
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/5e1cce7a4dbd35.52323135-original.jpg" alt="Reserve Image"></td>
+      
+	<td style="text-align: center;">2001</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5¢<hr>
+		  Value:&emsp;CA$ 0.05</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/3200-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings,
+	     facing right and the dates "1952-2002"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Bluenose under sail, a Canadian schooner from Nova Scotia, a celebrated racing ship and
+	 a symbol of the province surrounded by the the value and the country name</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/3201-original.jpg" alt="Reserve Image"></td>
+      	  	<td style="text-align: center;">2002</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5¢<hr>
+		  Value:&emsp;CA$ 0.05</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/64fa21037feb09.53067585-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A North American Beaver (Binomial Name: Castor canadensis), above the country name, surrounded with the face value,
+	 flanked on both sides by a maple leaf</p>
+		</td>
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/3213-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">2004</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5¢<hr>
+		  Value:&emsp;CA$ 0.05</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/64fa2293c48457.22828670-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 77 years of age, bare headed, wearing necklace and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A North American Beaver (Binomial Name: Castor canadensis), above the country name, surrounded with the face value, flanked on both sides by a maple leaf</p>
+		</td>
+	 <td ><img src="https://en.numista.com/catalogue/photos/canada/64fb4952e7b504.31686479-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">2007<br>2009<br>2011<br>2013<br>2015<br>2016<br>2022</td>
+	<td style="text-align: center;">7</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10¢<hr>
+		  Value:&emsp;CA$ 0.10</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/2943-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Bluenose under sail, a Canadian schooner from Nova Scotia, a celebrated racing ship and a symbol of the province, surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/2944-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">1978</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10¢<hr>
+		  Value:&emsp;CA$ 0.10</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/667be9e3afce44.19706671-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Bluenose under sail, a Canadian schooner from Nova Scotia, a celebrated racing ship and a symbol of the province, surrounded with the face value and the inscription "CANADA"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/canada/667be9e41f3477.88605859-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">1998</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10¢<hr>
+		  Value:&emsp;CA$ 0.10</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/64f9f5a3a10549.15917871-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 77 years of age, bare headed, wearing necklace and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bluenose under sail, Canadian schooner from Nova Scotia, celebrated racing ship and symbol of province, surrounded with face value and inscription "CANADA"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/canada/64f9f5a42e97f7.69114930-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">2012</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25¢<hr>
+		  Value:&emsp;CA$ 0.25</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/5efe08d72c2c63.46987184-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A caribou accompanied with the face value and surrounded with the inscription "CANADA"</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/5efe08d7869b12.86169058-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">1979</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;25¢<hr>
+		  Value:&emsp;CA$ 0.25</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/64fa209bc00061.90685164-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 77 years of age, bare headed, wearing necklace and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A caribou accompanied with the face value and surrounded with the inscription "CANADA"</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/64fb8606d46001.03098725-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">2006<br>2008<br>2016</td>
+	<td style="text-align: center;">3</td>
+    </tr>
+
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;CA$ 1<hr>
+		  Value:&emsp;CA$ 1.00</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/8268-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Bust of Queen Elizabeth II, as at 37 years of age, wearing tiara, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A Canadian loon swimming on a lake with above the inscription "CANADA" and below the face value</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/8269-original.jpg" alt="Reserve Image"></td>     
+	<td style="text-align: center;">1987</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;CA$ 1<hr>
+		  Value:&emsp;CA$ 1.00</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/5efe1584067b78.03396324-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 64 years of age, wearing the royal diadem, necklace, and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A Canadian loon, swimming on a lake, with the country name at the top, the date below, and the denomination at the bottom. The designer's initials to the right</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/5efe158469ab24.29491697-original.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">1999</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;CA$ 2<hr>
+		  Value:&emsp;CA$ 2.00</h5>
+	  </td>
+      <td ><img src="https://en.numista.com/catalogue/photos/canada/3230-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Head of Queen Elizabeth II, as at 77 years of age, bare headed, wearing necklace and earrings, facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Polar bear on ice flow, facing right</p>
+		</td>
+      	 <td ><img src="https://en.numista.com/catalogue/photos/canada/3231-180.jpg" alt="Reserve Image"></td>
+      	<td style="text-align: center;">2016</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+
+
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+
+       }
+       // Display the sum in the last row
+
+       document.getElementById("sum1").innerText = sum1;
+
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

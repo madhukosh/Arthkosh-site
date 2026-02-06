@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netherland</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+   background-color: #C8102E;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+  fetchExchangeRate3();
+   fetchExchangeRate4();
+   fetchExchangeRate5();
+   fetchExchangeRate6();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate5() {
+  var Currency2 = document.getElementById('Currency2').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency2}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD1').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD1').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate6() {
+  var Currency2 = document.getElementById('Currency2').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency2}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR1').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR1').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Netherland 
+      <img src="https://flagcdn.com/nl.svg" style="width: 25px;" alt="NL">
+ </h2>
+ 
+  <h3>
+     Currency: Euro&emsp; 
+	Unit Currency: Cent&emsp;
+	Symbol: &euro;&emsp; 
+	1 Euro = 100 Cents&emsp; 
+	Code:<input type="text" id="fromCurrency" value="EUR"><br>
+      EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:EUR -  <span id="reverseRateUSD">-</span> &emsp;
+      EUR:INR -  <span id="exchangeRateINR">-</span> &emsp;
+      INR:EUR - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+   <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;&euro; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/6228248f2ea4c4.55020389-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Profile of Queen Beatrix encircled by twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/6228249009e060.96783267-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2000<br>2001</td>
+	<td style="text-align: center;">2</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Cents<hr>
+	  	  Value:&emsp;&euro; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61fcb9c920e740.36889428-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Profile of Queen Beatrix encircled by twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61fcb9ca08e385.73587269-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2001</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;&euro; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61fde4379b8e66.45331830-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Profile of Queen Beatrix encircled by twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61fde438a4eb65.87953789-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1999</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;&euro; 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/63c2c1bbc15f46.19160707-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Profile of Queen Beatrix encircled by twelve stars of Europe<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/63c2c1bcb43fb7.17320031-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2000</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Cents<hr>
+	  	  Value:&emsp;&euro; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/605d79c9dc8152.20845277-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An uncluttered portrait of Queen Beatrix is encircled by the twelve stars of Europe and the legend "BEATRIX KONINGIN DER NEDERLANDEN"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, symbolizes the gathering of the fifteen nations of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/605d79ca744230.11057698-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2001</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Euros<hr>
+	  	  Value:&emsp;&euro; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2571-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>An uncluttered portrait of Queen Beatrix is accompanied, in the right side, facing left with a vertically written inscription above the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, shows the fifteen states of the European Union</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2572-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2002</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Euros<hr>
+	  	  Value:&emsp;&euro; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/579-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Treaty document signed by six founding countries ‘Treaty of Rome 50 years’, ‘EUROPE’, and name of issuing country appear in the respective languages of euro area or in Latin<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">A map, next to the face value, shows the European continent without borders</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/580-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2007</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<section>
+  <h3>
+     Currency: Guilder&emsp; 
+	Symbol: ƒ&emsp; 
+	Unit Currency: Cent &emsp;
+	1 Guilden = 100 Cents&emsp; 
+	Code:<input type="text" id="CurrencyX" value="NLG"><br>
+      NLG:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+      USD:NLG -  <span id="reverseRateUSD">-</span> &emsp;
+      NLG:INR -  <span id="exchangeRateINR">-</span> &emsp;
+      INR:NLG - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+   <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;ƒ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/678d82e975db43.73849277-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned rampant lion left on the field of 15 small shields all within beaded circle, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/678d82e9bd6225.76260871-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1925</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;ƒ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/curacao/140-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Upright lion with sword within beaded circle. Text in Dutch surrounding. Year flanked by palm tree mark and mint mark below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/curacao/141-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1942</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+                 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;ƒ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2853-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>German Occupation. Circled cross with banner below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Four waves and an ear of corn on the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2848-original.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1942</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;ƒ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1926-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Face value and year in the center of the coin</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1927-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1952&emsp;1954<br>1955&emsp;1957<br>1958&emsp;1959<br>1963&emsp;1964<br>1967&emsp;1971<br>1972&emsp;1974</td>
+	<td style="text-align: center;">12</td>
+    </tr>	  
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;ƒ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/65d4126383ad51.06333958-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, divided date at sides, orange branch at top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/65d41264971891.05490568-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1952&emsp;1957<br>1970&emsp;1971<br>1977&emsp;1980</td>
+	<td style="text-align: center;">6</td>
+    </tr>	  
+   
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;ƒ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2405-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The bust of Beatrix facing left with a vertical inscription to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within vertical lines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1452-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1989&emsp;1993</td>
+	<td style="text-align: center;">2</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;ƒ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a3a8a24d575.35201516-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, divided date at sides, crown at the top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a3a8b1382b3.95417441-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1948&emsp;1950<br>1951&emsp;1954<br>1956&emsp;1958<br>1970&emsp;1971<br>1975&emsp;1976<br>1977&emsp;1979<br>1980</td>
+	<td style="text-align: center;">13</td>
+    </tr>	  
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;ƒ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/2406-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The bust of Queen Beatrix facing left with a vertical inscription to the right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within vertical lines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/234-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1998&emsp;2000</td>
+	<td style="text-align: center;">2</td>
+    </tr>	  
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;ƒ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a2b8250a7f2.13413589-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Queen Wilhelmina facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, divided date at sides, crown at top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a2b8332d192.05848091-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1948</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+    	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;ƒ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61f6b381eb38a9.79979544-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, divided date at sides, crown at top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/61f6b3823aace3.46549154-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1950</td>
+	<td style="text-align: center;">1</td>
+    </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;ƒ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/225-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination, divided date at sides, crown at top</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/226-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1955&emsp;1971<br>1976&emsp;1977</td>
+	<td style="text-align: center;">4</td>
+    </tr>	  
+      	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;ƒ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a31ed65c731.21589820-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Queen Beatrix facing left with a vertical inscription to the right.<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within vertical lines</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/671a31ee60abd0.56824774-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1988</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+   	  00
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Guilden<hr>
+	  	  Value:&emsp;ƒ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1751-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crowned arms divide date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1752-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1955</td>
+	<td style="text-align: center;">1</td>
+    </tr>	
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Guilden<hr>
+	  	  Value:&emsp;ƒ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1902-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Queen Juliana facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The crowned Dutch arms divide the date above the denomination and the country name at the bottom, with the privy mark below the denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1903-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1971</td>
+	<td style="text-align: center;">1</td>
+    </tr>	
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Guilden<hr>
+	  	  Value:&emsp;ƒ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/645a8e66645a32.81004797-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait in left profile of Beatrix of the Netherlands, vertical inscription<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above date and a grid in the background</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/645a8e66ba2457.74487071-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1994</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Gulden<hr>
+	  	  Value:&emsp;ƒ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/pays-bas/5f470269568389.35036478-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait in left profile of Beatrix of the Netherlands, vertical inscription<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value "5 G" above the date and a grid in the background. The letter "G" abbreviation for "gulden"</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/pays-bas/1971-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1989&emsp;1990</td>
+	<td style="text-align: center;">2</td>
+    </tr>	  
+    
+       <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+ </section>
+ 
+ 
+<section>
+  <h2>Netherland Antilles
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Flag_of_the_Netherlands_Antilles_%281959%E2%80%931986%29.svg/188px-Flag_of_the_Netherlands_Antilles_%281959%E2%80%931986%29.svg.png" style="width: 25px;" alt="NL">
+ </h2>
+ 
+  <h3>
+     Currency: Gulden&emsp; 
+	Unit Currency: Cent&emsp;
+	Symbol: G&emsp; 
+	1 Gulden = 100 Cents&emsp; 
+	Code:<input type="text" id="Currency2" value="ANG"><br>
+      ANG:USD -  <span id="RateUSD1">-</span> &emsp;
+      USD:ANG -  <span id="RRateUSD1">-</span> &emsp;
+      ANG:INR -  <span id="RateINR1">-</span> &emsp;
+      INR:ANG - <span id="RRateINR1">-</span>
+ </h3>
+ 
+   <table id = "table3">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;G 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/antilles_neerlandaises/375-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>A crowned lion holding a sword and 7 arrows in front of a striated bottom with some escutcheons, borrowed from the Dutch coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/antilles_neerlandaises/376-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">1954</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+            
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Cent<hr>
+	  	  Value:&emsp;G 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/antilles_neerlandaises/388-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Orange blossom within a circle and the privy marks below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within circle of geometric designed border, divided date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/antilles_neerlandaises/389-180.jpg" alt="Reserve Image"></td>
+      	 	<td style="text-align: center;">2005</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+        
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum2;
+      	  
+   }
+    sumTable3();
+   </script>
+ </section>
+</p>
+
+<section>
+  <h2>Aruba
+      <img src="https://flagcdn.com/aw.svg" style="width: 25px;" alt="NL">
+ </h2>
+ 
+  <h3>
+     Currency: Florin&emsp; 
+	Unit Currency: Cent&emsp;
+	Symbol: Aƒ&emsp; 
+	1 Floring = 100 Cents&emsp; 
+	Code:<input type="text" id="Currency1" value="AWG"><br>
+      AWG:USD -  <span id="RateUSD">-</span> &emsp;
+      USD:AWG -  <span id="RRateUSD">-</span> &emsp;
+      AWG:INR -  <span id="RateINR">-</span> &emsp;
+      INR:AWG - <span id="RRateINR">-</span>
+ </h3>
+ 
+    <table id = "table4">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Cents<hr>
+	  	  Value:&emsp;Aƒ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/aruba/50-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Aruba underneath legend between horizontal lines. Year, privy and mint mark<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">5 c above line structure with filled shapes</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/aruba/51-180.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1992<br>2001</td>
+	<td style="text-align: center;">2</td>
+    </tr>	  
+         
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Cents<hr>
+	  	  Value:&emsp;Aƒ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/aruba/52-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State name, coat of arms, privy mark and mint mark, and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Triangular geometric designs and face value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/aruba/53-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1990</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Cents<hr>
+	  	  Value:&emsp;Aƒ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/aruba/186-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State name, coat of arms, privy mark and mint mark, and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Triangular geometric designs and face value</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/aruba/187-original.jpg" alt="Reserve Image"></td>
+	<td style="text-align: center;">1990</td>
+	<td style="text-align: center;">1</td>
+    </tr>	  
+    
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum2;
+      	  
+   }
+    sumTable4();
+   </script>
+  <h2>
+	  Total Coins:<span id="table5sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable5() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row 
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table5sum").innerText = table3sum;
+	  
+	  var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table5sum").innerText = table3sum;
+   }
+ sumTable5();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

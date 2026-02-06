@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamaica</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #FFD700 ;
+    color: #000000 ;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Jamaica 
+      <img src="https://flagcdn.com/jm.svg" style="width: 25px;" alt="Argentina">
+ </h2>
+ 
+ <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: JA$&emsp;
+	1 Dollar = 100 cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="JMD"><br>
+      JMD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:JMD - <span id="reverseRateUSD">-</span>  &emsp;
+     JMD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:JMD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+
+   <table id = "table1">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Cents<hr>
+	  Value:&emsp;JA$ 0.01</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/5f5bee5708da51.76149847-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">(Blighia sapida) fruit at centre, value below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/5f5bee577b19c9.84729562-180.jpg" alt="Reserve Image"></td>	
+	 	 <td style="text-align: center;">1969<br>1970</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Cents<hr>
+	  Value:&emsp;JA$ 0.01</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/543-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">FAO,Ackee (Blighia sapida) fruit at centre, value below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/544-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1972</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Cents<hr>
+	  Value:&emsp;JA$ 0.05</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/265-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crocodile (Crocodylus acutus) to the left, head turned right, on a rock. Value below, toothed rim</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/266-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1975<br>1980</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Cents<hr>
+	  Value:&emsp;JA$ 0.10</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/761-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Butterfly and flower at centre</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/762-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1972<br>1982<br>1987<br>1989</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Dollar<hr>
+	  Value:&emsp;JA$ 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/699-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Heptagonal, Bust of Alexander Bustamante facing forward, legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Jamaica</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/698-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1995</td>
+	 <td style="text-align: center;">1</td>
+    </tr>  
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Dollar<hr>
+	  Value:&emsp;JA$ 1.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/701-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Sir Alexander Bustamante facing forward<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Jamaica</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/700-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008<br>2012<br>2015<br>2017<br>2021<br>2022</td>
+	 <td style="text-align: center;">6</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Dollar<hr>
+	  Value:&emsp;JA$ 5.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/715-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Sir Alexander Bustamante facing forward<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Jamaica</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/716-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1996<br>2014<br>2018</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;JA$ 10.00<hr>
+	  Value:&emsp;10 Dollars</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/696-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of George William Gordon facing forward</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/697-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1999<br>2000</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Dollars<hr>
+	  Value:&emsp;JA$ 10.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/189-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Jamaica<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of George William Gordon facing forward</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/188-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2008<br>2012<br>2017<br>2018</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Dollars<hr>
+	  Value:&emsp;JA$ 20.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/516-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Non-Magnetic, Coat of arms of Jamaica, legend on outer ring<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Head of Marcus Garvey facing front-right. Legend on outer ring</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/517-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2001</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;20 Dollars<hr>
+	  Value:&emsp;JA$ 20.00</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/64bf80d05ed6d4.49651252-180.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Magnetic, Coat of arms of Jamaica, legend on outer ring<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Head of Marcus Garvey facing front-right. Legend on outer ring</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/64bf80d0a73a81.49323958-180.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">2018</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+    sumTable1();
+   </script>
+   
+  <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Penny&emsp; 
+	Symbol: &pound;&emsp;
+	1 Pound = 240 Pennies &emsp; 
+	Code: <input type="text" id="Currency1" value="JMP"><br>
+      JMD:USD -  <span id="RateUSD">-</span> &emsp;
+	 USD:JMD - <span id="RRateUSD">-</span>  &emsp;
+     JMD:INR - <span id="RateINR">-</span> &emsp;
+	INR:JMD - <span id="RRateINR">-</span>
+ </h3>
+ 
+   <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp; &frac12; Penny<hr>
+	  Value:&emsp;&pound; 0.0021</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/60c7c97a8f1c83.23749308-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned head of King George VI facing left. Legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Jamaica. Legend around</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/60c7c97a0b20f0.24009223-original.jpg" alt="Reserve Image"></td>	
+	 	 <td style="text-align: center;">1952</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp; 1 Penny<hr>
+	  Value:&emsp;&pound; 0.0042</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/jamaique/658-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned head of King George VI facing left. Legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Coat of arms of Jamaica. Legend around</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/jamaique/659-original.jpg" alt="Reserve Image"></td>	
+	 	 <td style="text-align: center;">1938</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+    </script>
+   <h2>
+	  Total Coins:<span id="tablesum"></span> &emsp;
+     </h2>
+ 
+   <script>
+function sumTable() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var tsum = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           tsum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       
+	 
+       
+        var tablesum = tsum
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
+
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

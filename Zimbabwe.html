@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zimbabwe</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #007A29;
+    color: #000000;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	  var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Zimbabwe 
+       <img src="https://flagcdn.com/zw.svg" style="width: 25px;" alt="Zimbabwe">
+
+ </h2>
+ 
+  <h3>Currency: Dollar&emsp; 
+     Unit Currency: Cent &emsp; 
+	Symbol: Z$&emsp; 
+	Code:<input type="text" id="fromCurrency" value="ZWL"> &emsp; <br>
+	ZWL:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:ZWL -  <span id="reverseRateUSD">-</span> &emsp; 
+	ZWL:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:ZWL -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 120px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e95650f062219.92000883-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Victoria Falls (or Mosi-oa-Tunya = The Smoke and Thunders) on Zambezi River, and Water Buffalo</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e95650f8703c3.78093067-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e957ea9064523.26573935-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Women Two women mashing grain near huts</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e957ea977ff03.63485399-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d9129e7d954.33595190-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Freedom Flame Monument, and View of Harare</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d912a810353.47877567-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e9565df88bfe3.00863786-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Kariba Dam on Zambezi River, and Trumpeting African Elephant</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e9565dfe60e70.57472992-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e957eef623466.20012811-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Tigerfish (Hydrocynus vittatus), and Kariba Dam on Zambezi River</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e957eefca2545.97991530-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea428e7da5ed7.65964017-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Women Two women mashing grain near huts</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea428e87f0b65.95061273-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62e394abc8df66.23838709-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Number 10 in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Building of the Reserve Bank of Zimbabwe, and African buffalo (or Cape buffalo (Syncerus caffer))</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62e394af4263e8.28209205-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e958688bae6b5.22212142-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Victoria Falls (or Mosi-oa-Tunya = The Smoke and Thunders) on Zambezi River</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e95868926d5b5.06369196-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea428e9115fb3.70267661-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Victoria Falls (or Mosi-oa-Tunya = The Smoke and Thunders) on Zambezi River</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea428e9671db0.21757073-original.jpg" alt="Reverse Image"></td>
+     </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62f2e508b5b921.77781644-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Tomb of the Unknown Soldier and the statue of Mbuya Nehanda, a female spiritual leader that along with Sekuru Kagovi inspired the 19th Century 
+	  Revolution against British Colonization<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Chiremba Balancing Rocks in Matopos National Park</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62f2e509838233.23674805-original.jpg" alt="Reverse Image"></td>
+     </tr>
+	
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d93e6b7fb34.34820403-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Terraced Hills</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d93e7566627.85868041-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e95671b5a0785.80715554-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Palm trees in the National Herbarium and Botanic Garden in Avondale in Harare, 
+	 and The conical tower inside the Great Enclosure at The Ruins of Great Zimbabwe near Masvingo (Fort Victoria)</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e95671bc6cef2.30151956-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 500</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d95ae6aaba2.22981078-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Tigerfish (Hydrocynus vittatus), and Kariba Dam on Zambezi River</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d95af05cab5.58251574-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d9838f2a895.31409867-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Terraced Hills</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/623d98398c8b49.60959667-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 500000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e956a51735df5.76780569-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Palm trees in the National Herbarium and Botanic Garden in Avondale in Harare, and Dairy farming – milking cows</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5e956a51e018e8.28538219-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 10000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea52e0cda2b04.78709581-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe, and Two giraffes<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Tigerfish (Hydrocynus vittatus), and Kariba Dam on Zambezi River</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/5ea52e0cda2b04.78709581-original.jpg" alt="Reverse Image"></td>
+	 </tr>
+	 
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 25000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62ac77ed5b9b99.56343369-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Freedom Flame Monument, and View of Harare</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/62ac77edd546b6.83589457-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 100000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/67cc8dbb566e71.08753856-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Piles of harvested grain, and Grain elevator with multiple silos</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/67cc8dbb9d2412.57836798-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+	 <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 500000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/674a269df24357.99136047-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Chiremba Balancing Rocks in Matopos National Park, and Zimbabwe Bird in colour-shifting paint, 
+		 and Zimbabwe Bird in colour-shifting paint<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Dairy farming – milking cows, and Miner</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/674a269edbc275.34247733-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 5000000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/61a4e56a8541c8.60628373-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Logo of the Reserve Bank of Zimbabwe<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Grain elevator with multiple silos, and Two giraffes</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/61a4e56adc4384.91327228-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">Z$ 25000000000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/674fba3c8f0921.96790723-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Reserve Bank of Zimbabwe logo, and Two giraffes<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Grain elevator with multiple silos, and Two giraffes</p>
+	 </td>
+      <td><img src="https://en.numista.com/catalogue/photos/zimbabwe/674fba3cdb4573.06226753-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

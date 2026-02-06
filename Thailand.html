@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thailand</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+
+<style>
+        .container {
+            display: flex;
+        }
+        
+    </style>
+
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color:#00247D;
+    color:  #ED1C24;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  #fromCurrency {
+    color: black; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+	 
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+
+</head>
+<body>
+
+<section>
+  <h2>Thailand 
+       <img src="https://flagcdn.com/th.svg" style="width: 25px;" alt="Thailand">
+
+ </h2>
+
+  <h3>
+     Currency: Baht &emsp; 
+	Unit currency: Satang&emsp; 
+	Symbol: &#3647; &emsp;	
+	Code: <input type="text" id="fromCurrency" value="THB"><br>
+      THB:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:THB - <span id="reverseRateUSD">-</span>  &emsp;
+     THB:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:THB - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#3647; 10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/623c4425ea3f64.32934444-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Rama IX, Thai King Coat of arms of Thailand at top left<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">King Chulalongkorn (Rama V) on horseback, 
+		 known for abolishing Siamese slavery. Coat of Arms of Thailand and ‘Sagar Samrat’ offshore oil rig</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/623c44268bfc38.65465484-original.jpg" alt="Reverse Image"></td>
+    </tr>
+	
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#3647; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/5ebc1b6a798708.27675426-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Green print; multicolour underprint; black serials and signatures. Bust of King Rama IX facing half left; denominations in Thai numerals (top-right) and Arabic numerals (bottom-left/right); coat of arms of Thailand (top-left)<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">King Taksin the Great Monument: King Taksin on horseback with sword, accompanied by four soldiers at King Taksin Memorial Park, Chantaburi, Thailand. Thai numerals (top-left); Arabic numerals (bottom-left).</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/5ebc1b6ac9f1d9.30224466-original.jpg" alt="Reverse Image"></td>
+    </tr>
+   
+    <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#3647; 20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/63df838aa99f08.22925937-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>Green print with multicolour underprint, red serial numbers, and black signatures. Features King Vajiralongkorn in Royal Thai Air Force uniform, 
+		 security elements include tactile bars and Braille ‘2’.<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">Green print with yellowish-orange underprint, featuring King Rama I and King Rama II. Includes the Grand Palace, Thai mural scene, 
+		 Trishula trident, and EURion constellations</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/63df838c666a21.31963691-original.jpg" alt="Reverse Image"></td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#3647; 1000</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/5ec24ce13b5e41.19223348-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h4>&larr;Observe</h4>King Vajiralongkorn, Rama X, in the Uniform of the Commander of the Royal Thai Air Force.Royal monogram of Rama X at center.Coat of arms of Thailand at top right<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">King Bhumibol Adulyadej (Rama IX) and King Vajiralongkorn (Rama X).Coat of arms of Thailand at top left, Chakri Dynasty emblem at top right</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/thailande/5ec24ce170ec47.39894592-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <h3>
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+</body>
+
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China</title>
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #BABA50;
+        color: #080774;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 12px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #DE2910;
+    color: #FFDE00;
+    text-align: center;
+  }
+  img {
+    width: 350px; /* Adjust image size as needed */
+  }
+</style>
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+
+
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ 
+</head>
+<body>
+
+<section>
+  <h2>China 
+       <img src="https://flagcdn.com/cn.svg" style="width: 25px;" alt="China">
+
+ </h2>
+ 
+  
+  <h3>Currency: Yuan &emsp;
+     Unit Currency:Jiao,Fen&emsp; 
+	Symbol: &#xA5; &emsp; 
+	Code:<input type="text" id="fromCurrency" value="CNY"> &emsp; <br> 
+	CNY:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:CNY -  <span id="reverseRateUSD">-</span> &emsp; 
+	CNY:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:CNY -  <span id="reverseRateINR">-</span> 
+</h3>
+ 
+   <table id = "table1" class="center">
+    
+      <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 800px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+     <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;0.01</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/60b7baff24fa73.93290771-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Produce truck at right<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Arms at center</p>
+     </td>     
+      <td><img src="https://en.numista.com/catalogue/photos/chine/60b7bb00b951a6.17191816-original.jpg" alt="Reverse Image"></td>
+    </tr>  
+    
+     <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;0.02</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dbb1560684.33762712-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>At the right, a Lisunov Li-2 airplane (built in the Soviet Union under licence of Douglas DC-3)<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Coat of arms in centre</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dbb1c5f421.44711793-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    
+     <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;0.10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/62ca886b9442d1.43867916-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Gaoshan and Manchu men wearing their traditional clothing.Design with 壹角 on the right.Denomination in arabic numerals (1) in bottom corners<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">"ZHONGGUO RENMIN YINHANG" printed along top.China's emblem (Tian'anmen, the "Gate of Heavenly Peace", the gate to the forbidden city, 
+		           with 5 stars above) in the center	with a large "1" on each side."YI JIAO" below "1" on the right side.“People’s Bank of China” 
+				 and the denomination printed along the bottom in traditional Mongolian and Tibetan scripts, Uyghur, and Zhuang</p>
+     </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/62ca886c2fe168.79343238-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    
+     <tr>
+	 <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;0.20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/623af2f14dcd08.70667903-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>2 women in ethnic Bouyei and Chaoxian dress facing right on the left. Design with written value on the right. Denomination in arabic numerals (2) in bottom corners<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Chinese (traditional, seal script), Latin, Mongolian / Manchu, Old Uyghur, Tibetan</p>
+     </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/623af2f1afbf11.77573416-original.jpg" alt="Reverse Image"></td>     
+    </tr>
+    
+   
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;0.50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63f7a02a81d7b5.84782537-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Two girls in ethnic dress representing the Miao and Zhuang nationalities facing right on the left. Design with 伍角 on the right. Denomination in arabic numerals (5) 
+	                         in bottom corners<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">"ZHONGGUO RENMIN YINHANG" printed along top. China's emblem (Tian'anmen, the "Gate of Heavenly Peace", the gate to the forbidden city, with 5 stars above) in the center with 
+	       a large "5" on each side. "WU JIAO" below "5" on the right side.“People’s Bank of China” and the denomination printed along the bottom in traditional Mongolian and Tibetan scripts, 
+		  Uyghur, and Zhuang."</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63f7a02e011da4.72326544-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dc69bd2544.87808881-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Dong and Yao youths. Arms. Stylized birds. Braille dot at lower left<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Great Wall of China at centre</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dc6a7a1c79.51247640-original.jpg" alt="Reverse Image"></td>
+    </tr>
+      
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dc895c3f67.55827458-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong and hidden latent image. Coat of arms<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">"Three Pools Mirroring Moon" depicting lanterns in water on West Lake in Hangzhou City, Zhejiang province</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/chine/6270dc8a26f140.91337089-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;5</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63f63580e9e357.53797069-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong (Mao Tse-Tung) (26 December 1893 – 9 September 1976). Coat of arms<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Mount Tai (Taishan; Daizong; Dongyue), one of the "Five Great Mountains" in Shandong province. Sunrise.
+		Signature seal</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63f635841cb0f3.84460791-original.jpg" alt="Reverse Image"></td>
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;10</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63c9033eca89e7.73905264-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong facing left, China’s emblem in the top left, flower design below 10 and 拾圆 on the left, denomination (10) in top right.<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">The Three Gorges of the Yangtze River in the center, “ZHONGGUO RENMIN YINHANG” in the top right, 
+		            denomination and “People’s Bank of China” in traditional scripts, vertical “10”, Arabic denomination (10) in top left and bottom left, 
+				  date and 年 to the right of center, microprinting along the bottom</p>
+     </td>	
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63c9033fcadae2.03942251-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;20</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/5e9b6573ca7238.75578714-original.jpg" alt="Obverse Image"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong. Lotus flower, Coat of arms <hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Scenery of Guilin in the center, “ZHONGGUO RENMIN YINHANG” in the top right, denomination and “People’s Bank of China” in traditional scripts, 
+		        vertical “20”, Arabic denomination (20) in top left and bottom left, date and 年 to the right of center, microprinting along the bottom</p>
+     </td>     
+      <td><img src="https://en.numista.com/catalogue/photos/chine/5e9b6574932619.62912578-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+        <tr>
+	    <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;50</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63e4a608726835.47344614-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong Chrysanthemum flower Coat of arms<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Potala Palace in the city of Lhasa, in Tibet. It was the winter palace of the Dalai Lamas from 1649 to 1959</p>
+     </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/63e4a609677f41.27383469-original.jpg" alt="Reverse Image"></td>
+      </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/5e9b6371605ca0.70253584-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Portrait of Mao Zedong facing left at center-right, China’s emblem in the top left, Prunus mume flower below 100 and 壹佰圆 on the left, 
+		     vertical Arabic denomination (100) in top right, hybrid printed/watermark denomination (100) in lower left<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Depiction of The People’s Congress Hall in the center, “ZHONGGUO RENMIN YINHANG” in the top right, 
+		 denomination and “People’s Bank of China” in traditional scripts, vertical “100”, Arabic denomination (100) in top left and 10 YUAN in bottom left, 
+		 date and 年 to the right of center, microprinting along the bottom</p>
+     </td>     
+      <td><img src="https://en.numista.com/catalogue/photos/chine/5e9b637215c4d8.85136395-original.jpg" alt="Reverse Image"></td>      
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">&#xA5;100</td>
+      <td><img src="https://en.numista.com/catalogue/photos/china_reformed_government/5ec06cf4bbaf93.38491099-original.jpg"></td>
+	 <td>
+          <h4>&larr;Observe</h4>Brown to red-brown. Imperial Resting Quarters near mountainside at left, Huang Ti at right<hr>
+          <h4 style = "text-align: right;">Reverse&rarr;</h4>
+          <p style = "text-align: right;">Federal Reserve Bank of China 100 Yuan</p>
+     </td>      
+      <td><img src="https://en.numista.com/catalogue/photos/china_reformed_government/5ec06cf506a3a7.80028990-original.jpg" alt="Reverse Image"></td>   	 
+    </tr>    
+  
+  </table>
+  
+  <h3 style =  "text-align: center">
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+   <script>
+   
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
+</script>
+
+ </section>
+</p>
+<!-- Repeat sections for other countries -->
+</body>
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi  </p>  
+</div>
+
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</html>

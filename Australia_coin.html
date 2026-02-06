@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #012169;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 15px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+ <script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script>
+</head>
+<body>
+
+<section>
+  <h2>Australia 
+      <img src="https://flagcdn.com/au.svg" style="width: 25px;" alt="Australia">
+ </h2>
+ 
+ 
+  
+  <h3>
+     Currency:Australian Dollar &emsp; 
+	Unit Currency: Cent (c) &emsp; 
+	Symbol:&#x41;&#x24;  &emsp; 
+	&#x41;&#x24;1 = 100 Cents &emsp; 
+	Code: <input type="text" id="fromCurrency" value="AUD"><br>
+      AUD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:AUD - <span id="reverseRateUSD">-</span>  &emsp;
+     AUD:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:AUD - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ 
+
+    <table id = "table1">
+ 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65f5c583512d10.09163796-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Feather-tailed Glider, Acrobates pygmaeus, also called Pygmy Gliding Possum</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65f5c5845195a4.50153868-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1966<br>1969<br>1974<br>1979</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65f5c895123605.76522533-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>3rd portrait of Queen Elizabeth II facing right wearing the King George IV State Diadem<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Feather-tailed Glider (Acrobates pygmaeus)</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65f5c8961ab077.54959767-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65f5b80c7eef99.11829504-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Frill-necked Lizard (Chlamydosaurus kingii), also known as the Frilled Dragon, endemic to Australia and south New Guinea</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65f5b80dd57a70.11485864-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1966<br>1975<br>1976<br>1977</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65c4c90b5a05f1.97339730-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;Short-beaked Echidnas or Spiny Ant Eaters (Tachyglossus aculeatus) and denomination in cents; designer mark below</h5>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65c4c90c8e0604.71355663-original.jpg" alt="Reserve Image"></td>
+       <td style="text-align: center;">1969<br>1976<br>1979 </td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+        
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65c4ca221a0771.06429412-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>3rd portrait of Queen Elizabeth II facing right wearing the King George IV State Diadem<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Echidna (Spiny Anteater)</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65c4ca2549fa75.97297894-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1989<br>1992</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65c4cbb57eb274.30709594-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Short beaked Echidna (Tachyglossus aculeatus) and value</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65c4cbb6bf6869.92288849-original.jpg" alt="Reserve Image"></td>
+     <td style="text-align: center;">2005<br>2006</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/668284cfcaa655.41002738-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Male Superb Lyrebird (Menura novaehollandiae), value superimposed</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/668284d0b972a2.58287604-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1977<br>1981<br>1983</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
+    
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/6682859cc36ce1.46789703-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>3rd portrait of Queen Elizabeth II facing right wearing the King George IV State Diadem<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Male Superb Lyrebird (Menura novaehollandiae), value superimposed</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/6682859dadca60.84771792-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1993<br>1997</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/6682865298da13.98625617-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Male Superb Lyrebird (Menura novaehollandiae), value superimposed</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/668286536cb218.52804702-original.jpg" alt="Reserve Image"></td>
+	 <td>2002</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/62a20f503f0c72.52855303-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Platypus (Ornithorhynchus anatinus) and the numeral "20"</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/62a20f5184d331.96221704-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1966<br>1978</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+        
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/62a210db06a899.82205180-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Platypus (Ornithorhynchus anatinus) and the numeral "20"</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/62a210dc350a20.47448877-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2006<br>2015</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65b12a2567cc56.84094586-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Australia coat of arms (the escutcheon is carried by a red kangaroo (Macropus rufus) and an Emu (Dromaius novaehollandiae))
+	  and the numeral "50".Designer's mark "SD" below</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65b12a27b631b2.09907964-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1974<br>1981 </td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65b125c6bfbc79.32484740-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>2nd portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Depiction of the logo of the 1982 Brisbane Commonwealth Games over a map of Australia surrounded by icons representing 12 
+	 of the sports conducted during the games. An eight-pointed star is shown at Brisbane's location</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65b125c8b01302.80968761-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;50c<hr>
+		  Value:&emsp;&#x41;&#x24; 0.50</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65b272ddca97a3.83325007-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Australia coat of arms (the escutcheon is carried by a red kangaroo (Macropus rufus) 
+	      and an Emu (Dromaius novaehollandiae)) and the numeral "50"</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65b272dfbae489.45032680-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2008</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#x41;&#x24; 1<hr>
+		  Value:&emsp;&#x41;&#x24; 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/6682b6771fe545.12804968-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">C.H.O.G.M. logo depicting the Globe of the Earth with the Southern Cross Constellation above surrounded by stylised flags 
+	      in the shape of the state of Western Australia</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/6682b67821a573.18320145-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2011</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#x41;&#x24; 2<hr>
+		  Value:&emsp;&#x41;&#x24; 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65fda97ec140c8.59102861-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>3rd portrait of Queen Elizabeth II facing right wearing the King George IV State Diadem<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">1/2 length figure of Aboriginal man at left, Southern Cross above, denomination at right, designer's initials below, Grass 
+	 Tree to the far right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65fda980148390.24918381-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+   
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#x41;&#x24; 2<hr>
+		  Value:&emsp;&#x41;&#x24; 2.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/australie/65fdac05e935b4.84643416-original.jpg" alt="Obverse Image"></td>
+	   <td>
+	     <h5>&larr;Observe</h5>4th portrait of Queen Elizabeth II facing right wearing the Girls of Great Britain and Ireland Tiara<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">1/2 length figure of Aboriginal man at left, Southern Cross above, denomination at right, designer's initials below, Grass 
+	 Tree to the far right</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/australie/65fdac078db794.93568283-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2016</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

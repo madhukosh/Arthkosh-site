@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switzerland</title>
+
+
+<style>
+    .footer {
+        position: float;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #50BABA;
+        color: #071974;
+        text-align: center;
+    }
+</style>
+<style>
+    table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+   td {
+    padding: 3px;
+    text-align: left;
+    font-size: 15px;
+    margin: 1px;
+  }
+  th {
+    padding: 3px;
+    background-color: #DA291C;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  img {
+ 
+    width: 175px; /* Adjust image size as needed */
+  }
+</style>
+
+<style>
+  /* Remove border and outline from input element */
+  input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+</style>
+<style> 
+ class=small-text
+{
+font-size: 5px;
+}
+</style> 
+
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+
+<style>
+  /* Hide the input value by making the text color the same as the background */
+  
+  #fromCurrency {
+    color: white; /* Assuming the background is white */
+    background-color: white;
+  }
+  /* Optional: Hide the caret as well */
+  #fromCurrency:focus {
+    caret-color: white;  
+  }
+  
+</style>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetchExchangeRate1();
+   fetchExchangeRate2();
+});
+
+function fetchExchangeRate1() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate2() {
+  var fromCurrency = document.getElementById('fromCurrency').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('exchangeRateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('reverseRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate3() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "USD";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateUSD').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateUSD').textContent = value;
+	 
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+    });
+}
+function fetchExchangeRate4() {
+  var Currency1 = document.getElementById('Currency1').value;
+  var toCurrency = "INR";
+
+  // Use your API key here
+  var apiKey = '9437098cd7f9c032886ef69e';
+  var endpoint = `https://api.exchangerate-api.com/v4/latest/${Currency1}?access_key=${apiKey}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      var rate = data.rates[toCurrency];
+      document.getElementById('RateINR').textContent = rate;
+	 var value = parseFloat(1 / rate).toFixed(3);
+	 document.getElementById('RRateINR').textContent = value;	 
+	
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+    });
+}
+</script>
+<script>
+window.onload = function() {
+  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var count = 1;
+  for (var i = 0; i < tables.length; i++) {
+    var rows = tables[i].getElementsByTagName('tr');
+    for (var j = 1; j < rows.length; j++) {
+      rows[j].getElementsByTagName('td')[0].innerText = count++;
+    }
+  }
+};
+</script> 
+</head>
+<body>
+
+<section>
+  <h2>Switzerland 
+      <img src="https://flagcdn.com/ch.svg" style="width: 25px;" alt="Switzerland">
+ </h2>
+ 
+ 
+  
+<h3>
+     Currency: Franc &emsp; 
+	Unit currency: Rappen&emsp; 
+	Symbol: &#x20A3;&emsp;
+	1 Franc = 100 Rappen  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="CHF"><br>
+      CHF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:CHF - <span id="reverseRateUSD">-</span>  &emsp;
+     CHF:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:CHF - <span id="reverseRateINR">-</span>
+ </h3>
+ 
+ <table id = "table1">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 800px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/63b577d9924fa6.29921437-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Switzerland on ornate shield. Oak branch to the right. Laurel branch to the left. Hat with feather above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath with two laurel branches tied with a ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/63b577daaab0e1.99252659-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1913</td>
+	  <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/1285-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Swiss cross surrounded by the inscription: "HELVETIA"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Spike of wheat with one leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/1286-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1948<br>1949<br>1963</td>
+	  <td style="text-align: center;">3</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/642948ffe4d1b8.77271458-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The Swiss cross surrounded by the inscription: "HELVETIA"<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Spike of wheat with one leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/6429491b89ebd9.89887693-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	  <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/1510-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Libertas (Roman goddess of liberty) facing right, with braided hair tied with ribbon, and wearing tiara<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two branches of grapevine bearing three bunches of grapes each and bound with a ribbon below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/suisse/1511-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	  <td style="text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/5f9f2db303dd07.21719076-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Libertas (Roman goddess of liberty) facing right, with braided hair tied with ribbon, and wearing tiara<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two branches of grape vine bearing three bunches of grapes each and bound with a ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/5f9f2db6937d19.06564382-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1983<br>2015</td>
+	  <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/5f32d311e60728.02240447-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Libertas (Roman goddess of liberty) facing right, with braided hair tied with ribbon and wearing tiara<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two oak branches with acorns tied with a ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/5f32d312709818.43603625-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1983<br>1989</td>
+	  <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Rappen<hr>
+	  	  Value:&emsp;&#x20A3; 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/60439aa723b836.65893076-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Libertas (Roman goddess of liberty) facing right, with braided hair tied with ribbon and wearing tiara<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two alpine rose springs with flowers tied with a ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/60439aa782ca70.60129588-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962<br>1985</td>
+	  <td style="text-align: center;">2</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#189; Franc<hr>
+	  	  Value:&emsp;&#x20A3; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/604494d856c8b6.92799686-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Helvetia standing with a spear and shield, surrounded by 22 stars representing the Swiss cantons, with a 23rd star added in 1983 for the Canton of Jura<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two alpine rose springs with flowers tied with a ribbon below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/suisse/604494d8dea075.86018121-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1993</td>
+	  <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;">1 Franc</td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;<hr>
+	  	  Value:&emsp;&#x20A3; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/suisse/64294a6e9f3133.14350286-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Helvetia standing with a spear and shield, surrounded by 22 stars representing the Swiss cantons, with a 23rd star added in 1983 for the Canton of Jura<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath formed of two alpine rose springs with flowers tied with a ribbon below</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/suisse/64294a6fbcc8c0.83604330-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1969</td>
+	  <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+    <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ </section>
+</p>
+<p><br></p>
+	   <p></p>
+<!-- Repeat sections for other countries -->
+<div class="footer">
+   <p>&copy; 2024 Indrajit Gandhi
+</div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+</p>
+</body>
+</html>

@@ -218,12 +218,16 @@ window.onload = function() {
     
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
-	  <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.: &emsp;1 Santeem The first emblem of Algeria (1971-1976): 2 Algerian flags, the Hand of Fatima and the star in a crescent <hr>
+	 <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp;1 Santeem<hr>
 		  Value:&emsp;0.01 د.ج</h5>
 	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/algerie/645-original.jpg" alt="Obverse Image"></td>
-      <td>Value surrounded by Arab ornamentals</td>
+	 <td>
+		     <h5>&larr;Observe</h5>The first emblem of Algeria (1971-1976): 2 Algerian flags, the Hand of Fatima and the star in a crescent<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value surrounded by Arab ornamentals</p>
+		</td>      
 	 <td><img src="https://en.numista.com/catalogue/photos/algerie/646-original.jpg" alt="Reserve Image"></td>
 	 <td style="text-align: center;">1964</td>
 	 <td style="text-align: center;">1</td>
@@ -236,10 +240,13 @@ window.onload = function() {
 		  Value:&emsp;0.02 د.ج</h5>
 	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/algerie/521-original.jpg" alt="Obverse Image"></td>
-      <td>The first emblem of Algeria (1971-1976): 2 Algerian flags, the Hand of Fatima and the star in a crescent</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/algerie/522-original.jpg" alt="Reserve Image"></td>
-      <td>Value surrounded by Arab ornamentals</td>
-	 <td style="text-align: center;">1964</td>
+	  <td>
+		     <h5>&larr;Observe</h5>The first emblem of Algeria (1971-1976): 2 Algerian flags, the Hand of Fatima and the star in a crescent<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value surrounded by Arab ornamentals</p>
+		</td>
+       <td><img src="https://en.numista.com/catalogue/photos/algerie/522-original.jpg" alt="Reserve Image"></td>
+      	 <td style="text-align: center;">1964</td>
 	 <td style="text-align: center;">1</td>
     </tr>
 	
@@ -250,11 +257,13 @@ window.onload = function() {
 		  Value:&emsp;0.50 د.ج</h5>
 	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/algerie/415-original.jpg" alt="Obverse Image"></td>
-      <td>30th Anniversary of the French-Algerian Clash (Sétif and Guelma massacre)</td>
+	  <td>
+		     <h5>&larr;Observe</h5>30th Anniversary of the French-Algerian Clash (Sétif and Guelma massacre)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Arabic calligraphy with dates</p>
+		</td>      
 	 <td><img src="https://en.numista.com/catalogue/photos/algerie/416-original.jpg" alt="Reserve Image"></td>
-      <td>Arabic calligraphy with dates</td>
-	 <td></td>
-	 <td style="text-align: center;">1975</td>
+      <td style="text-align: center;">1975</td>
 	 <td style="text-align: center;">1</td>
     </tr>
 	  
@@ -262,7 +271,7 @@ window.onload = function() {
   </table>
    <h2>
 	  Coins:<span id="sum1"></span> &emsp;
-  </h2>
+  </h2>  
   <script>
 function sumTable1() {
        // Get the table by its ID
@@ -272,7 +281,7 @@ function sumTable1() {
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum1 += parseInt(table.rows[i].cells[7].innerText);
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
@@ -282,6 +291,98 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+
+  <h3>
+     Currency: Franc&emsp; 
+	Unit currency: Centime&emsp; 
+	Symbol: F&emsp;
+	1 Franc= 100 Centime&emsp;
+	Code: <input type="text" id="fromCurrency" value="DZF"><br>
+      DZF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:DZF - <span id="reverseRateUSD">-</span>  &emsp;
+     DZF:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:DZF - <span id="reverseRateINR">-</span>
+ </h3>
+  
+   <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+	      <th style="width: 100px;">Stat</th>
+	      <th>Obverse</th>
+	      <th style="width: 700px;">Details</th>
+	      <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+    
+      <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.: &emsp; 20 Francs <hr>
+		  Value:&emsp;2.00 F</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/algerie/647-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Head of Marianne facing right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above date, flanked by wheat ears, country name below</p>
+		</td>      
+	 <td><img src="https://en.numista.com/catalogue/photos/algerie/648-original.jpg" alt="Reserve Image"></td>
+      <td style="text-align: center;">1949</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+<h2>
+	  Total Coins:<span id="Totalsum"></span> &emsp;
+  </h2>
+ <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var TotalS = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalS += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalS += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var totalsum = TotalS
+	  document.getElementById("Totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
  </section>
 </p>
 <p><br></p>
@@ -290,5 +391,7 @@ function sumTable1() {
 <div class="footer">
    <p>&copy; 2024 Indrajit Gandhi
 </div>
+<p style="text-align: center;">
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
 </body>
 </html>

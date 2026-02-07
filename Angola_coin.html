@@ -174,7 +174,7 @@ function fetchExchangeRate4() {
 </script>
  <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -198,13 +198,35 @@ window.onload = function() {
 	Symbol:Kz&emsp; 
 	1 Kwanze = 100 cêntimo&emsp;
 	Code:<input type="text" id="fromCurrency" value="AOA"> &emsp; <br>
-	AFN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	USD:AFN -  <span id="reverseRateUSD">-</span> &emsp; 
-	AFN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
-	INR:AFN -  <span id="reverseRateINR">-</span> 
+	AOA:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:AOA -  <span id="reverseRateUSD">-</span> &emsp; 
+	AOA:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:AOA -  <span id="reverseRateINR">-</span> 
+</h3>
+<table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+</table>
+
+<h3>Currency:Angolar&emsp; 
+	Unit Currency: Centavo&emsp; 
+	Symbol:A&emsp; 
+	1 Angolar = 100 Centavos&emsp;
+	Code:<input type="text" id="fromCurrency" value="AOG"> &emsp; <br>
+	AOG:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:AOG -  <span id="reverseRateUSD">-</span> &emsp; 
+	AOG:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:AOG -  <span id="reverseRateINR">-</span> 
 </h3>
   
-  	    <table id = "table1">
+  	    <table id = "table2">
 	 	    <tr>
 			  <th>#</th>
 		      <th style="width: 100px;">Stat</th>
@@ -218,46 +240,176 @@ window.onload = function() {
     <tr>
 	  <td style = "text-align: left; font-size: 15px;"></td>
       <td style = "text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;Kwanza<hr>
-		  Value:&emsp;Kz</h5>
+		  <h5>Den.:&emsp;10 Centavos<hr>
+		  Value:&emsp;A 0.10</h5>
 	  </td>
 	  
-      <td><img src="" alt="Obverse Image"></td>
+      <td><img src="https://en.numista.com/catalogue/photos/angola/445-original.jpg" alt="Obverse Image"></td>
 		 <td>
-		     <h5>&larr;Observe</h5><hr>
+		     <h5>&larr;Observe</h5>Arms of Portuguese Angola surrounded by legend with the date below<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;"></p>
+			 <p style = "text-align: right;">Numerical denomination surrounded by legend</p>
 		</td>
-	 <td><img src="" alt="Reserve Image"></td>
-	 <td style="text-align: center;"></td>
-	 <td style="text-align: center;"></td>
+	 <td><img src="https://en.numista.com/catalogue/photos/angola/446-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1949</td>
+	 <td style="text-align: center;">1</td>
     </tr>
+	   
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Centavos<hr>
+		  Value:&emsp;A 0.20</h5>
+	  </td>
 	  
-    <!-- Add more rows as needed -->
-  </table>
+      <td><img src="https://en.numista.com/catalogue/photos/angola/5fcd51199cff35.87227924-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Arms of Portuguese Angola surrounded by legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Numerical denomination surrounded by legend</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/angola/5fcd511a095b70.33528253-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1948</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+</table>
+  
   <h2>
-	  Coins:<span id="sum1"></span> &emsp;
+	  Coins:<span id="sum2"></span> &emsp;
      </h2>
 <script>
-   function sumTable1() {
+   function sumTable2() {
        // Get the table by its ID
-       var table = document.getElementById("table1");
+       var table = document.getElementById("table2");
        // Initialize sums for each column
-       var sum1 = 0;
+       var sum2 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum1").innerText = sum1;
+       document.getElementById("sum2").innerText = sum2;
       	  
    }
-    sumTable1();
+    sumTable2();
    </script>
+<h3>Currency:Escudo&emsp; 
+	Unit Currency: Centavo&emsp; 
+	Symbol:E&emsp; 
+	1 Escudo = 100 Centavos&emsp;
+	Code:<input type="text" id="fromCurrency" value="AOE"> &emsp; <br>
+	AOE:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:AOE -  <span id="reverseRateUSD">-</span> &emsp; 
+	AOE:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:AOE -  <span id="reverseRateINR">-</span> 
+</h3>
+<table id = "table3">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+		   <tr>
+	  		<td style = "text-align: left; font-size: 15px;"></td>
+      		<td style = "text-align: left; font-size: 15px;">
+		  		<h5>Den.:&emsp;50 Centavos<hr>
+		  		Value:&emsp;E 0.50</h5>
+	  		</td>	  
+      		<td><img src="https://en.numista.com/catalogue/photos/angola/5fcd5505e967c9.88959547-original.jpg" alt="Obverse Image"></td>
+		 	<td>
+		     	<h5>&larr;Observe</h5>Emblem of Angola as a Portuguese province with the country name above and the date below<hr>
+		     	<h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 	<p style = "text-align: right;">Value with the country name around the rim</p>
+			</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/angola/5fcd550653c268.01656900-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1953<br>1954<br>1957<br>1958</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	   
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;2.5 Escudos<hr>
+		  Value:&emsp;E 2.50</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/angola/63141ac5621d52.68602628-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Portuguese Angola coat of arms<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Portugal coat of arms</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/angola/63141ac7176f86.42135920-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1956<br>1967<br>1968<br>1969</td>
+	 <td style="text-align: center;">4</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+    <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+	<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+      <h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
  
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
  </section>
 </p>
 <p><br></p>
@@ -267,7 +419,7 @@ window.onload = function() {
    <p>&copy; 2024 Indrajit Gandhi
 </div>
 <p style="text-align: center;">
-<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
+<a href="index.html">Home</a>
 </p>
 </body>
 </html>

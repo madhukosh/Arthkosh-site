@@ -173,6 +173,7 @@ function fetchExchangeRate4() {
       document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
     });
 }
+</script>
 <script>
 window.onload = function() {
   var tables = [document.getElementById('table1'), document.getElementById('table2')];
@@ -184,7 +185,7 @@ window.onload = function() {
     }
   }
 };
-</script>
+
 
 </script>
  
@@ -195,10 +196,10 @@ window.onload = function() {
   <h2>Andorra
       <img src="https://flagcdn.com/ad.svg" style="width: 25px;" alt="Andorra">&emsp;	
  </h2>
- <h3>Currency: &emsp; 
-     Unit Currency: &emsp; 
-	Symbol: &emsp; 
-	1 = 100&emsp;
+ <h3>Currency: Euro&emsp; 
+     Unit Currency: Cent&emsp; 
+	Symbol: &euro&emsp; 
+	1 Euro = 100 Cents&emsp;
 	Code:<input type="text" id="fromCurrency" value="EUR"> &emsp; <br>
 	EUR:USD -  <span id="exchangeRateUSD">-</span> &emsp;
 	USD:EUR -  <span id="reverseRateUSD">-</span> &emsp; 
@@ -248,11 +249,7 @@ function sumTable1() {
 	Unit currency: Cèntim&emsp; 
 	Symbol: D&emsp;
 	1 Schilling = 100 Cèntim&emsp; 
-	Code: <input type="text" id="currency1" value="ADD"><br>
-      ADD:USD -  <span id="RateUSD">-</span> &emsp;
-	 USD:ADD - <span id="RRateUSD">-</span>  &emsp;
-     ADD:INR - <span id="RateINR">-</span> &emsp;
-	INR:ADD - <span id="RRateINR">-</span>
+	Code: <input type="text" id="currency1" value="ADD">
  </h3>
  
     <table id = "table2">

@@ -176,7 +176,7 @@ function fetchExchangeRate4() {
 
 <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -215,11 +215,11 @@ window.onload = function() {
 <table id = "table1">
  	    <tr>
 	      <th>#</th>
-		      <th style="width: 100px;">Stat</th>
+		      <th style="width: 110px;">Stat</th>
 		      <th>Obverse</th>
-		      <th style="width: 700px;">Details</th>
+		      <th style="width: 800px;">Details</th>
 		      <th>Reserve</th>
-			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
 			 <th style="width: 50px;text-align: right;">Count</th>
 	    </tr>
  
@@ -232,8 +232,7 @@ window.onload = function() {
        </td>
 	  <td><img src="https://en.numista.com/catalogue/photos/autriche/62ca843026f837.34117868-original.jpg" alt="Obverse Image"></td>
 	  <td>
-	     <h5>&larr;Observe</h5>A gentian, which symbolizes a duty to the environment encircled by the face value, 
-	      heraldic hatchings representing the Austrian flag and twelve five-pointed stars representing the European Union around the rim<hr>
+	     <h5>&larr;Observe</h5>Gentian, which symbolizes duty to environment, face value,heraldic hatchings representing Austrian flag and 12 5-pointed stars representing European Union<hr>
 	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
 		 <p style = "text-align: right;">A globe, next to the face value, shows Europe in relation to Africa and Asia</p>
 	</td>
@@ -324,31 +323,168 @@ window.onload = function() {
  sumTable1();
 </script>
  
-  <h3>
-     Currency: Schilling &emsp; 
-	Unit currency: Groschen &emsp; 
-	Symbol: öS&emsp;
-	1 Schilling = 100 Groschen &emsp; 
-	Code: <input type="text" id="currency1" value="ATS"><br>
-      ATS:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	 USD:ATS - <span id="reverseRateUSD">-</span>  &emsp;
-     ATS:INR - <span id="exchangeRateINR">-</span> &emsp;
-	INR:ATS - <span id="reverseRateINR">-</span>
+    <h3>
+     Currency: Gulden &emsp; 
+	Unit currency: Kreuzer &emsp; 
+	Symbol: Xr&emsp;
+	1 Gulden = 100 Kreuzer&emsp; 
+	Code: <input type="text" id="currency1" value="ATK">
  </h3>
+  
  
     <table id = "table2">
     <tr>
 	      <th>#</th>
 		      <th style="width: 110px;">Stat</th>
 		      <th>Obverse</th>
-		      <th style="width: 700px;">Details</th>
+		      <th style="width: 800px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>    
+ 
+        <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Kreuzer 1<hr>
+		  Value:&emsp;Xr 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f49b24af0.05685248-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>Imperial eagle with Habsburg-Lorraine and Austria arms, surrounded by legend<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Face value with date and mintmark below, surrounded by oak wreath</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f4a2e1da0.81012439-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1858</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+
+  <h3>
+     Currency: Crown &emsp; 
+	Unit currency: Heller &emsp; 
+	Symbol: K.&emsp;
+	1 Crown = 100 Heller&emsp; 
+	Code: <input type="text" id="currency1" value="ATC"><br>    
+ </h3>
+ 
+    <table id = "table3">
+      <tr>
+	      <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 800px;">Details</th>
 		      <th>Reserve</th>
 			  <th style="width: 75px;text-align: center;">Year(s)</th>
 			 <th style="width: 50px;text-align: right;">Count</th>
 	    </tr>
     
+        <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Heller 2<hr>
+		  Value:&emsp;K. 0.02</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed96c2190.61119943-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The 1867–1915 coat of arms of Austria-Hungary, a double-headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value above twigs, date below, within an art nouveau style frame</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed9ad8485.77995545-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1893<br>1906&emsp;1911</td>
+	 <td style="text-align: center;">3</td>
+    </tr>
     
     <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Heller 10<hr>
+		  Value:&emsp;K. 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc31d2ef9.37090316-original.jpg" alt="Obverse Image"></td>
+	  <td>
+	     <h5>&larr;Observe</h5>The double headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
+	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+		 <p style = "text-align: right;">Value above date at center of ornate shield</p>
+	</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc3742b41.87209523-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1895</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+	    
+
+    
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+   <h3>
+     Currency: Schilling &emsp; 
+	Unit currency: Groschen &emsp; 
+	Symbol: öS&emsp;
+	1 Schilling = 100 Groschen &emsp; 
+	Code: <input type="text" id="currency1" value="ATS">    
+ </h3>
+
+ 
+    <table id = "table4">
+        <tr>
+	      <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 800px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 75px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+	    </tr>
+    
+    <tr>    
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style="text-align: left; font-size: 15px;">
 		  <h5>Den.:&emsp;Groschen 1<hr>
@@ -559,155 +695,7 @@ window.onload = function() {
 	 <td style="text-align: center;">1</td>
     </tr>
    
-    <!-- Add more rows as needed -->
-  </table>
-  <h2>
-	  Coins:<span id="sum2"></span> &emsp;
-     </h2>
-<script>
-   function sumTable2() {
-       // Get the table by its ID
-       var table = document.getElementById("table2");
-       // Initialize sums for each column
-       var sum2 = 0;
-       // Loop through the rows, excluding the last row where the sum will be displayed
-       for (var i = 1; i < table.rows.length; i++) {
-           // Parse and sum the values in the first and second columns
-           sum2 += parseInt(table.rows[i].cells[6].innerText);
-           
-       }
-       // Display the sum in the last row
-	 
-       document.getElementById("sum2").innerText = sum2;
-      	  
-   }
-    sumTable2();
-   </script>
-
-  <h3>
-     Currency: Crown &emsp; 
-	Unit currency: Heller &emsp; 
-	Symbol: K.&emsp;
-	1 Crown = 100 Heller&emsp; 
-	Code: <input type="text" id="currency1" value="ATC"><br>
-      ATC:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	 USD:ATC - <span id="reverseRateUSD">-</span>  &emsp;
-     ATC:INR - <span id="exchangeRateINR">-</span> &emsp;
-	INR:ATC - <span id="reverseRateINR">-</span>
- </h3>
- 
-    <table id = "table3">
-      <tr>
-	      <th>#</th>
-		      <th style="width: 100px;">Stat</th>
-		      <th>Obverse</th>
-		      <th style="width: 700px;">Details</th>
-		      <th>Reserve</th>
-			  <th style="width: 75px;text-align: center;">Year(s)</th>
-			 <th style="width: 50px;text-align: right;">Count</th>
-	    </tr>
-    
-        <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;Heller 2<hr>
-		  Value:&emsp;K. 0.02</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed96c2190.61119943-original.jpg" alt="Obverse Image"></td>
-	  <td>
-	     <h5>&larr;Observe</h5>The 1867–1915 coat of arms of Austria-Hungary, a double-headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
-	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-		 <p style = "text-align: right;">Value above twigs, date below, within an art nouveau style frame</p>
-	</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e931ed9ad8485.77995545-original.jpg" alt="Reserve Image"></td>
-	 <td style="text-align: center;">1893<br>1906&emsp;1911</td>
-	 <td style="text-align: center;">3</td>
-    </tr>
-    
-    <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;Heller 10<hr>
-		  Value:&emsp;K. 0.10</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc31d2ef9.37090316-original.jpg" alt="Obverse Image"></td>
-	  <td>
-	     <h5>&larr;Observe</h5>The double headed imperial eagle with Habsburg-Lorraine shield on breast<hr>
-	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-		 <p style = "text-align: right;">Value above date at center of ornate shield</p>
-	</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/5e932dc3742b41.87209523-original.jpg" alt="Reserve Image"></td>
-	 <td style="text-align: center;">1895</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-    
-	    
-
-    
-    <!-- Add more rows as needed -->
-  </table>
-  <h2>
-	  Coins:<span id="sum3"></span> &emsp;
-     </h2>
-<script>
-   function sumTable3() {
-       // Get the table by its ID
-       var table = document.getElementById("table3");
-       // Initialize sums for each column
-       var sum3 = 0;
-       // Loop through the rows, excluding the last row where the sum will be displayed
-       for (var i = 1; i < table.rows.length; i++) {
-           // Parse and sum the values in the first and second columns
-           sum3 += parseInt(table.rows[i].cells[6].innerText);
-           
-       }
-       // Display the sum in the last row
-	 
-       document.getElementById("sum3").innerText = sum3;
-      	  
-   }
-    sumTable3();
-   </script>
-   
-   <h3>
-     Currency: Gulden &emsp; 
-	Unit currency: Kreuzer &emsp; 
-	Symbol: Xr&emsp;
-	1 Crown = 100 Heller&emsp; 
-	Code: <input type="text" id="currency1" value="ATK"><br>
-    ATK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	USD:ATK - <span id="reverseRateUSD">-</span>  &emsp;
-    ATK:INR - <span id="exchangeRateINR">-</span> &emsp;
-	INR:ATK - <span id="reverseRateINR">-</span>
- </h3>
- 
-    <table id = "table4">
-      <tr>
-	      <th>#</th>
-		      <th style="width: 100px;">Stat</th>
-		      <th>Obverse</th>
-		      <th style="width: 700px;">Details</th>
-		      <th>Reserve</th>
-			  <th style="width: 75px;text-align: center;">Year(s)</th>
-			 <th style="width: 50px;text-align: right;">Count</th>
-	    </tr>
-    
-        <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;Kreuzer 1<hr>
-		  Value:&emsp;Xr 0.01</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f49b24af0.05685248-original.jpg" alt="Obverse Image"></td>
-	  <td>
-	     <h5>&larr;Observe</h5>Imperial eagle with Habsburg-Lorraine and Austria arms, surrounded by legend<hr>
-	     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-		 <p style = "text-align: right;">Face value with date and mintmark below, surrounded by oak wreath</p>
-	</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/autriche-habsbourg/667f1f4a2e1da0.81012439-original.jpg" alt="Reserve Image"></td>
-	 <td style="text-align: center;">1858</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
+     
     
     
     <!-- Add more rows as needed -->
@@ -741,7 +729,7 @@ window.onload = function() {
 	
  
   <script>
-function sumTable4() {
+function sumTable5() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -776,7 +764,7 @@ function sumTable4() {
         var table5sum = sum5
 	  document.getElementById("table5sum").innerText = table5sum;
    }
- sumTable4();
+ sumTable5();
 </script>
 
   </section>

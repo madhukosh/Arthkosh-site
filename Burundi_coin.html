@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cayman Islands</title>
+  <title>Burundi</title>
 
 
 <style>
@@ -19,7 +19,7 @@
 </style>
 <style>
     table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
   }
    td {
@@ -30,8 +30,8 @@
   }
   th {
     padding: 3px;
-   background-color: #00205B;
-    color: #EF3340;
+    background-color: #1EB53A;
+    color: #CE1126;
     text-align: center;
   }
   img {
@@ -75,12 +75,12 @@ font-size: 15px;
   
 </style>
 
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetchExchangeRate1();
    fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
 });
 
 function fetchExchangeRate1() {
@@ -146,7 +146,7 @@ function fetchExchangeRate3() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
     });
 }
 function fetchExchangeRate4() {
@@ -168,7 +168,7 @@ function fetchExchangeRate4() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
     });
 }
 </script>
@@ -187,25 +187,25 @@ window.onload = function() {
 </head>
 <body>
 
+
+
 <section>
-  <h2>Cayman Islands 
-      <img src="https://flagcdn.com/ky.svg" style="width: 25px;" alt="Algeria">
+  <h2>Burundi
+      <img src="https://flagcdn.com/bi.svg" style="width: 25px;" alt="Burundi">
  </h2>
     <h3>
-     Currency: Dollar &emsp;
-	Unit currency: Cent &emsp;
-	Symbol:CI$ &emsp;	
-	1 Dollar = 100 Cents&emsp;
-	Code: <input type="text" id="fromCurrency" value="KYD"><br>
-      KYD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	 USD:KYD - <span id="reverseRateUSD">-</span>  &emsp;
-     KYD:INR - <span id="exchangeRateINR">-</span> &emsp;
-	INR:KYD - <span id="reverseRateINR">-</span>
+     Currency: Franc&emsp; 
+	Unit currency: Centime&emsp;
+	Symbol: FBu&emsp;
+	1 Franc = 100 Centimes&emsp;
+	Code: <input type="text" id="fromCurrency" value="BIF"><br>
+      BIF:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	 USD:BIF - <span id="reverseRateUSD">-</span>  &emsp;
+     BIF:INR - <span id="exchangeRateINR">-</span> &emsp;
+	INR:BIF - <span id="reverseRateINR">-</span>
  </h3>
-  
-   <table id = "table1">
- 	    
-	     <tr>
+  	    <table id = "table1">
+	 	    <tr>
 			  <th>#</th>
 		      <th style="width: 100px;">Stat</th>
 		      <th>Obverse</th>
@@ -214,89 +214,22 @@ window.onload = function() {
 			  <th style="width: 50px;text-align: center;">Year(s)</th>
 			 <th style="width: 50px;text-align: right;">Count</th>
 		    </tr>
-	    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	   <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;1 Cents<hr>
-		  Value:&emsp;CI$ 0.01</h5>
+ 
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;Fbu 1<hr>
+		  Value:&emsp;FBu 1.00</h5>
 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/204-original.jpg"  alt="Obverse Image"></td>
-	   <td>
-		     <h5>&larr;Observe</h5>Second crowned portrait of Elizabeth II right, wearing Girls of Great Britain and Ireland tiara, legend around, date<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">A Grand Cayman thrush beside value</p>
-		</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/205-original.jpg" 	 alt="Reserve Image"></td>
-	 	 <td style="text-align: center;">1972<br>1977<br>1982</td>
-	 <td style="text-align: center;">3</td>
-    </tr>
-	     
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	   <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;1 Cents<hr>
-		  Value:&emsp;CI$ 0.01</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/82-original.jpg"  alt="Obverse Image"></td>
-	   <td>
-		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing George IV State Diadem, legend around, date below<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">A Grand Cayman thrush beside value</p>
-		</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/83-original.jpg" 	 alt="Reserve Image"></td>
-	 	 <td style="text-align: center;">1992<br>1996</td>
-	 <td style="text-align: center;">2</td>
-    </tr>	  
-	     
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	   <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;1 Cents<hr>
-		  Value:&emsp;CI$ 0.01</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/666c6188e408e2.26816056-original.jpg" alt="Obverse Image"></td>
-	   <td>
-		     <h5>&larr;Observe</h5>4th crowned portrait of Elizabeth II facing right, wearing Girls of Great Britain and Ireland tiara, legend, date<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">A Grand Cayman thrush beside value</p>
-		</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/666c6189e45e83.32797960-original.jpg" alt="Reserve Image"></td>
-	 	 <td style="text-align: center;">2002<br>2005<br>2008<br>2013<br>2017<br>2019</td>
-	 <td style="text-align: center;">6</td>
-    </tr>
 	  
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	   <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;5 Cents<hr>
-		  Value:&emsp;CI$ 0.05</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/64405f15f2a747.77515895-original.jpg" alt="Obverse Image"></td>
-	   <td>
-		     <h5>&larr;Observe</h5>Crowned portrait of HM Queen Elizabeth II facing right, wearing the Girls of Great Britain and Ireland tiara<hr>
+      <td><img src="https://en.numista.com/catalogue/photos/burundi/5e38751af12261.93429458-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Burundi, date below<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Cayman Crayfish, value at right</p>
+			 <p style = "text-align: right;">Denomination within circle</p>
 		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/64405f166e2702.95456939-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">2013</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-	   
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	   <td style="text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;25 Cents<hr>
-		  Value:&emsp;CI$ 0.25</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/426-original.jpg" alt="Obverse Image"></td>
-	   <td>
-		     <h5>&larr;Observe</h5>Third crowned portrait of Queen Elizabeth II right, wearing George IV State Diadem, legend around, date below<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Schooner 'Kirk B', sailing, denomination to right</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/iles_caimanes/427-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1990</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/burundi/5e38751b9aaf47.99329630-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
 	 <td style="text-align: center;">1</td>
     </tr>
 	  
@@ -304,9 +237,9 @@ window.onload = function() {
   </table>
   <h2>
 	  Coins:<span id="sum1"></span> &emsp;
-  </h2>
-  <script>
-function sumTable1() {
+     </h2>
+<script>
+   function sumTable1() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -322,8 +255,9 @@ function sumTable1() {
        document.getElementById("sum1").innerText = sum1;
       	  
    }
- sumTable1();
-</script>
+    sumTable1();
+   </script>
+ 
  </section>
 </p>
 <p><br></p>
@@ -333,7 +267,7 @@ function sumTable1() {
    <p>&copy; 2024 Indrajit Gandhi
 </div>
 <p style="text-align: center;">
-<a href="index.html">Home</a>
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
 </p>
 </body>
 </html>

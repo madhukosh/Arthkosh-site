@@ -189,7 +189,24 @@ window.onload = function() {
 	 <td style="text-align: center;">1975</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-           
+ 
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 1<hr>
+		  Value:&emsp;$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1007-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Bernardo O'Higgins with signature Francis R.Thenot<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within a laurel wreath, date under</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chili/1008-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">1978</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+                  
     <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style="text-align: left; font-size: 15px;">
@@ -319,7 +336,24 @@ function sumTable1() {
       	  	 <td style="text-align: center;">1944<br>1948</td>
 	 <td style="text-align: center;">2</td>
     </tr>   
-        
+                
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;$ 1<hr>
+		  Value:&emsp;$ 1.00</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chili/1448-original.jpg"  alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Portrait of Bernardo O'Higgins (1778-1842) leader of the Chilean independence<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by Copihue-Flowers, Chile's national flower</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/chili/1449-original.jpg"  alt="Reserve Image"></td>
+	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+          
     <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style="text-align: left; font-size: 15px;">
@@ -361,7 +395,34 @@ function sumTable2() {
    }
  sumTable2();
 </script>
- 
+ <h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }	  
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
  </section>
 </p>
 <p><br></p>

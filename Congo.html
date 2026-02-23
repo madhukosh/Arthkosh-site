@@ -143,60 +143,7 @@ window.onload = function() {
   <h2>Democratic Republic of Congo 
        <img src="https://flagcdn.com/cd.svg" style="width: 25px;" alt="Congo">
 
- </h2>
- 
-  
-  <h3>Currency: Nouveau Likuta &emsp; 
-     Unit Currency: Sengi&emsp; 
-	Symbol: NK&emsp; 
-	Code:<input type="text" id="Currency1" value="ZRN"> &emsp; <br>
-	ZRN:USD -  <span id="RateUSD">-</span> &emsp;
-	USD:ZRN -  <span id="RRateUSD">-</span> &emsp; 
-	ZRN:INR -  <span id="RateINR">-</span> &emsp; 
-	INR:ZRN -  <span id="RRateINR">-</span> 
-</h3>
- 
-    <table id = "table1" class="center">
-    
-     <tr>
-	 <th>#</th>
-      <th style="width: 60px;">Den.</th>
-      <th>Obverse</th>
-      <th style="width: 600px;">Details</th>	
-      <th>Reverse</th>     
-    </tr>
-    
-    <tr>
-     <td style="text-align: right; font-size: 15px;"></td>
-      <td style="text-align: right; font-size: 15px;">NK 1</td>
-      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944ddc4b6.34110209-original.jpg" alt="Obverse Image"></td>
-	 <td>
- 		<h4>&larr;Observe</h4>Mobutu in military uniform on the right leopard in bottom left face<hr>
- 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
- 		<p style = "text-align: right;">Independence Monument on the left</p>
-	</td>
-      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944e923c6.85761229-original.jpg" alt="Reverse Image"></td>
-    </tr>
-     </table>
-	  <h3 style =  "text-align: center">
-Notes: <span id="sum1">-</span> &emsp;
-</h3>
-   <script>
-  function sumTable1() {
-       // Get the table by its ID
-       var table = document.getElementById("table1");
-       // Initialize sums for each column
-      
-      
-           sum1 = table.rows.length-1;
-       
-      
-       document.getElementById("sum1").innerText = sum1;
-      	 
-   }
- sumTable1();
-</script>
-    <h3>Currency: Franc&emsp; 
+<h3>Currency: Franc&emsp; 
      Unit Currency: &emsp; 
 	Symbol:  FC ;&emsp; 
 	Code:<input type="text" id="fromCurrency" value="CDF"> &emsp; <br>
@@ -275,7 +222,6 @@ Notes: <span id="sum1">-</span> &emsp;
 	</td>
       <td><img src="https://en.numista.com/catalogue/photos/democratic_republic_congo_period/653ab9b8cd2c42.22544404-original.jpg" alt="Reverse Image"></td>      
     </tr>
-    
     <!-- Add more rows as needed -->
   </table>
    <h3 style =  "text-align: center">
@@ -295,6 +241,54 @@ Notes: <span id="sum2">-</span> &emsp;
       	 
    }
  sumTable2();
+</script>
+ </h2>
+  
+  <h3>Currency: Nouveau Likuta &emsp; 
+     Unit Currency: Sengi&emsp; 
+	Symbol: NK&emsp; 
+	Code:<input type="text" id="Currency1" value="ZRN">
+</h3>
+ 
+    <table id = "table1" class="center">
+    
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 600px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+    
+    <tr>
+     <td style="text-align: right; font-size: 15px;"></td>
+      <td style="text-align: right; font-size: 15px;">NK 1</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944ddc4b6.34110209-original.jpg" alt="Obverse Image"></td>
+	 <td>
+ 		<h4>&larr;Observe</h4>Mobutu in military uniform on the right leopard in bottom left face<hr>
+ 		<h4 style = "text-align: right;">Reverse&rarr;</h4>
+ 		<p style = "text-align: right;">Independence Monument on the left</p>
+	</td>
+      <td><img src="https://en.numista.com/catalogue/photos/zaire_period/653ab944e923c6.85761229-original.jpg" alt="Reverse Image"></td>
+    </tr>
+     </table>
+	  <h3 style =  "text-align: center">
+Notes: <span id="sum1">-</span> &emsp;
+</h3>
+   <script>
+  function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+      
+      
+           sum1 = table.rows.length-1;
+       
+      
+       document.getElementById("sum1").innerText = sum1;
+      	 
+   }
+ sumTable1();
 </script>
 
   <h3 style =  "text-align: center">

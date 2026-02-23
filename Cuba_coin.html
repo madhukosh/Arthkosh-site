@@ -227,10 +227,44 @@ window.onload = function() {
 			 <p style = "text-align: right;">Value in Roman numeral over 5-pointed star, motto "Fatherland and Freedom", date, weight and fineness on sides</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/cuba/411-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1920<br>1946</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Centavos<hr>
+		  Value:&emsp;₱ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/cuba/2154-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>5-pointed star in triangle, value, motto "Fatherland and Freedom", date, weight and fineness<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;"></p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/cuba/2155-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1953</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Centavos<hr>
+		  Value:&emsp;₱ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/cuba/442-original.jpg" alt="Obverse Image"></td>
+	   <td>
+		     <h5>&larr;Observe</h5>Cuban coat of arms, country name, face value in letters, line of denticles <hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in Roman numeral over 5-pointed star, motto "Fatherland and Freedom", date, weight and fineness</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/cuba/443-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">1920</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-	  
+	
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	   <td style="text-align: left; font-size: 15px;">
@@ -239,15 +273,58 @@ window.onload = function() {
 	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/cuba/635ef3850ef234.52357815-original.jpg" alt="Obverse Image"></td>
 	   <td>
-		     <h5>&larr;Observe</h5>Cuban coat of arms, country name on top, face value in letters on bottom, line of denticles close to rim<hr>
+		     <h5>&larr;Observe</h5>Cuban coat of arms, country name, face value in letters, line of denticles <hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value in Roman numeral over 5-pointed star, motto "Fatherland and Freedom", date, weight and fineness on sides</p>
+			 <p style = "text-align: right;">Value in Roman numeral over 5-pointed star, motto "Fatherland and Freedom", date, weight and fineness</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/cuba/635ef3855d0362.69526676-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">1943</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-	  
+	
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+ <h3>Currency: Convertible Peso&emsp; 
+     Unit Currency: Centavo&emsp; 
+	Symbol: ₱&emsp;
+	1 Peso= 100 Centavos &emsp;
+	Code:<input type="text" id="fromCurrency" value="CUC">
+</h3>
+  
+   <table id = "table2">
+ 	    
+	      <tr>
+			  <th>#</th>
+		      <th style="width: 110px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	   <td style="text-align: left; font-size: 15px;">
@@ -320,28 +397,56 @@ window.onload = function() {
     <!-- Add more rows as needed -->
   </table>
    <h2>
-	  Coins:<span id="sum1"></span> &emsp;
+	  Coins:<span id="sum2"></span> &emsp;
   </h2>
   <script>
-function sumTable1() {
+function sumTable2() {
        // Get the table by its ID
-       var table = document.getElementById("table1");
+       var table = document.getElementById("table2");
        // Initialize sums for each column
-       var sum1 = 0;
+       var sum2 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum1").innerText = sum1;
+       document.getElementById("sum2").innerText = sum2;
       	  
    }
- sumTable1();
+ sumTable2();
 </script>
- </section>
+<h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }	  
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
+</section>
 </p>
 <p><br></p>
 	   <p></p>

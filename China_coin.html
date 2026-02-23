@@ -148,13 +148,11 @@ window.onload = function() {
       <img src="https://flagcdn.com/cn.svg" style="width: 25px;" alt="China">
  </h2>
  
- 
-  
-  <h3>
-     Currency:Yuan &emsp; 
-	Unit currency:Fen, Jiao &emsp; 
+<h3>
+     Currency: Renminbi &emsp; 
+	Unit currency: Fen, Jiao &emsp; 
 	Symbol: &#xA5; &emsp;
-	1 Yuan = 100 Fens, 1 Yuan = 10 Jiao  &emsp; 
+	1 Renminbi = 100 Fens, 1 Yuan = 10 Jiao  &emsp; 
 	Code: <input type="text" id="fromCurrency" value="CNY"><br>
       CNY:USD -  <span id="exchangeRateUSD">-</span> &emsp;
 	 USD:CNY - <span id="reverseRateUSD">-</span>  &emsp;
@@ -172,6 +170,23 @@ window.onload = function() {
 			  <th style="width: 50px;text-align: center;">Year(s)</th>
 			 <th style="width: 50px;text-align: right;">Count</th>
 		    </tr>
+
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>	
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Fen<hr>
+		  Value:&emsp;&#xA5; 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine/5faa7d06cd4926.28545049-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem of the People's Republic of China<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Wreath of wheat stalks around denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine/5faa7d07a37750.60723009-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>    
 
   <tr>
       <td style="text-align: right; font-size: 15px;"></td>	
@@ -252,7 +267,7 @@ window.onload = function() {
 	  <td>
 		     <h5>&larr;Observe</h5>Lotus flower, and the issuer name above<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The issuer name at the top around the rim with the denomination in Chinese and Pinyin in the center, and the date below</p>
+			 <p style = "text-align: right;">Issuer name with denomination in Chinese and Pinyin, and date</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/chine/17-original.jpg" alt="Reserve Image"></td>
       	  	 <td style="text-align: center;">2005<br>2006<br>2010<br>2016</td>
@@ -267,7 +282,7 @@ window.onload = function() {
 	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/chine/1748-original.jpg" alt="Obverse Image"></td>
 	  <td>
-		     <h5>&larr;Observe</h5>China's emblem: Tian'anmen, "Gate of Heavenly Peace", gate to the forbidden city, 5 stars above it and the country name below along with date<hr>
+		     <h5>&larr;Observe</h5>China's emblem: Tian'anmen, "Gate of Heavenly Peace", gate to forbidden city, 5 stars and country name with date<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
 			 <p style = "text-align: right;">Peony blossom. Value in Chinese and Pinyin</p>
 		</td>
@@ -318,8 +333,103 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+
+<h2>Republic of China 
+      <img src="https://en.numista.com/design/pays/chine_republique.gif" style="width: 25px;" alt="China">
+ </h2>
+ 
+<h3>
+     Currency:Yuan &emsp; 
+	Unit currency:Fen, Jiao &emsp; 
+	Symbol: &#22291; &emsp;
+	1 Yuan = 100 Fens, 1 Yuan = 10 Jiao  &emsp; 
+	Code:
+ </h3>
+ 
+    <table id = "table2">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style="text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Fen<hr>
+		  Value:&#22291; 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/chine_republique/5f8bb68c5d9487.80845583-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Bust of Sun Yat-sen with Chinese ideograms surrounded by decorative border<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Ancient Chinese spade money with 1 Chinese ideogram on either side and surrounded by decorative border</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/chine_republique/5f8bb68cb82188.26728584-original.jpg" alt="Reserve Image"></td>
+      	  	 <td style="text-align: center;">1936</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     
+        
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+ <h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }	  
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
  </section>
-</p>
+
 <p><br></p>
 	   <p></p>
 <!-- Repeat sections for other countries -->

@@ -165,22 +165,10 @@ window.onload = function() {
 	 <th>#</th>
       <th style="width: 60px;">Den.</th>
       <th>Obverse</th>
-      <th style="width: 600px;">Details</th>	
+      <th style="width: 700px;">Details</th>	
       <th>Reverse</th>     
     </tr>
-    
-    <tr>
-     <td style="text-align: right; font-size: 15px;"></td>
-      <td style="text-align: right; font-size: 15px;">&#75;&#269; 10</td>
-      <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e837adc5.80144273-original.jpg" alt="Obverse Image"></td>
-	 <td>
-	     <h4>&larr;Observe</h4>10 10 Protectorate of Bohemia and Moravia Ten Crowns Protectorate Bohemia and Moravia Ten Crowns Prague, July 8, 1942. 415235 S. 01 A 10 Counterfeiting is punished<hr>
-	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
-		 <p style = "text-align: right;">10 Prot. Bohemia & Moravia 10 Crowns</p>
-	</td>
-      <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e960aec6.61585408-original.jpg" alt="Reverse Image"></td>  	
-    </tr>
-    
+
     <tr>
      <td style="text-align: right; font-size: 15px;"></td>
       <td style="text-align: right; font-size: 15px;">&#75;&#269; 100</td>
@@ -203,9 +191,6 @@ window.onload = function() {
 		 <p style = "text-align: right;">Hands, stylized open book at bottom right</p>
 	</td>      
       <td><img src="https://en.numista.com/catalogue/photos/republique_tcheque/651aedd466f447.27847845-original.jpg"  alt="Reverse Image"></td>
-      <td> .
-	</td>
-	
     </tr>
     
     <!-- Add more rows as needed -->
@@ -229,6 +214,82 @@ Notes: <span id="sum1">- </span> &emsp;
  sumTable1();
 </script>
  
+  <h2>Bohemia and Moravia 
+       <img src="https://en.numista.com/design/pays/boheme_moravie.gif" style="width: 25px;" alt="Czech">
+
+ </h2>
+ 
+  <h3>
+     Currency: Koruna&emsp; 
+	Unit currency: Haléřů&emsp; 
+	Symbol: Kč &emsp;
+	Code: <input type="text" id="fromCurrency" value="CSK">
+ </h3>
+
+     <table id = "table2" class="center">
+
+     <tr>
+	 <th>#</th>
+      <th style="width: 60px;">Den.</th>
+      <th>Obverse</th>
+      <th style="width: 700px;">Details</th>	
+      <th>Reverse</th>     
+    </tr>
+
+<tr>
+   <td style="text-align: right; font-size: 15px;"></td>
+   <td style="text-align: right; font-size: 15px;">&#75;&#269; 10</td>
+   <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e837adc5.80144273-original.jpg" alt="Obverse Image"></td>
+   <td>
+	     <h4>&larr;Observe</h4>10 10 Protectorate of Bohemia and Moravia Ten Crowns Protectorate Bohemia and Moravia Ten Crowns Prague, July 8, 1942. 415235 S. 01 A 10 Counterfeiting is punished<hr>
+	     <h4 style = "text-align: right;">Reverse&rarr;</h4>
+		 <p style = "text-align: right;">10 Prot. Bohemia & Moravia 10 Crowns</p>
+	</td>
+    <td><img src="https://en.numista.com/catalogue/photos/boheme_moravie/5ea363e960aec6.61585408-original.jpg" alt="Reverse Image"></td>  	
+</tr>
+
+  </table>
+   <h3>
+Notes: <span id="sum2">- </span> &emsp;
+</h3>
+   <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+      
+      
+           sum2 = table.rows.length-1;
+       
+      
+       document.getElementById("sum2").innerText = sum2;
+      	 
+   }
+ sumTable2();
+</script>
+<h2>
+	  Total Notes: <span id="tablesum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table1 = document.getElementById("table1");
+       // Initialize sums for each column
+           sum5 = table1.rows.length-1;
+         
+       
+	  var table2 = document.getElementById("table2");
+	  
+           // Parse and sum the values in the first and second columns
+           sum6 = table2.rows.length-1;
+       
+       // Display the sum in the last row
+        var tablesum = sum5 + sum6
+	  document.getElementById("tablesum").innerText = tablesum;
+   }
+ sumTable();
+</script>
  </section>
 </p>
 <!-- Repeat sections for other countries -->

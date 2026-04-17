@@ -75,8 +75,6 @@ font-size: 15px;
   
 </style>
 
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetchExchangeRate1();
@@ -174,7 +172,7 @@ function fetchExchangeRate4() {
 </script>
  <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -196,7 +194,7 @@ window.onload = function() {
  
   
   <h3>
-     Currency: Cedi&emsp; 
+     Currency: Third Cedi&emsp; 
 	Unit currency: Pesewa&emsp; 
 	Symbol:  GH¢&emsp;
 	1 Cedi  = 100 Pesewa &emsp; 
@@ -218,41 +216,6 @@ window.onload = function() {
 		  <th style="width: 50px;text-align: right;">Count</th>
    </tr>
 
-     
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;&#189; Pesewa<hr>
-		  Value:&emsp;GH¢ 0.005</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ghana/607af1583309e0.74089712-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Adowa drums<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">5-pointed star in the center dividing date, denomination below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/607af15883c165.34557737-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1967</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-     
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
-		  <h5>Den.:&emsp;10 Pesewa<hr>
-		  Value:&emsp;GH¢ 0.10</h5>
-	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ghana/190-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Cacao Fruits or Pods (Binomial Name: Theobroma cacao) and the country name above<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The lesser version of the arms of Ghana dividing the date on both sides and the denomination above and below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/191-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1967</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-      
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
@@ -267,6 +230,23 @@ window.onload = function() {
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/ghana/145-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">2007</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;20 Pesewa<hr>
+		  Value:&emsp;GH¢ 0.20</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ghana/243-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Ghana’s coat of arms,quartered shield with staff, castle, cocoa tree, mine shaft, central lion, star, eagles, and motto.<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Cocoa pod</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/244-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2007</td>
 	 <td style="text-align: center;">1</td>
     </tr>
     
@@ -311,17 +291,13 @@ function sumTable1() {
    }
  sumTable1();
 </script>
-  
+
   <h3>
      Currency: Pound&emsp; 
 	Unit currency: Shilling &emsp; 
 	Symbol: £&emsp;
 	1 Pound  = 20 Shillings , 1 Pound = 240 Penny  &emsp; 
-	Code: <input type="text" id="fromCurrency" value="GHP"><br>
-      GHP:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	 USD:GHP - <span id="reverseRateUSD">-</span>  &emsp;
-     GHP:INR - <span id="exchangeRateINR">-</span> &emsp;
-	INR:GHP - <span id="reverseRateINR">-</span>
+	Code: <input type="text" id="fromCurrency" value="GHP">
  </h3>
  
  
@@ -352,6 +328,22 @@ function sumTable1() {
       	 <td><img src="https://en.numista.com/catalogue/photos/ghana/198-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">1958</td>
 	 <td style="text-align: center;">1</td>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;3 Penny<hr>
+		  Value:&emsp;£ 0.0125</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ghana/607ae78746b329.90137456-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Five - pointed star<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Dr. Kwame Nkrumah bust</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/607ae786e3d596.94455807-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1958</td>
+	 <td style="text-align: center;">1</td>
     </tr>
 	  
     <!-- Add more rows as needed -->
@@ -378,12 +370,94 @@ function sumTable1() {
    }
     sumTable2();
    </script>
-<h2>
-	  Total Coins:<span id="table3sum"></span> &emsp;
-     </h2>
+   
+
+  <h3>
+     Currency: Second Cedi&emsp; 
+	Unit currency: Pesewa &emsp; 
+	Symbol: ₵&emsp;
+	1 Cedi = 100 Pesewa  &emsp; 
+	Code: <input type="text" id="fromCurrency" value="GHC">
+ </h3>
  
-  <script>
-function sumTable3() {
+ 
+ <table id = "table3">
+     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&#189; Pesewa<hr>
+		  Value:&emsp;GH¢ 0.005</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ghana/607af1583309e0.74089712-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Adowa drums<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">5-pointed star in the center dividing date, denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/607af15883c165.34557737-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+   </tr>
+     
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;10 Pesewa<hr>
+		  Value:&emsp;GH¢ 0.10</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ghana/190-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cacao Fruits or Pods (Binomial Name: Theobroma cacao) and the country name above<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The lesser version of the arms of Ghana dividing the date on both sides and the denomination above and below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ghana/191-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+      
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+
+<h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+</h2>
+
+<script>
+function sumTotal() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -400,13 +474,21 @@ function sumTable3() {
            sum5 += parseInt(table.rows[i].cells[6].innerText);
            
        }
+       	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
        // Display the sum in the last row
-        var table3sum = sum5
-	  document.getElementById("table3sum").innerText = table3sum;
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
    }
- sumTable3();
+   
+ sumTotal();
 </script>
  </section>
+ 
 </p>
 <p><br></p>
 	   <p></p>

@@ -190,7 +190,7 @@ window.onload = function() {
 
 <section>
   <h2>Indonesia 
-      <img src="https://flagcdn.com/id.svg" style="width: 25px;" alt="Peru">
+      <img src="https://flagcdn.com/id.svg" style="width: 25px;" alt="Indonesia">
  </h2>
  
   <h3>
@@ -310,7 +310,152 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+
+  <h2>Netherland East Indies</h2>
+ 
+  <h3>
+     Currency: Gulden&emsp; 
+	Unit currency: Cent,Penning&emsp; 
+    Symbol: ƒ&emsp;
+	1 Gulden = 100 Cents
+    1 Gulden = 320 Penning
+    1 Gulden = 20 Stuiver
+	Code: <input type="text" id="fromCurrency" value="IDG">
+ </h3>
+ 
+    <table id = "table2">
+ 	  <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		 <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;ƒ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/501-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Shield with Dutch lion dividing date, value below, privy left, mintmark right<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value in Javanese and Malayan</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/544-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1920</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;1 Cent<hr>
+		  Value:&emsp;ƒ 0.01</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/6748b65f1ceb26.57062981-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Rice plant, legend above, denomination below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Black Palm Cockatoo (Probosciger aterrimus) and the denomination to the right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/6748b65f71ac87.37085114-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1938<br>1942(P,p)<br>1945(D,P,p,S)</td>
+	 <td style="text-align: center;">7</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&189; Stuiver<hr>
+		  Value:&emsp;ƒ 0.05</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/66d0e00687fe39.96778647-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned lion inside shield, large crown. Denomination, abbreviated value<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Floral elements, legend in Javanese and in Malay in Jawi script</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/66d0e006eb61d7.04749594-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1826</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;&188; Gulden<hr>
+		  Value:&emsp;ƒ 0.25</h5>
+	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/5fb54782476e71.45183590-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5> Dutch coat of arms dividing value, date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Solar disk with 7 rays. Denomination in two lines in Malayan and between rays in Javanese</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/netherland_east_indies/5fb54782b66537.34253888-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1942</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
   
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+<h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }	  
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
+
  </section>
 </p>
 <p><br></p>

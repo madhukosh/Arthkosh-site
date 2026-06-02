@@ -174,7 +174,7 @@ function fetchExchangeRate4() {
 </script>
 <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4)];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -191,6 +191,7 @@ window.onload = function() {
   <h2>Malaysia 
       <img src="https://flagcdn.com/my.svg" style="width: 25px;" alt="MY">
  </h2>
+ 
  
   <h3>
      Currency: Ringgit&emsp; 
@@ -283,8 +284,8 @@ window.onload = function() {
 	     symbolizing Malaysia as an Islamic country and the 13 states in Malaysia</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/malaisie/525-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1976</td>
-	 <td style="text-align: center;">1</td>
+      	 	 <td style="text-align: center;">1968<br>1976</td>
+	 <td style="text-align: center;">2</td>
     </tr>
 	
    <tr>
@@ -397,6 +398,277 @@ window.onload = function() {
    }
     sumTable1();
    </script>
+ 
+ <h2>Strait Settlements (British Malaysia)
+      <img src="https://en.numista.com/design/pays/straits.gif" style="width: 25px;" alt="MY">
+ </h2>
+ 
+     <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: MY$&emsp;
+	1 Dollar = 100 Cents&emsp; 
+	Code: <input type="text" id="fromCurrency" value="MYD">
+ </h3>
+ 
+    <table id = "table2">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 750px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Cent<hr>
+	  Value:&emsp;RM 0.01</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/straits/261-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of Victoria<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within beaded circle, date lower right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/straits/262-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1897</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	      
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+    sumTable2();
+   </script>
+
+ <h2>British Malaya 
+      <img src="https://en.numista.com/design/pays/malaya.gif" style="width: 25px;" alt="MY">
+ </h2>
+ 
+     <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: MY$&emsp;
+	1 Dollar = 100 Cents&emsp; 
+	Code: <input type="text" id="fromCurrency" value="MYD">
+ </h3>
+ 
+    <table id = "table3">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 750px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+	      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Cent<hr>
+	  Value:&emsp;RM 0.05</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/malaya/92-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of Victoria<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within beaded circle, date lower right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/malaya/93-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1950</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;10 Cent<hr>
+	  Value:&emsp;RM 0.10</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/malaya/82-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of George VI<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within beaded circle, date lower right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/malaya/83-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1949<br>1950</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+
+   
+ <h2>Malaya and British Borneo
+      <img src="https://en.numista.com/design/pays/malaya_borneo.gif" style="width: 25px;" alt="MY">
+ </h2>
+ 
+     <h3>
+     Currency: Dollar&emsp; 
+	Unit currency: Cent&emsp; 
+	Symbol: MY$&emsp;
+	1 Dollar = 100 Cents&emsp; 
+	Code: <input type="text" id="fromCurrency" value="MYD">
+ </h3>
+ 
+    <table id = "table4">
+ 	    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 750px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;1 Cent<hr>
+	  Value:&emsp;RM 0.01</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/malaya_borneo/32-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of Victoria<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within beaded circle, date lower right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/malaya_borneo/31-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1962</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;5 Cent<hr>
+	  Value:&emsp;RM 0.05</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/malaya_borneo/25-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of Elizabeth II <hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within beaded circle, date lower right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/malaya_borneo/26-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+    sumTable4();
+   </script>
+<h2>
+	  Total Coins:<span id="TotalSum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function Tsum() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var TotalSum = 0
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+       }
+
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }  
+	   var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           TotalSum += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var tablessum = TotalSum
+	  document.getElementById("TotalSum").innerText = tablessum;
+   }
+ Tsum();
+</script>
+
  </section>
 </p>
 <p><br></p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Libya</title>
+  <title>Malawi</title>
 
 
 <style>
@@ -30,8 +30,8 @@
   }
   th {
     padding: 3px;
-   background-color: #239E46;
-    color: #FFFFFF;
+    background-color: #C8102E;
+    color: #000000;
     text-align: center;
   }
   img {
@@ -52,7 +52,7 @@
 <style> 
  class=small-text
 {
-font-size: 5px;
+font-size: 15px;
 }
 </style> 
 
@@ -75,12 +75,12 @@ font-size: 5px;
   
 </style>
 
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetchExchangeRate1();
    fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
 });
 
 function fetchExchangeRate1() {
@@ -146,7 +146,7 @@ function fetchExchangeRate3() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
     });
 }
 function fetchExchangeRate4() {
@@ -168,11 +168,11 @@ function fetchExchangeRate4() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
     });
 }
 </script>
-<script>
+ <script>
 window.onload = function() {
   var tables = [document.getElementById('table1'), document.getElementById('table2')];
   var count = 1;
@@ -183,60 +183,63 @@ window.onload = function() {
     }
   }
 };
-</script> 
+</script>
 </head>
 <body>
 
+
 <section>
-  <h2>Libya
-      <img src="https://flagcdn.com/ly.svg" style="width: 25px;" alt="LIbya">&emsp;	
+  <h2>Malawi
+      <img src="https://flagcdn.com/mw.svg" style="width: 25px;" alt="Malawi">
  </h2>
- <h3> Currency: Dinar&emsp;
-     Unit Currency: Dirham&emsp;
-	Symbol: ل.د&emsp;
-	One Dirham= 100&emsp;
-	Code:<input type="text" id="fromCurrency" value="LYD"> &emsp; <br>
-	LYD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	USD:LYD -  <span id="reverseRateUSD">-</span> &emsp; 
-	LYD:INR -  <span id="exchangeRateINR">-</span> &emsp; 
-	INR:LYD -  <span id="reverseRateINR">-</span> 
+ <h3>Currency: Kwacha&emsp; 
+     Unit Currency: Tambala&emsp; 
+	Symbol: MK&emsp; 
+    1 Kwacha = 100 Tambalas&emsp;
+	Code:<input type="text" id="fromCurrency" value="MWK"> &emsp; <br>
+	MWK:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:MWK -  <span id="reverseRateUSD">-</span> &emsp; 
+	MWK:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:MWK -  <span id="reverseRateINR">-</span> 
 </h3>
 
-      <table id = "table1">
- 	     <tr>
-		  <th>#</th>
- 	          <th style="width: 100px;">Stat</th>
-		  <th>Obverse</th>
-		  <th style="width: 700px;">Details</th>
-		  <th>Reserve</th>
-		  <th style="width: 50px;text-align: center;">Year(s)</th>
-		  <th style="width: 50px;text-align: right;">Count</th>
-   </tr>
+  
+  	    <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
  
-   <tr>
-      <td style="text-align: right; font-size: 12px;"></td>
-	   <td style = "text-align: left; font-size: 15px;">
- 	  	<h5>Den.:&emsp;20 Milliemes<hr>
-	  	Value:&emsp;1.00 ل.د</h5>
- 		</td>
-      <td><img src="https://en.numista.com/catalogue/photos/libye/510-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Crowned Libyan coat of arms with Arabic legend above and Arabic date below (in both Hejira and Christian eras)<hr>
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;<hr>
+		  Value:&emsp;</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/malawi/5ef4da432d8774.58041549-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>State arms and supporters with country name below<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The denomination within a wreath of palm fronds, denomination in English below</p>
+			 <p style = "text-align: right;">Fisherman at work with date above and value below</p>
 		</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/libye/495-original.jpg" alt="Reserve Image"></td>
-	 <td style="text-align: center;">1965</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/malawi/5ef4da43669649.38404952-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2006</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-    	  
+	  
     <!-- Add more rows as needed -->
   </table>
-   <h2>
+  <h2>
 	  Coins:<span id="sum1"></span> &emsp;
-  </h2>
-  <script>
-function sumTable1() {
+     </h2>
+<script>
+   function sumTable1() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -252,8 +255,9 @@ function sumTable1() {
        document.getElementById("sum1").innerText = sum1;
       	  
    }
- sumTable1();
-</script>
+    sumTable1();
+   </script>
+ 
  </section>
 </p>
 <p><br></p>
@@ -263,7 +267,7 @@ function sumTable1() {
    <p>&copy; 2024 Indrajit Gandhi
 </div>
 <p style="text-align: center;">
-<a href="index.html">Home</a>
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
 </p>
 </body>
 </html>

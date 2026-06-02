@@ -232,6 +232,40 @@ window.onload = function() {
 	 <td style="text-align: center;">1955</td>
 	 <td style="text-align: center;">1</td>
     </tr>
+    	   
+   <tr>
+      <td style="text-align: right; font-size: 12px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;2.5 Piastre<hr>
+	  Value:&emsp;&#1604;&#1604; 0.025</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/liban/63777e70d60469.33732236-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arabic script with denomination “2½ Qirsh,” date 1955, and “Lebanese Republic” legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Latin legend with “PIASTRES 2½ 1955,” surrounding central hole, “Republique Libanaise” inscription</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/liban/63777e715a6ab6.54610917-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1955</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	  
+   <tr>
+      <td style="text-align: right; font-size: 12px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;25 Piastre<hr>
+	  Value:&emsp;&#1604;&#1604; 0.25</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/liban/63d815e3737a89.33516462-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cedar tree - the symbol of Lebanon<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date.Two olive branches with olives fruits</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/liban/63d815e3f121b9.09142195-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1952</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
     	  
    <tr>
       <td style="text-align: right; font-size: 12px;"></td>
@@ -291,6 +325,96 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+ 
+ <h3>
+  Currency: Syrian Pound&emsp; 
+	Unit currency: Piastre&emsp; 
+	Symbol:  &#1604;&#1604;&emsp;	
+	One Pound = 100 Piastres&emsp;
+	Code: <input type="text" id="fromCurrency" value="LBS">
+</h3>
+
+      <table id = "table2">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+ 
+   <tr>
+      <td style="text-align: right; font-size: 12px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 	  <h5>Den.:&emsp;2 Piastre<hr>
+	  Value:&emsp;&#1604;&#1604; 0.02</h5>
+ </td>
+      <td><img src="https://en.numista.com/catalogue/photos/liban/5e52a93e199a11.48082992-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Cedar tree - the symbol of Lebanon<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Trireme, ancient boat, war ship, used by the Greeks, Romans and Phoenicians, denomination and date</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/liban/5e52a93fd6b497.41466013-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1925</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+<h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }	  
+	  
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
+
  </section>
 </p>
 <p><br></p>

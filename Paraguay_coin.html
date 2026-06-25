@@ -218,6 +218,23 @@ window.onload = function() {
    <tr>
       <td style="text-align: right; font-size: 12px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Centimos<hr>
+	  	  Value:&emsp;₲ 00.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/paraguay/6063ddc38bb793.32956126-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country with one of the two national coats of arms (Sello de Hacienda), national motto and year of issue<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination within wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/paraguay/6063ddc4044230.34919454-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1953</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 12px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
  		  <h5>Den.:&emsp;50 Guarani<hr>
 	  	  Value:&emsp;₲ 50.00</h5>
  	  </td>
@@ -251,6 +268,31 @@ window.onload = function() {
 	  
     <!-- Add more rows as needed -->
   </table>
+  
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+  
  </section>
 </p>
 <p><br></p>

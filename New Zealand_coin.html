@@ -194,7 +194,6 @@ window.onload = function() {
       <img src="https://flagcdn.com/nz.svg" style="width: 25px;" alt="New Zealand">
  </h2>
  
- 
  <h3>
      Currency: Dollar&emsp; 
 	Unit currency: Cent&emsp; 
@@ -330,6 +329,107 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+
+  <h2>New Zealand 
+      <img src="https://flagcdn.com/nz.svg" style="width: 25px;" alt="New Zealand">
+ </h2>
+ 
+ <h3>
+     Currency: Pound&emsp; 
+	Unit currency: Penny&emsp; 
+	Symbol: NZ&pound;&emsp;	
+	1 Dollar = 240 Pennies &emsp; 
+	Code: <input type="text" id="fromCurrency" value="NZP">
+ </h3>
+ 
+  <table id = "table2">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Penny<hr>
+	  	  Value:&emsp;NZ&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/226-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Uncrowned portrait of George VI <hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tūī bird on kōwhai tree branches, legend around, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/227-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1946</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Penny<hr>
+	  	  Value:&emsp;NZ&pound; 0.0042</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/226-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Young laureate bust of Elizabeth II, legend<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Tūī bird on kōwhai tree branches, legend around, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/227-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1953<br>1958<br>1959<br>1962<br>1964</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+
+  <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Shilling<hr>
+	  	  Value:&emsp;NZ&pound; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/420-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Crowned bust of King George V<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Crouched Māori warrior with taiaha, legend above, denomination and date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/nouvelle-zelande/421-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1935</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
  </section>
 </p>
 <section>
@@ -343,16 +443,12 @@ function sumTable1() {
 	Unit currency: Cent&emsp; 
 	Symbol: NZ$&emsp;	
 	1 Dollar = 100 Cents &emsp; 
-	Code: <input type="text" id="Currency1" value="NZD"><br>
-      NZD:USD -  <span id="RateUSD">-</span> &emsp;
-	 USD:NZD - <span id="RRateUSD">-</span>  &emsp;
-     NZD:INR - <span id="RateINR">-</span> &emsp;
-	INR:NZD - <span id="RRateINR">-</span>
+	Code: <input type="text" id="Currency1" value="NZD">
  </h3>
 
    
     <table>
-     <table id = "table2">
+     <table id = "table3">
      <tr>
 		  <th>#</th>
  	          <th style="width: 100px;">Stat</th>
@@ -382,33 +478,33 @@ function sumTable1() {
     <!-- Add more rows as needed -->
   </table>
   <h2>
-	  Coins:<span id="sum2"></span> &emsp;
+	  Coins:<span id="sum3"></span> &emsp;
      </h2>
 <script>
-   function sumTable2() {
+   function sumTable3() {
        // Get the table by its ID
-       var table = document.getElementById("table2");
+       var table = document.getElementById("table3");
        // Initialize sums for each column
-       var sum2 = 0;
+       var sum3 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum2").innerText = sum2;
+       document.getElementById("sum3").innerText = sum3;
       	  
    }
-    sumTable2();
+    sumTable3();
    </script>
    <h2>
 	  Total Coins:<span id="table3sum"></span> &emsp;
      </h2>
  
   <script>
-function sumTable3() {
+function sumTotal() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -425,11 +521,18 @@ function sumTable3() {
            sum5 += parseInt(table.rows[i].cells[6].innerText);
            
        }
+	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+
        // Display the sum in the last row
         var table3sum = sum5
 	  document.getElementById("table3sum").innerText = table3sum;
    }
- sumTable3();
+ sumTotal();
 </script>
  </section>
 </p>

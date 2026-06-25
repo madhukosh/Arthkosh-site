@@ -17,6 +17,7 @@
         text-align: center;
     }
 </style>
+
 <style>
     table, th, td {
     border: 2px solid black;
@@ -174,7 +175,7 @@ function fetchExchangeRate4() {
 </script>
  <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -191,11 +192,9 @@ window.onload = function() {
   <h2>Romania 
       <img src="https://flagcdn.com/ro.svg" style="width: 25px;" alt="Romania">
  </h2>
- 
- 
   
   <h3>
-     Currency: Leu&emsp; 
+     Currency: Fourth Leu&emsp; 
 	Unit currency: Bani&emsp; 
 	Symbol:  lei&emsp;
 	1 Leu = 100 Bani &emsp; 
@@ -206,10 +205,10 @@ window.onload = function() {
 	INR:RON - <span id="reverseRateINR">-</span>
  </h3>
  
- 
+<h2> Years 2005 - Date</h2>
 
     <table id = "table1">
- 	     <tr>
+   <tr>
 		  <th>#</th>
  	          <th style="width: 100px;">Stat</th>
 		  <th>Obverse</th>
@@ -218,7 +217,7 @@ window.onload = function() {
 		  <th style="width: 50px;text-align: center;">Year(s)</th>
 		  <th style="width: 50px;text-align: right;">Count</th>
    </tr>
-	    
+
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
@@ -235,24 +234,7 @@ window.onload = function() {
       	 	 <td style="text-align: center;">2015</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-    
-	<tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;5 Bani<hr>
-	  	  Value:&emsp;lei 0.05</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/roumanie/6431a534193573.10728339-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>National Coat of Arms of Romanian People's Republic<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value, date</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/6431a534c058e2.57339408-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1957</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-	
+
 	<tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
@@ -324,23 +306,6 @@ window.onload = function() {
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;25 Bani<hr>
-	  	  Value:&emsp;lei 0.25</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1097-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Wreath of wheat ears, star above, sun with rays above mountain below with trees in foreground, banner below<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value above tractor driving left, wheat stalks to right</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1098-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1982</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
  		  <h5>Den.:&emsp;50 Bani<hr>
 	  	  Value:&emsp;lei 0.50</h5>
  	  </td>
@@ -353,40 +318,6 @@ window.onload = function() {
       	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/2444-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">2014<br>2015</td>
 	 <td style="text-align: center;">2</td>
-    </tr>
-
-<tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;3 Lei<hr>
-	  	  Value:&emsp;lei 3.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1103-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>The arms of the Socialist Republic of Romania, the country name around the rim, and the date below<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">An industrial scene with the denomination below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1104-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1966</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-
-<tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;50 Lei<hr>
-	  	  Value:&emsp;lei 50.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/roumanie/634-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>ROMANIA, two seven pearl sectors, portrait of Alexandru Ioan Cuza facing left<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Two laurel branches below the denomination, date below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/635-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">2015</td>
-	 <td style="text-align: center;">1</td>
     </tr>
 
     <!-- Add more rows as needed -->
@@ -413,6 +344,334 @@ function sumTable1() {
    }
  sumTable1();
 </script>
+
+<h3>
+     Currency: First Leu&emsp; 
+	Unit currency: Bani&emsp; 
+	Symbol:  lei&emsp;
+	1 Leu = 100 Bani &emsp; 
+	Code: <input type="text" id="fromCurrency" value="ROL1">
+ </h3>
+
+<h2> Years 1867 - 1947</h2>
+    <table id = "table2">
+ 	     <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Bani<hr>
+	  	  Value:&emsp;lei 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/2789-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with supporters<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/2790-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1867</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Lei<hr>
+	  	  Value:&emsp;lei 5.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/694ad1996b28a1.99756631-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Large crown, date. Lettering on left and right edge. Leaves on top, different leaves below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination on left. Swirl of wheat stalks curves round bottom, right, top edges</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/694ad19a7d8085.92456945-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+<h3>
+     Currency: Third Leu&emsp; 
+	Unit currency: Bani&emsp; 
+	Symbol:  lei&emsp;
+	1 Leu = 100 Bani &emsp; 
+	Code: <input type="text" id="fromCurrency" value="ROL1">
+ </h3>
+
+<h2> Years 1952 - 2005</h2>
+    <table id = "table3">
+    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bani<hr>
+	  	  Value:&emsp;lei 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/6431a534193573.10728339-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National Coat of Arms of Romanian People's Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/6431a534c058e2.57339408-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1957</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bani<hr>
+	  	  Value:&emsp;lei 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/67b70321afd474.44319167-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National emblem, RPR on ribbon<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value, date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/67b70322092c22.90880141-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+	<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Bani<hr>
+	  	  Value:&emsp;lei 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1029-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Romanian emblem: wheat‑ear wreath, star, sun over mountains and trees, ribbon ROMANIA<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1030-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Bani<hr>
+	  	  Value:&emsp;lei 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1087-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Romanian People's Republic<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Olive Leaves Wreath around value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1088-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	  
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Bani<hr>
+	  	  Value:&emsp;lei 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1095-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Socialist Romania arms (1965–1989): wheat‑ear wreath, star, sun over mountains and trees, banner<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1096-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Bani<hr>
+	  	  Value:&emsp;lei 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1089-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National emblem, date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above tractor driving left, wheat stalks to right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1090-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1960</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Bani<hr>
+	  	  Value:&emsp;lei 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1097-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Wreath of wheat ears, star above, sun with rays above mountain below with trees in foreground, banner below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above tractor driving left, wheat stalks to right</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1098-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1982</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Lei<hr>
+	  	  Value:&emsp;lei 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1101-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Romania flanked by stars along with the country name above and the date below<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">"1" over a farm scene with a tractor and the sun is at the back behind two mountains</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1102-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Lei<hr>
+	  	  Value:&emsp;lei 3.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/1103-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of the Socialist Republic of Romania above the date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">An industrial scene with the denomination below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/1104-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+<tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Lei<hr>
+	  	  Value:&emsp;lei 50.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/roumanie/634-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>ROMANIA, two seven pearl sectors, portrait of Alexandru Ioan Cuza facing left<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Two laurel branches below the denomination, date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/roumanie/635-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1992</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+  </table>
+
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+  </h2>
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+ sumTable3();
+</script>
+   <h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable3();
+</script>
+
  </section>
 </p>
 <p><br></p>

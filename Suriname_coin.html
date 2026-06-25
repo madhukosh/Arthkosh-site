@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nigeria</title>
+  <title>Guinea-Bissau</title>
 
 
 <style>
@@ -30,8 +30,8 @@
   }
   th {
     padding: 3px;
-    background-color: #1B7339 ;
-    color: #FFFFFF ;
+    background-color: #C8102E;
+    color: #FFCD00;
     text-align: center;
   }
   img {
@@ -75,12 +75,12 @@ font-size: 15px;
   
 </style>
 
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetchExchangeRate1();
    fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
 });
 
 function fetchExchangeRate1() {
@@ -146,7 +146,7 @@ function fetchExchangeRate3() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateUSD').textContent = 'Error fetching rate';
+      document.getElementById('RateUSD').textContent = 'Error fetching rate';
     });
 }
 function fetchExchangeRate4() {
@@ -168,7 +168,7 @@ function fetchExchangeRate4() {
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('exchangeRateINR').textContent = 'Error fetching rate';
+      document.getElementById('RateINR').textContent = 'Error fetching rate';
     });
 }
 </script>
@@ -188,103 +188,96 @@ window.onload = function() {
 <body>
 
 <section>
-  <h2>Nigeria 
-      <img src="https://flagcdn.com/ng.svg" style="width: 25px;" alt="Nigeria">
+  <h2>Suriname
+      <img src="https://flagcdn.com/sr.svg" style="width: 25px;" alt="Haiti">
  </h2>
- 
- 
- <h3>Currency: Naira&emsp; 
-     Unit Currency: Kobo&emsp; 
-	Symbol: &#x20A6;&emsp; 
-	1 Naira = 100 Kobo &emsp; 
-	Code:<input type="text" id="fromCurrency" value="NGN"> &emsp; <br>
-	NGN:USD -  <span id="exchangeRateUSD">-</span> &emsp;
-	USD:NGN -  <span id="reverseRateUSD">-</span> &emsp; 
-	NGN:INR -  <span id="exchangeRateINR">-</span> &emsp; 
-	INR:NGN -  <span id="reverseRateINR">-</span> 
+ <h3>Currency: Dollar&emsp; 
+     Unit Currency: Cent&emsp; 
+	Symbol: $&emsp; 
+	Code:<input type="text" id="fromCurrency" value="SRD"> &emsp; <br>
+	SRD:USD -  <span id="exchangeRateUSD">-</span> &emsp;
+	USD:SRD -  <span id="reverseRateUSD">-</span> &emsp; 
+	SRD:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	INR:SRD -  <span id="reverseRateINR">-</span> 
 </h3>
- 
-  <table id = "table1">
- 	    <tr>
-	      <th style="width: 65px;">Den.</th>
-	      <th>Obverse</th>
-	      <th style="width: 500px;">Obverse Detail</th>
-	      <th>Reserve</th>
-	      <th style="width: 300px;">Reserve Detail</th>
-		 <th style="width: 70px;">Value</th>
-		 <th style="width: 50px;text-align: center;">Year(s)</th>
-		 <th style="width: 50px; text-align: center;">Coin(s)</th>
-	    </tr> 
-</table>
-
-
- 
- <h3>Currency: Pound&emsp; 
-     Unit Currency: Penny&emsp; 
-	Symbol: &pound;&emsp; 
-	1 Pound = 100 Pennies &emsp; 
-	Code:<input type="text" id="fromCurrency" value="NGP"> 
-</h3>
- 
-   <table id = "table2">
-    <tr>
-		  <th>#</th>
- 	          <th style="width: 100px;">Stat</th>
-		  <th>Obverse</th>
-		  <th style="width: 700px;">Details</th>
-		  <th>Reserve</th>
-		  <th style="width: 50px;text-align: center;">Year(s)</th>
-		  <th style="width: 50px;text-align: right;">Count</th>
-   </tr>
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Penny<hr>
-	  	  Value:&emsp;&pound; 0.01</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/nigeria/158-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Multilingual legends with British crown on top<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Emblem of Nigeria (1952-1960) with a hole in the middle</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/nigeria/159-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1959</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
+  
+  
+  	    <table id = "table1">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+    
 	  
-  	 	    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;3 Pence<hr>
-	  	  Value:&emsp;&pound; 0.03</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/nigeria/72-270.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Crowned bust facing right<hr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+     </h2>
+<script>
+   function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+    sumTable1();
+   </script>
+ 
+ <section>
+  <h2>Suriname
+      <img src="https://flagcdn.com/sr.svg" style="width: 25px;" alt="Haiti">
+ </h2>
+ <h3>Currency: Guider&emsp; 
+     Unit Currency: Cent&emsp; 
+     1 Guilder = 100 Cents;
+	Symbol: ƒ&emsp; 
+	Code:<input type="text" id="fromCurrency" value="SRD"> 
+</h3>
+  
+  
+  	    <table id = "table2">
+	 	    <tr>
+			  <th>#</th>
+		      <th style="width: 100px;">Stat</th>
+		      <th>Obverse</th>
+		      <th style="width: 700px;">Details</th>
+		      <th>Reserve</th>
+			  <th style="width: 50px;text-align: center;">Year(s)</th>
+			 <th style="width: 50px;text-align: right;">Count</th>
+		    </tr>
+ 
+    <tr>
+	  <td style = "text-align: left; font-size: 15px;"></td>
+      <td style = "text-align: left; font-size: 15px;">
+		  <h5>Den.:&emsp;5 Cents<hr>
+		  Value:&emsp;ƒ 0.05</h5>
+	  </td>
+	  
+      <td><img src="https://en.numista.com/catalogue/photos/suriname/215-original.jpg" alt="Obverse Image"></td>
+		 <td>
+		     <h5>&larr;Observe</h5>Orange branch with fruit inside, old Dutch legend around, all within decorative border.<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Cotton plant</p>
+			 <p style = "text-align: right;">Denomination within circles divides date at sides, shells at corners of coin</p>
 		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/nigeria/73-270.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1959</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-	   
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;6 Pence<hr>
-	  	  Value:&emsp;&pound; 0.06</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/nigeria/6000926e7c76a3.71975133-270.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Crowned bust facing right<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Cacao beans</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/nigeria/6000926f4181f3.12442220-270.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1959</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/suriname/216-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1943</td>
 	 <td style="text-align: center;">1</td>
     </tr>
 	  
@@ -312,66 +305,13 @@ window.onload = function() {
    }
     sumTable2();
    </script>
-   
-   <table id = "table3">
-    <tr>
-		  <th>#</th>
- 	          <th style="width: 100px;">Stat</th>
-		  <th>Obverse</th>
-		  <th style="width: 700px;">Details</th>
-		  <th>Reserve</th>
-		  <th style="width: 50px;text-align: center;">Year(s)</th>
-		  <th style="width: 50px;text-align: right;">Count</th>
-   </tr>
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Penny<hr>
-	  	  Value:&emsp;&pound; 0.01</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/nigeria/158-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Multilingual legends with British crown on top<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Emblem of Nigeria (1952-1960) with a hole in the middle</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/nigeria/159-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1959</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-	  
-    <!-- Add more rows as needed -->
-  </table>
-  <h2>
-	  Coins:<span id="sum3"></span> &emsp;
-     </h2>
-<script>
-   function sumTable3() {
-       // Get the table by its ID
-       var table = document.getElementById("table3");
-       // Initialize sums for each column
-       var sum3 = 0;
-       // Loop through the rows, excluding the last row where the sum will be displayed
-       for (var i = 1; i < table.rows.length; i++) {
-           // Parse and sum the values in the first and second columns
-           sum3 += parseInt(table.rows[i].cells[6].innerText);
-           
-       }
-       // Display the sum in the last row
-	 
-       document.getElementById("sum3").innerText = sum3;
-      	  
-   }
-    sumTable3();
-   </script>
-
 <h2>
 	  Total Coins:<span id="totalsum"></span> &emsp;
      </h2>
   <script>
 function sumTotal() {
        // Get the table by its ID
-       var table = document.getElementById("table2");
+       var table = document.getElementById("table1");
        // Initialize sums for each column
        var sum5 = 0, sum6 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
@@ -380,7 +320,7 @@ function sumTotal() {
            sum5 += parseInt(table.rows[i].cells[6].innerText);
          
        }
-	  var table = document.getElementById("table3");
+	  var table = document.getElementById("table2");
 	  for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
            sum5 += parseInt(table.rows[i].cells[6].innerText);
@@ -393,7 +333,8 @@ function sumTotal() {
    }
  sumTotal();
 </script>
-
+ </section>
+ 
  </section>
 </p>
 <p><br></p>
@@ -403,7 +344,7 @@ function sumTotal() {
    <p>&copy; 2024 Indrajit Gandhi
 </div>
 <p style="text-align: center;">
-<a href="index.html">Home</a>
+<a href="file:///G:/My%20Drive/www.Arthshala.com/AArthkosh.html">Home</a>
 </p>
 </body>
 </html>

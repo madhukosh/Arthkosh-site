@@ -174,7 +174,7 @@ function fetchExchangeRate4() {
 </script>
 <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4'), document.getElementById('table5'), document.getElementById('table6'), document.getElementById('table7')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -205,8 +205,8 @@ window.onload = function() {
 	
  </h3>
  
+ <h3>Years 2003 - Date</h3>
  
-
   <table id = "table1">
  <tr>
 		  <th>#</th>
@@ -217,23 +217,6 @@ window.onload = function() {
 		  <th style="width: 50px;text-align: center;">Year(s)</th>
 		  <th style="width: 50px;text-align: right;">Count</th>
    </tr>	  
-   
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;5 Paras<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.05</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1f553fd2.10836122-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Coat of Arms of Serbia in a circle of pearls<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination in the center surrounded by legend</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1fcf4126.74055182-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1904</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
     
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -248,7 +231,7 @@ window.onload = function() {
 			 <p style = "text-align: right;">Krušedol Monastery</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/serbie/539-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1990</td>
+      	 	 <td style="width: 50px; text-align: center;">2003</td>
 	 <td style="width: 50px; text-align: center;">1</td>
     </tr>
     
@@ -276,33 +259,301 @@ window.onload = function() {
    }
  sumTable1();
 </script>
- 
-</p>
-<p><br></p>
-<p></p>
 
-
-  <h2>Yugoslavia 
-      <img src="https://th.bing.com/th?id=ODL.ca43c159fd8e90db39dbc1754e4088bf&w=149&h=76&c=10&rs=1&qlt=99&o=6&pid=13.1" style="width: 25px;" alt="Serbia">
+  <h2>Serbia
+      <img src="https://en.numista.com/design/pays/serbie.gif" style="width: 25px;" alt="Serbia">
  </h2>
  
+ <h3>
+    Currency: Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;
+	1 Dinar = 100 Para&emsp; 
+	Code: <input type="text" id="fromCurrency" value="SED">	
+ </h3>
  
+ <h3>Years 1868 - 1917</h3>
+ 
+  <table id = "table2">
+ <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>	  
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1f553fd2.10836122-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of Arms of Serbia in a circle of pearls<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in the center surrounded by legend</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/serbie/5f56ad1fcf4126.74055182-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1904</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+     </h2>
+<script>
+   function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+  <h2>Yugoslavia
+      <img src="https://en.numista.com/design/pays/yougoslavie.gif" style="width: 25px;" alt="Serbia">
+ </h2>
   
   <h3>
    Currency: Dinar&emsp; 
 	Unit currency: Para&emsp; 
 	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
      1 Dinar = 100 paras &emsp; 
-	Code: <input type="text" id="Currency1" value="YUD"><br>
-      YUD:USD -  <span id="RateUSD">-</span> &emsp;
-	 USD:YUD - <span id="RRateUSD">-</span>  &emsp;
-     YUD:INR - <span id="RateINR">-</span> &emsp;
-	INR:YUD - <span id="RRateINR">-</span>
+	Code: <input type="text" id="Currency1" value="YUD">
  </h3>
- 
- 
 
-    <table id = "table2">
+<h3>Years 1918 - 1941</h3>
+
+    <table id = "table3">
+    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad6441215232.27462001-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Large crown, lettering around outside<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination , date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad644156d282.50922611-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1938</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+     </h2>
+<script>
+   function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+    sumTable3();
+   </script>
+   
+  <h3>
+   Currency: Federation Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+     1 Dinar = 100 paras &emsp; 
+	Code: <input type="text" id="Currency1" value="YUF">
+ </h3>
+
+<h3>Years 1944 - 1965</h3>
+
+    <table id = "table4">
+    <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Paras<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e51f1828.69247701-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Emblem or coat of arms (1946-1963) of Yugoslavia, circular legend around<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination with seven stars, date on the sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e586ccd8.12511333-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1953</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/914-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, old arms of Yugoslavi 5 Torches<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Seven stars above value, the date on the left and right sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/915-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1953</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88310373d1.28800208-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around the coat of arms (1963 - 1992 version; 6 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Left side of wreath: short stem on top left berry, partly behind leaf</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8831623545.80601919-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1963</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 2.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/26-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The former name of the country, Federal People's Republic of Yugoslavia, around the coat of arms (1943 - 1963 version; 5 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">7 stars above denomination, date in the left and right sides</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/27-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1953</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+      
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8706c4bab4.51384865-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Former name of the country, Federal People's Republic of Yugoslavia, around coat of arms (1943 - 1963 version; 5 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad870729a5c7.01259925-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1955</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Dinars<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/886-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around coat of arms (1963 - 1992 version; 6 torches)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/887-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1963</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+	      
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+     </h2>
+<script>
+   function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+    sumTable4();
+   </script>
+
+
+  <h3>
+   Currency: Federation Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+     1 Dinar = 100 paras &emsp; 
+	Code: <input type="text" id="Currency1" value="YUH">
+ </h3>
+
+<h3>Years 1966 - 1989</h3>
+
+    <table id = "table5">
     <tr>
 		  <th>#</th>
  	          <th style="width: 100px;">Stat</th>
@@ -360,42 +611,8 @@ window.onload = function() {
 			 <p style = "text-align: right;">The denomination divides date</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ac320a5716a9.53760353-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1973<br>1977<br>1978<br>1979</td>
-	 <td style="width: 50px; text-align: center;">4</td>
-    </tr>
-	
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;50 Paras<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad6441215232.27462001-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Large crown, lettering around outside<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination , date below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad644156d282.50922611-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1938</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-	
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;50 Paras<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 0.50</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e51f1828.69247701-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Emblem or coat of arms (1946-1963) of Yugoslavia, circular legend around<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination with seven stars, date on the sides</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88e586ccd8.12511333-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1953</td>
-	 <td style="width: 50px; text-align: center;">1</td>
+      	 	 <td style="width: 50px; text-align: center;">1965<br>1973<br>1977<br>1978<br>1979</td>
+	 <td style="width: 50px; text-align: center;">5</td>
     </tr>
 	
    <tr>
@@ -415,22 +632,6 @@ window.onload = function() {
 	 <td style="width: 50px; text-align: center;">2</td>
     </tr>
 	
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Dinar<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad88310373d1.28800208-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around the coat of arms (1963 - 1992 version; 6 torches)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Left side of wreath: short stem on top left berry, partly behind leaf</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8831623545.80601919-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1963</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
     
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -499,58 +700,7 @@ window.onload = function() {
       	 	 <td style="width: 50px; text-align: center;">1985</td>
 	 <td style="width: 50px; text-align: center;">1</td>
     </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Dinar<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd80b3bd0.37069831-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>The arms of Yugoslavia surrounded by the country name<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The numerical value surrounded by the word "dinar" in 4 languages and the date at the bottom</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd85e7458.82118818-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1990</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Dinar<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd29a071.18221371-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Coat of arms of the Federal Republic of Yugoslavia, showing a two-headed eagle<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd817ed6.58994176-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1996</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;2 Dinar<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 2.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/26-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>The former name of the country, Federal People's Republic of Yugoslavia, around the coat of arms (1943 - 1963 version; 5 torches)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">7 stars above denomination, date in the left and right sides</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/27-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1953</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-    
+
     <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
@@ -616,40 +766,6 @@ window.onload = function() {
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03e57729f48.52607601-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="width: 50px; text-align: center;">1982</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-	  
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;10 Dinars<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad8706c4bab4.51384865-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Former name of the country, Federal People's Republic of Yugoslavia, around coat of arms (1943 - 1963 version; 5 torches)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63ad870729a5c7.01259925-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1955</td>
-	 <td style="width: 50px; text-align: center;">1</td>
-    </tr>
-	    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;10 Dinars<hr>
-	  	  Value:&emsp;&#x434;&#x438;&#x43D; 10.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/886-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Name of the country, Socialist Federal Republic of Yugoslavia, around coat of arms (1963 - 1992 version; 6 torches)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Woman holding a sheaf of wheat</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/887-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="width: 50px; text-align: center;">1963</td>
 	 <td style="width: 50px; text-align: center;">1</td>
     </tr>
 	      
@@ -759,33 +875,153 @@ window.onload = function() {
     <!-- Add more rows as needed -->
   </table>
    <h2>
-	  Coins:<span id="sum2"></span> &emsp;
+	  Coins:<span id="sum5"></span> &emsp;
      </h2>
 <script>
-   function sumTable2() {
+   function sumTable5() {
        // Get the table by its ID
-       var table = document.getElementById("table2");
+       var table = document.getElementById("table5");
        // Initialize sums for each column
-       var sum2 = 0;
+       var sum5 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum2").innerText = sum2;
+       document.getElementById("sum5").innerText = sum5;
       	  
    }
-    sumTable2();
+    sumTable5();
    </script>
+
+  <h3>
+   Currency: Convertible Dinar&emsp; 
+	Unit currency: Para&emsp; 
+	Symbol:  &#x434;&#x438;&#x43D; &emsp;	
+     1 Dinar = 100 paras &emsp; 
+	Code: <input type="text" id="Currency1" value="YUN">
+ </h3>
+
+
+ <h3>Years 1990 - 1992</h3>
+ 
+  <table id = "table6">
+ <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>	  
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd80b3bd0.37069831-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Yugoslavia surrounded by the country name<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The numerical value surrounded by the word "dinar" in 4 languages and the date at the bottom</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b03bd85e7458.82118818-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1990</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum6"></span> &emsp;
+     </h2>
+<script>
+   function sumTable6() {
+       // Get the table by its ID
+       var table = document.getElementById("table6");
+       // Initialize sums for each column
+       var sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum6 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum6").innerText = sum6;
+      	  
+   }
+ sumTable6();
+</script>
+
+ <h3>Years 1994 - 2003</h3>
+ 
+  <table id = "table7">
+ <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>	  
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Dinar<hr>
+	  	  Value:&emsp;&#x434;&#x438;&#x43D; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd29a071.18221371-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Federal Republic of Yugoslavia, showing a two-headed eagle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/yougoslavie/63b052fd817ed6.58994176-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="width: 50px; text-align: center;">1996</td>
+	 <td style="width: 50px; text-align: center;">1</td>
+    </tr>
+    
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum7"></span> &emsp;
+     </h2>
+<script>
+   function sumTable7() {
+       // Get the table by its ID
+       var table = document.getElementById("table7");
+       // Initialize sums for each column
+       var sum7 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum7 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum7").innerText = sum7;
+      	  
+   }
+ sumTable7();
+</script>
+
 <h2>
-	  Total Coins:<span id="table3sum"></span> &emsp;
+	  Total Coins:<span id="tablesum"></span> &emsp;
      </h2>
  
   <script>
-function sumTable3() {
+function sumTable() {
        // Get the table by its ID
        var table = document.getElementById("table1");
        // Initialize sums for each column
@@ -802,11 +1038,45 @@ function sumTable3() {
            sum5 += parseInt(table.rows[i].cells[6].innerText);
            
        }
+       	  var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       	  var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
        // Display the sum in the last row
+                 	  var table = document.getElementById("table5");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+                 	  var table = document.getElementById("table6");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+                 	  var table = document.getElementById("table7");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+
         var table3sum = sum5
-	  document.getElementById("table3sum").innerText = table3sum;
+	  document.getElementById("tablesum").innerText = table3sum;
    }
- sumTable3();
+ sumTable();
 </script>
 
  </section>

@@ -75,12 +75,12 @@ font-size: 15px;
   
 </style>
 
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetchExchangeRate1();
    fetchExchangeRate2();
+   fetchExchangeRate3();
+   fetchExchangeRate4();
 });
 
 function fetchExchangeRate1() {
@@ -172,9 +172,10 @@ function fetchExchangeRate4() {
     });
 }
 </script>
+
  <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2')];
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4'), document.getElementById('table5')];
   var count = 1;
   for (var i = 0; i < tables.length; i++) {
     var rows = tables[i].getElementsByTagName('tr');
@@ -200,39 +201,22 @@ window.onload = function() {
 	Code:<input type="text" id="fromCurrency" value="RUB"> &emsp; <br>
 	RUB:USD -  <span id="exchangeRateUSD">-</span> &emsp;
 	USD:RUB -  <span id="reverseRateUSD">-</span> &emsp; 
-	RUB:INR -  <span id="exchangeRateINR">-</span> &emsp; 
+	RUB:INR -  <span id="exchangeRateINR">-</span> &emsp;  
 	INR:RUB -  <span id="reverseRateINR">-</span> 
 </h3>
 
+<h3>Years 1997 - Date</h3>
     <table id = "table1">
  	 <tr>
 		  <th>#</th>
- 	          <th style="width: 110px;">Stat</th>
+ 	          <th style="width: 120px;">Stat</th>
 		  <th>Obverse</th>
 		  <th style="width: 700px;">Details</th>
 		  <th>Reserve</th>
-		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
 		  <th style="width: 50px;text-align: right;">Count</th>
    </tr>
    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.01</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/634b0c74e2be70.35263885-original.jpg" 
-	 alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1974&emsp;1977<br>1978&emsp;1980<br>1981&emsp;1982<br>1984&emsp;1985<br>1986&emsp;1987<br>1988</td>
-	 <td style="text-align: center;">11</td>
-    </tr>
-         
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
@@ -246,96 +230,9 @@ window.onload = function() {
 			 <p style = "text-align: right;">Denomination “1” and “КОПЕЙКА” (KOPECK), with stylized vegetable ornament of two branches</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/russie/5902-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1998&emsp;2001<br>2009</td>
+      	 	 <td style="text-align: center;">1998&emsp;2001&emsp;2008</td>
 	 <td style="text-align: center;">3</td>
     </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;2 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.02</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The value above the date surrounded by sprays</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6e392b5.42090251-original.jpg" 	 alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1963&emsp;1979<br>1985&emsp;1990</td>
-	 <td style="text-align: center;">4</td>
-    </tr>
-        
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;3 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.03</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/11-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value above the date surrounded by sprays</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/12-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1971&emsp;1973<br>1978&emsp;1983<br>1987</td>
-	 <td style="text-align: center;">5</td>
-    </tr>
-   
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;5 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.05</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/19-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above.15 orbits on wreath (7 + 1 + 7 orbits)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination and date within wreath</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/20-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1980&emsp;1985</td>
-	 <td style="text-align: center;">2</td>
-    </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;10 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.10</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404151150.28446467-original.jpg"	 alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Arms of Soviet Union (hammer and sickle on globe above sun with rays, sheaf of wheat stalks, star above within 15 ribbons on wreath (7 + 1 + 7 ribbons)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The denomination above the date within a partial wreath</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404d42456.79786090-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1961&emsp;1962<br>1974&emsp;1976<br>1978&emsp;1980<br>1982&emsp;1983<br>1984&emsp;1985<br>1986&emsp;1988<br>1991</td>
-	 <td style="text-align: center;">13</td>
-    </tr>
-    
-           
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;10 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.10</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1034-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1035-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1991</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-    
            
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -350,94 +247,8 @@ window.onload = function() {
 			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/russie/6375-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">2008&emsp;2009<br>2012</td>
+      	 	 <td style="text-align: center;">2008&emsp;2009&emsp;2012</td>
 	 <td style="text-align: center;">3</td>
-    </tr>
-           
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;15 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.15</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee44d0deb2.44222776-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>State Emblem of the Soviet Union.15 ribbons on the wreath, 7 + 1 + 7<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee45996d11.36709784-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1961&emsp;1988</td>
-	 <td style="text-align: center;">2</td>
-    </tr>
-          
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;15 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.15</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1173-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>50th Anniversary of the October Revolution<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Worker and Kolkhoz Woman statue and dates</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1174-original.jpg"  alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1967</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;20 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.20</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af0758f219.99722485-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value within octagon flanked by sprigs with date below</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af07dabe47.05047487-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1935</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-    
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;20 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.20</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/7-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above. 15 orbits of ribbon on wreath (7 + 1 + 7 orbits)<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Denomination and date within wreath</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/8-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1961&emsp;1962<br>1982&emsp;1987<br>1988</td>
-	 <td style="text-align: center;">5</td>
-    </tr>
-    
-        
-   <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;50 Kopecks<hr>
-	  	  Value:&emsp;₽ 0.50</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1673-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>50th Anniversary of the Great October Socialist Revolution<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">The emblem of the Soviet Union; value</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1674-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1967</td>
-	 <td style="text-align: center;">1</td>
     </tr>
            
    <tr>
@@ -454,23 +265,6 @@ window.onload = function() {
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/russie/22-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">2006</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-    
-    <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;1 Ruble<hr>
-	  	  Value:&emsp;₽ 1.00</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1289-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
-		</td>
-      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1290-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1991</td>
 	 <td style="text-align: center;">1</td>
     </tr>
 	
@@ -516,12 +310,12 @@ window.onload = function() {
  	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/russie/62e2ab41c968e9.85603700-original.jpg" alt="Obverse Image"></td>
 	  <td>
-		     <h5>&larr;Observe</h5>Coat of Arms, “РОССИЙСКАЯ ФЕДЕРАЦИЯ” (RUSSIAN FEDERATION), 2 double rhombuses. “БАНК РОССИИ” (BANK OF RUSSIA);year<hr>
+		     <h5>&larr;Observe</h5>Coat of Arms, (RUSSIAN FEDERATION), 2 double rhombuses. (BANK OF RUSSIA);year<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
 			 <p style = "text-align: right;">Denomination</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/russie/62e2ab420a6b47.06032052-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">2016&emsp;2020<br>2022</td>
+      	 	 <td style="text-align: center;">2016&emsp;2020&emsp;2022</td>
 	 <td style="text-align: center;">3</td>
     </tr>
 	
@@ -538,7 +332,7 @@ window.onload = function() {
 			 <p style = "text-align: right;">Denomination to the left and a floral design</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/russie/30-original.jpg" alt="Reserve Image"></td>
-      	 	 <td style="text-align: center;">1997<br>1998</td>
+      	 	 <td style="text-align: center;">1997&emsp;1998</td>
 	 <td style="text-align: center;">2</td>
     </tr>
 		
@@ -609,6 +403,501 @@ window.onload = function() {
       	 	 <td style="text-align: center;">2010</td>
 	 <td style="text-align: center;">1</td>
     </tr>
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+
+  <h3>
+     Currency: Fourth Ruble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	1 Ruble = 100 Kopecks &emsp; 
+	Code:<input type="text" id="fromCurrency" value="SUB4"> &emsp;
+</h3>
+
+<h3>Years 1924 - 1947</h3>
+    <table id = "table2">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.03</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1487-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1488-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1929&emsp;1932&emsp;1933</td>
+	 <td style="text-align: center;">3</td>
+    </tr>        
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1455-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1456-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1924</td>
+	 <td style="text-align: center;">1</td>
+    </tr>        
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1489-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1490-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1933</td>
+	 <td style="text-align: center;">1</td>
+    </tr>        
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/rsfsr/67c9f77da84514.65921088-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>National arms within circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within beaded circle, star on top divides wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/rsfsr/67c9f77dcc2bd8.16359394-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1932</td>
+	 <td style="text-align: center;">1</td>
+    </tr>        
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1443-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value on shield held by figure</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1444-original.jpg" 
+	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1931&emsp;1932</td>
+	 <td style="text-align: center;">2</td>
+    </tr>        
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af0758f219.99722485-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within octagon flanked by sprigs with date below</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5e52af07dabe47.05047487-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1935</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  <script>
+function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+</script>
+
+
+  <h3>
+     Currency: Fifth Ruble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	1 Ruble = 100 Kopecks &emsp; 
+	Code:<input type="text" id="fromCurrency" value="SUB5"> &emsp;
+</h3>
+
+<h3>Years 1947 - 1960</h3>
+    <table id = "table3">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1667-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1668-original.jpg" 
+	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1954</td>
+	 <td style="text-align: center;">1</td>
+    </tr>        
+
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+  </h2>
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+ sumTable3();
+</script>
+
+  <h3>
+     Currency: Rouble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	1 Ruble = 100 Kopecks &emsp; 
+	Code:<input type="text" id="fromCurrency" value="SUR">
+</h3>
+
+<h3>Years 1961 - 1991</h3>
+    <table id = "table4">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 120px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.01</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value and date within wheat sprigs</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/634b0c74e2be70.35263885-original.jpg" 
+	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1967&emsp;1968<br>1974&emsp;1977&emsp;1978<br>1980&emsp;1981&emsp;1982<br>1984&emsp;1985&emsp;1986<br>1987&emsp;1988</td>
+	 <td style="text-align: center;">14</td>
+    </tr>
+         
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;2 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.02</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6883e61.96148705-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The value above the date surrounded by sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/5f769ab6e392b5.42090251-original.jpg" 	 alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1963&emsp;1969&emsp;1979<br>1985&emsp;1990</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;3 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.03</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/11-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The coat of arms of the Soviet Union. 15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value above the date surrounded by sprays</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/12-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1971&emsp;1973<br>1978&emsp;1983<br>1987</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/19-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above.15 orbits on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/20-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1980&emsp;1985</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404151150.28446467-original.jpg"	 alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Arms of Soviet Union (hammer and sickle on globe above sun with rays, sheaf of wheat stalks, star above within 15 ribbons on wreath (7 + 1 + 7 ribbons)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The denomination above the date within a partial wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/642f8404d42456.79786090-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1962&emsp;1974<br>1976&emsp;1978&emsp;1980<br>1982&emsp;1983&emsp;1984<br>1985&emsp;1986<br>1988&emsp;1991</td>
+	 <td style="text-align: center;">13</td>
+    </tr>
+    
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;10 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.10</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1034-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1035-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee44d0deb2.44222776-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>State Emblem of the Soviet Union.15 ribbons on the wreath, 7 + 1 + 7<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/6185ee45996d11.36709784-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1988</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+          
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;15 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.15</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1173-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>50th Anniversary of the October Revolution<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Worker and Kolkhoz Woman statue and dates</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1174-original.jpg"  alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;20 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.20</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/7-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Hammer and sickle overlain on globe above sun with rays, all within wreath or sheaf of wheat stalks, star above. 15 orbits of ribbon on wreath (7 + 1 + 7 orbits)<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination and date within wreath</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/8-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1961&emsp;1962&emsp;1982<br>1987&emsp;1988</td>
+	 <td style="text-align: center;">5</td>
+    </tr>
+    
+        
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Kopecks<hr>
+	  	  Value:&emsp;₽ 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1673-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>50th Anniversary of the Great October Socialist Revolution<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The emblem of the Soviet Union; value</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1674-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1967</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+           
+    <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Ruble<hr>
+	  	  Value:&emsp;₽ 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1289-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Kremlin Tower and Dome<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value flanked by sprigs above date</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ancienne_urss/1290-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1991</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+	
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum4"></span> &emsp;
+  </h2>
+  <script>
+function sumTable4() {
+       // Get the table by its ID
+       var table = document.getElementById("table4");
+       // Initialize sums for each column
+       var sum4 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum4 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum4").innerText = sum4;
+      	  
+   }
+ sumTable4();
+</script>
+
+  <h3>
+     Currency: Rouble&emsp; 
+     Unit Currency: Kopeck&emsp; 
+	Symbol: ₽&emsp; 
+	1 Ruble = 100 Kopecks &emsp; 
+	Code:<input type="text" id="fromCurrency" value="RUR"> &emsp;
+</h3>
+
+<h3>Years 1992 - 1997</h3>
+    <table id = "table5">
+ 	 <tr>
+		  <th>#</th>
+ 	          <th style="width: 110px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 75px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
 	  
     <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -648,27 +937,76 @@ window.onload = function() {
     <!-- Add more rows as needed -->
   </table>
    <h2>
-	  Coins:<span id="sum1"></span> &emsp;
+	  Coins:<span id="sum5"></span> &emsp;
   </h2>
   <script>
-function sumTable1() {
+function sumTable5() {
        // Get the table by its ID
-       var table = document.getElementById("table1");
+       var table = document.getElementById("table5");
        // Initialize sums for each column
-       var sum1 = 0;
+       var sum5 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
        for (var i = 1; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum1").innerText = sum1;
+       document.getElementById("sum5").innerText = sum5;
       	  
    }
- sumTable1();
+ sumTable5();
 </script>
+
+   <h2>
+	  Total Coins:<span id="table3sum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTable() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       var table = document.getElementById("table3");
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table4");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  var table = document.getElementById("table5");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+
+       // Display the sum in the last row
+        var table3sum = sum5
+	  document.getElementById("table3sum").innerText = table3sum;
+   }
+ sumTable();
+</script>
+
  </section>
 </p>
 <p><br></p>

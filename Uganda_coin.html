@@ -191,7 +191,7 @@ window.onload = function() {
   <h2>Uganda 
       <img src="https://flagcdn.com/ug.svg" style="width: 25px;" alt="Algeria">
  </h2>
- <h3>Currency: Shilling&emsp; 
+ <h3>Currency: New Shilling&emsp; 
      Unit Currency: Cent&emsp; 
 	Symbol: Sh&emsp; 
 	1 Shilling= 100 Cents&emsp;
@@ -201,11 +201,13 @@ window.onload = function() {
 	UGX:INR -  <span id="exchangeRateINR">-</span> &emsp; 
 	INR:UGX -  <span id="reverseRateINR">-</span> 
 </h3>
-    
+
+<h3>Years 1987 - Date</h3>
+
    <table id = "table1">
  	  <tr>
 		  <th>#</th>
- 	          <th style="width: 100px;">Stat</th>
+ 	          <th style="width: 110px;">Stat</th>
 		  <th>Obverse</th>
 		  <th style="width: 700px;">Details</th>
 		  <th>Reserve</th>
@@ -226,6 +228,23 @@ window.onload = function() {
 			 <p style = "text-align: right;">Coffee (Coffea spp.) plants around value in circle. Bowl with coffee beans at bottom</p>
 		</td>
       	 <td><img src="https://en.numista.com/catalogue/photos/ouganda/408-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1987</td>
+	 <td style="text-align: center;">1</td>	 
+    </tr>
+	  	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;100 Shillings<hr>
+	  	  Value:&emsp;Sh 100.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ouganda/22-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Uganda<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Sanga cattle (Bos taurus africanus)</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ouganda/23-original.jpg" alt="Reserve Image"></td>
       	 	 <td style="text-align: center;">1987</td>
 	 <td style="text-align: center;">1</td>	 
     </tr>
@@ -291,7 +310,101 @@ window.onload = function() {
  sumTable1();
  
 </script>
+  <h2>Uganda 
+      <img src="https://flagcdn.com/ug.svg" style="width: 25px;" alt="Algeria">
+ </h2>
+ <h3>Currency: Shilling&emsp; 
+     Unit Currency: Cent&emsp; 
+	Symbol: Sh&emsp; 
+	1 Shilling= 100 Cents&emsp;
+	Code:<input type="text" id="fromCurrency" value="UGS">
+</h3>
 
+<h3>Years 1966 - 1987</h3>
+
+   <table id = "table2">
+ 	  <tr>
+		  <th>#</th>
+ 	          <th style="width: 100px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 700px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+	    
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Shillings<hr>
+	  	  Value:&emsp;Sh 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/ouganda/60c7655d193d86.79195899-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms of Uganda<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Flower‑like ornament surrounding standing grey crowned crane facing left, with mountains rising softly behind</p>
+		</td>
+      	 <td><img src="https://en.numista.com/catalogue/photos/ouganda/408-original.jpg" alt="Reserve Image"></td>
+      	 	 <td style="text-align: center;">1966</td>
+	 <td style="text-align: center;">1</td>	 
+    </tr>
+	  
+    <!-- Add more rows as needed -->
+  </table>
+  
+  <h2>
+	  Coins:<span id="sum2"></span> &emsp;
+  </h2>
+  
+  <script>
+  function sumTable2() {
+       // Get the table by its ID
+       var table = document.getElementById("table2");
+       // Initialize sums for each column
+       var sum2 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum2").innerText = sum2;
+      	  
+   }
+ sumTable2();
+ 
+</script>
+   <h2>
+	  Total Coins:<span id="totalsum"></span> &emsp;
+     </h2>
+ 
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
  </section>
 </p>
 <p><br></p>

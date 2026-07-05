@@ -191,7 +191,8 @@ window.onload = function() {
   <h2>Venezuela 
       <img src="https://flagcdn.com/ve.svg" style="width: 25px;" alt="Venezuela">
  </h2>
-  <h3>Currency: Bolivar &emsp;
+ 
+  <h3>Currency: Bolivar Digital&emsp;
      Unit Currency:Centimos &emsp;
 	Symbol: &#x20A1; &emsp; 
 	1 Bolivares= 100 Centimos&emsp;
@@ -202,6 +203,7 @@ window.onload = function() {
 	INR:VES -  <span id="reverseRateINR">-</span> 
 </h3>
  
+ <h3>Years: 2021 - Date</h3>
 <table id = "table1">
  	   <tr>
 		  <th>#</th>
@@ -212,6 +214,119 @@ window.onload = function() {
 		  <th style="width: 50px;text-align: center;">Year(s)</th>
 		  <th style="width: 50px;text-align: right;">Count</th>
    </tr>
+
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum1"></span> &emsp;
+  </h2>
+  <script>
+function sumTable1() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum1 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum1").innerText = sum1;
+      	  
+   }
+ sumTable1();
+</script>
+
+  <h3>Currency: Bolivar&emsp;
+     Unit Currency:Centimos &emsp;
+	Symbol: &#x20A1; &emsp; 
+	1 Bolivares= 100 Centimos&emsp;
+	Code:<input type="text" id="fromCurrency" value="VEB"> 
+</h3>
+ 
+ <h3>Years: 1879 - 2007</h3>
+
+<table id = "table2">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 850px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/60ba7421df61a1.89976670-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/60ba74229408a3.84004761-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1938</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/534-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/535-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1946<br>1948</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;05 Centimos<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/815-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend around and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within laurel wreath in two lines</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/816-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1958<br>1965</td>
+	 <td style="text-align: center;">2</td>
+    </tr>
+	
+ <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;5 Centimos<hr>
+	  	  Value:&emsp;$ 0.05</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/404-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Venezuelan coat of arms with the country name and date<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Denomination in two lines below an inverted wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/405-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
 
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -232,6 +347,59 @@ window.onload = function() {
 	
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;12.5 Centimos<hr>
+	  	  Value:&emsp;&#x20A1; 0.125</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/61772099aa0353.67117197-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend at top and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value within wreath</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/6177209a0fdfc7.64987212-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1948</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp; &#188; Bolivare<hr>
+	  	  Value:&emsp;&#x20A1; 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/669c1a7e9c4440.62214064-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend around. Weight, date and fineness at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left flanked with legend. With privy marks and engraver's name at bottom</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/669c1a7ee02fe3.28387588-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1936</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	   	 	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Centimos<hr>
+	  	  Value:&emsp;&#x20A1; 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/618f0f092ed204.27565337-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend at top. Value and date at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left, flanked with legend and engraver's name at base</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/618f0f09af9755.88276231-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1965</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
 	  <td style = "text-align: left; font-size: 15px;">
  		  <h5>Den.:&emsp;25 Centimos<hr>
 	  	  Value:&emsp;$ 0.25</h5>
@@ -246,24 +414,7 @@ window.onload = function() {
 	 <td style="text-align: center;">1977</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-	
- <tr>
-      <td style="text-align: right; font-size: 15px;"></td>
-	  <td style = "text-align: left; font-size: 15px;">
- 		  <h5>Den.:&emsp;25 Centimos<hr>
-	  	  Value:&emsp;$ 0.25</h5>
- 	  </td>
-      <td><img src="https://en.numista.com/catalogue/photos/venezuela/667-original.jpg" alt="Obverse Image"></td>
-	  <td>
-		     <h5>&larr;Observe</h5>Venezuelan coat of arms with a legend and date on the outer circle<hr>
-		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Value with diagonal waves crossing coin and 8 stars; mintmark</p>
-		</td>
-	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/668-original.jpg" alt="Reserve Image"></td>
-	 <td style="text-align: center;">2007</td>
-	 <td style="text-align: center;">1</td>
-    </tr>
-
+        	   	 
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	   <td style = "text-align: left; font-size: 15px;">
@@ -272,15 +423,51 @@ window.onload = function() {
  	  </td>
       <td><img src="https://en.numista.com/catalogue/photos/venezuela/803-original.jpg" alt="Obverse Image"></td>
 	  <td>
-		     <h5>&larr;Observe</h5>Shield features national flag’s colors: wheat for unity and wealth, weapons and flags for triumph, and horse for independence and freedom<hr>
+		     <h5>&larr;Observe</h5>Shield with national colors, wheat, weapons, flags, and horse symbolizing unity, wealth, triumph, independence, and freedom<hr>
 		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
-			 <p style = "text-align: right;">Bust of Simón Bolívar (1783–1830), Venezuelan leader instrumental in independence of 6 nations from Spanish rule, with legend and engraver’s name</p>
+			 <p style = "text-align: right;">Bust of Simón Bolívar right with surrounding legend and engraver’s name, famed liberator of six nations</p>
 		</td>
 	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/804-original.jpg" alt="Reserve Image"></td>
 	 <td style="text-align: center;">1965</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-    	 
+        	   	 
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	   <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;50 Centimos<hr>
+	  	  Value:&emsp;&#x20A1; 0.50</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/62f2abc2f2dcb0.12344551-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Shield with national colors, wheat, weapons, flags, and horse symbolizing unity, wealth, triumph, independence, and freedom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust of Simón Bolívar right with surrounding legend and engraver’s name, famed liberator of six nations</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/62f2abc331c313.11926292-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1988</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	    <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Bolivares<hr>
+	  	  Value:&emsp;&#x20A1; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/527-original.jpg" alt="Obverse Image"></td>
+	
+	  <td>
+		     <h5>&larr;Observe</h5>Coat of arms with legend at top. Weight, date and fineness at bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left flanked with legend. Engraver's name at base</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/526-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1911</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+    	  
+ 	 
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	    <td style = "text-align: left; font-size: 15px;">
@@ -298,7 +485,24 @@ window.onload = function() {
 	 <td style="text-align: center;">1967</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-    	   	 	 
+   
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;1 Bolivares<hr>
+	  	  Value:&emsp;&#x20A1; 1.00</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/614-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>The arms of Venezuela with a legend at the top and the date and value at the bottom<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Bust left flanked with legend and engraver's name at base</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/613-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">1977</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+     	 	 
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
 	    <td style = "text-align: left; font-size: 15px;">
@@ -351,31 +555,134 @@ window.onload = function() {
 	 <td style="text-align: center;">2002</td>
 	 <td style="text-align: center;">1</td>
     </tr>
-   
     <!-- Add more rows as needed -->
   </table>
    <h2>
-	  Coins:<span id="sum1"></span> &emsp;
+	  Coins:<span id="sum2"></span> &emsp;
   </h2>
   <script>
-function sumTable1() {
+function sumTable2() {
        // Get the table by its ID
-       var table = document.getElementById("table1");
+       var table = document.getElementById("table2");
        // Initialize sums for each column
-       var sum1 = 0;
+       var sum2 = 0;
        // Loop through the rows, excluding the last row where the sum will be displayed
-       for (var i = 1; i < table.rows.length; i++) {
+       for (var i = 2; i < table.rows.length; i++) {
            // Parse and sum the values in the first and second columns
-           sum1 += parseInt(table.rows[i].cells[6].innerText);
+           sum2 += parseInt(table.rows[i].cells[6].innerText);
            
        }
        // Display the sum in the last row
 	 
-       document.getElementById("sum1").innerText = sum1;
+       document.getElementById("sum2").innerText = sum2;
       	  
    }
- sumTable1();
+ sumTable2();
 </script>
+
+  <h3>Currency: Bolivar Digital&emsp;
+     Unit Currency:Centimos &emsp;
+	Symbol: &#x20A1; &emsp; 
+	1 Bolivares= 100 Centimos&emsp;
+	Code:<input type="text" id="fromCurrency" value="VES"> &emsp;
+</h3>
+ 
+ <h3>Years: 2008 - 2018</h3>
+
+<table id = "table3">
+ 	   <tr>
+		  <th>#</th>
+ 	          <th style="width: 120px;">Stat</th>
+		  <th>Obverse</th>
+		  <th style="width: 850px;">Details</th>
+		  <th>Reserve</th>
+		  <th style="width: 50px;text-align: center;">Year(s)</th>
+		  <th style="width: 50px;text-align: right;">Count</th>
+   </tr>
+
+	
+ <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;25 Centimos<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/venezuela/667-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Venezuelan coat of arms with a legend and date on the outer circle<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">Value with diagonal waves crossing coin and 8 stars; mintmark</p>
+		</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/venezuela/668-original.jpg" alt="Reserve Image"></td>
+	 <td style="text-align: center;">2007</td>
+	 <td style="text-align: center;">1</td>
+    </tr>
+
+   
+    	 
+   
+    <!-- Add more rows as needed -->
+  </table>
+   <h2>
+	  Coins:<span id="sum3"></span> &emsp;
+  </h2>
+  <script>
+function sumTable3() {
+       // Get the table by its ID
+       var table = document.getElementById("table3");
+       // Initialize sums for each column
+       var sum3 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum3 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+	 
+       document.getElementById("sum3").innerText = sum3;
+      	  
+   }
+ sumTable3();
+</script>
+</script>
+<h2>
+	  Total Coins:<span id="Totalsum"></span> &emsp;
+ </h2>
+	
+ 
+  <script>
+function sumTotal() {
+       // Get the table by its ID
+       var table = document.getElementById("table1");
+       // Initialize sums for each column
+       var sum5 = 0, sum6 = 0;
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+         
+       }
+	  var table = document.getElementById("table2");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+	  
+       var table = document.getElementById("table3");
+	  for (var i = 1; i < table.rows.length; i++) {
+           // Parse and sum the values in the first and second columns
+           sum5 += parseInt(table.rows[i].cells[6].innerText);
+           
+       }
+       // Display the sum in the last row
+        var totalsum = sum5
+	  document.getElementById("Totalsum").innerText = totalsum;
+   }
+ sumTotal();
+</script>
+
  </section>
 </p>
 <p><br></p>

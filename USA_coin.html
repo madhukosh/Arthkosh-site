@@ -174,9 +174,8 @@ function fetchExchangeRate4() {
 </script>
  <script>
 window.onload = function() {
-  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3')
-  , document.getElementById('table4'), document.getElementById('table5'), document.getElementById('table6'), document.getElementById('table7')
-  , document.getElementById('table8'), document.getElementById('table9'), document.getElementById('table11'), document.getElementById('table12')
+  var tables = [document.getElementById('table1'), document.getElementById('table2'), document.getElementById('table3'), document.getElementById('table4'), document.getElementById('table5'), document.getElementById('table6'), document.getElementById('table7')
+  , document.getElementById('table8'), document.getElementById('table9'), document.getElementById('table10'), document.getElementById('table11'), document.getElementById('table12')
   , document.getElementById('table13'), document.getElementById('table14'), document.getElementById('table15'), document.getElementById('table16')
   , document.getElementById('table17'), document.getElementById('table18'), document.getElementById('table19'), document.getElementById('table20') 
   , document.getElementById('table21'), document.getElementById('table22'), document.getElementById('table23'), document.getElementById('table24') 
@@ -498,6 +497,22 @@ Regular Coins
 	 	 <td style="text-align: center;">1989</td>
 	 	 <td style="text-align: center;">1</td>
     </tr>
+		
+   <tr>
+      <td style="text-align: right; font-size: 15px;"></td>
+	  <td style = "text-align: left; font-size: 15px;">
+ 		  <h5>Den.:&emsp;&#188; Dollar<hr>
+	  	  Value:&emsp;$ 0.25</h5>
+ 	  </td>
+      <td><img src="https://en.numista.com/catalogue/photos/etats-unis/69553e0d7d1683.96047352-original.jpg" alt="Obverse Image"></td>
+	  <td>
+		     <h5>&larr;Observe</h5>Two Pilgrims embracing as they behold the New World<hr>
+		     <h5 style = "text-align: right;">Reverse&rarr;</h5>
+			 <p style = "text-align: right;">The Mayflower, with full sails over rough seas, heading west</td>
+	 <td><img src="https://en.numista.com/catalogue/photos/etats-unis/69553e0eed7c89.58070756-original.jpg" alt="Reserve Image"></td>
+	 	 <td style="text-align: center;">2026</td>
+	 	 <td style="text-align: center;">1</td>
+    </tr>
 	
    <tr>
       <td style="text-align: right; font-size: 15px;"></td>
@@ -594,10 +609,6 @@ Regular Coins
    </script>
  
 
-
- 
- 
-
 <h4>
 State Formation Quarters 
 </h4>
@@ -617,18 +628,17 @@ State Formation Quarters
 
 
 
-
 <div style="display: flex; margin-left: 2px; margin-right: 2px; ">
 <div>
-   <table id = "table3" class="center">
-    <thead>
+   <table id = "table2"  class="center">
+    
     	<tr>
       		<th>#</th>			
       		<th style="width: 175px;">Quarter</th>
 	 		<th style="width: 600px;">Quarter Detail</th>
     	</tr>
-     </thead>
-	<tbody>
+    
+	
 	
          <tr>
 		    <td></td>      		
@@ -815,14 +825,14 @@ State Formation Quarters
 				  The Magnolia State. the state flower, blossoms and leaves of two magnolias
 			 </td>	     
         </tr>
-     </tbody>
     
-	
     <!-- Add more rows as needed -->
   </table>
+  
   </div>
+ 
   <div style= "margin-left: 1px; margin-right: 1px; ">
-   <table id = "table4" class="center">
+   <table id = "table3" class="center">
     <thead>
     	<tr>
       		<th>#</th>			
@@ -1024,7 +1034,7 @@ State Formation Quarters
   </div>
   
     <div style= "margin-left: 1px; margin-right: 1px;">
-   <table id = "table5" class="center">
+   <table id = "table4" class="center">
     <thead>
 	<tr>
       		<th>#</th>			
@@ -1138,7 +1148,7 @@ State Formation Quarters
 	 </tr>
 	 </table>
 		
-	 <table id = "table6" class="center">
+	 <table id = "table5" class="center">
 	 <tr>
       		<th>#</th>			
       		<th style="width: 175px;">Quarter</th>
@@ -1204,10 +1214,33 @@ State Formation Quarters
 </table>
 	
 </section>  
-<h2>
-	  Coins: 56
- </h2>	
 
+  <h2>
+	  Coins:<span id="sumusstate"></span> &emsp;
+     </h2>
+<script>
+   function sumusstate() {
+       // Get the table by its ID
+       var table2 = document.getElementById("table2");
+              		sum2 = table2.rows.length-1;
+	    var table3 = document.getElementById("table3");
+              		sum3 = table3.rows.length-1;
+	   var table4 = document.getElementById("table4");
+              		sum4 = table4.rows.length-1;
+        var table5 = document.getElementById("table5");
+              		sum5 = table5.rows.length-1;
+       
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       
+       
+       // Display the sum in the last row
+	 
+       document.getElementById("sumusstate").innerText = sum2+sum3+sum4+sum5;
+      	  
+   }
+    sumusstate();
+   </script>
+ 
 
 <section> 
 
@@ -1218,7 +1251,7 @@ State Formation Quarters
 <div>
 
 <img src="https://en.numista.com/catalogue/photos/etats-unis/65be7d1a013716.00222234-original.jpg" alt="Reserve Image">
-   <table id = "table7" class="center">
+   <table id = "table6" class="center">
    
     <thead>
 	<tr> 
@@ -1229,9 +1262,7 @@ State Formation Quarters
 	
 	   </thead>
     			     		
-      	
-	 				
-				
+      		
   <tbody>
        
     <tr>
@@ -1349,7 +1380,7 @@ State Formation Quarters
 </div>
 
 <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table8" class="center">
+   <table id = "table7" class="center">
     <thead>
     	<tr> 
 			<th>#</th>
@@ -1479,7 +1510,7 @@ State Formation Quarters
 </div>
 
 <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table9" class="center">
+   <table id = "table8" class="center">
     <thead>
 
 	   <tr> 
@@ -1610,10 +1641,33 @@ State Formation Quarters
   </table>
 </div>
 </div>
+ <h2>
+	  Coins:<span id="sumusbeauty"></span> &emsp;
+     </h2>
+<script>
+   function sumusbeauty() {
+       // Get the table by its ID
+       var table6 = document.getElementById("table6");
+              		sum6 = table6.rows.length-1;
+	    var table7 = document.getElementById("table7");
+              		sum7 = table7.rows.length-1;
+	   var table8 = document.getElementById("table8");
+              		sum8 = table8.rows.length-1;
+        
+       
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       
+       
+       // Display the sum in the last row
+	 
+       document.getElementById("sumusbeauty").innerText = sum6+sum7+sum8;
+      	  
+   }
+    sumusbeauty();
+   </script>
+ 
+ 
  </section>
-<h2>
-	  Coins: 56
- </h2>	
 
 
 
@@ -1628,12 +1682,12 @@ Women Power in America
  
 <div>
  <div>
-   <table id = "table10" class="center">
+   <table  class="center">
     <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
    <tr><td><b>2022</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/61c101e0c2b090.87283459-original.jpg"  alt="Obverse Image"></td></tr>
    </table>
  </div>   
-   <table id = "table11" class="center">
+   <table id = "table9" class="center">
     	
  			<tr>
 				<th>#</th>
@@ -1669,16 +1723,15 @@ Women Power in America
   	</table>
  </div>
  
-
- 
  <div>
  <div>
-   <table id = "table10" class="center">
+   <table class="center">
     <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
    <tr><td><b>2023</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/63a0fb50e1d4f9.71219011-original.jpg"  alt="Obverse Image"></td></tr>
-   </table>
+  </table>
+  
  </div>   
-   <table id = "table12" class="center">
+   <table id = "table10" class="center">
  		<tr>
 			<th>#</th>
 	      	<th>Quarter</th>
@@ -1722,14 +1775,14 @@ Women Power in America
   </div>
   <div>
    <div>
-   <table id = "table10" class="center">
+   <table  class="center">
    
    <tr style = "width: 175px;"><th>Year</th><th>Obverse</th></tr> 
    <tr><td><b>2024</b></td><td><img src="https://en.numista.com/catalogue/photos/etats-unis/6577c3ffb93aa5.59795211-original.jpg"  alt="Obverse Image"></td></tr>
    </table>  
    </div> 
   
-   <table id = "table13" class="center">
+   <table id = "table11" class="center">
    
 	   
     		<tr>
@@ -1759,14 +1812,34 @@ Women Power in America
   </table>
   
  </div>   
- 
-
- 
+  
  </section>
+ 
  <h2>
-	  Coins: 11
- </h2>	
-
+	  Coins:<span id="sumuswomen"></span> &emsp;
+     </h2>
+<script>
+   function sumuswomen() {
+       // Get the table by its ID
+       var table9 = document.getElementById("table9");
+              		sum9 = table9.rows.length-1;
+	    var table10 = document.getElementById("table10");
+              		sum10 = table10.rows.length-1;
+	   var table11 = document.getElementById("table11");
+              		sum11 = table11.rows.length-1;
+        
+       
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       
+       
+       // Display the sum in the last row
+	 
+       document.getElementById("sumuswomen").innerText = sum9+sum10+sum11;
+      	  
+   }
+    sumuswomen();
+   </script>
+ 
  
 <section> 
 <h4>
@@ -1784,7 +1857,7 @@ Presidential Dollar
 
  <div style="display: flex; margin-left: 1px; margin-right: 1px; ">
 <div>
-   <table id = "table14" class="center">
+   <table id = "table12" class="center">
     <thead>
 	    
     		<tr>
@@ -1821,7 +1894,7 @@ Presidential Dollar
   </div> 
  
    <div>
-   <table id = "table15" class="center">
+   <table id = "table13" class="center">
 	    
     		<tr>
 			<th>#</th>
@@ -1857,7 +1930,7 @@ Presidential Dollar
   </div> 
   
     <div>
-   <table id = "table16" class="center">
+   <table id = "table14" class="center">
         
     		<tr>
 			<th>#</th>
@@ -1893,7 +1966,7 @@ Presidential Dollar
   </div> 
   
     <div>
-   <table id = "table17" class="center">
+   <table id = "table15" class="center">
     
 	    
     		<tr>
@@ -1929,7 +2002,7 @@ Presidential Dollar
   </div> 
   
    <div>
-   <table id = "table18" class="center">
+   <table id = "table16" class="center">
         
     		<tr>
 			<th>#</th>
@@ -1965,7 +2038,7 @@ Presidential Dollar
   </div> 
   
    <div>
-   <table id = "table19" class="center">
+   <table id = "table17" class="center">
        
     		<tr>
 			<th>#</th>
@@ -2002,7 +2075,7 @@ Presidential Dollar
    
   
    <div>
-   <table id = "table20" class="center">
+   <table id = "table18" class="center">
     <thead>
 	    
     		<tr>
@@ -2039,7 +2112,7 @@ Presidential Dollar
   </div> 
   
    <div>
-   <table id = "table21" class="center">
+   <table id = "table19" class="center">
     <thead>
 	    
     		<tr>
@@ -2076,7 +2149,7 @@ Presidential Dollar
   
   </div> 
   <div>
-   <table id = "table22" class="center">
+   <table id = "table20" class="center">
     <thead>
 	    
     		<tr>
@@ -2115,7 +2188,7 @@ Presidential Dollar
  <section>
 <div style="display: flex; margin-left: 1px; margin-right: 1px; ">
 <div>
-   <table id = "table23" class="center">
+   <table id = "table21" class="center">
     <thead>
 	    
     		<tr>
@@ -2152,7 +2225,7 @@ Presidential Dollar
   </div> 
  
    <div>
-   <table id = "table24" class="center">
+   <table id = "table22" class="center">
     <thead>
 	    
     		<tr>
@@ -2189,7 +2262,7 @@ Presidential Dollar
   </div> 
   
     <div>
-   <table id = "table25" class="center">
+   <table id = "table23" class="center">
     <thead>
 	    
     		<tr>
@@ -2217,13 +2290,65 @@ Presidential Dollar
  </section>
 
  <h2>
-	  Coins: 46
- </h2>	
+	  Coins:<span id="sumuspresident"></span> &emsp;
+     </h2>
+<script>
+   function sumuspresident() {
+       // Get the table by its ID
+var table12 = document.getElementById("table12");
+sum12 = table12.rows.length-1;
 
+var table13 = document.getElementById("table13");
+sum13 = table13.rows.length-1;
+
+var table14 = document.getElementById("table14");
+sum14 = table14.rows.length-1;
+
+var table15 = document.getElementById("table15");
+sum15 = table15.rows.length-1;
+
+var table16 = document.getElementById("table16");
+sum16 = table16.rows.length - 1;
+
+var table17 = document.getElementById("table17");
+sum17 = table17.rows.length - 1;
+
+var table18 = document.getElementById("table18");
+sum18 = table18.rows.length - 1;
+
+var table19 = document.getElementById("table19");
+sum19 = table19.rows.length - 1;
+
+var table20 = document.getElementById("table20");
+sum20 = table20.rows.length - 1;
+
+var table21 = document.getElementById("table21");
+sum21 = table21.rows.length - 1;
+
+var table22 = document.getElementById("table22");
+sum22 = table22.rows.length - 1;
+
+var table23 = document.getElementById("table23");
+sum23 = table23.rows.length - 1;
+
+       
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       
+       
+       // Display the sum in the last row
+	 
+       document.getElementById("sumuspresident").innerText = sum12 + sum13 + sum14 + sum15 +
+    sum16 + sum17 + sum18 + sum19 +
+    sum20 + sum21 + sum22 + sum23;
+      	  
+   }
+    sumuspresident();
+   </script>
+ 
 <section> 
 <h4>
 Innovative America
- <table id = "table26" style="margin-left: 500px;">
+ <table id = "table24" style="margin-left: 500px;">
     <tr>
 	  <th>#</th>
       <th margin-left: 1px;">Year</th>
@@ -2243,7 +2368,7 @@ Innovative America
 </h4>
    <div style="display: flex; margin-left: 1px; margin-right: 1px; ">
 <div>
-   <table id = "table10" class="center">
+
     <thead>
 
 	    <table>
@@ -2284,7 +2409,7 @@ Innovative America
   </div>
   
   <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table27" class="center">
+   <table id = "table25" class="center">
    
     			<tr>
 				    <th></th>  		
@@ -2339,7 +2464,7 @@ Innovative America
   </div>
   
   <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table28" class="center">
+   <table id = "table26" class="center">
     			<tr>      	
 				<th>#</th>			
       		<th>Dollar Coin</th>
@@ -2396,7 +2521,7 @@ Innovative America
   </div> 
   
   <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table29" class="center">
+   <table id = "table27" class="center">
   
     			<tr>      
 				<th>#</th>		
@@ -2453,7 +2578,7 @@ Innovative America
   </div>
  
   <div style="margin-left: 1px; margin-right: 1px;margin-top: 0px;">
-   <table id = "table30" class="center">
+   <table id = "table28" class="center">
     
       <tr>      		
 	 	<th>#</th>		
@@ -2510,8 +2635,37 @@ Innovative America
   </div>
  </section>
 <h2>
-	  Coins: 25
- </h2>	
+	  Coins:<span id="sumusinnova"></span> &emsp;
+     </h2>
+<script>
+   function sumusinnova() {
+       // Get the table by its ID
+       var table24 = document.getElementById("table24");
+              		sum24 = table24.rows.length-1;
+
+       var table25 = document.getElementById("table25");
+              		sum25 = table25.rows.length-1;
+
+       var table26 = document.getElementById("table26");
+              		sum26 = table26.rows.length-1;
+
+       var table27 = document.getElementById("table27");
+              		sum27 = table27.rows.length-1;
+
+       var table28 = document.getElementById("table28");
+              		sum28 = table28.rows.length-1;
+
+       // Loop through the rows, excluding the last row where the sum will be displayed
+       
+       
+       // Display the sum in the last row
+	 
+       document.getElementById("sumusinnova").innerText = sum24+sum25+sum26+sum27+sum28;
+      	  
+   }
+    sumusinnova();
+   </script>
+ 
  <h2>
 	  Total Coins:<span id="tsum"></span> &emsp;
  </h2>
@@ -2530,6 +2684,9 @@ Innovative America
        // Display the sum in the last row
 	   
        // Get the table by its ID
+         var table2 = document.getElementById("table2");
+              		sum2 = table2.rows.length-1;
+	
        var table3 = document.getElementById("table3");
               		sum3 = table3.rows.length-1;
 					
@@ -2549,6 +2706,9 @@ Innovative America
               		sum8 = table8.rows.length-1;
     				
 	   var table9 = document.getElementById("table9");
+              		sum9 = table9.rows.length-1;
+                    
+	   var table10 = document.getElementById("table10");
               		sum9 = table9.rows.length-1;
         			
 	   var table11 = document.getElementById("table11");
@@ -2604,15 +2764,9 @@ Innovative America
 	   					
        var table28 = document.getElementById("table28");
               		sum28 = table28.rows.length-1;
-	   					
-       var table29 = document.getElementById("table29");
-              		sum29 = table29.rows.length-1;
-	   					
-       var table30 = document.getElementById("table30");
-              		sum30 = table30.rows.length-1;
 	   
-       document.getElementById("tsum").innerText = sum1+sum3+sum4+sum5+sum6+sum7+sum8+sum9+sum11+sum12+sum13+sum14+sum15+sum16+sum17+sum18+sum19+sum20+sum21+sum22+sum23+sum24+sum25
-	   +sum26+sum27+sum28+sum29+sum30;  
+       document.getElementById("tsum").innerText = sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8+sum9+sum10+sum11+sum12+sum13+sum14+sum15+sum16+sum17+sum18+sum19+sum20+sum21+sum22+sum23+sum24+sum25
+	   +sum26+sum27+sum28;  
    }
  sumTable();
 </script>
